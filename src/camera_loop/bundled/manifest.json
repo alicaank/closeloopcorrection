@@ -81,7 +81,7 @@
   },
   {
     "path": "analysis/plan_base_restart_20261008/long_domain_20261028/score_long.py",
-    "sha256": "ebdb78ddc70b3a16586e440c8476bea64424ac41a698635e4114d1515f2faf7b"
+    "sha256": "e8445d91200a47506e183b66e7e089be4dffd648d44fbc3498ed62e1e2c37c3f"
   },
   {
     "path": "analysis/plan_base_restart_20261008/long_domain_20261028/spatia_run.py",
@@ -157,7 +157,7 @@
   },
   {
     "path": "analysis/plan_base_restart_20261008/new_models_loop_20261028/score_pair.py",
-    "sha256": "a45fd51422eaeb724590258de017d00922bb8c10367c69e2b7f128a07e014854"
+    "sha256": "e3559f4f4cbb53c027ca2bd1a7bbe43c83d8464ddea401bcb1eec57918b232b9"
   },
   {
     "path": "analysis/plan_base_restart_20261008/new_models_loop_20261028/worldwarp_run.py",
@@ -302,5 +302,37 @@
   {
     "path": "analysis/plan_base_restart_20261008/new_models_loop_20261028/sana_kv_offload.py",
     "sha256": "ed5aca0bff6c786841dcfa9bed378f3a80e43b23a887070f5264467778a57365"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measure80.py",
+    "sha256": "1b42efb2704acbbbb3cdeda4c3158057ef428c25dc60858def6a374a9b7ff472"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measure80_vggt_legacy.py",
+    "sha256": "a6b020f8bbd1a1a816973f897e2b7ba67fb7a94e207b9e98424f5b619622b3b1"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/long_domain_20261028/score_long_vggt_legacy.py",
+    "sha256": "ebdb78ddc70b3a16586e440c8476bea64424ac41a698635e4114d1515f2faf7b"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/new_models_loop_20261028/score_pair_vggt_legacy.py",
+    "sha256": "a45fd51422eaeb724590258de017d00922bb8c10367c69e2b7f128a07e014854"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/camera.py",
+    "sha256": "64a1c902f55fcc9661b235d10ad0f972bf41f657522a8b6785f9126d84ce9ff0"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/score.py",
+    "sha256": "b66e0e311ec88fa3cb5a2425ce8d4110290369169e4d238d4b65ea207e9ac4f0"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/test_camera.py",
+    "sha256": "f31eb93f30a4f841c3a2382b9018c1aa79236cfaccfccdb230065167485c58b8"
+  },
+  {
+    "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/worker.py",
+    "sha256": "e3cf4953d0c42ecd10314111ffdc76e9d16c4020495e267e896145c0a2dfb098"
   }
 ]

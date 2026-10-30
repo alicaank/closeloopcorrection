@@ -70,7 +70,7 @@ def materialize(workspace, config, clone=False):
             raise ValueError("Bundled patch hash mismatch: " + path)
     w.mkdir(parents=True, exist_ok=True)
     pins = json.loads((BUNDLE / "repos.json").read_text())
-    clone_models = set(selected) | ({"lyra", "vggt"} if selected else set())
+    clone_models = set(selected) | ({"lyra", "vipe"} if selected else set())
     if clone:
         for model in sorted(clone_models):
             p = pins[model]

@@ -14,6 +14,8 @@ The source package has CPU checks for:
 
 The initial release passed 19 CPU tests, including execution against an installed wheel. Version 0.2.0 passes 31 CPU tests against a freshly built/installed wheel. Additional dataset tests cover registered resize geometry, metadata/trajectory rejection, selected scene order, separate job outputs, fail-fast execution, changed-input rejection and child interpreter relocation. Multi-scene process execution is tested with mocked native jobs, not real GPU sampling. Every nonempty upstream patch was also checked against its pinned source revision using a temporary Git index, without modifying the research checkouts. All 11 local source revisions and interpreter paths were present during the audit.
 
+Version 0.3.0 adds VIPE registration and relocated scoring-entrypoint checks, and verifies that preparation selects the pinned VIPE source rather than VGGT. The suite has 33 top-level tests; the evaluator test also runs four geometry cases in a separate process. A local VIPE import/configuration dry run passed with CUDA hidden. GPU qualification of VIPE scoring is pending. See [evaluation protocol](evaluation.md).
+
 Run with `python -m unittest discover -s tests -v`. CI runs the CPU suite on Python 3.10–3.12. It does not download model weights or validate GPU behavior.
 
 A successful CPU suite or wheel install is not an end-to-end model claim. Native environment installation, checkpoint availability, pose-estimator loading and GPU sampling must be tested on the destination machine.

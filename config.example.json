@@ -23,6 +23,7 @@
     "@CONDA_ROOT@/envs/framecrafter": "/opt/envs/scoring",
     "@CONDA_ROOT@/envs/cuda128": "/usr/local/cuda",
     "@WORKSPACE@/baselines/venv_vmem": "/opt/envs/observer",
-    "@WORKSPACE@/analysis/plan_base_restart_20261008/model_controls_20261024/bin/ffmpeg": "/usr/bin/ffmpeg"
+    "@WORKSPACE@/analysis/plan_base_restart_20261008/model_controls_20261024/bin/ffmpeg": "/usr/bin/ffmpeg",
+    "@WORKSPACE@/vipe/.venv/bin/python": "/opt/envs/vipe/bin/python"
   }
 }

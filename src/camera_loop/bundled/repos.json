@@ -70,5 +70,11 @@
     "url": "https://github.com/SimonSun0810/VGGT-World.git",
     "commit": "2a42a713586bdacc4069f2c08943550a3f2c76ce",
     "patch": "patches/vggt.patch"
+  },
+  "vipe": {
+    "path": "vipe",
+    "url": "https://github.com/nv-tlabs/vipe.git",
+    "commit": "95a8816947602ddc26fcb7a80bea4f9313059578",
+    "patch": "patches/vipe.patch"
   }
 }

@@ -22,6 +22,91 @@ This is a research integration toolkit. Native environments and checkpoints stil
 
 For another dataset or more scenes, use the [dataset import, validation and serial experiment guide](docs/datasets.md). The importer requires registered poses/depth/intrinsics; it does not estimate them from raw video.
 
+## How closed-loop correction works
+
+The input is a desired camera trajectory, a conditioning image, and the generator's normal text/image/memory inputs. A camera command is not necessarily the camera motion visible in the resulting video: a generator may under-execute translation, drift in rotation, or accumulate error across chunks. The controller observes that discrepancy at a generation boundary and changes the next chunk's camera conditioning. It needs no generator weight update.
+
+```mermaid
+flowchart LR
+    P[Desired camera path] --> C[Align and encode future commands]
+    C --> G[Generate next chunk with native memory]
+    G --> O[DA3: measure available generated frames]
+    O --> Q[Register geometry and check measurement quality]
+    Q --> R[Replan future path and bridge memory coordinates]
+    R --> C
+    G --> V[Completed video: offline VIPE evaluation]
+```
+
+### 1. Establish one geometric reference
+
+The portable controller uses anchor-relative, OpenCV **camera-to-world** matrices. A pose `T = [R, t; 0, 1]` maps camera coordinates into this fixed reference. The adapter converts the dataset's cameras, depth and intrinsics into that convention, then converts outgoing commands into the generator's own convention.
+
+For depth-calibrated models, the native translation factor is `k = median(native_depth / reference_depth)` over valid corresponding anchor pixels. Depths must describe the same surface, pixel rays and depth convention. Resizing or cropping an image requires the matching intrinsics and depth transformation. Some adapters instead need an explicit metric or normalization contract. The checkpoint, anchor and normalization context bind the saved calibration; an unexplained factor is an error, not an invitation to tune it against the desired motion.
+
+This native-model calibration differs from observer registration. A fresh reconstruction can have its own arbitrary scale and coordinate frame. Its poses must be registered back into the fixed reference for each observation. Reusing a previous raw observer scale can create apparent camera jumps even when the rendered motion is smooth.
+
+### 2. Generate, then measure only available frames
+
+Run the model for one native generation chunk. In the local experiments, DA3 observes generated images available up to that boundary. It must not receive future images or commanded cameras as pose labels. The adapter is responsible for registering its reconstruction, reporting measurement quality and returning the pose of the **actual last generated frame**.
+
+The portable `Measurement` object contains that endpoint pose, its frame ID and a quality record. `CorrectionSession` rejects stale/future measurements, invalid rigid transforms and failed quality gates. A host integrating the core API supplies its own observer; DA3 is provided through the bundled research adapters rather than loaded by the NumPy controller.
+
+### 3. Rejoin the desired trajectory smoothly
+
+Let `P_t` be the original planned pose at the boundary, `M_t` the measured pose, and `P_(t+i)` the planned future poses in a chunk of length `N`. With full correction gains, define:
+
+```text
+translation residual: delta_t = translation(M_t) - translation(P_t)
+rotation residual:    delta_R = rotation(M_t) @ rotation(P_t).T
+fade:                 w_i = 1 - i/N,  i = 1,...,N
+
+translation(D_i) = translation(P_(t+i)) + w_i * delta_t
+rotation(D_i)    = Slerp(delta_R, identity, i/N) @ rotation(P_(t+i))
+```
+
+`D_i` is the desired future path after replanning. It starts near the observed boundary and gradually rejoins the original plan; the final pose is the original chunk target. Separate translation and rotation gains in `[0,1]` can attenuate the measured residual before replanning. This is a boundary rejoin rule, not a guarantee of constant velocity or acceleration: noisy measurements, abrupt desired paths and imperfect model execution still need to be inspected.
+
+### 4. Respect the model's memory coordinates
+
+The image at the boundary was generated under some previous command `U_t`, which can differ from both `P_t` and `M_t` after earlier corrections. If the model's memory labels that image with its **commanded** pose, future commands must be expressed in that same memory frame. At full gains the portable controller uses:
+
+```text
+B   = U_t @ inverse(M_t)
+C_i = B @ D_i
+```
+
+This makes the relative motion from the stored boundary label agree with the desired motion from the measured boundary: `inverse(U_t) @ C_i = inverse(M_t) @ D_i`. Simply supplying `D_i` to commanded-pose memory would mix coordinate frames. With reduced gains the implementation uses the gain-adjusted endpoint in this bridge too, so zero gain does not leave a hidden full-strength compensation.
+
+If memory has actually been relabelled with registered **measured** poses, the desired path can instead be supplied directly. Setting `history_labels="measured"` does not rewrite a model's memory automatically: the host must maintain that invariant. Measured-memory writes, such as the explicit VMem `replan_measured` ablation, are a separate experiment. The default generic hook writes only future conditioning and retains native model memory.
+
+The adapter finally applies native units/axes and c2w/w2c conversion. For relative-chain conditioning, it composes relative transforms after converting both endpoints into the native camera basis. Ray or Plücker encodings remain the host model's responsibility.
+
+### 5. Repeat and evaluate independently
+
+After generating the next chunk, measure again and repeat. Past frames are immutable; correction cannot fix a frame already emitted. If a generator systematically under-executes, the changed conditioning may request a larger relative movement toward the target, but success remains an empirical property of the model and scene.
+
+Use matched **baseline**, **sham**, and **correction** runs where the adapter supports them. Baseline uses the planned commands. Sham exercises the measurement path while bypassing command correction; the portable controller's sham preserves those planned commands exactly. Compare identical scenes, seeds, lengths and sampling schedules, and report observation overhead separately. Historical Memorizon/WorldPlay adapters do not yet provide verified native/sham controls.
+
+The equations above describe `CorrectionSession`/`AlignedLoop`. Bundled research launchers retain model-specific controller implementations, chunk schedules and guards; they are not all equivalent implementations of this portable controller. See [integration details](docs/integration.md) before interpreting an adapter result as a test of these exact equations.
+
+## Evaluate with VIPE
+
+**VIPE is the default camera evaluator for the bundled long, pair and 80-frame scoring entrypoints.** DA3 remains the correction observer. VIPE processes every consecutive frame of the completed video with fixed, model-preprocessed intrinsics; it is an offline evaluator and may use later frames. Its trajectory must never feed back into a causal generation run.
+
+For evaluation, the initial VIPE pose defines the rigid anchor and shared anchor depth defines scale:
+
+```text
+s = median(reference_anchor_depth / VIPE_optimized_anchor_depth)
+T_i = inverse(VIPE_pose_0) @ VIPE_pose_i
+translation(T_i) *= s
+```
+
+The depths are compared at registered pixels. The desired trajectory is not supplied to SLAM or used to fit scale, rotation or translation. Position error is Euclidean distance in the stored anchor-depth units; rotation error is the SO(3) geodesic angle in degrees. Report camera mean and endpoint errors alongside DINO similarity and LPIPS against the recording. Those appearance metrics measure agreement with the recording, not all aspects of visual quality or temporal consistency.
+
+VIPE writes dense trajectories, registration diagnostics and evaluator provenance. Historical VGGT reports stay historical; compare baseline/correction under the same evaluator and protocol, and re-score both arms before making a new claim. Some stored reference trajectories are themselves VIPE-derived, so using a different correction observer does **not** make those references independent ground truth.
+
+See [VIPE installation, evaluation commands and output format](docs/evaluation.md). The release includes CPU registration checks and a local VIPE configuration/import dry run. GPU qualification of the new scoring route is pending; no VIPE improvement result is claimed here.
+
 ## Automatic alignment
 
 A model declares its camera direction, camera axes, native unit contract and conditioning layout. The alignment layer then:

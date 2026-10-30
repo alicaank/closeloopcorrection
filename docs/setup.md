@@ -39,3 +39,7 @@ Dataset/checkpoint provenance still needs to be verified per experiment. Inclusi
 `baseline`, `sham` and `correction` exist where the bundled native adapter supports them. VMem's `replan_measured` is an explicit separate memory-label ablation. Generic `correction` maps to `replan_commanded`. Memorizon and WorldPlay's historical adapters expose only baseline/correction; the launcher rejects a claimed sham/native arm for them. The upstream native entrypoint is required for Lyra/Spatia/VMem native parity.
 
 The wrapper refuses existing output directories. Use separate directories for matched arms and keep their calibration evidence identical. No queue manager, automatic cleanup, environment installer or training job is started by `prepare`.
+
+## Camera evaluation
+
+New scoring uses VIPE, separately from the DA3 correction observer. Preparation clones its pinned source, but you must install its native environment and cache its assets. Configure the VIPE interpreter using the example `path_map` or `CAMERA_VIPE_PYTHON`. See [VIPE setup and commands](evaluation.md). Historical VGGT dependencies are optional and are no longer cloned by default.
