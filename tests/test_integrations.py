@@ -5,6 +5,12 @@ from camera_loop.registry import profiles
 
 
 class Integrations(unittest.TestCase):
+    def test_template_inventory_matches_manifest(self):
+        expected = {item['path'] for item in json.loads((BUNDLE/'manifest.json').read_text())}
+        actual = {str(p.relative_to(BUNDLE/'templates')) for p in (BUNDLE/'templates').rglob('*')
+                  if p.is_file() and '__pycache__' not in p.parts}
+        self.assertEqual(actual, expected, 'Stale or untracked adapter files in source/wheel')
+
     def test_patch_integrity_and_syntax(self):
         for path, expected in json.loads(
             (BUNDLE / "patch_manifest.json").read_text()

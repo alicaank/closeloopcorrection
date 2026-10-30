@@ -14,7 +14,13 @@ python -m unittest discover -s tests -v
 camera-loop models
 ```
 
-The core requires Python 3.10+, NumPy and SciPy; it does not load Torch or occupy a GPU. The demo is a simulated under-executing camera, **not a measured model result**.
+The package requires Python 3.10+, NumPy, SciPy and Pillow; it does not load Torch or occupy a GPU. The demo is a simulated under-executing camera, **not a measured model result**.
+
+## Readiness
+
+This is a research integration toolkit. Native environments and checkpoints still require setup, and fresh-machine GPU execution has not been qualified. CPU source/package checks are not an end-to-end installation guarantee.
+
+For another dataset or more scenes, use the [dataset import, validation and serial experiment guide](docs/datasets.md). The importer requires registered poses/depth/intrinsics; it does not estimate them from raw video.
 
 ## Automatic alignment
 

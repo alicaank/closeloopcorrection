@@ -5,8 +5,8 @@ For our single-GPU configuration, see [Spatia and Lyra-2 on the RTX 5090](rtx-50
 Install the small core package in a control environment. Each video model and the pose observer retain their own CUDA/PyTorch environments; installing the core does not install them.
 
 1. Copy `config.example.json` and select `models`. Set `conda_root`, `cache_root` and `python` interpreter overrides. Set `home_root` only when generated disk checks should use another home directory.
-2. Add `path_map` entries for externally stored weights, upstream repositories, observer Python and child-process Python paths. Overrides use the template placeholders, are applied longest-first in a single pass, and must have plain path values. `python` overrides affect the doctor report; `run --python` explicitly selects the launch interpreter. Child processes must also be mapped.
-3. Run `camera-loop prepare --workspace EMPTY_PATH --config CONFIG --clone`. This checks out pins and applies local adapter patches. Omitting `--clone` only writes the adapter sources, for environments whose upstream sources will be supplied separately. Do not materialize into an existing research workspace.
+2. Add `path_map` entries for externally stored weights, upstream repositories, observer Python and child-process Python paths. Overrides use the template placeholders, are applied longest-first in a single pass, and must have plain path values. `python` overrides also relocate matching native child-interpreter paths; `run --python` explicitly selects the launch interpreter. Child processes must also be mapped.
+3. Run `camera-loop prepare --workspace EMPTY_PATH --config CONFIG --clone`. This uses a partial clone, checks out pins, initializes required runtime submodules (including Lyra DA3/VIPE), and applies local adapter patches. Omitting `--clone` only writes the adapter sources, for environments whose upstream sources will be supplied separately. Do not materialize into an existing research workspace.
 4. Install each selected upstream environment from its pinned repository instructions. The bundle keeps copies of available requirement files under `upstream_metadata/`; they are references, not a universal cross-model lockfile.
 5. Obtain the model and observer assets, respecting their upstream terms. `bundled/asset_download_plan.json` and `weights_provenance.json` record known asset locations/revisions. They are inventory evidence; neither silently downloads files. Reuse teammate-provided caches or map asset paths to your own cache. Some adapters require precomputed text embeddings (the Lyra preparation scripts are included).
 6. Supply ffmpeg. Map `@WORKSPACE@/analysis/plan_base_restart_20261008/model_controls_20261024/bin/ffmpeg` to your installed executable, e.g. `/usr/bin/ffmpeg`. Alternatively put an executable at that materialized path. Model-output image/video libraries are installed in native environments.
@@ -15,6 +15,8 @@ Install the small core package in a control environment. Each video model and th
 The dated internal directory layout is retained only inside the relocated compatibility workspace, so the existing model adapters can share helpers. It is not a requirement for new integrations using `AlignedLoop`.
 
 ## Evaluation batch
+
+Use [import-batch / validate-batch / run-batch](datasets.md) to prepare another dataset or select more scenes before GPU work.
 
 The adapters consume the existing batch layout:
 

@@ -35,6 +35,16 @@ def materialize(workspace, config, clone=False):
     }
     overrides = config.get("path_map", {})
     mappings = dict(values, **overrides)
+    # The same model interpreter may also launch native subprocesses (e.g. Spatia
+    # MapAnything/rendering). A Python override must relocate those references too.
+    for model, interpreter in config.get("python", {}).items():
+        native = profile(model)["python"]
+        key = native if native.startswith("@") else "@WORKSPACE@/" + native
+        if not Path(interpreter).is_absolute():
+            raise ValueError("Python overrides must be absolute paths")
+        if key in overrides and overrides[key] != interpreter:
+            raise ValueError(f"Conflicting interpreter/path_map override for {model}")
+        mappings[key] = interpreter
     for key, value in mappings.items():
         if not isinstance(value, str) or any(
             c in value for c in ["\n", "\r", "'", '"', "\\"]
@@ -66,11 +76,50 @@ def materialize(workspace, config, clone=False):
             p = pins[model]
             target = w / p["path"]
             target.parent.mkdir(parents=True, exist_ok=True)
-            subprocess.run(["git", "clone", p["url"], str(target)], check=True)
+            subprocess.run(
+                [
+                    "git",
+                    "clone",
+                    "--filter=blob:none",
+                    "--no-checkout",
+                    p["url"],
+                    str(target),
+                ],
+                check=True,
+            )
             subprocess.run(
                 ["git", "-C", str(target), "checkout", "--detach", p["commit"]],
                 check=True,
             )
+            if model == "lyra":
+                subprocess.run(
+                    [
+                        "git",
+                        "-C",
+                        str(target),
+                        "submodule",
+                        "update",
+                        "--init",
+                        "--recursive",
+                        "--",
+                        "Lyra-2/lyra_2/_src/inference/depth_anything_3",
+                        "Lyra-2/lyra_2/_src/inference/vipe",
+                    ],
+                    check=True,
+                )
+            elif (target / ".gitmodules").exists():
+                subprocess.run(
+                    [
+                        "git",
+                        "-C",
+                        str(target),
+                        "submodule",
+                        "update",
+                        "--init",
+                        "--recursive",
+                    ],
+                    check=True,
+                )
             patch = render((BUNDLE / p["patch"]).read_text())
             if patch.strip():
                 subprocess.run(
@@ -271,6 +320,14 @@ def command(
                 else ["--arm", arm, "--latents", "42"]
             )
         )
+    if model == "worldplay" and (Path(b) / "index.json").is_file():
+        row = next(
+            r
+            for r in json.loads((Path(b) / "index.json").read_text())["scenes"]
+            if r["name"] == scene
+        )
+        if "native_units_per_anchor_unit" in row:
+            args += ["--unit", str(row["native_units_per_anchor_unit"])]
     env = dict(
         os.environ,
         CUDA_VISIBLE_DEVICES=device,

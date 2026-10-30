@@ -12,7 +12,7 @@ The source package has CPU checks for:
 - All 11 launcher script paths, explicit VMem measured-memory selection, historical control restrictions, hash manifests and compilation in a relocated workspace.
 - Absence of model assets and machine-specific source paths in the bundle.
 
-The initial release passes 19 CPU tests, including execution against an installed wheel. Every nonempty upstream patch was also checked against its pinned source revision using a temporary Git index, without modifying the research checkouts. All 11 local source revisions and interpreter paths were present during the audit.
+The initial release passed 19 CPU tests, including execution against an installed wheel. Version 0.2.0 passes 31 CPU tests against a freshly built/installed wheel. Additional dataset tests cover registered resize geometry, metadata/trajectory rejection, selected scene order, separate job outputs, fail-fast execution, changed-input rejection and child interpreter relocation. Multi-scene process execution is tested with mocked native jobs, not real GPU sampling. Every nonempty upstream patch was also checked against its pinned source revision using a temporary Git index, without modifying the research checkouts. All 11 local source revisions and interpreter paths were present during the audit.
 
 Run with `python -m unittest discover -s tests -v`. CI runs the CPU suite on Python 3.10–3.12. It does not download model weights or validate GPU behavior.
 
