@@ -1,0 +1,28 @@
+[
+  {
+    "name": "baseline",
+    "write": "commanded",
+    "replan": false
+  },
+  {
+    "name": "sham",
+    "write": "commanded",
+    "replan": true,
+    "gain": 0.0
+  },
+  {
+    "name": "replan_commanded",
+    "write": "commanded",
+    "replan": true
+  },
+  {
+    "name": "write_measured",
+    "write": "measured",
+    "replan": false
+  },
+  {
+    "name": "replan_measured",
+    "write": "measured",
+    "replan": true
+  }
+]

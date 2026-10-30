@@ -1,0 +1,18 @@
+{
+  "lingbot": [
+    {"repo": "robbyant/lingbot-world-v2-1.3b-causal-fast", "destination": "lingbot/transformers"},
+    {"repo": "robbyant/lingbot-world-v2-14b-causal-fast", "destination": "lingbot/assets", "include": ["Wan2.1_VAE.pth", "models_t5_umt5-xxl-enc-bf16.pth", "google/*"]}
+  ],
+  "dreamx": [{"repo": "GD-ML/DreamX-World-5B", "destination": "dreamx"}],
+  "difix": [{"repo": "nvidia/difix_ref", "destination": "difix_ref"}],
+  "solarwm": [{"repo": "junchaoh-cs/SolarWM", "destination": "solarwm", "include": ["SolarWM-5B-base/*", "SolarWM-5B-sgf-stage2-81f/*"]}],
+  "worldwarp": [
+    {"repo": "imsuperkong/worldwarp", "destination": "worldwarp"},
+    {"repo": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers", "destination": "worldwarp/Wan-AI/Wan2.1-T2V-1.3B-Diffusers", "exclude": ["assets/*", "examples/*"]}
+  ],
+  "sana": [
+    {"repo": "Efficient-Large-Model/SANA-WM_streaming", "destination": "sana_streaming"},
+    {"repo": "Efficient-Large-Model/gemma-2-2b-it", "destination": "gemma2", "exclude": ["gemma-2-2b-it.safetensors"]}
+  ],
+  "worldcrafter": [{"repo": "TencentARC/WorldCrafter-Fast", "destination": "worldcrafter_fast"}]
+}

@@ -1,0 +1,13 @@
+diff --git a/diffusion/model/builder.py b/diffusion/model/builder.py
+index 1378788..1b95b3e 100755
+--- a/diffusion/model/builder.py
++++ b/diffusion/model/builder.py
+@@ -128,7 +128,7 @@ def get_tokenizer_and_text_encoder(name="T5", device="cuda"):
+         "gemma-2b": "google/gemma-2b",
+         "gemma-2b-it": "google/gemma-2b-it",
+         "gemma-2-2b": "google/gemma-2-2b",
+-        "gemma-2-2b-it": "Efficient-Large-Model/gemma-2-2b-it",
++        "gemma-2-2b-it": os.environ.get("SANA_WM_LOCAL_GEMMA2", "Efficient-Large-Model/gemma-2-2b-it"),
+         "gemma-2-9b": "google/gemma-2-9b",
+         "gemma-2-9b-it": "google/gemma-2-9b-it",
+         "Qwen2-5-VL-3B-Instruct": "Qwen/Qwen2.5-VL-3B-Instruct",

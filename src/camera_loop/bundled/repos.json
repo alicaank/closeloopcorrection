@@ -1,0 +1,74 @@
+{
+  "matrixgame": {
+    "path": "sota_repos/matrix_game/Matrix-Game-3.5",
+    "url": "https://github.com/Riemann-Dynamics/Matrix-Game-3.5.git",
+    "commit": "fbf7def0693ae14f745ba35bf2a26215d4ef991d",
+    "patch": "patches/matrixgame.patch"
+  },
+  "spatia": {
+    "path": "sota_repos/spatia",
+    "url": "https://github.com/ZhaoJingjing713/Spatia.git",
+    "commit": "f75b10c9bb5f6b0cd779ec8c41ab33dd8382dba3",
+    "patch": "patches/spatia.patch"
+  },
+  "lyra": {
+    "path": "lyra",
+    "url": "https://github.com/nv-tlabs/lyra.git",
+    "commit": "9fffc9adc37004091ecf26ef03abfb3abdf4d59a",
+    "patch": "patches/lyra.patch"
+  },
+  "vmem": {
+    "path": "baselines/vmem",
+    "url": "https://github.com/runjiali-rl/vmem.git",
+    "commit": "39291e4f272f6b4f270691d930926ab5930f942e",
+    "patch": "patches/vmem.patch"
+  },
+  "memorizon": {
+    "path": "baselines/memorizon",
+    "url": "https://github.com/TingtingLiao/memorizon.git",
+    "commit": "432a49e01c19be8fbd60eb37427ed07dfcc2db16",
+    "patch": "patches/memorizon.patch"
+  },
+  "worldplay": {
+    "path": "sota_repos/worldplay",
+    "url": "https://github.com/Tencent-Hunyuan/HY-WorldPlay",
+    "commit": "1588e1336e842b03b0a7860c654ebd7c46bb065e",
+    "patch": "patches/worldplay.patch"
+  },
+  "astronex": {
+    "path": "sota_repos/astronex_world",
+    "url": "https://github.com/Astronex-Robotics/Astronex-World.git",
+    "commit": "27584bf1a89da01ef35a03b48d83bc818d2adf2b",
+    "patch": "patches/astronex.patch"
+  },
+  "lingbot": {
+    "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/lingbot",
+    "url": "https://github.com/robbyant/lingbot-world-v2.git",
+    "commit": "1895d300d8ac936401689b26389f51cbd36530eb",
+    "patch": "patches/lingbot.patch"
+  },
+  "dreamx": {
+    "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/dreamx",
+    "url": "https://github.com/AMAP-ML/DreamX-World.git",
+    "commit": "a1f4c6e5e45600718e5236955f2e0702e53fc275",
+    "patch": "patches/dreamx.patch"
+  },
+  "worldwarp": {
+    "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/worldwarp",
+    "url": "https://github.com/HyoKong/WorldWarp.git",
+    "commit": "0396b801c278546d01a6618a18e5a5c2a154c0a1",
+    "patch": "patches/worldwarp.patch"
+  },
+  "sana": {
+    "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/sana",
+    "url": "https://github.com/NVlabs/Sana.git",
+    "commit": "25adaaf02ad501c27be2c376b6b49b349cbcbe52",
+    "patch": "patches/sana.patch"
+  },
+  "vggt": {
+    "path": "VGGT-World",
+    "url": "https://github.com/SimonSun0810/VGGT-World.git",
+    "commit": "2a42a713586bdacc4069f2c08943550a3f2c76ce",
+    "patch": "patches/vggt.patch"
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "native",
+    "write": "commanded",
+    "replan": false
+  },
+  {
+    "name": "baseline",
+    "write": "commanded",
+    "replan": false
+  },
+  {
+    "name": "sham",
+    "write": "commanded",
+    "replan": true
+  },
+  {
+    "name": "replan_commanded",
+    "write": "commanded",
+    "replan": true
+  }
+]

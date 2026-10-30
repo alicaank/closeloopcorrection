@@ -1,0 +1,320 @@
+diff --git a/Lyra-2/lyra_2/_src/inference/lyra2_ar_inference.py b/Lyra-2/lyra_2/_src/inference/lyra2_ar_inference.py
+index a69b4e6..47be0d0 100644
+--- a/Lyra-2/lyra_2/_src/inference/lyra2_ar_inference.py
++++ b/Lyra-2/lyra_2/_src/inference/lyra2_ar_inference.py
+@@ -392,6 +392,10 @@ def _intrinsics_vec_to_k33(intrinsics_vec: torch.Tensor) -> torch.Tensor:
+ def _offload_diffusion_to_cpu(model, enable_offload: bool):
+     """Move diffusion model to CPU if offload is enabled."""
+     if enable_offload and hasattr(model, 'net'):
++        if bool(getattr(model, "_sequential_cpu_offload", False)):
++            if torch.cuda.is_available():
++                torch.cuda.empty_cache()
++            return
+         model.net.cpu()
+         if torch.cuda.is_available():
+             torch.cuda.empty_cache()
+@@ -400,6 +404,8 @@ def _offload_diffusion_to_cpu(model, enable_offload: bool):
+ def _restore_diffusion_to_gpu(model, enable_offload: bool):
+     """Move diffusion model back to GPU if offload is enabled."""
+     if enable_offload and hasattr(model, 'net'):
++        if bool(getattr(model, "_sequential_cpu_offload", False)):
++            return
+         model.net.to(model.tensor_kwargs.get("device", "cuda"))
+ 
+ 
+diff --git a/Lyra-2/lyra_2/_src/inference/lyra2_custom_traj_inference.py b/Lyra-2/lyra_2/_src/inference/lyra2_custom_traj_inference.py
+index b56a982..390b462 100644
+--- a/Lyra-2/lyra_2/_src/inference/lyra2_custom_traj_inference.py
++++ b/Lyra-2/lyra_2/_src/inference/lyra2_custom_traj_inference.py
+@@ -133,6 +133,12 @@ def parse_arguments() -> argparse.Namespace:
+     parser.add_argument("--num_sampling_step", type=int, default=35)
+     parser.add_argument("--seed", type=int, default=1)
+     parser.add_argument("--fps", type=int, default=16)
++    parser.add_argument(
++        "--save_png_frames",
++        action="store_true",
++        help=("Also save the uncompressed model output as numbered PNG frames. "
++              "Use this for quantitative evaluation; MP4 is visualization-only."),
++    )
+     parser.add_argument("--num_frames", type=int, default=161,
+                         help="Number of frames to generate (taken from the start of the trajectory).")
+     parser.add_argument("--pose_scale", type=float, default=1.1,
+@@ -142,8 +148,20 @@ def parse_arguments() -> argparse.Namespace:
+     parser.add_argument("--lora_paths", type=str, default=None, nargs="+")
+     parser.add_argument("--lora_weights", type=float, default=None, nargs="+")
+     parser.add_argument("--offload", action="store_true")
++    parser.add_argument(
++        "--sequential_cpu_offload",
++        action="store_true",
++        help=("Load diffusion weights in CPU memory and stage submodules onto CUDA "
++              "only for their forward calls. Preserves BF16 weights and sampling, "
++              "but is substantially slower; intended for GPUs below 40 GiB."),
++    )
+     parser.add_argument("--offload_when_prompt", action="store_true")
+     parser.add_argument("--debug", action="store_true")
++    parser.add_argument(
++        "--model_load_only",
++        action="store_true",
++        help="Load/checkpoint-restore/offload the diffusion model, then exit before geometry models.",
++    )
+ 
+     # Depth backend
+     parser.add_argument("--use_moge_scale", action=argparse.BooleanOptionalAction, default=True,
+@@ -174,6 +192,29 @@ def parse_arguments() -> argparse.Namespace:
+     return parser.parse_args()
+ 
+ 
++def save_png_sequence(video_cthw: torch.Tensor, output_dir: str) -> None:
++    """Save a C,T,H,W tensor in [0,1] without video-codec distortion."""
++    if video_cthw.ndim != 4 or video_cthw.shape[0] not in (1, 3, 4):
++        raise ValueError(f"expected C,T,H,W video, got {tuple(video_cthw.shape)}")
++    os.makedirs(output_dir, exist_ok=True)
++    frames_thwc = (
++        video_cthw.clamp(0, 1)
++        .permute(1, 2, 3, 0)
++        .mul(255.0)
++        .round()
++        .to(torch.uint8)
++        .numpy()
++    )
++    for frame_index, rgb in enumerate(frames_thwc):
++        if rgb.shape[-1] == 1:
++            encoded = rgb[..., 0]
++        else:
++            encoded = cv2.cvtColor(rgb[..., :3], cv2.COLOR_RGB2BGR)
++        path = os.path.join(output_dir, f"frame_{frame_index:05d}.png")
++        if not cv2.imwrite(path, encoded):
++            raise OSError(f"failed to write {path}")
++
++
+ # ---------------------------------------------------------------------------
+ # Main
+ # ---------------------------------------------------------------------------
+@@ -234,6 +275,15 @@ if __name__ == "__main__":
+         "model.config.use_mp_policy_fsdp=False",
+         "model.config.keep_original_net_dtype=False",
+     ]
++    if args.sequential_cpu_offload:
++        experiment_opts += ["model.config.inference_load_device=cpu"]
++        # Selective activation checkpointing renames block parameters with a
++        # ``_checkpoint_wrapped_module`` prefix, while Accelerate builds its
++        # sequential-offload weight map from the unwrapped names; the mismatch
++        # raises KeyError on the first offloaded block. Activation checkpointing
++        # only trades compute for memory in the backward pass, so skipping it
++        # under no-grad inference cannot change the generated output.
++        experiment_opts += ["model.config.net.postpone_checkpoint=True"]
+     if args.lora_paths:
+         experiment_opts += ["model.config.net.postpone_checkpoint=True"]
+     model, config = load_model_from_checkpoint(
+@@ -244,6 +294,7 @@ if __name__ == "__main__":
+         instantiate_ema=False,
+         load_ema_to_reg=False,
+         experiment_opts=experiment_opts,
++        initial_device="cpu" if args.sequential_cpu_offload else "cuda",
+     )
+     if args.lora_paths:
+         lora_names = []
+@@ -251,20 +302,42 @@ if __name__ == "__main__":
+             lora_name = model.load_lora_weights(lora_path)
+             lora_names.append(lora_name)
+         model.set_weights_and_activate_adapters(lora_names, args.lora_weights)
+-        if hasattr(model, "net") and hasattr(model.net, "enable_selective_checkpoint"):
++        # Inference offload requires the original parameter names, including after DMD LoRA.
++        if not args.sequential_cpu_offload and hasattr(model, "net") and hasattr(model.net, "enable_selective_checkpoint"):
+             model.net.enable_selective_checkpoint(model.net.sac_config, model.net.blocks)
+ 
+     desired_dtype = model.tensor_kwargs.get("dtype", None)
+     desired_device = model.tensor_kwargs.get("device", None)
+-    if desired_dtype is not None:
++    if desired_dtype is not None and not args.sequential_cpu_offload:
+         model.net = model.net.to(device=desired_device, dtype=desired_dtype)
+         log.info(f"Casted model.net to dtype={desired_dtype}", rank0_only=True)
++    elif args.sequential_cpu_offload:
++        from accelerate import cpu_offload
++
++        if not args.offload:
++            raise ValueError("--sequential_cpu_offload requires --offload")
++        cpu_offload(model.net, execution_device=torch.device(desired_device), offload_buffers=True)
++        model._sequential_cpu_offload = True
++        log.info(
++            "Enabled sequential CPU offload for the diffusion network; BF16 weights "
++            "and the requested sampler are unchanged.",
++            rank0_only=True,
++        )
+ 
+     assert getattr(model.config, "important_start", True) is True
+     assert getattr(model.config, "encode_video_from_start", True) is True
+     assert not getattr(model.config, "use_hd_map_cond", False)
+ 
+     model.eval()
++    if args.model_load_only:
++        parameter_count = sum(parameter.numel() for parameter in model.net.parameters())
++        cuda_peak = torch.cuda.max_memory_allocated() if torch.cuda.is_available() else 0
++        log.info(
++            f"MODEL_LOAD_OK parameters={parameter_count} cuda_peak_bytes={cuda_peak} "
++            f"sequential_cpu_offload={args.sequential_cpu_offload}",
++            rank0_only=True,
++        )
++        raise SystemExit(0)
+     if args.context_parallel_size > 1:
+         model.net.enable_context_parallel(process_group)
+ 
+@@ -311,7 +384,13 @@ if __name__ == "__main__":
+         base_name = os.path.splitext(os.path.basename(img_path))[0]
+ 
+         video_path = os.path.join(args.output_path, f"{base_name}.mp4")
+-        if os.path.exists(video_path):
++        png_dir = os.path.join(args.output_path, f"{base_name}_frames")
++        png_complete = (
++            os.path.isdir(png_dir)
++            and len([name for name in os.listdir(png_dir)
++                     if name.startswith("frame_") and name.endswith(".png")]) == N
++        )
++        if os.path.exists(video_path) and (not args.save_png_frames or png_complete):
+             log.info(f"Skipping {img_path} (video already exists at {video_path})", rank0_only=True)
+             continue
+ 
+@@ -530,6 +609,13 @@ if __name__ == "__main__":
+ 
+         # ---- Save output video ----
+         video_01 = (result["video"][0].clamp(-1, 1) * 0.5 + 0.5).float().cpu()
++        if video_01.shape[1] != N:
++            raise RuntimeError(
++                f"model returned {video_01.shape[1]} frames, expected trajectory length {N}"
++            )
++        if args.save_png_frames:
++            save_png_sequence(video_01, png_dir)
++            log.info(f"Saved {N} lossless frames: {png_dir}", rank0_only=True)
+         save_img_or_video(video_01, video_path.replace(".mp4", ""), fps=args.fps)
+         log.info(f"Saved video: {video_path}", rank0_only=True)
+ 
+diff --git a/Lyra-2/lyra_2/_src/models/lyra2_model.py b/Lyra-2/lyra_2/_src/models/lyra2_model.py
+index 15968c8..5a5a31a 100644
+--- a/Lyra-2/lyra_2/_src/models/lyra2_model.py
++++ b/Lyra-2/lyra_2/_src/models/lyra2_model.py
+@@ -281,8 +281,15 @@ class Lyra2Model(WANDiffusionModel):
+                 net.fully_shard(mesh=self.fsdp_device_mesh, **fsdp_kwargs)
+                 net = fully_shard(net, mesh=self.fsdp_device_mesh, reshard_after_forward=True, **fsdp_kwargs)
+ 
+-            with misc.timer("meta to cuda and broadcast model states"):
+-                net.to_empty(device="cuda")
++            load_device = str(getattr(config, "inference_load_device", "cuda"))
++            if load_device not in ("cpu", "cuda"):
++                raise ValueError(f"unsupported inference_load_device={load_device!r}")
++            with misc.timer(f"meta to {load_device} and broadcast model states"):
++                if load_device == "cpu":
++                    # GaussVerse 2026-10-13: cast on the meta device (free) so the host
++                    # materializes bf16 (34 GiB) instead of fp32 (68 GiB, host OOM).
++                    net = net.to(dtype={"float32": torch.float32, "bfloat16": torch.bfloat16}[str(config.precision)])
++                net.to_empty(device=load_device)
+                 net.init_weights()
+ 
+             if self.fsdp_device_mesh:
+diff --git a/Lyra-2/lyra_2/_src/models/wan_t2v_model.py b/Lyra-2/lyra_2/_src/models/wan_t2v_model.py
+index eb182e0..07ed797 100644
+--- a/Lyra-2/lyra_2/_src/models/wan_t2v_model.py
++++ b/Lyra-2/lyra_2/_src/models/wan_t2v_model.py
+@@ -115,6 +115,11 @@ class T2VModelConfig:
+     lora_config: I4LoraConfig = I4LoraConfig()
+     use_mp_policy_fsdp: bool = False
+     keep_original_net_dtype: bool = False
++    # Inference-only escape hatch for hosts whose GPU cannot hold the full
++    # diffusion checkpoint.  Training and normal inference retain the CUDA
++    # default.  A CPU-loaded net can subsequently be executed with Accelerate's
++    # sequential CPU offload without ever materializing all weights on CUDA.
++    inference_load_device: str = "cuda"
+ 
+     state_ch: int = 16  # for latent model, ref to the latent channel number
+     state_t: int = 8  # for latent model, ref to the latent number of frames
+@@ -249,8 +254,15 @@ class WANDiffusionModel(ImaginaireModel):
+                 net.fully_shard(mesh=self.fsdp_device_mesh)
+                 net = fully_shard(net, mesh=self.fsdp_device_mesh, reshard_after_forward=True)
+ 
+-            with misc.timer("meta to cuda and broadcast model states"):
+-                net.to_empty(device="cuda")
++            load_device = str(getattr(config, "inference_load_device", "cuda"))
++            if load_device not in ("cpu", "cuda"):
++                raise ValueError(f"unsupported inference_load_device={load_device!r}")
++            with misc.timer(f"meta to {load_device} and broadcast model states"):
++                if load_device == "cpu":
++                    # GaussVerse 2026-10-13: cast on the meta device (free) so the host
++                    # materializes bf16 (34 GiB) instead of fp32 (68 GiB, host OOM).
++                    net = net.to(dtype={"float32": torch.float32, "bfloat16": torch.bfloat16}[str(config.precision)])
++                net.to_empty(device=load_device)
+                 net.init_weights()
+ 
+             if self.fsdp_device_mesh:
+diff --git a/Lyra-2/lyra_2/_src/networks/wan2pt1.py b/Lyra-2/lyra_2/_src/networks/wan2pt1.py
+index ef7aa73..18879a9 100644
+--- a/Lyra-2/lyra_2/_src/networks/wan2pt1.py
++++ b/Lyra-2/lyra_2/_src/networks/wan2pt1.py
+@@ -27,8 +27,28 @@ from einops import rearrange, repeat
+ try:
+     from flash_attn.layers.rotary import apply_rotary_emb as flash_apply_rotary_emb
+ except ImportError:
+-    flash_apply_rotary_emb = None
+-    raise ImportError("flash_attn is not installed.")
++    def flash_apply_rotary_emb(x, cos, sin, interleaved=True, inplace=False):
++        """Torch fallback for the sole FlashAttention utility used by Lyra.
++
++        Attention itself is handled by Transformer Engine.  The released code
++        unnecessarily made FlashAttention mandatory for this small RoPE helper;
++        sm_120 is unsupported by Lyra's pinned FlashAttention 2.6.3 build.  This
++        implements its interleaved pair rotation exactly and remains autograd-safe.
++        """
++        if not interleaved:
++            raise NotImplementedError("Lyra's fallback only supports interleaved RoPE")
++        if inplace:
++            raise NotImplementedError("Lyra never requests in-place RoPE")
++        if x.shape[-1] != 2 * cos.shape[-1] or cos.shape != sin.shape:
++            raise ValueError(
++                f"invalid rotary shapes: x={tuple(x.shape)} cos={tuple(cos.shape)} sin={tuple(sin.shape)}"
++            )
++        pairs = x.unflatten(-1, (-1, 2))
++        view_shape = (1, cos.shape[0], 1, cos.shape[1])
++        cos_b = cos.view(view_shape)
++        sin_b = sin.view(view_shape)
++        even, odd = pairs[..., 0], pairs[..., 1]
++        return torch.stack((even * cos_b - odd * sin_b, even * sin_b + odd * cos_b), dim=-1).flatten(-2)
+ 
+ from torch.distributed import ProcessGroup, get_process_group_ranks
+ from torch.distributed._composable.fsdp import fully_shard
+diff --git a/Lyra-2/lyra_2/_src/utils/model_loader.py b/Lyra-2/lyra_2/_src/utils/model_loader.py
+index 058ccd0..2590ac2 100644
+--- a/Lyra-2/lyra_2/_src/utils/model_loader.py
++++ b/Lyra-2/lyra_2/_src/utils/model_loader.py
+@@ -37,6 +37,7 @@ def load_model_from_checkpoint(
+     seed=0,
+     experiment_opts: list[str] = [],
+     strict=True,
++    initial_device="cuda",
+ ):
+     """
+     experiment_name: experiment name
+@@ -66,10 +67,23 @@ def load_model_from_checkpoint(
+     if not enable_fsdp:
+         # disable fsdp
+         config.model.config.fsdp_shard_size = 1
++    if initial_device not in ("cpu", "cuda"):
++        raise ValueError(f"unsupported initial_device={initial_device!r}")
+     with misc.timer("instantiate model"):
+-        model = instantiate(config.model).cuda()
+-        # Convert the model parameters to bf16
+-        model.on_train_start()
++        model = instantiate(config.model)
++        if initial_device == "cuda":
++            model = model.cuda()
++            # Convert the model parameters to bf16.
++            model.on_train_start()
++        else:
++            # Keep the heavyweight diffusion state on CPU while preserving the
++            # CUDA execution contract in tensor_kwargs.  This is intentionally
++            # narrower than on_train_start(), which would move the whole net.
++            if model.config.ema.enabled:
++                model.net_ema.to(dtype=torch.float32)
++            if hasattr(model.tokenizer, "reset_dtype"):
++                model.tokenizer.reset_dtype()
++            model.net = model.net.to(dtype=model.precision)
+ 
+     if checkpoint_path.endswith(".pth"):
+         log.info(f"Loading model from consolidated checkpoint {checkpoint_path}")

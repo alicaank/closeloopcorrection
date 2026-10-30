@@ -1,0 +1,70 @@
+diff --git a/modeling/modules/autoencoder.py b/modeling/modules/autoencoder.py
+index cd2d629..19eec78 100644
+--- a/modeling/modules/autoencoder.py
++++ b/modeling/modules/autoencoder.py
+@@ -10,7 +10,7 @@ class AutoEncoder(nn.Module):
+     def __init__(self, chunk_size: int):
+         super().__init__()
+         self.module = AutoencoderKL.from_pretrained(
+-            "stabilityai/stable-diffusion-2-1-base",
++            __import__("os").environ.get("VMEM_SD21_VAE", "@WORKSPACE@/baselines/models/sd21base_vae"),  # original repo removed from HF (404, 2026-10-08); copy of sd2-community/stable-diffusion-2-1-base
+             subfolder="vae",
+             force_download=False,
+             low_cpu_mem_usage=False,
+diff --git a/modeling/pipeline.py b/modeling/pipeline.py
+index bd2ff55..efadb08 100644
+--- a/modeling/pipeline.py
++++ b/modeling/pipeline.py
+@@ -660,6 +660,10 @@ class VMemPipeline:
+                     i: frame for i, frame in enumerate(candidates)
+                 }
+                 
++            if not candidates:                                                          # PATCH (GaussVerse F' run, 2026-10-23): no surfel of any memory
++                candidates = list(range(len(self.c2ws) - 1, -1, -1))[:self.config.model.context_num_frames]   # frame is visible from the
++                indices_to_frame = {i: frame for i, frame in enumerate(candidates)}                           # target (upstream then crashes on
++                                                                                                              # sorted_frames[0]): use the most recent frames
+             # Sort candidates by distance to target view
+             distances = [self.geodesic_distance(torch.from_numpy(average_c2w).to(self.device, self.dtype), 
+                                                 torch.from_numpy(self.c2ws[frame]).to(self.device, self.dtype), 
+@@ -671,7 +675,11 @@ class VMemPipeline:
+             max_frames = min(self.config.model.context_num_frames, len(candidates), len(self.latents))
+             
+ 
+-            is_second_step = len(self.pil_frames) == 5
++            # PATCH (GaussVerse baseline run, 2026-10-08): upstream sets the NMS threshold only when memory holds exactly 5 frames
++            # (interactive app: 1 + 4). The batch __call__ path generates num_frames-1 = 7 first, so that moment never comes and
++            # initial_threshold is undefined. Same rule (median pairwise pose distance), computed once per scene at the first
++            # multi-frame step instead.
++            is_second_step = len(self.pil_frames) > 1 and getattr(self, '_thr_scene', None) is not self.pil_frames[0]
+     
+             
+             # Adaptively determine initial threshold based on camera pose distribution
+@@ -696,6 +704,7 @@ class VMemPipeline:
+                         pairwise_distances.sort()
+                         percentile_idx = int(len(pairwise_distances) * 0.5)  # 25th percentile
+                         self.initial_threshold = pairwise_distances[percentile_idx]
++                        self._thr_scene = self.pil_frames[0]
+                     else:
+                         self.initial_threshold = 1
+ 
+@@ -705,7 +714,7 @@ class VMemPipeline:
+                 self.initial_threshold = 1e8
+             
+             selected_indices = []
+-            current_threshold = self.initial_threshold
++            current_threshold = getattr(self, 'initial_threshold', 1)   # PATCH: first step has 1 memory frame, threshold unused
+             
+             # Always start with the closest pose
+             selected_indices.append(sorted_frames[0])
+@@ -750,5 +759,11 @@ class VMemPipeline:
+                 selected_indices.extend(available_indices[:max_frames-len(selected_indices)])
+             
+             # Convert to tensor and maintain original order (don't reverse)
++            # PATCH (GaussVerse F' run, 2026-10-19): when surfel retrieval yields < context_num_frames distinct candidates after
++            # the first step, context + targets != num_frames and get_cond crashes (shape mismatch). Pad by repeating the last
++            # selected frame so the official 4 context + 4 target layout holds.
++            if len(self.latents) > 1 and len(target_c2ws) == self.config.model.target_num_frames:
++                while len(selected_indices) < self.config.model.num_frames - len(target_c2ws):
++                    selected_indices.append(selected_indices[-1])
+             context_time_indices = torch.from_numpy(np.array(selected_indices))
+         context_data = prepare_context_data(context_time_indices)

@@ -1,0 +1,53 @@
+diff --git a/wan/inference/pipeline_wan_w_mem_relative_rope.py b/wan/inference/pipeline_wan_w_mem_relative_rope.py
+index bd7a4e1..0236e18 100755
+--- a/wan/inference/pipeline_wan_w_mem_relative_rope.py
++++ b/wan/inference/pipeline_wan_w_mem_relative_rope.py
+@@ -773,6 +773,7 @@ class WanPipeline(DiffusionPipeline, WanLoraLoaderMixin):
+             callback_on_step_end_tensor_inputs = callback_on_step_end.tensor_inputs
+ 
+         # ==========================================================
++        self._tpl = (height // 32) * (width // 32)   # local patch: tokens per latent (880 only at 704x1280)
+         if self.ctx is None and chunk_i > 0:
+             raise ValueError(
+                 "When chunk_i > 0, the context self.ctx cannot be empty. Please ensure the call starts from chunk_i = 0."
+@@ -926,8 +927,8 @@ class WanPipeline(DiffusionPipeline, WanLoraLoaderMixin):
+                         encoder_hidden_states=prompt_embeds,
+                         attention_kwargs=attention_kwargs,
+                         return_dict=False,
+-                        current_start=kv_start_rope * 880,
+-                        current_end=kv_end_rope * 880,
++                        current_start=kv_start_rope * self._tpl,
++                        current_end=kv_end_rope * self._tpl,
+                         kv_cache=self._kv_cache,
+                         is_cache=True,
+                         window_frames=n_latent,
+@@ -951,8 +952,8 @@ class WanPipeline(DiffusionPipeline, WanLoraLoaderMixin):
+                 timestep = timestep[:, -generate_latent_num:]
+                 timestep = timestep.flatten()
+ 
+-                generate_rope_start = (now_window_latent_num - generate_latent_num) * 880
+-                generate_rope_end = now_window_latent_num * 880
++                generate_rope_start = (now_window_latent_num - generate_latent_num) * self._tpl
++                generate_rope_end = now_window_latent_num * self._tpl
+ 
+                 torch.cuda.nvtx.range_push("noise_pred")
+                 noise_pred = current_model(
+diff --git a/wan/models/dits/arwan_w_action_w_mem_relative_rope.py b/wan/models/dits/arwan_w_action_w_mem_relative_rope.py
+index eb13e65..87c336c 100644
+--- a/wan/models/dits/arwan_w_action_w_mem_relative_rope.py
++++ b/wan/models/dits/arwan_w_action_w_mem_relative_rope.py
+@@ -52,6 +52,13 @@ from diffusers.models.modeling_outputs import Transformer2DModelOutput
+ from diffusers.models.modeling_utils import ModelMixin
+ from diffusers.models.normalization import FP32LayerNorm
+ 
+-from sageattention import sageattn
++try:
++    from sageattention import sageattn
++except ImportError:                      # local patch (GaussVerse baselines): SDPA fallback, same HND layout [B, H, N, D]
++    import torch.nn.functional as _F
++
++    def sageattn(q, k, v, tensor_layout="HND", is_causal=False):
++        assert tensor_layout == "HND"
++        return _F.scaled_dot_product_attention(q, k, v, is_causal=is_causal)
+ 
+ logger = logging.get_logger(__name__)  # pylint: disable=invalid-name

@@ -1,0 +1,20 @@
+diff --git a/src/wan/model.py b/src/wan/model.py
+index 09e4425..35d9529 100644
+--- a/src/wan/model.py
++++ b/src/wan/model.py
+@@ -35,7 +35,14 @@ from diffusers.models.normalization import FP32LayerNorm
+ logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
+ 
+ # Add this import at the top of your script
+-from flash_attn import flash_attn_func
++try:
++    from flash_attn import flash_attn_func
++except ImportError:
++    def flash_attn_func(q, k, v, causal=False):
++        # Local single-GPU compatibility: upstream only uses unmasked attention here.
++        return torch.nn.functional.scaled_dot_product_attention(
++            q.transpose(1, 2), k.transpose(1, 2), v.transpose(1, 2),
++            is_causal=causal).transpose(1, 2)
+ 
+ class FlashAttnProcessor:
+     def __call__(

@@ -1,0 +1,14 @@
+{
+  "patches/astronex.patch": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "patches/dreamx.patch": "922e5060e8ccf13abd41d55b31f1eca850baf7c379495434d805283721e6b044",
+  "patches/lingbot.patch": "c90409bee3a5b4a26c0f3c4057e6da1e00a20fcbb473e84fb9f88c51969b9002",
+  "patches/lyra.patch": "085051965cf143fd37a7da201beb3771ece6369b101efbca8f3313eeac04943f",
+  "patches/matrixgame.patch": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "patches/memorizon.patch": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "patches/sana.patch": "5759fd61f4df35e8c8462a180808a80ec2ebdb4b59cc141f490ad6f208fb89d1",
+  "patches/spatia.patch": "dc27367e7c483f056e203558a6074608a84d65f6aa97ae286da1c27d4cefa8a5",
+  "patches/vggt.patch": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "patches/vmem.patch": "0087ef473e99f12af01ea86f6cf66a35bd44cd3a4b45ad6d55452904b96e2624",
+  "patches/worldplay.patch": "d0e81d186577bb7da95a333ecfab51c4e475cd0a37064eb7eefe2b8c8779f655",
+  "patches/worldwarp.patch": "8847868b159b17be2ecb50ab4ce4410823bdf0b7dc50cdbb8637e1635817e8d6"
+}

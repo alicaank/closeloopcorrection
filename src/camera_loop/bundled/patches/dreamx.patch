@@ -1,0 +1,79 @@
+diff --git a/inference_ar_forcing.py b/inference_ar_forcing.py
+index f634dce..b8e0a0b 100644
+--- a/inference_ar_forcing.py
++++ b/inference_ar_forcing.py
+@@ -272,8 +272,8 @@ def main():
+     for idx, item in enumerate(items):
+         image_path = item['image_path']
+         caption = item.get('caption', item.get('prompt', ''))
+-        action_seq = item['action_seq']
+-        action_speed_list = item['action_speed_list']
++        action_seq = item.get('action_seq', [])
++        action_speed_list = item.get('action_speed_list', [])
+         task_id = item.get('task_id', str(idx))
+ 
+         img_parent = os.path.basename(os.path.dirname(image_path))
+@@ -298,11 +298,17 @@ def main():
+         # 3) Build camera trajectory → PRoPE dict
+         action_seq_lower = [a.lower() for a in action_seq]
+         trajectory_spec = list(zip(action_seq_lower, action_speed_list))
+-        _, cam_params_np, _ = generate_trajectory_from_json(
+-            trajectory_spec=trajectory_spec,
+-            num_frames=num_pixel_frames,
+-            return_cam_params=True,
+-        )
++        if item.get('camera_c2w_path'):
++            # Local input adapter: preserve the published latent alignment,
++            # chunk-relative policy and fixed intrinsics; change only source poses.
++            from camera_input import load_camera_rows
++            cam_params_np = load_camera_rows(item['camera_c2w_path'], num_pixel_frames)
++        else:
++            _, cam_params_np, _ = generate_trajectory_from_json(
++                trajectory_spec=trajectory_spec,
++                num_frames=num_pixel_frames,
++                return_cam_params=True,
++            )
+         cam_objects = [Camera(cam_params_np[i].tolist()) for i in range(cam_params_np.shape[0])]
+         control_camera = cam_params_to_prope_dict(cam_objects, device=device, chunk_relative=args.chunk_relative)
+ 
+diff --git a/utils/memory.py b/utils/memory.py
+index c9758df..a7c76ad 100755
+--- a/utils/memory.py
++++ b/utils/memory.py
+@@ -6,7 +6,7 @@ import torch
+ 
+ 
+ cpu = torch.device('cpu')
+-gpu = torch.device(f'cuda:{torch.cuda.current_device()}')
++gpu = torch.device('cuda:0')  # launcher selects the single visible GPU; no import-time allocation
+ gpu_complete_modules = []
+ 
+ 
+diff --git a/wan/modules/attention.py b/wan/modules/attention.py
+index 8845659..5d6bf1b 100755
+--- a/wan/modules/attention.py
++++ b/wan/modules/attention.py
+@@ -57,6 +57,10 @@ def flash_attention(
+     deterministic:  bool. If True, slightly slower and uses more memory.
+     dtype:          torch.dtype. Apply when dtype of q/k/v is not float16/bfloat16.
+     """
++    if not FLASH_ATTN_2_AVAILABLE and not FLASH_ATTN_3_AVAILABLE:
++        from .sdpa_compat import masked_sdpa
++        return masked_sdpa(q, k, v, q_lens, k_lens, dropout_p,
++                           softmax_scale, q_scale, causal, window_size, dtype)
+     half_dtypes = (torch.float16, torch.bfloat16)
+     assert dtype in half_dtypes
+     assert q.device.type == 'cuda' and q.size(-1) <= 256
+diff --git a/wan/modules/t5.py b/wan/modules/t5.py
+index c841b04..efb713e 100755
+--- a/wan/modules/t5.py
++++ b/wan/modules/t5.py
+@@ -475,7 +475,7 @@ class T5EncoderModel:
+         self,
+         text_len,
+         dtype=torch.bfloat16,
+-        device=torch.cuda.current_device(),
++        device='cuda',
+         checkpoint_path=None,
+         tokenizer_path=None,
+         shard_fn=None,

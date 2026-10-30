@@ -1,0 +1,28 @@
+{
+  "models": [
+    "lyra",
+    "spatia",
+    "matrixgame",
+    "vmem",
+    "astronex",
+    "dreamx",
+    "lingbot",
+    "worldwarp",
+    "sana",
+    "memorizon",
+    "worldplay"
+  ],
+  "conda_root": "/opt/conda",
+  "cache_root": "/data/model-cache",
+  "python": {
+    "lyra": "/opt/envs/scoring/bin/python",
+    "spatia": "/opt/envs/spatia/bin/python"
+  },
+  "path_map": {
+    "@CONDA_ROOT@/envs/lyra2": "/opt/envs/lyra2",
+    "@CONDA_ROOT@/envs/framecrafter": "/opt/envs/scoring",
+    "@CONDA_ROOT@/envs/cuda128": "/usr/local/cuda",
+    "@WORKSPACE@/baselines/venv_vmem": "/opt/envs/observer",
+    "@WORKSPACE@/analysis/plan_base_restart_20261008/model_controls_20261024/bin/ffmpeg": "/usr/bin/ffmpeg"
+  }
+}

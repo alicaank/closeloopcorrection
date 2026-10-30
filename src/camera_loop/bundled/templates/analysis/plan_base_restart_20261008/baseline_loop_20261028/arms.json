@@ -1,0 +1,13 @@
+[
+  {
+    "name": "baseline",
+    "write": "commanded",
+    "bank": "full"
+  },
+  {
+    "name": "replan_commanded",
+    "write": "commanded",
+    "replan": true,
+    "bank": "full"
+  }
+]

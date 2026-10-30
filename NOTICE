@@ -1,0 +1,5 @@
+This repository contains original integration/controller code and source snapshots or patches derived from multiple upstream research repositories.
+
+Upstream repository URLs and source revisions are recorded in src/camera_loop/bundled/repos.json. Available upstream license notices are retained under src/camera_loop/bundled/upstream_metadata/ and continue to apply to their respective code. Some pinned sources did not include a captured license notice; no additional redistribution rights are implied for those sources. Consult the upstream project for its terms.
+
+No blanket license is assigned to the combined bundle. Model weights, training data and evaluation data are not included. Their availability and permissions are separate from this source handoff.

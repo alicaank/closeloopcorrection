@@ -1,0 +1,167 @@
+{
+  "matrixgame": {
+    "label": "Matrix-Game 3.5",
+    "scale_strategy": "metric",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "sota_repos/matrix_game/Matrix-Game-3.5",
+      "url": "https://github.com/Riemann-Dynamics/Matrix-Game-3.5.git",
+      "commit": "fbf7def0693ae14f745ba35bf2a26215d4ef991d",
+      "patch": "patches/matrixgame.patch"
+    },
+    "python": "baselines/venv_mg35/bin/python",
+    "status": "local_adapter_available",
+    "notes": "Metric metadata drives the adapter; native action encoding remains model-owned. Training corpus unresolved."
+  },
+  "lyra": {
+    "label": "Lyra-2",
+    "scale_strategy": "anchor_depth",
+    "direction": "w2c",
+    "axes": "opencv",
+    "repo": {
+      "path": "lyra",
+      "url": "https://github.com/nv-tlabs/lyra.git",
+      "commit": "9fffc9adc37004091ecf26ef03abfb3abdf4d59a",
+      "patch": "patches/lyra.patch"
+    },
+    "python": "@CONDA_ROOT@/envs/framecrafter/bin/python",
+    "status": "local_adapter_available",
+    "notes": "Final native DA3/MoGe anchor depth; 96 history padding frames are not generated time. v3 quality gate awaits GPU validation."
+  },
+  "spatia": {
+    "label": "Spatia",
+    "scale_strategy": "anchor_depth",
+    "direction": "w2c",
+    "axes": "opencv",
+    "repo": {
+      "path": "sota_repos/spatia",
+      "url": "https://github.com/ZhaoJingjing713/Spatia.git",
+      "commit": "f75b10c9bb5f6b0cd779ec8c41ab33dd8382dba3",
+      "patch": "patches/spatia.patch"
+    },
+    "python": "baselines/venv_spatia/bin/python",
+    "status": "local_adapter_available",
+    "notes": "Anchor MapAnything depth; w2c translations in native units. v3 view batching awaits CUDA parity."
+  },
+  "vmem": {
+    "label": "VMem",
+    "scale_strategy": "native_callback",
+    "direction": "c2w",
+    "axes": "opengl",
+    "repo": {
+      "path": "baselines/vmem",
+      "url": "https://github.com/runjiali-rl/vmem.git",
+      "commit": "39291e4f272f6b4f270691d930926ab5930f942e",
+      "patch": "patches/vmem.patch"
+    },
+    "python": "baselines/venv_vmem/bin/python",
+    "status": "local_adapter_available",
+    "notes": "OpenGL cameras and native per-window translation normalization; obtain the factor from the released pipeline, do not freeze it globally."
+  },
+  "astronex": {
+    "label": "Astronex",
+    "scale_strategy": "native_callback",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "sota_repos/astronex_world",
+      "url": "https://github.com/Astronex-Robotics/Astronex-World.git",
+      "commit": "27584bf1a89da01ef35a03b48d83bc818d2adf2b",
+      "patch": "patches/astronex.patch"
+    },
+    "python": "baselines/venv_astronex/bin/python",
+    "status": "local_adapter_available",
+    "notes": "Latent frame j corresponds to RGB frame 4j; metric/native normalization needs an explicit callback."
+  },
+  "lingbot": {
+    "label": "LingBot v2",
+    "scale_strategy": "native_callback",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/lingbot",
+      "url": "https://github.com/robbyant/lingbot-world-v2.git",
+      "commit": "1895d300d8ac936401689b26389f51cbd36530eb",
+      "patch": "patches/lingbot.patch"
+    },
+    "python": "analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+    "status": "local_adapter_available",
+    "notes": "Relative camera chain divided by the frozen native path normalizer. Preserve the native relative/Plucker encoding."
+  },
+  "dreamx": {
+    "label": "DreamX-World",
+    "scale_strategy": "native_callback",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/dreamx",
+      "url": "https://github.com/AMAP-ML/DreamX-World.git",
+      "commit": "a1f4c6e5e45600718e5236955f2e0702e53fc275",
+      "patch": "patches/dreamx.patch"
+    },
+    "python": "analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+    "status": "local_adapter_available",
+    "notes": "Camera indices are [0,1,5,...]; decoded feedback is delayed by three frames. Keep its adapter-specific alignment."
+  },
+  "worldwarp": {
+    "label": "WorldWarp",
+    "scale_strategy": "anchor_depth",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/worldwarp",
+      "url": "https://github.com/HyoKong/WorldWarp.git",
+      "commit": "0396b801c278546d01a6618a18e5a5c2a154c0a1",
+      "patch": "patches/worldwarp.patch"
+    },
+    "python": "analysis/plan_base_restart_20261008/model_readiness_20261027/envs/worldwarp312/bin/python",
+    "status": "experimental",
+    "notes": "Initial TTT3R depth fit plus a two-chunk continuation gate; later chunks are unsupported by that gate. GPU validation pending."
+  },
+  "sana": {
+    "label": "SANA-WM",
+    "scale_strategy": "metric",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/sana",
+      "url": "https://github.com/NVlabs/Sana.git",
+      "commit": "25adaaf02ad501c27be2c376b6b49b349cbcbe52",
+      "patch": "patches/sana.patch"
+    },
+    "python": "analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+    "status": "experimental",
+    "notes": "Metric sidecar conversion, 24-frame chunks; preserve cached past camera conditioning. GPU validation pending."
+  },
+  "memorizon": {
+    "label": "Memorizon",
+    "scale_strategy": "metric_div4",
+    "direction": "c2w",
+    "axes": "opencv",
+    "repo": {
+      "path": "baselines/memorizon",
+      "url": "https://github.com/TingtingLiao/memorizon.git",
+      "commit": "432a49e01c19be8fbd60eb37427ed07dfcc2db16",
+      "patch": "patches/memorizon.patch"
+    },
+    "python": "baselines/venv_memorizon/bin/python",
+    "status": "historical_controls_incomplete",
+    "notes": "Recorded metric translation /4 mapping; projection audit pending. Historical launcher lacks native/sham controls."
+  },
+  "worldplay": {
+    "label": "WorldPlay",
+    "scale_strategy": "native_callback",
+    "direction": "w2c",
+    "axes": "opencv",
+    "repo": {
+      "path": "sota_repos/worldplay",
+      "url": "https://github.com/Tencent-Hunyuan/HY-WorldPlay",
+      "commit": "1588e1336e842b03b0a7860c654ebd7c46bb065e",
+      "patch": "patches/worldplay.patch"
+    },
+    "python": "baselines/venv_worldplay/bin/python",
+    "status": "historical_controls_incomplete",
+    "notes": "Native pose-unit contract unresolved. Explicit calibrated factor required; historical launcher lacks native/sham controls."
+  }
+}

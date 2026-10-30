@@ -1,0 +1,46 @@
+{
+  "spatia_run.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/long_domain_20261028/spatia_run.py",
+    "sha256": "94d13438cc4990f70fc62616fcd95e16ccbc4b933df6efa373c52eb33fb8b2ef"
+  },
+  "spatia_da3_worker.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/spatia_plugins/spatia_da3_worker.py",
+    "sha256": "fd460951235c2ae7b66c194b287c78c645b0e7af63a225fcb4cbbe9a01e6bbe9"
+  },
+  "realized_pose.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/memorizon_plugins/realized_pose.py",
+    "sha256": "8c42ec69191ae5360070bd03e2366be1ab613eaa7058411a081035aedd643da5"
+  },
+  "worldwarp_run.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/new_models_loop_20261028/worldwarp_run.py",
+    "sha256": "4243b3f9f3ac7bc1791fe3aeda40ab5bddbe82bc662d211423aaca8587698dad"
+  },
+  "common.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/new_models_loop_20261028/common.py",
+    "sha256": "25f83ced07d2b8ab09934c6fd2be8a7233c7223730a4f1fd8a932145dd168c78"
+  },
+  "sana_run.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/new_models_loop_20261028/sana_run.py",
+    "sha256": "54d2f716c85a30a05e191cf69dd22fc792b14fbbdc4d6f0bd4fa64dd3f227b6b"
+  },
+  "lyra_run.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_run.py",
+    "sha256": "93ca0b7df224d271b82af7ceda47404056b47e9e3ca76b829bc3899b5c336720"
+  },
+  "lyra_plugin.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_plugin.py",
+    "sha256": "c139218adb67c3a55cb2f608a4d231d7cc196b7199568f5e85a9df31533a14fe"
+  },
+  "anchor_scale.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/continuous_eval_20261029/anchor_scale.py",
+    "sha256": "c0eb30f4c440674c28ffa0b93b1b4224b838345ff84380a1cc428c3760ccb518"
+  },
+  "frustum_culling.py": {
+    "original": "@WORKSPACE@/sota_repos/spatia/utils/frustum_culling.py",
+    "sha256": "15a0c08477fc5d2073fa93eeb6a6c1d0a5c52ae9c658acc0cea7fc2d9f3f1d7c"
+  },
+  "ttt3r.py": {
+    "original": "@WORKSPACE@/analysis/plan_base_restart_20261008/model_readiness_20261027/repos/worldwarp/src/ttt3r/ttt3r.py",
+    "sha256": "19a03a3b03868845b6c0dee89053fab498936108414feb30bac10a3da38dbe26"
+  }
+}

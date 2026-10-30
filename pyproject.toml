@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "camera-closed-loop"
+version = "0.1.0"
+description = "Model-aware camera alignment and causal closed-loop camera correction"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.scripts]
+camera-loop = "camera_loop.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+camera_loop = ["profiles.json", "bundled/**/*"]
