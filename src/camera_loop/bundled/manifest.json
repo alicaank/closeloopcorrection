@@ -96,10 +96,6 @@
     "sha256": "1a3a45431155c84671ba2f069e571d0fba0ff4cbfae4ee6c5e2550958f63ed0a"
   },
   {
-    "path": "analysis/plan_base_restart_20261008/lyra2_plugins/bootstrap_lyra.sh",
-    "sha256": "cf6df755cfc3a7bd9952350872e88af6763943023863b013767c731c4501c171"
-  },
-  {
     "path": "analysis/plan_base_restart_20261008/lyra2_plugins/precompute_t5.py",
     "sha256": "26d66747cf669be1b8c0166fb35b6957944e9cd90b65917382c9d64bbc7fa28d"
   },

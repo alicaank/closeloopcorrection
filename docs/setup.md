@@ -1,5 +1,7 @@
 # Team setup
 
+For our single-GPU configuration, see [Spatia and Lyra-2 on the RTX 5090](rtx-5090.md).
+
 Install the small core package in a control environment. Each video model and the pose observer retain their own CUDA/PyTorch environments; installing the core does not install them.
 
 1. Copy `config.example.json` and select `models`. Set `conda_root`, `cache_root` and `python` interpreter overrides. Set `home_root` only when generated disk checks should use another home directory.

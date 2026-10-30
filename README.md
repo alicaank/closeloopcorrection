@@ -64,6 +64,10 @@ camera-loop run --workspace /data/camera-work --model spatia \
 
 `prepare` requires an empty destination, verifies source hashes, checks out pinned upstream revisions when `--clone` is set, applies the included patches, and relocates adapter paths. It does not install CUDA environments or download checkpoints/datasets. Each model runs in its own native environment. Follow [team setup](docs/setup.md) for assets, subprocess interpreters and batch format.
 
+## Our RTX 5090 setup
+
+See [running Spatia and Lyra-2 on 32 GB](docs/rtx-5090.md) for the inspected environments, CPU offload strategy, caption-cache preparation, pilot/long-run commands, observed timings and remaining memory limits.
+
 ## Validation and scope
 
 CPU tests cover geometry, controller semantics, calibration binding, quality/causality rejection, all 11 launcher paths and compilation after relocation. A wheel installation is also tested separately. GPU end-to-end portability has not yet been established. New Spatia visibility batching and Lyra/SANA/WorldWarp observer guards remain pending GPU qualification; WorldWarp's guarded continuation is limited to two chunks.
