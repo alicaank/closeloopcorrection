@@ -221,7 +221,7 @@
   },
   {
     "path": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/correction_v3_20261030/geometry_quality.py",
-    "sha256": "288d02e9611bea8f0e05e73191ee4d924a957ce779933cbd12315b289cbce568"
+    "sha256": "fdd373f56d8662d54296abfd012ff3a136bd7be020250b591f03e49a85203780"
   },
   {
     "path": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/correction_v3_20261030/checked_common.py",
@@ -321,18 +321,46 @@
   },
   {
     "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/camera.py",
-    "sha256": "64a1c902f55fcc9661b235d10ad0f972bf41f657522a8b6785f9126d84ce9ff0"
+    "sha256": "0b435022d1cce0b43915040d4a244219c37e49e5d132279c0990a5a1d36999a2"
   },
   {
     "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/score.py",
-    "sha256": "b66e0e311ec88fa3cb5a2425ce8d4110290369169e4d238d4b65ea207e9ac4f0"
+    "sha256": "5088989a8af97b2c3bf63620ebcbf53ec8cbbc5c310e74f2cafda62baf4cfb8b"
   },
   {
     "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/test_camera.py",
-    "sha256": "f31eb93f30a4f841c3a2382b9018c1aa79236cfaccfccdb230065167485c58b8"
+    "sha256": "0b718ee96cacf362478b75d27cdee28cc6adfc53a61c07252ca2029ac8e7acce"
   },
   {
     "path": "analysis/plan_base_restart_20261008/vipe_eval_20261030/worker.py",
     "sha256": "e3cf4953d0c42ecd10314111ffdc76e9d16c4020495e267e896145c0a2dfb098"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/launch.py",
+    "sha256": "09875c3d328e333fb3a90d3eab9d1932be49734c4bd75df0b23e915a44caba1e"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/runtime.py",
+    "sha256": "406ed1cee0323d952dec2aa3428572a58bb39e0f4a8b740e4c3a865d036713cc"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/memory_hooks.py",
+    "sha256": "7000deb14110418c4b4eb8f1804b5e7483c4f553efc6a86aa4009bbb81011ffc"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/overlays.py",
+    "sha256": "8d74b428308b02747e9caca107000e6fc169879f9b39279188b93f0a50796c78"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/dreamx_run.py",
+    "sha256": "322a00b6b2a16b60e61f6a997fca76ef95a5a9c6714d76857915cf7ea42606df"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/dreamx_hook.py",
+    "sha256": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f"
+  },
+  {
+    "path": "analysis/measured_memory_20261101/memory_contract.py",
+    "sha256": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd"
   }
 ]

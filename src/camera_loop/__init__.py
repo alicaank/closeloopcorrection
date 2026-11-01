@@ -18,3 +18,12 @@ from .hooks import ModelHooks, AlignedLoop
 from .registry import register_model
 
 __all__ += ["ModelHooks", "AlignedLoop", "register_model"]
+
+from .adaptive import AdaptiveController, RecoveryConfig
+from .evidence import EvidencePolicy, assess_window, select_window
+
+__all__ += ["AdaptiveController", "RecoveryConfig", "EvidencePolicy", "assess_window", "select_window"]
+
+from .memory import MemoryWrite, stage_memory_write, bridge_future
+
+__all__ += ["MemoryWrite", "stage_memory_write", "bridge_future"]

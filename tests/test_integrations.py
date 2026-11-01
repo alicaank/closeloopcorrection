@@ -1,4 +1,4 @@
-import compileall, hashlib, json, os, tempfile, unittest, subprocess
+import compileall, hashlib, json, os, tempfile, unittest, subprocess, sys
 from pathlib import Path
 from camera_loop.integrations import materialize, command, BUNDLE, V
 from camera_loop.registry import profiles
@@ -87,6 +87,25 @@ class Integrations(unittest.TestCase):
             if p.is_file() and "__pycache__" not in p.parts:
                 self.assertNotIn(p.suffix, forbidden)
                 self.assertNotIn("/home/hj", p.read_text(), str(p))
+
+    def test_measured_memory_contract_matches_portable_core(self):
+        import camera_loop.memory as memory
+        bundled = BUNDLE / "templates/analysis/measured_memory_20261101/memory_contract.py"
+        self.assertEqual(bundled.read_bytes(), Path(memory.__file__).read_bytes())
+
+    def test_relocated_measured_memory_driver_contracts(self):
+        with tempfile.TemporaryDirectory() as td:
+            w = Path(td) / "work"
+            materialize(w, {"home_root": "/home/teammate", "conda_root": "/opt/conda"})
+            launcher = w / "analysis/measured_memory_20261101/launch.py"
+            env = dict(os.environ, CUDA_VISIBLE_DEVICES="")
+            for model in ["dreamx", "lingbot", "sana", "matrixgame", "lyra",
+                          "astronex", "worldwarp", "matrix_child", "lyra_child"]:
+                result = subprocess.run([sys.executable, str(launcher), model,
+                                         "--check-source"], env=env,
+                                        capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, model + result.stderr)
+                self.assertTrue(json.loads(result.stdout)["compiled"])
 
 
 if __name__ == "__main__":

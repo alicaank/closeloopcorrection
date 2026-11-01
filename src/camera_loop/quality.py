@@ -70,9 +70,11 @@ def depth_quality(reference, native, mask=None):
 
 def pose_quality(poses):
     bad = []
+    observed = 0
     for i, p in enumerate(poses):
         if p is None:
             continue  # unrequested context is deliberately omitted by the native observer
+        observed += 1
         a = np.asarray(p, dtype=float)
         if a.shape != (4, 4) or not np.isfinite(a).all():
             bad.append(i)
@@ -84,6 +86,8 @@ def pose_quality(poses):
             or abs(np.linalg.det(R) - 1) > 1e-3
         ):
             bad.append(i)
-    return dict(
-        passed=not bad, invalid_indices=bad, reasons=["invalid_SE3_pose"] if bad else []
-    )
+    reasons = ["invalid_SE3_pose"] if bad else []
+    if not observed:
+        reasons.append("no_observed_poses")
+    return dict(passed=not reasons, invalid_indices=bad, observed_count=observed,
+                valid_count=observed - len(bad), reasons=reasons)

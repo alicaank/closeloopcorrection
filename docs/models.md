@@ -2,6 +2,14 @@
 
 These are pinned local integrations, not a claim that every checkpoint or new guard has passed end-to-end GPU validation. `native_callback` means the reusable API requires the model-owned factor; it will not guess one. Legacy launchers retain their original code paths.
 
+A separate [measured-memory runtime](measured_memory.md) now supports DreamX,
+LingBot, SANA, Astronex, Lyra, Matrix-Game, and WorldWarp. Its native write paths
+have local GPU checks, and its source is included in the relocated bundle.
+The table below describes the existing adapter contracts and historical route
+limits; those routes do not automatically enable the new memory policy.
+Short tracking comparisons have mixed results; see the
+[paper reference and claim ledger](paper_method_reference.md).
+
 | Model / upstream | Scale strategy in core | Native camera basis | State / limitations |
 |---|---|---|---|
 | [Matrix-Game 3.5](https://github.com/Riemann-Dynamics/Matrix-Game-3.5) (`matrixgame`) | `metric` | c2w / opencv | Metric metadata drives the adapter; native action encoding remains model-owned. Training corpus unresolved. |

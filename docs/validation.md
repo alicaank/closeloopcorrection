@@ -1,5 +1,23 @@
 # Validation
 
+## Current measured-memory repository update (2026-11-01)
+
+The current working tree passes **67 top-level CPU tests**, both from source and
+from a freshly built/installed wheel. The evaluator integration test additionally
+runs its internal geometry suite in a subprocess. New coverage checks the
+bundled memory contract against the portable core and compiles all seven
+measured-memory drivers plus their Matrix-Game/Lyra child overlays after
+relocation. No GPU is used for these package checks.
+
+The [validation receipt](measured_memory_package_validation.json) records the
+wheel and bundle hashes and test output. The [method reference](paper_method_reference.md)
+and [development evidence snapshot](paper_evidence_20261101.json) distinguish
+the locally GPU-tested memory runtime from the relocated source bundle. Fresh
+machine GPU portability remains unqualified. Earlier version-specific counts
+below describe historical releases, not the current suite.
+
+## Historical release checks and general protocol
+
 The source package has CPU checks for:
 
 - Native/reference camera round trips across c2w/w2c and OpenCV/OpenGL.

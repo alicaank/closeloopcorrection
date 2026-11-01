@@ -14,6 +14,12 @@ The observer returns poses in the fixed reference frame, after its own raw recon
 
 Frame IDs refer to **decoded output frames**, not latent indices or padded history. Supply an explicit mapping at the adapter boundary. All future IDs must be strictly increasing and later than the measured last available frame. Models with delayed decoding need a model-specific causal feedback boundary; never relabel an older estimate as the latest frame to bypass this guard.
 
+The portable controller fades correction according to elapsed output-frame IDs, so sparse and dense samples of the same target give the same commands at shared timestamps. The low-level `rejoin` function accepts an explicit `progress` vector; omitting it assumes uniformly spaced samples. Neither path infers timestamps from latent indices.
+
+`pose_quality` rejects empty/all-missing observations. Omitted context poses are allowed when actual poses exist, so this check alone does not guarantee that a particular requested endpoint was observed. `Measurement.validate()` checks the endpoint separately. Proper SE(3) algebra and a depth-scale fit are only initial checks; they do not establish shared-frame consistency or reliable current image overlap.
+
+Sham may supply `Measurement(None, frame_id, rejected_quality_report)` and keeps planned commands. It still requires the actual boundary frame and strictly future command IDs. This controller bypass does not isolate a host's RNG, VAE cache or offloading effects; native/baseline/sham image parity must be tested in the model host.
+
 ## Minimal host integration
 
 ```python
@@ -55,6 +61,14 @@ event = loop.update(
 This is a host integration template: `host`, depth arrays, observer and plans come from your model. `examples/synthetic_loop.py` is the executable CPU example.
 
 Use `history_labels='commanded'` if generated history is stored under the camera commands that produced it. The controller bridges the measured frame into that commanded-memory frame before encoding future cameras. Use `history_labels='measured'` only if the host actually stores history under the measured poses. The controller does **not** rewrite a memory bank automatically.
+
+`stage_memory_write` validates a proposed historical pose update and
+`bridge_future` expresses desired future poses against the label actually
+committed by the host. The staging result is not a completed native cache write.
+Seven model-specific consumers are available through the separate
+[measured-memory launcher](measured_memory.md), now included in the source
+bundle. See [the paper method reference](paper_method_reference.md) for the
+transaction semantics, mathematical bridge, and implementation boundaries.
 
 With `layout='relative_chain'`, the result is consecutive relative transforms in the declared native basis. The `previous_command` callback must still return an **absolute** native pose. Model-specific temporal sampling, action encodings and Plücker features remain in the host callback.
 

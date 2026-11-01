@@ -22,7 +22,7 @@ class VipeEvaluation(unittest.TestCase):
                 env=env, text=True, capture_output=True,
             )
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-            self.assertIn('Ran 4 tests', result.stderr)
+            self.assertIn('Ran 9 tests', result.stderr)
             for relative in ['long_domain_20261028/score_long.py',
                              'new_models_loop_20261028/score_pair.py',
                              'continuous_eval_20261029/scale_20261030/measure80.py']:

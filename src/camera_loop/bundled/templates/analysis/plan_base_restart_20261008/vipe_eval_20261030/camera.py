@@ -12,12 +12,15 @@ def register(raw,native_depth,reference_depth):
  rotations=raw[:,:3,:3]
  if np.max(np.abs(rotations.transpose(0,2,1)@rotations-np.eye(3)))>1e-3 or np.max(np.abs(np.linalg.det(rotations)-1))>1e-3:raise ValueError('Invalid VIPE rotations')
  if nd.shape!=rd.shape or nd.ndim!=2:raise ValueError('Depth pixels must be registered')
- valid=np.isfinite(nd)&np.isfinite(rd)&(nd>1e-6)&(rd>1e-6)
+ # The pinned VIPE retractor clamps inverse depth to [1e-3,10]. Clamp
+ # endpoints are optimizer saturation, not supported surface measurements.
+ saturated=(nd<=0.1*(1+1e-5))|(nd>=1000*(1-1e-5))
+ valid=np.isfinite(nd)&np.isfinite(rd)&~saturated&(rd>1e-6)
  if valid.sum()<256 or valid.mean()<.2:raise ValueError('VIPE anchor depth coverage insufficient')
  ratios=rd[valid]/nd[valid];scale=float(np.median(ratios));p10,p90=np.quantile(ratios,[.1,.9])
  if not np.isfinite(scale) or scale<=0 or p90/p10>4:raise ValueError('VIPE anchor depth does not support a scalar gauge conversion')
  measured=np.linalg.inv(raw[0])@raw;measured[:,:3,3]*=scale
- return measured,dict(scale=scale,valid_pixels=int(valid.sum()),valid_fraction=float(valid.mean()),p90_over_p10=float(p90/p10),median_relative_residual=float(np.median(np.abs(ratios/scale-1))),method='reference/native optimized anchor z-depth at matching pixels; first-pose SE3 reanchor; no trajectory fit')
+ return measured,dict(scale=scale,saturated_pixels=int(saturated.sum()),valid_pixels=int(valid.sum()),valid_fraction=float(valid.mean()),p90_over_p10=float(p90/p10),median_relative_residual=float(np.median(np.abs(ratios/scale-1))),method='reference/native optimized anchor z-depth at matching pixels, excluding native disparity saturation; first-pose SE3 reanchor; no trajectory fit')
 
 def estimate(frames,K,reference_depth,output):
  import sys
@@ -43,3 +46,23 @@ def errors(measured,target):
  pe=np.linalg.norm(measured[:,:3,3]-target[:,:3,3],axis=-1)
  rot=np.degrees(Rotation.from_matrix(measured[:,:3,:3].transpose(0,2,1)@target[:,:3,:3]).magnitude())
  return pe,rot
+
+def path_metrics(measured,target,minimum_target_length=1e-8):
+ """Translation diagnostics in fixed anchor units, without a fabricated denominator.
+
+ The threshold is numerical, not an estimator noise floor. Rotation-only targets
+ still have meaningful absolute translation drift, but no translation path ratio.
+ """
+ measured=np.asarray(measured,float);target=np.asarray(target,float)
+ if measured.ndim!=3 or measured.shape[1:]!=(4,4) or measured.shape!=target.shape or not len(measured):
+  raise ValueError('Expected matching nonempty pose sequences')
+ if not np.isfinite(measured).all() or not np.isfinite(target).all():raise ValueError('Nonfinite trajectory')
+ if not np.isfinite(minimum_target_length) or minimum_target_length<0:raise ValueError('Invalid path-length threshold')
+ actual=float(np.linalg.norm(np.diff(measured[:,:3,3],axis=0),axis=1).sum())
+ planned=float(np.linalg.norm(np.diff(target[:,:3,3],axis=0),axis=1).sum())
+ valid=planned>minimum_target_length
+ return dict(measured_path_length=actual,target_path_length=planned,
+  path_length_ratio=actual/planned if valid else None,
+  path_length_ratio_valid=valid,
+  path_length_ratio_reason=None if valid else 'insufficient_target_translation',
+  minimum_target_path_length=minimum_target_length)

@@ -1,7 +1,9 @@
 # Closed-loop camera correction
 
 Model-aware camera alignment and causal command correction for video generators.
-The controller measures a generated endpoint, replans **future camera commands**, and preserves the model's native camera representation and memory policy. It does not repair already-generated images or train a generator.
+The portable controller measures a generated endpoint and replans **future camera commands** in the model's native camera representation. A separate opt-in runtime can rebuild supported model memories under measured poses. Neither path repairs already-generated images or trains a generator.
+
+For paper writing, start with [the method reference](docs/paper_method_reference.md): equations, assumptions, implemented versus proposed components, per-model memory consumers, evaluation, and claim limits. See [measured-memory integration](docs/measured_memory.md) and the [dated development evidence](docs/paper_evidence_20261101.json) for the new seven-model path. Results are mixed; this is not a claim of universal tracking improvement.
 
 ## Quick start
 
@@ -49,22 +51,25 @@ This native-model calibration differs from observer registration. A fresh recons
 
 Run the model for one native generation chunk. In the local experiments, DA3 observes generated images available up to that boundary. It must not receive future images or commanded cameras as pose labels. The adapter is responsible for registering its reconstruction, reporting measurement quality and returning the pose of the **actual last generated frame**.
 
-The portable `Measurement` object contains that endpoint pose, its frame ID and a quality record. `CorrectionSession` rejects stale/future measurements, invalid rigid transforms and failed quality gates. A host integrating the core API supplies its own observer; DA3 is provided through the bundled research adapters rather than loaded by the NumPy controller.
+The portable `Measurement` object contains that endpoint pose, its frame ID and a quality record. For correction, `CorrectionSession` rejects stale/future measurements, invalid rigid transforms and failed quality gates. Sham still validates frame IDs and causality, but bypasses pose/quality rejection because it does not use the measured pose; the rejected quality report remains in its event log. A host integrating the core API supplies its own observer; DA3 is provided through the bundled research adapters rather than loaded by the NumPy controller.
 
 ### 3. Rejoin the desired trajectory smoothly
 
-Let `P_t` be the original planned pose at the boundary, `M_t` the measured pose, and `P_(t+i)` the planned future poses in a chunk of length `N`. With full correction gains, define:
+Let `P_t` be the original planned pose at the boundary, `M_t` the measured pose, and `P_(f_i)` the planned future poses at output-frame IDs `f_i`. With full correction gains, define:
 
 ```text
 translation residual: delta_t = translation(M_t) - translation(P_t)
 rotation residual:    delta_R = rotation(M_t) @ rotation(P_t).T
-fade:                 w_i = 1 - i/N,  i = 1,...,N
+elapsed fraction:     a_i = (f_i - t) / (f_last - t)
+fade:                 w_i = 1 - a_i
 
-translation(D_i) = translation(P_(t+i)) + w_i * delta_t
-rotation(D_i)    = Slerp(delta_R, identity, i/N) @ rotation(P_(t+i))
+translation(D_i) = translation(P_(f_i)) + w_i * delta_t
+rotation(D_i)    = Slerp(delta_R, identity, a_i) @ rotation(P_(f_i))
 ```
 
 `D_i` is the desired future path after replanning. It starts near the observed boundary and gradually rejoins the original plan; the final pose is the original chunk target. Separate translation and rotation gains in `[0,1]` can attenuate the measured residual before replanning. This is a boundary rejoin rule, not a guarantee of constant velocity or acceleration: noisy measurements, abrupt desired paths and imperfect model execution still need to be inspected.
+
+The fade follows elapsed output frames, including nonuniform latent-to-image sampling. Uniformly spaced schedules retain `a_i = i/N`. Frame IDs assume a fixed output frame rate; variable-rate time in seconds is not currently a separate API.
 
 ### 4. Respect the model's memory coordinates
 
@@ -77,7 +82,7 @@ C_i = B @ D_i
 
 This makes the relative motion from the stored boundary label agree with the desired motion from the measured boundary: `inverse(U_t) @ C_i = inverse(M_t) @ D_i`. Simply supplying `D_i` to commanded-pose memory would mix coordinate frames. With reduced gains the implementation uses the gain-adjusted endpoint in this bridge too, so zero gain does not leave a hidden full-strength compensation.
 
-If memory has actually been relabelled with registered **measured** poses, the desired path can instead be supplied directly. Setting `history_labels="measured"` does not rewrite a model's memory automatically: the host must maintain that invariant. Measured-memory writes, such as the explicit VMem `replan_measured` ablation, are a separate experiment. The default generic hook writes only future conditioning and retains native model memory.
+If memory has actually been relabelled with registered **measured** poses, the desired path can instead be supplied directly. Setting `history_labels="measured"` does not rewrite a model's memory automatically: the host must maintain that invariant. Measured-memory writes, including the explicit VMem `replan_measured` ablation and the new [seven-model memory runtime](docs/measured_memory.md), are separate experiments. The default generic hook writes only future conditioning and retains native model memory.
 
 The adapter finally applies native units/axes and c2w/w2c conversion. For relative-chain conditioning, it composes relative transforms after converting both endpoints into the native camera basis. Ray or Plücker encodings remain the host model's responsibility.
 
@@ -88,6 +93,10 @@ After generating the next chunk, measure again and repeat. Past frames are immut
 Use matched **baseline**, **sham**, and **correction** runs where the adapter supports them. Baseline uses the planned commands. Sham exercises the measurement path while bypassing command correction; the portable controller's sham preserves those planned commands exactly. Compare identical scenes, seeds, lengths and sampling schedules, and report observation overhead separately. Historical Memorizon/WorldPlay adapters do not yet provide verified native/sham controls.
 
 The equations above describe `CorrectionSession`/`AlignedLoop`. Bundled research launchers retain model-specific controller implementations, chunk schedules and guards; they are not all equivalent implementations of this portable controller. See [integration details](docs/integration.md) before interpreting an adapter result as a test of these exact equations.
+
+See [the shared-controller audit and proposed design](docs/controller_audit.md) for the reproduced bugs, patch coverage, and the remaining work on observation reliability, feasible motion and memory consistency.
+
+The experimental [adaptive-controller pilot](docs/adaptive_controller.md) now implements shared evidence gating, bounded recovery across chunks and conservative directional response fitting. It has isolated LingBot/SANA adapters and a frozen B/C queue; this is a separate experimental API from `CorrectionSession`, with GPU efficacy still to be established.
 
 ## Evaluate with VIPE
 
@@ -103,9 +112,13 @@ translation(T_i) *= s
 
 The depths are compared at registered pixels. The desired trajectory is not supplied to SLAM or used to fit scale, rotation or translation. Position error is Euclidean distance in the stored anchor-depth units; rotation error is the SO(3) geodesic angle in degrees. Report camera mean and endpoint errors alongside DINO similarity and LPIPS against the recording. Those appearance metrics measure agreement with the recording, not all aspects of visual quality or temporal consistency.
 
+The bundled VIPE pair/long scorer reports absolute measured and target translation path lengths. If target travel is at most `1e-8` anchor units, its translation path ratio is `null` with an explicit reason; a rotation-only target cannot define that ratio. This is a numerical validity rule, not a calibrated motion-noise threshold. Historical scores are not rewritten.
+
+Packaged scale registration also rejects the pinned VIPE optimizer's saturated inverse-depth values. The protocol `vipe_dense_anchor_depth_no_saturation_v2` distinguishes this from the earlier permissive fit; it does not yet include the experimental native-map-mask diagnostic used in later local audits.
+
 VIPE writes dense trajectories, registration diagnostics and evaluator provenance. Historical VGGT reports stay historical; compare baseline/correction under the same evaluator and protocol, and re-score both arms before making a new claim. Some stored reference trajectories are themselves VIPE-derived, so using a different correction observer does **not** make those references independent ground truth.
 
-See [VIPE installation, evaluation commands and output format](docs/evaluation.md). The release includes CPU registration checks and a local VIPE configuration/import dry run. GPU qualification of the new scoring route is pending; no VIPE improvement result is claimed here.
+See [VIPE installation, evaluation commands and output format](docs/evaluation.md). The release includes CPU registration checks and a local VIPE configuration/import dry run. The separate local measured-memory queue now has short VIPE comparisons recorded in the [development evidence snapshot](docs/paper_evidence_20261101.json); these do not qualify fresh-machine GPU execution of every packaged scoring route.
 
 ## Automatic alignment
 
@@ -161,6 +174,6 @@ See [running Spatia and Lyra-2 on 32 GB](docs/rtx-5090.md) for the inspected env
 
 ## Validation and scope
 
-CPU tests cover geometry, controller semantics, calibration binding, quality/causality rejection, all 11 launcher paths and compilation after relocation. A wheel installation is also tested separately. GPU end-to-end portability has not yet been established. New Spatia visibility batching and Lyra/SANA/WorldWarp observer guards remain pending GPU qualification; WorldWarp's guarded continuation is limited to two chunks.
+The current 67-test CPU suite passes from source and an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
 
 See [validation protocol](docs/validation.md). Source pins and available upstream license notices are retained under `src/camera_loop/bundled/`. No weights, datasets, generated videos, credentials or training checkpoints are included. See [NOTICE](NOTICE).

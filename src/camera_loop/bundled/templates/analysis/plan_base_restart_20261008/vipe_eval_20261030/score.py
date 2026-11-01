@@ -6,7 +6,7 @@ from PIL import Image,ImageDraw
 R=Path(__file__).resolve().parent;A=R.parent
 sys.path[:0]=[str(A/'fair_common_20261025'),str(A/'new_models_loop_20261028'),'@WORKSPACE@/training_runs/joint_samplerfix_20261012',str(A/'memorizon_plugins'),'@WORKSPACE@/training_runs/memory1500_resplat_20260905/python_deps']
 import fair_common as fc
-from camera import estimate,errors
+from camera import estimate,errors,path_metrics
 
 def load_frames(source,h,scene):
  source=Path(source)
@@ -66,7 +66,7 @@ def main(style='long'):
   trajectory=out.parent/(out.stem+'_trajectories')/(arm+'.npz')
   measured,meta=estimate(frames,ko,rd,trajectory)
   pe,re=errors(measured,plan)
-  record=dict(camera_frame_ids=list(range(h+1)),position_errors=pe.tolist(),rotation_errors=re.tolist(),measured_c2w=measured.tolist(),anchor_scale=meta['registration']['scale'],vipe=meta,trajectory_file=str(trajectory),source=str(directory),finite=True,path_length_ratio=float(np.linalg.norm(np.diff(measured[:,:3,3],axis=0),axis=1).sum()/max(1e-8,np.linalg.norm(np.diff(plan[:,:3,3],axis=0),axis=1).sum())))
+  record=dict(camera_frame_ids=list(range(h+1)),position_errors=pe.tolist(),rotation_errors=re.tolist(),measured_c2w=measured.tolist(),anchor_scale=meta['registration']['scale'],vipe=meta,trajectory_file=str(trajectory),source=str(directory),finite=True,**path_metrics(measured,plan))
   if style=='gate':
    sys.path.insert(0,str(A/'continuous_eval_20261029/scale_20261030'));from measure80_vggt_legacy import execution_metrics
    ids=np.arange(0,81,4);record.update(execution_metrics(measured[ids],plan[ids]),measured_c2w=measured[ids].tolist(),commanded_c2w=plan[ids].tolist(),camera_frame_ids=ids.tolist(),position_errors=pe[ids].tolist(),rotation_errors=re[ids].tolist(),vipe_anchor_depth_scale=meta['registration']['scale'])
@@ -91,7 +91,7 @@ def main(style='long'):
    for ci,(i,frame) in enumerate(zip(shows,frames)):
     sheet.paste(Image.fromarray(frame).resize((280,158)),(280*ci,185*ri+25));draw.text((280*ci+4,185*ri+4),f'{label}: {i}',fill='black')
   sheet.save(out.with_suffix('.jpg'))
- report=dict(estimator='VIPE',evaluation_protocol='vipe_dense_anchor_depth_v1',model=a.model,scene=a.scene,seed=a.seed,horizon=h,batch=str(batch),units='fixed reference anchor-depth units; not verified metric metres',camera_sampling='VIPE receives every consecutive frame; long/pair camera means use every generated frame',registration='anchor depth only; commanded trajectory never enters SLAM or gauge fitting',reference_provenance='stored batch poses; these may be VIPE-derived and are not asserted independent ground truth',arms=results,completed=time.time(),seconds=time.time()-start)
+ report=dict(estimator='VIPE',evaluation_protocol='vipe_dense_anchor_depth_no_saturation_v2',model=a.model,scene=a.scene,seed=a.seed,horizon=h,batch=str(batch),units='fixed reference anchor-depth units; not verified metric metres',camera_sampling='VIPE receives every consecutive frame; long/pair camera means use every generated frame',registration='anchor depth only; commanded trajectory never enters SLAM or gauge fitting',reference_provenance='stored batch poses; these may be VIPE-derived and are not asserted independent ground truth',arms=results,completed=time.time(),seconds=time.time()-start)
  if style=='gate':report['frame_ids']=list(range(0,81,4))
  out.parent.mkdir(parents=True,exist_ok=True);tmp=out.with_suffix('.tmp');tmp.write_text(json.dumps(report,indent=2));tmp.replace(out)
  print(json.dumps({'out':str(out),'estimator':'VIPE','arms':{k:{m:v.get(m) for m in ['camera_mean','camera_endpoint','rotation_mean','rotation_endpoint','dino','lpips','passed']} for k,v in results.items()}}),flush=True)

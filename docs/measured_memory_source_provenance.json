@@ -1,0 +1,69 @@
+{
+  "scope": "Source-only export of locally GPU-tested runtime; relocated bundle separately CPU-qualified, not GPU-qualified.",
+  "files": [
+    {
+      "file": "launch.py",
+      "source": "analysis/measured_memory_20261101/launch.py",
+      "source_sha256": "09875c3d328e333fb3a90d3eab9d1932be49734c4bd75df0b23e915a44caba1e",
+      "bundled_sha256": "09875c3d328e333fb3a90d3eab9d1932be49734c4bd75df0b23e915a44caba1e",
+      "changes": [
+        "relocated machine paths to bundle placeholders"
+      ]
+    },
+    {
+      "file": "runtime.py",
+      "source": "analysis/measured_memory_20261101/runtime.py",
+      "source_sha256": "c90d05c4b107afbaf5d3b5b9777a9709c2800cd05b70817419f231460137cd67",
+      "bundled_sha256": "406ed1cee0323d952dec2aa3428572a58bb39e0f4a8b740e4c3a865d036713cc",
+      "changes": [
+        "relocated machine paths to bundle placeholders",
+        "use bundled portable memory contract to avoid requiring camera_loop in every model environment"
+      ]
+    },
+    {
+      "file": "memory_hooks.py",
+      "source": "analysis/measured_memory_20261101/memory_hooks.py",
+      "source_sha256": "7000deb14110418c4b4eb8f1804b5e7483c4f553efc6a86aa4009bbb81011ffc",
+      "bundled_sha256": "7000deb14110418c4b4eb8f1804b5e7483c4f553efc6a86aa4009bbb81011ffc",
+      "changes": [
+        "relocated machine paths to bundle placeholders"
+      ]
+    },
+    {
+      "file": "overlays.py",
+      "source": "analysis/measured_memory_20261101/overlays.py",
+      "source_sha256": "8d74b428308b02747e9caca107000e6fc169879f9b39279188b93f0a50796c78",
+      "bundled_sha256": "8d74b428308b02747e9caca107000e6fc169879f9b39279188b93f0a50796c78",
+      "changes": [
+        "relocated machine paths to bundle placeholders"
+      ]
+    },
+    {
+      "file": "dreamx_run.py",
+      "source": "analysis/measured_memory_20261101/dreamx_run.py",
+      "source_sha256": "8ff67c74fbe570244428aca40afe531c281b1db69491a53329489e9e19789ec5",
+      "bundled_sha256": "322a00b6b2a16b60e61f6a997fca76ef95a5a9c6714d76857915cf7ea42606df",
+      "changes": [
+        "relocated machine paths to bundle placeholders"
+      ]
+    },
+    {
+      "file": "dreamx_hook.py",
+      "source": "analysis/measured_memory_20261101/dreamx_hook.py",
+      "source_sha256": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f",
+      "bundled_sha256": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f",
+      "changes": [
+        "relocated machine paths to bundle placeholders"
+      ]
+    },
+    {
+      "file": "memory_contract.py",
+      "source": "camera-closed-loop/src/camera_loop/memory.py",
+      "source_sha256": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+      "bundled_sha256": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+      "changes": [
+        "relocated machine paths to bundle placeholders"
+      ]
+    }
+  ]
+}
