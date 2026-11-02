@@ -1,0 +1,92 @@
+{
+  "method_id": "measured-memory-v1",
+  "status": "frozen_for_expanded_development",
+  "base_repository_commit": "aa84d68f063b955440463b6695ae7043d9922616",
+  "primary_intervention": "causal measured-pose memory reconstruction",
+  "target_policy": "native baseline with required memory coordinate conversion",
+  "future_residual_correction": false,
+  "online_response_learning": false,
+  "calibration_probes": false,
+  "per_model_fitted_gains": false,
+  "observer": {
+    "name": "DA3",
+    "max_views": 16,
+    "query_tail_max": 8,
+    "min_depth_pixels": 256,
+    "min_depth_coverage": 0.2,
+    "max_depth_ratio_p90_over_p10": 4.0,
+    "requires_all_requested_poses_finite": true,
+    "requires_proper_SE3": true,
+    "fixed_anchor": true,
+    "calibrated_uncertainty": false,
+    "validated_collapse_detector": false
+  },
+  "models": [
+    "lingbot",
+    "sana",
+    "dreamx",
+    "matrixgame",
+    "lyra"
+  ],
+  "qualification_pending": {
+    "worldwarp": "Pre-intervention prefix mismatch; current apparent gain is confounded.",
+    "astronex": "Raw prefix parity unverified; current pair also has unsupported positional registration."
+  },
+  "batch": "analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+  "scene_selection": "Retain both original development scenes; add the lowest two SHA256(memory-multiboundary-v2:SCENE) names among remaining batch scenes. No observer/outcome filtering.",
+  "scenes": [
+    "02267acf",
+    "c7418b7d",
+    "0238de14",
+    "924228bf"
+  ],
+  "seeds": [
+    7,
+    107
+  ],
+  "arms": [
+    "commanded",
+    "measured"
+  ],
+  "pairs": 40,
+  "generation_jobs": 80,
+  "schedules": {
+    "lingbot": {
+      "frames": 77,
+      "first_affected_frame": 13
+    },
+    "sana": {
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "dreamx": {
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "matrixgame": {
+      "frames": 337,
+      "blocks": 4,
+      "first_affected_frame": 85
+    },
+    "lyra": {
+      "frames": 321,
+      "first_affected_frame": 81
+    }
+  },
+  "evaluator": "VIPE, fixed intrinsics and anchor-depth registration, no target-trajectory fitting",
+  "primary_interval": "first_affected_frame through native exported endpoint, original timestamps",
+  "prefix_mismatch_policy": "hold remaining pairs for that model; preserve the mismatched result",
+  "invalid_registration_policy": "position unavailable; retain rotation, validity, and failure counts",
+  "split_claim": "expanded development; not untouched held-out data",
+  "method_change_policy": "new version and matched-arm reruns; no outcome-driven edits within this snapshot",
+  "disk_reserve_gib": 4,
+  "evaluation_protocol": "memory-multiboundary-v2",
+  "qualification": {
+    "active_scenes_per_model": 2,
+    "accepted_writes_per_qualified_pair": 2,
+    "policy_outcomes_include_abstentions": true
+  },
+  "artifact_retention": "After each arm, exact RGB hash-verified FFV1 can replace newly generated NPZ/PNG frames; all pose, command, memory and score evidence retained."
+}

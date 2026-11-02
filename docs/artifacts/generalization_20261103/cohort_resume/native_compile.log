@@ -1,0 +1,5 @@
+{"model": "lingbot", "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/lingbot_pair.py", "sha256": "99348e9c1b018dd19fde5908075ebd78e640e274a48978d91b9d5187d5df92a8", "compiled": true}
+{"model": "sana", "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/sana_run.py", "sha256": "2a5710f8addf9f1b9211dae1055e9de238b1e81495f2bd0d57d6b2566b0bf17d", "compiled": true}
+{"model": "dreamx", "source": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/dreamx_run.py", "sha256": "4ff07b566f05b17bf4173dc8af3df4bf50f7ac4df25983a8234cb824b15f7521", "compiled": true}
+{"model": "matrixgame", "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/mg35_stream_run.py", "sha256": "2f174436d84783457cc82dedc63797b56657d4d8637f8142676b075db7668439", "compiled": true}
+{"model": "lyra", "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_run.py", "sha256": "f40d9004bc55c3058ad37b7186ee5c0da56bd9df897ac62e68858568d126c411", "compiled": true}

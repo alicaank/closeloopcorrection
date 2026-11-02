@@ -1,0 +1,9 @@
+{
+  "checked_utc": "2026-11-02T23:31:26.974701+00:00",
+  "present_scenes": 4233,
+  "outside_prior_preservation_set": [],
+  "free_gib": 6.5979156494140625,
+  "additional_dedup_reclaimed_gib": 2.1351242065429688,
+  "decision": "No additional raw scenes deleted: duplicate cleanup provides more than the 4 GiB queue launch reserve; all remaining raw scenes are in the prior dependency/evaluation preservation set. Reassess before any future deletion.",
+  "new_raw_scene_deletions": 0
+}

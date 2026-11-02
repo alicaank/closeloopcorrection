@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "cases": 216,
+  "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/repos/sana/diffusion/refiner/diffusers_ltx2_refiner.py",
+  "scope": "Actual released history-update block: bitwise tensor/shape/dtype/frame-count equality across storage dtypes, masks, history lengths, incoming chunk lengths and clipping. This does not replace GPU prefix parity."
+}

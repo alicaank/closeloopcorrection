@@ -3,6 +3,25 @@ import functools
 import os
 
 
+def release_history_temporaries(source):
+    """Release consumed caches without changing tensor arithmetic or history."""
+    before='    with profiler.section("history_update"):\n        for layer_idx in range(self._n_layers):'
+    after='            raw_k = None\n            raw_v = None'
+    if source.count(before)!=1 or source.count(after)!=1:
+        raise RuntimeError('SANA native history lifetime contract changed')
+    source=source.replace(before,
+        '    kv_prefix_per_layer = None\n'
+        '    prefix = None\n'
+        '    hk = None\n'
+        '    captured_kv_post = None\n'+before)
+    return source.replace(after,after+'\n'
+        '            block_kv_post[layer_idx] = None\n'
+        '            raw_pair = None\n'
+        '            old = None\n'
+        '            new_k = None\n'
+        '            new_v = None')
+
+
 def install(refmod):
     if getattr(refmod, '_camera_cpu_kv_installed', False):
         return
@@ -39,4 +58,10 @@ def install(refmod):
     refmod._capture_kv_tensor = capture
     refmod._store_kv_tensor = store
     refmod._streaming_self_attention = attention
+    import inspect,textwrap
+    method=inspect.unwrap(refmod.RefinerChunkRunner.refine_block)
+    source=release_history_temporaries(textwrap.dedent(inspect.getsource(method)))
+    scope=dict(refmod.__dict__)
+    exec(compile(source,inspect.getfile(method),'exec'),scope)
+    refmod.RefinerChunkRunner.refine_block=scope['refine_block']
     refmod._camera_cpu_kv_installed = True

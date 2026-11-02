@@ -1,0 +1,42 @@
+{
+  "scope": "Identical completed camera-control output archives only; all paths and bytes preserved, no unique data or checkpoints removed.",
+  "links": [
+    {
+      "canonical": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/C/frames.npz",
+      "sha256": "41a560c4285d1fd0ce17abe96b4dc324210babf44c50307894fab5d06eece328",
+      "old_inode": 38281893,
+      "bytes": 1007968384
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/qualification/S/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/qualification/A/frames.npz",
+      "sha256": "543a56baa9dd0fe9bacbea840bf603110cd8765a82de54fe119ab4482602365b",
+      "old_inode": 38278341,
+      "bytes": 347997242
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/sana_924228bf_s7/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/sana_924228bf_s7/C/frames.npz",
+      "sha256": "2f2e6c1ac68e1d66059da0907bcd21383e1b420304ead7eb4ed41f88ac18b0b0",
+      "old_inode": 38278037,
+      "bytes": 315639099
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/sana_0238de14_s107/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/sana_0238de14_s107/C/frames.npz",
+      "sha256": "e97204b6cbf6ba7c0a49b5db32c1f3c9c596e58e203d5ff6b370693c3998efd1",
+      "old_inode": 38277932,
+      "bytes": 338801620
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/sana_924228bf_s107/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/sana_924228bf_s107/C/frames.npz",
+      "sha256": "9e0124775065a5600a575553129f8d2cfc0d2280cf0aa34dba1145379af35416",
+      "old_inode": 38278147,
+      "bytes": 282129167
+    }
+  ],
+  "free_before": 4792385536,
+  "free_after": 7084957696
+}

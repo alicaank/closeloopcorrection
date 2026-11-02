@@ -150,26 +150,42 @@ simpler measured-memory method already demonstrates broad benefit.
 
 ## Current implementation and execution progress
 
-The SANA bundled callback now closes its auxiliary endpoint observer after each
-measurement, including failure, before the next native chunk. Previously the
-worker moved weights off the GPU but retained them in host RAM. This is a
-concrete resource-lifetime issue; it is not yet proven to explain the entire
-previous memory-guard event. Memory policy, future targets and native precision
-are unchanged. Two tests execute the actual callback with a stub worker and
-verify closure and recreation. The full current suite passes 128 tests.
+The SANA callback closes its auxiliary endpoint observer after each measurement,
+including failure, before the next native chunk. That first resource retry
+still stopped at the host-memory guard, at a later chunk than the original
+failure. It is an execution failure, not a scientific negative or a completed
+121-frame experiment. Its partial outputs and terminal state remain preserved.
 
-The fresh attempt is under
-`analysis/memory_generalization_20261103/sana_lifetime_qualification/` with
-source/input hashing, the existing GPU locks, host/RAM guards and resource
-telemetry. Two generation arms, verified lossless retention and a paired score
-are scheduled. GPU completion and prefix parity remain pending. The exact old
-attempt is retained. Broader evaluation and the proposed method extensions
-remain unfinished; this document does not declare the research goal achieved.
+The next resource overlay releases consumed references to old per-layer KV
+history before constructing replacement history, and releases each consumed
+chunk buffer after copying it. It changes no cache length, precision, tensor
+arithmetic, model forward call or camera policy. Two regressions check lifetime
+release and fail-closed source matching. The full suite passes **130 CPU tests**;
+216 cases using the actual native history-update block have bitwise-identical
+tensors, shapes, dtypes and frame counts. These checks do not prove GPU parity.
 
-[Execution snapshot](generalization_execution_20261103.json) and
-[audit artifacts](artifacts/generalization_20261103/README.md) bind this progress
-to the current source and the preserved cohort. Seven additional pairs of
-SHA256-identical completed frame archives were hardlinked with all paths and
-bytes preserved, reclaiming 0.434 GiB for the retry; no unique data or model
-assets were removed. The workspace receipt is
-`analysis/memory_generalization_20261103/deduplication.json`.
+The new frozen attempt is
+`analysis/memory_generalization_20261103/cohort_resume/`. It retains all original
+**40 pairs: five models × four scenes × two seeds**, with their original native
+horizons. The completed original LingBot pair is reused with content hashes;
+its visual collapse remains a policy failure. The other 78 generation jobs are
+scheduled. The first new SANA baseline must match every available RGB frame of
+the preserved preceding resource retry before its measured arm runs. A resource
+prefix mismatch or host-memory guard holds SANA while other models continue.
+Disk and source-integrity guards still hold the whole queue. Scientific losses
+remain results and do not trigger model holds.
+
+The queue was launched and its process confirmed live. Completion, GPU resource
+parity, repeated-memory efficacy and new visual reviews remain pending. See the
+[dated execution snapshot](generalization_execution_20261103.json); it is not a
+live status feed. The [audit artifacts](artifacts/generalization_20261103/README.md)
+include the preparation/queue/parity scripts and CPU evidence. Broad evaluation
+and the proposed method extensions remain unfinished.
+
+Additional SHA256-identical completed output archives were hardlinked while
+preserving every path and byte: the first cleanup recovered 0.434 GiB and the
+second 2.135 GiB. Free space was 6.6 GiB at launch. No additional DL3DV scenes
+were removed; all remaining scenes belong to the prior dependency/evaluation
+preservation set. Protected model assets remain untouched. Workspace receipts
+are `analysis/memory_generalization_20261103/deduplication*.json` and
+`storage_check_20261103.json` in that directory.
