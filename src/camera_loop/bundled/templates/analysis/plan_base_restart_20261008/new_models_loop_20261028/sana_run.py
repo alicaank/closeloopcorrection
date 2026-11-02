@@ -77,13 +77,14 @@ def main():
   np.savez_compressed(a.out/'frames.npz',frames=np.asarray(prefix,np.uint8))
   if a.arm=='native' or lo>=a.frames-1:return
   pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()
-  if worker is None:worker=PoseWorker(a.out/'observer')
-  try:
-   with torch.random.fork_rng(devices=[0]):measured,info=worker.measure(np.asarray(prefix),K,depth)
-  finally:
-   # The observer is not part of native generation state. Release its CPU
-   # weights before the next chunk; GPU offload alone retains host memory.
-   worker.close();worker=None
+  from camera_loop.resource_residency import observer_residency
+  with observer_residency(pipe.model):
+   try:
+    if worker is None:worker=PoseWorker(a.out/'observer')
+    with torch.random.fork_rng(devices=[0]):measured,info=worker.measure(np.asarray(prefix),K,depth)
+   finally:
+    # Close before generator weights return to CPU, including on failure.
+    if worker is not None:worker.close();worker=None
   stride=int(pipe.config.vae.vae_stride[0]);latent_lo=(lo//stride)+1;latent_hi=min(latent_lo+int(pipe.refiner_settings.block_size),state['latent_T']);hi=(latent_hi-1)*stride+1
   assert lo%stride==0
   if a.arm in ['sham','correction']:

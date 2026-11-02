@@ -65,3 +65,28 @@ visible failure, so it does not by itself identify that initial failure's cause.
 The deployed v1 gate is not a validated collapse detector, as the frozen protocol
 already states. A future image-consistency gate would need separate validation;
 no new threshold or scene-specific exception is inserted into this cohort.
+
+## DreamX 02267acf, seed 7: small change after four writes
+
+The first completed 69-frame DreamX pair has exact raw pre-intervention equality,
+four accepted writes and valid positional registration in both arms. Post-boundary
+mean position error is 0.038172 → 0.037501 reference anchor units (−1.76%); mean
+rotation error is 0.824285° → 0.809984° (−0.01430°). These are descriptive paired
+numbers from one scene and seed, not a general efficacy estimate.
+
+![Matched DreamX reference and paired samples](artifacts/generalization_20261103/visual_review/dreamx_02267acf_s7.jpg)
+
+Frames 0, 20, 21, 34, 51 and 68 retain recognizable store geometry in both arms.
+Both drift relative to the near-stationary reference, and the two generated rows
+look very similar. Severe collapse is not evident in these six samples; this is
+not a full-video quality or oscillation assessment. Exact lossless decoding gives
+post-boundary mean RGB absolute difference **1.0853/255**, with zero difference
+through the pre-intervention prefix. No matched regeneration noise floor was
+measured here, so this small difference is not evidence of a reliable differential
+gain or statistically established control benefit.
+
+[Score](artifacts/generalization_20261103/visual_review/dreamx_02267acf_s7.score.json),
+[visual inspection](artifacts/generalization_20261103/visual_review/dreamx_02267acf_s7.review.json),
+and [frame-wise RGB differences](artifacts/generalization_20261103/visual_review/dreamx_02267acf_s7.rgb_difference.json)
+retain the numerical and visual evidence. MatrixGame was running next at this
+snapshot; SANA remained an execution failure with a separate resource retry queued.

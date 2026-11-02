@@ -171,7 +171,8 @@ def sana_write(L):
     cap=SANA['capture'];start,end=cap['start_f'],cap['end_f'];pipe=L['pipe'];state=L['state']
     stride=int(pipe.config.vae.vae_stride[0]);first=max(0,start*stride-(stride-1));last=(end-1)*stride
     ids=np.arange(first,last+1);old=L['commands'][ids].copy();out=L['a'].out
-    with torch.random.fork_rng(devices=[0]):
+    from camera_loop.resource_residency import observer_residency
+    with observer_residency(pipe.model), torch.random.fork_rng(devices=[0]):
         try:write,q=measured_write(out,np.asarray(L['prefix']),L['K'],L['depth'],ids,old)
         finally:close_observer(out)
     if not write.applied and not verify_replay():

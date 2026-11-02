@@ -164,7 +164,7 @@ The next resource overlay releases consumed references to old per-layer KV
 history before constructing replacement history, and releases each consumed
 chunk buffer after copying it. It changes no cache length, precision, tensor
 arithmetic, model forward call or camera policy. Two regressions check lifetime
-release and fail-closed source matching. The full suite passes **130 CPU tests**;
+release and fail-closed source matching. The history-release revision passed **130 CPU tests**;
 216 cases using the actual native history-update block have bitwise-identical
 tensors, shapes, dtypes and frame counts. These checks do not prove GPU parity.
 
@@ -198,3 +198,34 @@ were removed; all remaining scenes belong to the prior dependency/evaluation
 preservation set. Protected model assets remain untouched. Workspace receipts
 are `analysis/memory_generalization_20261103/deduplication*.json` and
 `storage_check_20261103.json` in that directory.
+
+### Observer-time residency supplement (queued, not GPU-qualified)
+
+The next opt-in resource change moves idle SANA stage-1 weights from CPU to GPU
+before **either** observer starts, and closes that observer before restoring the
+original CPU placement. It moves devices only, without dtype conversion or model
+forwards. The context restores placement on measurement and transfer failures and
+rejects mixed original devices. It drops temporary parameter/buffer references
+before transfer so they do not retain old CPU buffer storage. A per-callback log
+records host/GPU memory before, during and after placement.
+
+`CAMERA_SANA_OBSERVER_GPU_RESIDENCY=1` enables this experimental resource option;
+it is disabled by default. It is not an online control gain or calibration
+constant. **135 CPU tests pass**, including observer construction/closure ordering
+and restoration on exceptions. The native SANA overlay compiles. GPU capacity,
+full-horizon RGB equivalence and measured-arm completion remain unverified.
+
+The separate `sana_observer_residency/` attempt is queued behind the running
+cohort's shared GPU locks. It contains **all eight original SANA pairs** (four
+scenes × two seeds; 16 generations). The first case must complete 121 frames,
+match the preserved 97-frame baseline prefix, complete the measured arm and pass
+paired-prefix attribution before proceeding. All scientific outcomes remain
+reportable. This supplement does not replace the original 40-pair denominator,
+shorten horizons or alter the currently running frozen sources.
+
+The first longer DreamX pair has now completed and received sampled visual
+inspection: four writes, exact prefix, a 1.76% mean-position reduction and a
+0.0143° mean-rotation reduction. Both outputs look similar and drift relative to
+the reference. No regeneration floor or population confidence interval was
+estimated; treat this as a small descriptive result. Details are in the
+[visual audit](multiboundary_visual_audit_20261103.md).

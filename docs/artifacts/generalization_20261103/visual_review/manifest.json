@@ -1,7 +1,7 @@
 {
   "scope": "Timestamp-matched sampled visual inspection, not full-video review or a quality metric. Full-frame thumbnails may retain native crop/FOV differences. References are source RGB; stored poses may be VIPE-derived.",
   "freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
-  "script_sha256": "4a0cc541583146d9fd086eafa8136991b8409e6211c69c69a95887cb8a89796d",
+  "script_sha256": "07108abedfc0519970aa440df09d5889297f24bdb4e3ecae36adcf0faac09a86",
   "motion": [
     {
       "scene": "02267acf",
@@ -301,7 +301,71 @@
       ],
       "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s7.jpg",
       "sheet_sha256": "3e28405dbc54711d651dedee1213dafedc62ed2975f7504640b295b9e50d59e2",
-      "review_status": "awaiting_visual_inspection"
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s7.review.json",
+      "inspection_sha256": "1cfe4fe1c15f8b9fbbb61ef7e054db1bb43737bd6ad6af7ace15986e9ddd31cb",
+      "classification": "visual collapse; policy failure"
+    },
+    {
+      "key": "dreamx_02267acf_s7",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s7/score.json",
+      "score_sha256": "0d480ea5d6d93ca43acf76f2fc95842cd6b08c2312d304e5460b9f0b96c35bad",
+      "frames": [
+        0,
+        20,
+        21,
+        34,
+        51,
+        68
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s7/commanded/frames.lossless.mkv",
+          "sha256": "08677432434acd9625ea1124635851c0dfddf6466d50d08c713055f656077efe"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s7/measured/frames.lossless.mkv",
+          "sha256": "0f3272207a82a9343dd93b230e1a1ab182123d2bd9011f8a1269413e3ff9f6af"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00001.jpg",
+          "sha256": "dbd275b79ec7f7fb46acaaec70b803d8f9147ff4559a7d00ceb40f34c01e0d03"
+        },
+        {
+          "frame": 20,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00021.jpg",
+          "sha256": "583131478cf464240379fa96781d2da208f3b257a8d4479ec3e032645594ee6f"
+        },
+        {
+          "frame": 21,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00022.jpg",
+          "sha256": "e89fe85502afbaacbeb705e8184d551884a3b49bdad25afb67c9c53948015d67"
+        },
+        {
+          "frame": 34,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00035.jpg",
+          "sha256": "845787f554b85b80b89984d62d12285a24e009c144df9bda0af736b3c4a315bd"
+        },
+        {
+          "frame": 51,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00052.jpg",
+          "sha256": "11ecb3d974e567d1b7059dc9edc9cb38d358db3b660e9dfd9d8f31edbeef437a"
+        },
+        {
+          "frame": 68,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00069.jpg",
+          "sha256": "4ca197ab63e67c1aef662654bf9eb2141b10ddd85d2f7e3fc2222f61781602f3"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_02267acf_s7.jpg",
+      "sheet_sha256": "3c2ec196b9f5c753e5051209019799643e85ec0815623c41b1ff7cc120f07baa",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_02267acf_s7.review.json",
+      "inspection_sha256": "a514576cbd05ea96fe6196975c84f1d123b24ef4af0e3d0ea2ba67a79d0c3b01",
+      "classification": "Small numerical pose difference with visually similar sampled outputs; efficacy unresolved at this sample size."
     }
   ]
 }

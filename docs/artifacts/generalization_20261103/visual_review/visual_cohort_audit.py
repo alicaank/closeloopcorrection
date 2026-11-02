@@ -55,8 +55,15 @@ for pair in frozen['pairs']:
             y=40+ri*(height+pad);sheet.paste(Image.fromarray(frame),(j*width,y+pad));draw.text((j*width+4,y+2),f'{arm} {i}',fill='white')
         archives[arm]=dict(path=str(archive),sha256=sha(archive))
     target=OUT/f'{key}.jpg';sheet.save(target,quality=88)
-    review.append(dict(key=key,score=str(scorepath),score_sha256=sha(scorepath),frames=ids,archives=archives,
-        reference_frames=entries,sheet=str(target),sheet_sha256=sha(target),review_status='awaiting_visual_inspection'))
+    item=dict(key=key,score=str(scorepath),score_sha256=sha(scorepath),frames=ids,archives=archives,
+        reference_frames=entries,sheet=str(target),sheet_sha256=sha(target),review_status='awaiting_visual_inspection')
+    inspected=OUT/f'{key}.review.json'
+    if inspected.exists():
+        previous=read(inspected)
+        if previous['sheet_sha256']==item['sheet_sha256'] and previous['score_sha256']==item['score_sha256']:
+            item.update(review_status='sampled_visual_review_complete',inspection_record=str(inspected),
+                        inspection_sha256=sha(inspected),classification=previous['classification'])
+    review.append(item)
 out=dict(scope='Timestamp-matched sampled visual inspection, not full-video review or a quality metric. Full-frame thumbnails may retain native crop/FOV differences. References are source RGB; stored poses may be VIPE-derived.',
          freeze_sha256=sha(Q/'freeze.json'),script_sha256=sha(Path(__file__)),motion=motion,pairs=review)
 (OUT/'manifest.json').write_text(json.dumps(out,indent=2)+'\n')
