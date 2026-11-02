@@ -13,11 +13,14 @@ Changes vs gv_memorizon2.py (everything else, incl. the rollout math, is the sam
   * per-run disk floor check; --arm filter.
 Settings = official (pipeline.py __call__ with the checkpoint config): 4 steps, guidance 0 (default_guidance_scale 0.0 ->
 B=1, no negative prompt), memory_size 6, chunk 4 latents, 10 chunks = 1 + 40 latents = frames 0..160, seed via a CPU generator.
-Camera units as before: metres/4, metres = gauge x DA3 metric median depth of the (processed) anchor.
+Camera units: runtime corresponding-pixel metric depth/reference depth, divided by the native training divisor 4; missing metric geometry is rejected.
 Usage (venv_memorizon, cwd @WORKSPACE@/baselines):
   mem_fair.py --out RUNS/memorizon --arms arms_4.json [--arm NAME ...] [--scenes ...] [--seeds 7]"""
 import argparse, json, sys, time
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'fair_common_20261025'))
+from causal_units import metric_prediction_scale
+
 import numpy as np, torch
 from PIL import Image
 
@@ -52,8 +55,8 @@ class Roller:
         self.prompt = sc['prompts']['memorizon']; self.text = pipe.encode_prompt(self.prompt).to(pipe.device, pipe.dtype)
         da3.to('cuda'); pm = da3.inference(image=[self.anchor], intrinsics=self.K[None].astype(np.float32), infer_gs=False, process_res=504, export_dir=None)
         da3.to('cpu'); torch.cuda.empty_cache()
-        dm = np.asarray(pm.depth[0]); self.metric = float(np.median(dm[dm > 0])) if pm.is_metric else 1.0
-        self.unit = self.metric / TRAJ_SCALE
+        self.unit, self.unit_calibration = metric_prediction_scale(da3, pm, self.anchor, self.anchor_depth, self.K, divisor=TRAJ_SCALE)
+        self.metric = self.unit_calibration["metres_per_reference_unit"]
         self.dit, self.C = pipe.model.model, pipe.model.config.chunk_size
         self.frustum = Frustum.from_intrinsics(list(self.intr)); self.memory_size = memory_size
         first = pipe.encode_image(img)                                                  # official crop / resize / VAE encode
@@ -130,7 +133,7 @@ class Roller:
                 self.g_prev = float(np.linalg.norm(b[:3, 3] - a[:3, 3]) / max(np.linalg.norm(self.cmd[q_hi - 1][:3, 3] - self.cmd[q_lo - 1][:3, 3]), 1e-6))
             self.events.append(dict(kind='chunk', chunk=ci, g=self.g_prev, bank=[int(x) for x in bank], da3_scale=est['scale'],
                                     residual=[self.residual[j] for j in range(q_lo, q_hi)]))
-        return self.frames, dict(metric_anchor_depth_m=self.metric, unit=self.unit, prompt=self.prompt, events=self.events, pose_frame_ids=[4 * j for j in range(41)],
+        return self.frames, dict(unit_calibration=self.unit_calibration, metric_anchor_depth_m=self.metric, unit=self.unit, prompt=self.prompt, events=self.events, pose_frame_ids=[4 * j for j in range(41)],
                                  commanded=self.cmd.tolist(), planned=self.plan.tolist(), measured=[None if m is None else m.tolist() for m in self.measured])
 
 

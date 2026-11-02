@@ -72,7 +72,7 @@
     },
     "python": "baselines/venv_astronex/bin/python",
     "status": "local_adapter_available",
-    "notes": "Latent frame j corresponds to RGB frame 4j; metric/native normalization needs an explicit callback."
+    "notes": "Fresh runtime native geometry provider required; no provider ships with the pose-only encoder. Reference-fit scale and prepared native trajectory are not consumed."
   },
   "lingbot": {
     "label": "LingBot v2",
@@ -117,7 +117,7 @@
     },
     "python": "analysis/plan_base_restart_20261008/model_readiness_20261027/envs/worldwarp312/bin/python",
     "status": "experimental",
-    "notes": "Initial TTT3R depth fit plus a two-chunk continuation gate; later chunks are unsupported by that gate. GPU validation pending."
+    "notes": "TTT3R scale fitted on initial input, then transferred at every source window through shared emitted-frame depth. Fixed reference gauge for control; current native gauge for commands and memory. GPU validation pending."
   },
   "sana": {
     "label": "SANA-WM",
@@ -147,7 +147,7 @@
     },
     "python": "baselines/venv_memorizon/bin/python",
     "status": "historical_controls_incomplete",
-    "notes": "Recorded metric translation /4 mapping; projection audit pending. Historical launcher lacks native/sham controls."
+    "notes": "Fresh metric anchor-depth correspondence /4; rejects nonmetric or invalid depth. Native/sham controls remain incomplete."
   },
   "worldplay": {
     "label": "WorldPlay",
@@ -162,6 +162,6 @@
     },
     "python": "baselines/venv_worldplay/bin/python",
     "status": "historical_controls_incomplete",
-    "notes": "Native pose-unit contract unresolved. Explicit calibrated factor required; historical launcher lacks native/sham controls."
+    "notes": "Fresh runtime native geometry provider required; unavailable without one. No numeric default or batch-scale injection. Historical native/sham controls remain incomplete."
   }
 }

@@ -202,7 +202,24 @@ class Datasets(unittest.TestCase):
                 )
             run.assert_not_called()
 
-    def test_worldplay_explicit_scale_is_forwarded(self):
+    def test_astronex_requires_no_recorded_native_scale_or_trajectory(self):
+        self.make()
+        p = self.batch / "index.json"
+        d = json.loads(p.read_text())
+        for row in d["scenes"]:
+            row["prompts"] = {"astronex": "A room"}
+            row.pop("metres_per_anchor_unit", None)
+            q = self.batch / "trajectories" / f'{row["name"]}.npz'
+            arrays = read_arrays(q)
+            arrays.pop("metres_per_anchor_unit", None)
+            self.assertNotIn("native_w2c_latent", arrays)
+            np.savez(q, **arrays)
+        p.write_text(json.dumps(d))
+        self.assertTrue(validate_batch(self.batch, "astronex")["passed"])
+        argv, _ = command("/w", "astronex", "/python", self.batch, "scene_a", "/out")
+        self.assertNotIn("--scale", argv)
+
+    def test_worldplay_offline_scale_is_not_forwarded(self):
         self.make()
         p = self.batch / "index.json"
         d = json.loads(p.read_text())
@@ -219,7 +236,12 @@ class Datasets(unittest.TestCase):
         p.write_text(json.dumps(d))
         self.assertTrue(validate_batch(self.batch, "worldplay")["passed"])
         argv, _ = command("/w", "worldplay", "/python", self.batch, "scene_a", "/out")
-        self.assertEqual(argv[argv.index("--unit") + 1], "3")
+        self.assertNotIn("--unit", argv)
+        for row in d["scenes"]:
+            del row["native_units_per_anchor_unit"]
+            del row["native_scale_evidence"]
+        p.write_text(json.dumps(d))
+        self.assertTrue(validate_batch(self.batch, "worldplay")["passed"])
 
 
 if __name__ == "__main__":

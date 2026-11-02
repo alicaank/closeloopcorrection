@@ -173,6 +173,8 @@ class AdaptiveController:
             # Prediction is a separate belief, never a measured-memory write.
             self.last_observation_index = None
         gains = self.response.gains() if self.arm == "C" else np.ones(6)
+        original_future = self.commands[lo:hi].copy()
+        fresh_feedback = accepted and confidence > 0 and not np.allclose(self.predicted, self.plan[lo-1], atol=1e-12, rtol=0)
         state = self.predicted.copy()
         native_command = self._native(boundary)
         previous = vector(self.issued[lo - 1]) / self.dt[lo - 1]
@@ -218,6 +220,8 @@ class AdaptiveController:
                      stored_boundary=boundary.tolist(),
                      boundary_source="issued_command" if stored_boundary is None else "host_rebuilt_memory",
                      accepted=accepted, confidence=confidence, response_gains=gains.tolist(),
+                     controller_called=True, fresh_residual_feedback=bool(fresh_feedback),
+                     commands_changed=not np.allclose(original_future,self.commands[lo:hi],atol=1e-12,rtol=0),
                      response_update_axes=fit, return_horizon_frames=horizons, clipped=clipped,
                      requested_native_velocity=raw_inputs, bridge_max_error=max(bridge_residuals),
                      predicted_endpoint=state.tolist(), target_endpoint=self.plan[hi - 1].tolist(),

@@ -1,6 +1,6 @@
 {
-  "snapshot_utc": "2026-11-01 17:39:57 UTC",
-  "queue_phase_at_snapshot": "generate_worldwarp",
+  "snapshot_utc": "2026-11-01 18:35:47 UTC",
+  "queue_phase_at_snapshot": "finished",
   "protocol": "measured_memory_vipe_pair_v1",
   "scope": "One development scene/seed per model; post-intervention camera errors. Not a held-out generalization or visual-quality claim.",
   "reference_units": "reference anchor-depth units; not verified metric metres",
@@ -406,7 +406,63 @@
       "scene": "e43058cb",
       "seed": 7,
       "first_affected_frame": 81,
-      "state": "pending"
+      "state": "completed",
+      "rgb_frames": 161,
+      "comparison_valid": false,
+      "prefix_rgb_exact": false,
+      "prefix_pixel_mae": 4.293646335601807,
+      "accepted_memory_writes": 1,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.09174491596923957,
+          "measured": 0.07960215853552204,
+          "measured_minus_commanded": -0.012142757433717538,
+          "reduction_percent": 13.235346400871723
+        },
+        "position_endpoint": {
+          "commanded": 0.12128968920499668,
+          "measured": 0.15284865012172735,
+          "measured_minus_commanded": 0.031558960916730674,
+          "reduction_percent": -26.019491948232783
+        },
+        "rotation_mean_deg": {
+          "commanded": 40.91971256770179,
+          "measured": 40.789243946712155,
+          "measured_minus_commanded": -0.13046862098963175,
+          "reduction_percent": 0.31884051182854967
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 54.001027509817206,
+          "measured": 60.40407676966372,
+          "measured_minus_commanded": 6.403049259846512,
+          "reduction_percent": -11.857273009633861
+        }
+      },
+      "registration": {
+        "commanded": {
+          "valid": true,
+          "saturated_pixels": 8,
+          "scale": 0.5419771962296241,
+          "valid_pixels": 3007,
+          "valid_fraction": 0.997346600331675,
+          "p90_over_p10": 1.3533565386991255,
+          "median_relative_residual": 0.05529577557681842,
+          "method": "reference/native optimized anchor z-depth at matching pixels; first-pose SE3 reanchor; no trajectory fit"
+        },
+        "measured": {
+          "valid": true,
+          "saturated_pixels": 12,
+          "scale": 0.5418918546917777,
+          "valid_pixels": 3003,
+          "valid_fraction": 0.9960199004975124,
+          "p90_over_p10": 1.3244021807510047,
+          "median_relative_residual": 0.06054945321161209,
+          "method": "reference/native optimized anchor z-depth at matching pixels; first-pose SE3 reanchor; no trajectory fit"
+        }
+      },
+      "source_score": "analysis/measured_memory_20261101/efficacy_queue_20261101/scores/worldwarp/score.json",
+      "source_score_sha256": "a00381a333a1f9859c446b9ab3621f924ae29c5e09eee1d584fae606659480b9",
+      "qualification_note": "Prefix mismatch before intervention; NPZ contains frames decoded from native chunk mp4. Apparent gain is confounded."
     }
   ],
   "failures": []

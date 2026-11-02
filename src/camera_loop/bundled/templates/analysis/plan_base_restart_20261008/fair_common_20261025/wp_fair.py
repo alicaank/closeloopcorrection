@@ -15,9 +15,11 @@ Changes vs wp_fprime.py:
   * synthetic / action_zero / prope_static / cmd_gain controls removed; per-run disk floor check; --arm filter.
 Settings kept from wan/generate.py: guidance 1 (no CFG), few-step 4, use_memory, context_window_length 16, first_chunk_size 4.
 Deviation kept from before: 544x960 instead of the official 704x1280 (OOM on 32 GB at chunk 5; peak 28.0 GB at 544x960).
-Camera units: --unit WorldPlay translation units per anchor-depth unit (1.0 as in the 10-23 runs)."""
+Camera units require native geometry from a fresh runtime provider; no numeric default."""
 import argparse, json, os, sys, time
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'fair_common_20261025'))
+from causal_units import runtime_anchor_scale, require_runtime_provider
 import numpy as np, torch
 from PIL import Image
 WP = '@WORKSPACE@/sota_repos/worldplay'; sys.path[:0] = [WP, WP + '/wan']
@@ -87,8 +89,8 @@ class WorldPlay:
 
 
 class Roller:
-    def __init__(self, wp, da3, name, arm, seed, chunks, unit):
-        self.wp, self.da3, self.arm, self.seed, self.chunks, self.unit = wp, da3, arm, seed, chunks, unit
+    def __init__(self, wp, da3, name, arm, seed, chunks, unit_receipt, online_response=False):
+        self.wp, self.da3, self.arm, self.seed, self.chunks = wp, da3, arm, seed, chunks
         sc = fc.scene(name); n_lat = 4 * chunks
         self.plan = sc['c2w_ext'][0:4 * (n_lat - 1) + 1:4].copy()                    # c2w per latent j (frame 4j), gauge
         assert len(self.plan) == n_lat, f'{len(self.plan)} poses for {n_lat} latents'
@@ -100,12 +102,23 @@ class Roller:
         ref = np.asarray(src.resize((nw, nh), Image.LANCZOS).crop((l, t, l + W, t + H)))
         assert np.abs(self.anchor.astype(int) - ref.astype(int)).max() <= 1, 'k_worldplay geometry disagrees with the pipeline'
         self.anchor_depth = fc.remap_depth(sc['depth'], sc['K'], self.K, (H, W))
+        self.response=None
+        if online_response:
+            from camera_loop.native_response_runtime import BoundaryRuntime
+            self.response=BoundaryRuntime(self.plan,np.arange(n_lat)*4,model='worldplay',arm=arm['name'],
+                out=Path(unit_receipt).with_suffix('.response'),anchor=self.anchor,K=self.K,depth=self.anchor_depth,workspace='@WORKSPACE@')
+            self.unit=None;self.unit_calibration=dict(status='physical_units_unidentified',mode='online_command_response')
+        else:
+            self.unit, self.unit_calibration = runtime_anchor_scale('worldplay', self.anchor, self.anchor_depth, self.K, receipt=unit_receipt)
         self.cmd = self.plan.copy(); self.mem = self.cmd.copy(); self.measured = [None] * n_lat; self.measured[0] = np.eye(4); self.events = []
+        if self.response is not None:self.cmd=self.response.control.commands.copy();self.mem=self.cmd.copy()
         k = self.K.copy(); k[0, 0] /= k[0, 2] * 2; k[1, 1] /= k[1, 2] * 2; k[0, 2] = .5; k[1, 2] = .5; self.Kn = k   # pose_to_input normalisation
 
     def wp_rows(self, lo, hi):
         """viewmats (w2c, WorldPlay units), Ks and actions for latents lo..hi-1 from self.mem (verbatim wp_fprime minus controls)."""
-        c2w = self.mem[lo:hi].copy(); c2w[:, :3, 3] *= self.unit; w2c = np.linalg.inv(c2w)
+        c2w = self.mem[lo:hi].copy()
+        if self.response is None:c2w[:, :3, 3] *= self.unit
+        w2c = np.linalg.inv(c2w)
         act = [0 if j == 0 else action_label(self.mem[j - 1], self.mem[j]) for j in range(lo, hi)]
         f = lambda x: torch.as_tensor(np.asarray(x)).to(self.wp.device)
         return (f(w2c).float()[None], f(np.repeat(self.Kn[None], hi - lo, 0)).float()[None], torch.as_tensor(act)[None].to(self.wp.device))
@@ -131,6 +144,14 @@ class Roller:
             for i in range(4):
                 v = pipe.decode_next_latent(output_type='np')                          # [1, f, H, W, 3] in [0, 1]
                 frames += [(x * 255).round().clip(0, 255).astype(np.uint8) for x in np.asarray(v)[0]]
+            if self.response is not None:
+                device=next(pipe.transformer.parameters()).device
+                pipe.transformer.to('cpu');torch.cuda.empty_cache()
+                try:future,event,measured=self.response.observe(frames,hi-1,min(hi+4,n_lat))
+                finally:pipe.transformer.to(device);torch.cuda.empty_cache()
+                self.measured[hi-1]=measured
+                self.cmd[hi:hi+len(future)]=future;self.events.append(event)
+                continue
             lat = [frames[4 * j] for j in range(1, hi)]                                 # latent j end frame = frame 4j; frames[0] = image
             self.da3.to('cuda'); est = fc.da3_window(self.da3, self.anchor, self.anchor_depth, lat, self.K, max_views=16, tail=4); self.da3.to('cpu'); torch.cuda.empty_cache()
             for j in range(max(1, lo), hi):
@@ -145,18 +166,26 @@ class Roller:
                 pipe.ctx['viewmats'][:, lo:hi] = vm2.to(pipe.ctx['viewmats'].dtype); pipe.ctx['action'][:, lo:hi] = act2.to(pipe.ctx['action'].dtype)
             r = [None if self.measured[j] is None else float(np.linalg.norm(self.measured[j][:3, 3] - self.cmd[j][:3, 3])) for j in range(max(1, lo), hi)]
             self.events.append(dict(kind='chunk', chunk=ci, residual=r, da3_scale=est['scale'], peak_GiB=torch.cuda.max_memory_allocated() / 2**30))
-        return frames, dict(planned=self.plan.tolist(), commanded=self.cmd.tolist(), unit=self.unit, prompt=self.text, pose_frame_ids=[4 * j for j in range(n_lat)],
+        if self.response is not None:
+            self.response.close()
+            return frames,dict(planned=self.plan.tolist(),native_commanded=self.cmd.tolist(),unit=None,unit_calibration=self.unit_calibration,
+                measured=[None if m is None else m.tolist() for m in self.measured],events=self.events,pose_frame_ids=[4*j for j in range(n_lat)],online_response=self.response.metadata())
+        return frames, dict(planned=self.plan.tolist(), commanded=self.cmd.tolist(), unit=self.unit, unit_calibration=self.unit_calibration, prompt=self.text, pose_frame_ids=[4 * j for j in range(n_lat)],
                             measured=[None if m is None else m.tolist() for m in self.measured], events=self.events)
 
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument('--out', type=Path, required=True); p.add_argument('--arms', type=Path, required=True)
     p.add_argument('--arm', nargs='*', default=None); p.add_argument('--scenes', nargs='+', default=None); p.add_argument('--seeds', nargs='+', type=int, default=[7])
-    p.add_argument('--chunks', type=int, default=11); p.add_argument('--unit', type=float, default=1.0)
+    p.add_argument('--chunks', type=int, default=11);p.add_argument('--online-response',action='store_true')
     p.add_argument('--min_free_gib', type=float, default=10.); a = p.parse_args()
+    if a.online_response:fc.N_FRAMES=16*a.chunks-4
     assert 16 * a.chunks - 3 >= fc.N_FRAMES + 1, 'need >= 161 frames (0..160)'
     arms = [x for x in json.load(open(a.arms)) if not a.arm or x['name'] in a.arm]; a.out.mkdir(parents=True, exist_ok=True)
     scenes = a.scenes or [s['name'] for s in fc.index()['scenes']]
+    if a.online_response:
+        if any(x['name'] not in ('A','S','C') or x.get('write')=='measured' or x.get('replan') for x in arms):raise ValueError('Online response requires command-only A/S/C arms')
+    else:require_runtime_provider('worldplay')
     wp = WorldPlay(); da3 = load_da3('cpu')
     for arm in arms:
         for scene in scenes:
@@ -167,12 +196,12 @@ def main():
                 if fc.free_gib() < a.min_free_gib:
                     print(json.dumps(dict(stop='disk floor', free_gib=round(fc.free_gib(), 2))), flush=True); sys.exit(3)
                 t0 = time.time(); torch.cuda.reset_peak_memory_stats()
-                r = Roller(wp, da3, scene, arm, seed, a.chunks, a.unit); frames, log = r.run()
+                r = Roller(wp, da3, scene, arm, seed, a.chunks, dst.with_suffix(".online_units.json"), online_response=a.online_response); frames, log = r.run()
                 log = dict(model='worldplay', arm=arm, scene=scene, seed=seed, seconds=time.time() - t0, peak_GiB=torch.cuda.max_memory_allocated() / 2**30,
                            settings=dict(steps=4, guidance=1.0, few_step=True, use_memory=True, context_window_length=16, chunks=a.chunks, hw=[H, W],
                                          generated_frames=len(frames) - 1, kept_frames=fc.N_FRAMES), **log)
                 fc.save_run(dst, frames[1:], r.anchor, r.K, log, preprocess='worldplay')
-                res = [x for e in log['events'] if e['kind'] == 'chunk' for x in e['residual'] if x is not None]
+                res = [x for e in log['events'] if e.get('kind') == 'chunk' for x in e['residual'] if x is not None]
                 print(json.dumps(dict(arm=arm['name'], scene=scene, seed=seed, sec=round(log['seconds'], 1), frames=len(frames) - 1,
                                       residual_end=round(res[-1], 3) if res else None, peak=round(log['peak_GiB'], 1))), flush=True)
 

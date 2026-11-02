@@ -1,0 +1,325 @@
+{
+  "implementation_tests": 107,
+  "implementation_test_log_sha256": "a0e7ecdd8b6649998e5f290f05e77ad1593ff987e74825a83bd7e583d482932e",
+  "website_browser_qa": {
+    "passed": true,
+    "comparisons": 170,
+    "invalidPosition": 25,
+    "unqualifiedComparisons": 2,
+    "studies": 15,
+    "initial": {
+      "model": "lingbot",
+      "cohort": "abc_AB",
+      "catalog": 15,
+      "mode": "M changes the memory write while future commands stay fixed."
+    },
+    "playback": {
+      "left": 1.549135,
+      "right": 1.549162
+    },
+    "overflow": {
+      "scroll": 390,
+      "width": 390
+    },
+    "errors": [],
+    "httpErrors": []
+  },
+  "queues": {
+    "response_v2": {
+      "directory": "/home/hj/Alican/analysis/online_response_v2_20261102",
+      "manifest_sha256": "a39eb72c2eb8e5898d714e7fb185f8b1ea391727e62fffb17cae367008766faa",
+      "cpu_qualification": {
+        "passed": true,
+        "manifest_sha256": "a39eb72c2eb8e5898d714e7fb185f8b1ea391727e62fffb17cae367008766faa",
+        "checks": [
+          {
+            "name": "response_astronex_help",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_astronex/bin/python",
+              "/home/hj/Alican/analysis/online_response_v2_20261102/hosts/analysis/plan_base_restart_20261008/long_domain_20261028/astronex_run.py",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 1.869593620300293,
+            "log_sha256": "ab8b2416c1405871e3f5ccaaf7f9ce4eda3df554e6a17064e711c3a6f01ed697"
+          },
+          {
+            "name": "response_worldplay_help",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_worldplay/bin/python",
+              "/home/hj/Alican/analysis/online_response_v2_20261102/hosts/analysis/plan_base_restart_20261008/fair_common_20261025/wp_fair.py",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 4.779309034347534,
+            "log_sha256": "4449d2f625b1eafb3d9d9e79c64b43442e85bd3ef6aca7e36e19d3bb82a1be2a"
+          },
+          {
+            "name": "response_score_help",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/online_response_v2_20261102/score.py",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.8668689727783203,
+            "log_sha256": "a79d187919968f35b6b317e158c6e89348625de8b21875ae0a571d3520bdbb2a"
+          },
+          {
+            "name": "response_test_online_response.py",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "-m",
+              "unittest",
+              "discover",
+              "-s",
+              "/home/hj/Alican/camera-closed-loop/tests",
+              "-p",
+              "test_online_response.py",
+              "-v"
+            ],
+            "passed": true,
+            "seconds": 0.2148141860961914,
+            "log_sha256": "0624abccc9a203249a8b9ce768c2ab3b5aeeb306b913320124a28b999c45859e"
+          },
+          {
+            "name": "response_test_evaluation_accounting.py",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "-m",
+              "unittest",
+              "discover",
+              "-s",
+              "/home/hj/Alican/camera-closed-loop/tests",
+              "-p",
+              "test_evaluation_accounting.py",
+              "-v"
+            ],
+            "passed": true,
+            "seconds": 0.26494598388671875,
+            "log_sha256": "1008043768494126b394b67312c84da9c117ae7595e18a8cf55729ccbccf655f"
+          }
+        ],
+        "created": 1793625921.1600847,
+        "scope": "CPU native CLI / frozen package regression qualification; no GPU efficacy assertion"
+      },
+      "status_at_recording": {
+        "phase": "waiting_for_gpu_lock",
+        "pid": 2643116,
+        "started": 1793625968.575103,
+        "manifest_sha256": "a39eb72c2eb8e5898d714e7fb185f8b1ea391727e62fffb17cae367008766faa",
+        "follows": "spatia_command_gain_20261102 through shared queue locks; supersedes unstarted online_response_20261102",
+        "jobs": {},
+        "qualification": {},
+        "failures": []
+      }
+    },
+    "memory_multiboundary": {
+      "directory": "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102",
+      "manifest_sha256": "f3b3413a19e4e00d165349b88a63e77c2e84fbe61bc33c615e877833765f8dbe",
+      "cpu_qualification": {
+        "passed": true,
+        "freeze_sha256": "f3b3413a19e4e00d165349b88a63e77c2e84fbe61bc33c615e877833765f8dbe",
+        "checks": [
+          {
+            "name": "memory_lingbot_source",
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "lingbot",
+              "--memory-policy",
+              "measured",
+              "--check-source"
+            ],
+            "passed": true,
+            "seconds": 0.06453895568847656,
+            "log_sha256": "b2f1f356a8f0c34d79ba2d17a1041bb7e919cd54bc5e00b989088cc0bc5ec6a1"
+          },
+          {
+            "name": "memory_lingbot_help",
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "lingbot",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.21456074714660645,
+            "log_sha256": "bd2a86269554eef2c6987e8bfc5824dcc003fb6b672d1871b38e60969a35fd77"
+          },
+          {
+            "name": "memory_sana_source",
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "sana",
+              "--memory-policy",
+              "measured",
+              "--check-source"
+            ],
+            "passed": true,
+            "seconds": 0.1647481918334961,
+            "log_sha256": "01dee1858b2c9e74eab29d8c1c313d306bc668ffaf82a184e9db9127b0b3bfc9"
+          },
+          {
+            "name": "memory_sana_help",
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "sana",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.26502060890197754,
+            "log_sha256": "0fe2ace3d5d8d8cd7e25dc2cc79acf4a56fc10c560b327f6d70f546af231bd23"
+          },
+          {
+            "name": "memory_dreamx_source",
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "dreamx",
+              "--memory-policy",
+              "measured",
+              "--check-source"
+            ],
+            "passed": true,
+            "seconds": 0.06413507461547852,
+            "log_sha256": "eb2c9ab8a910c4777700b12eef0a6beb8cb7b77254e47c65342434369399fd1a"
+          },
+          {
+            "name": "memory_dreamx_help",
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "dreamx",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.11418318748474121,
+            "log_sha256": "c2ee878f41426b1ff1bc1992d83fb3e062469f300cd29e10423aa993e4e6c53c"
+          },
+          {
+            "name": "memory_matrixgame_source",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--check-source"
+            ],
+            "passed": true,
+            "seconds": 0.06448745727539062,
+            "log_sha256": "6e097d5f27eb1c719ed4b5d7a4e384e255dae879e637ca7a10f66b1db1ff8625"
+          },
+          {
+            "name": "memory_matrixgame_help",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.11416482925415039,
+            "log_sha256": "d871b98d1837e692e72cdbf21b34998dd52f96433f9a4900f1d4c63349207c90"
+          },
+          {
+            "name": "memory_lyra_source",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "lyra",
+              "--memory-policy",
+              "measured",
+              "--check-source"
+            ],
+            "passed": true,
+            "seconds": 0.06429409980773926,
+            "log_sha256": "09dc91e3c7b1aedbafe65343009cf47c78a075bf29e1013b4a7fdefcd192b8a3"
+          },
+          {
+            "name": "memory_lyra_help",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/launch.py",
+              "lyra",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.11433649063110352,
+            "log_sha256": "d57e396259cf21f61d65dcea91b63365868e91701be6ef13c574d759b033ec35"
+          },
+          {
+            "name": "memory_score_help",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/source/score_memory_pair.py",
+              "--help"
+            ],
+            "passed": true,
+            "seconds": 0.2147350311279297,
+            "log_sha256": "864778466e7b480f7295963d6a17959b26e7a99f0b48b8f166946146c3655541"
+          },
+          {
+            "name": "memory_frozen_accounting",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "-m",
+              "unittest",
+              "discover",
+              "-s",
+              "/home/hj/Alican/camera-closed-loop/tests",
+              "-p",
+              "test_evaluation_accounting.py",
+              "-v"
+            ],
+            "passed": true,
+            "seconds": 0.2648649215698242,
+            "log_sha256": "b129e4dd59ab24032defaf5d95b0253c278dc2d84bdf809bef74070394df4db9"
+          },
+          {
+            "name": "memory_input_commands",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/run.py",
+              "--check"
+            ],
+            "passed": true,
+            "seconds": 0.11432027816772461,
+            "log_sha256": "7a0634dfcb806e7b8fecf58d160770dd61d62e6dc255fe7cdfe352a72c1d0970"
+          }
+        ],
+        "created": 1793625923.065731,
+        "scope": "Native CLI/source, frozen evaluator and lossless archive qualification; GPU outcomes pending"
+      },
+      "status_at_recording": {
+        "pid": 2643117,
+        "phase": "waiting_for_response_v2",
+        "started": 1793625968.549728,
+        "depends_on": "/home/hj/Alican/analysis/online_response_v2_20261102/status.json",
+        "freeze_sha256": "f3b3413a19e4e00d165349b88a63e77c2e84fbe61bc33c615e877833765f8dbe"
+      }
+    }
+  },
+  "limitations": [
+    "New GPU results pending; no efficacy, generalization, physical-scale or stability claim.",
+    "Historical observer correspondence concern has not been quantified by this audit."
+  ]
+}

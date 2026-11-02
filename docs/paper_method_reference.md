@@ -6,6 +6,11 @@ to connect them. It is not a claim that every component below has been combined
 into one validated system. Numerical results are versioned in
 [the development evidence snapshot](paper_evidence_20261101.json).
 
+The selected primary candidate is now [measured-memory v1](method_v1.md).
+Its [frozen protocol](method_v1_protocol.json) fixes the memory-only algorithm
+and expanded development cohort. The adaptive and future-command designs below
+remain separate components/ablations, not part of that candidate.
+
 ## 1. What the method does, and which version is implemented
 
 We study inference-time camera tracking in a frozen, camera-conditioned video
@@ -559,8 +564,9 @@ position registration and only lossy-export prefix evidence. Preserve all of
 these in the paper's development record; do not select only positive models.
 Exact numbers and pending/completed states are in the dated evidence snapshot.
 
-Development snapshot (2026-11-01; WorldWarp still running when this table was
-written). All means are over the post-intervention continuation:
+Completed initial development queue (2026-11-01). All means are over the
+post-intervention continuation; a numerical score is not necessarily an
+attributable intervention result:
 
 | Model | Position mean, commanded → measured | Position reduction | Rotation mean, commanded → measured |
 |---|---|---|---|
@@ -570,12 +576,19 @@ written). All means are over the post-intervention continuation:
 | Matrix-Game | 0.10766 → 0.14900 | −38.40% | 0.52379° → 3.05172° |
 | Lyra | 0.02084 → 0.01841 | +11.68% | 0.05080° → 0.07540° |
 | Astronex | unavailable in both arms | undefined | 14.56347° → 14.88234° |
-| WorldWarp | pending | pending | pending |
+| WorldWarp | 0.09174 → 0.07960 | +13.24%, confounded | 40.91971° → 40.78924° |
 
 The five completed lossless comparisons preserve their pre-intervention RGB
 exactly. Astronex's lossy exports do not; raw prefix parity is unverified. Lyra
 improves translation in this sample while worsening its small rotation error.
 No significance threshold was established for the small DreamX difference.
+WorldWarp differs from frame 0, before the memory intervention, with prefix MAE
+4.29365/255. Its frame arrays are decoded from native chunk videos; storing them
+in NPZ does not make their provenance raw lossless generation. The observed
+gain is confounded and is not counted as evidence for measured-memory efficacy.
+WorldWarp already estimates source poses natively; our write replaces those
+with external estimates rather than introducing pose estimation for the first
+time. Qualification must address both provenance and prefix consistency.
 
 Engineering qualification is separate: seven native memory write paths ran on
 GPU; 19 memory/contract CPU tests and five evaluation-metric tests passed in the

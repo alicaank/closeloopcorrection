@@ -1,28 +1,18 @@
-"""Fair-inference copy of astronex_plugins/astronex_fprime.py (Astronex-World 1.0 causal student, inference/causal_consumer.yaml)
-on batch_ours10. venv_astronex; env as astronex_plugins/queue_astronex.sh (PYTHONPATH with the Astronex repo).
+"""Astronex native rollout with causal geometry-unit calibration.
 
-Changes vs astronex_fprime.py:
-  * image: the dataset's 864x480 frame 0 handed to sample.py, whose own I2V transform (sample.py:538-551: torchvision
-    Resize((480, 832)), an anisotropic stretch) prepares it, instead of our pre-cropped 832x480 centre crop; intrinsics = our
-    true K through that stretch (fair_common.k_astronex), normalised by 832 / 480 as before;
-  * length: 48 latents (6 blocks of 8; generate.py snaps 1 + frames to a block multiple) = frames 0..188, frames 1..160 kept
-    (40 latents would give 156); latents 41..47 take the same recorded path (batch w2c_overrun), never scored;
-  * all frames kept (before: every 2nd, npz) at the native 832x480 as a crf-12 mp4 with frame 0 = the processed input frame,
-    + json with per-frame poses and the output K (fair_common.save_run);
-  * arms named as the other harnesses (arms_4.json: baseline / write_measured / replan_commanded / replan_measured =
-    measure / write / replan / both before); output <out>/<arm>/<name>_s<seed>.mp4 + .json;
-  * the latent-only dump of sample.py:921-925 (WAN_SKIP_DECODE, ~7 MB per video) is not written (disk floor; frames are
-    stream-decoded in the hook as before); disk floor check before each video.
-Unchanged: causal consumer config (UniPC 8 steps, CFG 3.0, window 20 + sink 4, ref_cond_scale 1.1), --seed, the measurement
-(DA3 realized_poses on [decoded frame 0 + latent ends], metric / metres_per_anchor_unit), write / replan logic, --scale
-(anchor-depth units -> Astronex units; astronex_calib.py picks it with queue_astronex.sh's rule).
-Usage: astronex_fair.py --arms arms_4.json --arm baseline --scale S --out RUNS/astronex [--videos ...]"""
+Target poses are supplied in reference-anchor units. A runtime provider must
+produce native-unit depth from the initial input; this launcher never fits scale
+from recorded motion or reads prepared native_w2c_latent arrays. Without such
+geometry the unit mapping is unavailable, and generation is not launched.
+Native consumer settings, latent/RGB indexing, and observer schedule are retained.
+"""
 import argparse, json, os, runpy, sys, time
 from pathlib import Path
 import numpy as np, torch
 from PIL import Image
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent/'fair_common_20261025'))
 import fair_common as fc
+from causal_units import runtime_anchor_scale, require_runtime_provider
 fc.BATCH=Path(os.environ['LONG_BATCH']);fc.N_FRAMES=76
 sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'new_models_loop_20261028'))
 from common import PoseWorker,rejoin
@@ -34,7 +24,7 @@ atexit.register(close_worker)
 
 REPO = Path('@WORKSPACE@/sota_repos/astronex_world'); WEIGHTS = Path('@WORKSPACE@/sota_repos/Astronex')
 NLAT = 24; BLOCK = 8; OUT_W, OUT_H = 832, 480
-CTX = dict(videos=[], i=-1, arm=None, flags=None, scale=1., da3=None, out=None, seed=7, min_free=10.)
+CTX = dict(videos=[], i=-1, arm=None, flags=None, scale=None, da3=None, out=None, seed=7, min_free=10.)
 
 
 def w2c_astro(c2w):
@@ -67,7 +57,15 @@ def block_done(L, v, st, final=False):
 
 def _measure_and_act(L, v, st, gen, arm, vm, cur, done0, final):
     global WORKER
-    if arm['measure'] and not final:
+    if v.get('response') is not None:
+        runtime=v['response'];n=min(BLOCK,NLAT-cur)
+        commands,event,measured=runtime.observe(gen,cur-1,cur+n)
+        v['measured'][cur-1]=measured;v['events'].append(event)
+        if n:
+            v['cmd'][cur:cur+n]=list(commands)
+            if event['commands_differ_from_bootstrap']:
+                vm[0,cur:cur+n]=torch.as_tensor(np.linalg.inv(commands)).to(vm)
+    elif arm['measure'] and not final:
         if WORKER is None:WORKER=PoseWorker(CTX['out']/'observer'/v['name'])
         prefix=gen.copy();prefix[0]=v['frame0']
         with torch.random.fork_rng(devices=[0]):
@@ -87,12 +85,14 @@ def _measure_and_act(L, v, st, gen, arm, vm, cur, done0, final):
         v['events'].append(dict(block_end=cur,observed_frame=4*(cur-1),applied=arm['replan'] and CTX['arm']['name']!='sham',measured=measured.tolist(),measurement=info))
     if final:
         name = v['name']; dst = CTX['out'] / CTX['arm']['name'] / f"{name}_s{CTX['seed']}.mp4"
-        log = dict(model='astronex', arm=CTX['arm'], scene=name, seed=CTX['seed'], scale=CTX['scale'], n_rgb=int(len(gen)), prompt=v['prompt'],
+        log = dict(model='astronex', arm=CTX['arm'], scene=name, seed=CTX['seed'], scale=CTX['scale'], unit_calibration=v['unit_calibration'], n_rgb=int(len(gen)), prompt=v['prompt'],
                    planned=[p.tolist() for p in v['plan']], commanded=[c.tolist() for c in v['cmd']], pose_frame_ids=[4 * j for j in range(NLAT)],
                    measured=[None if v['measured'].get(j) is None else v['measured'][j].tolist() for j in range(NLAT)], events=v['events'],
                    seconds=round(time.time() - st['t_start'], 1), decode_s=round(st['t_decode'], 1), measure_s=round(st['t_measure'], 1),
                    peak_GiB=round(torch.cuda.max_memory_allocated() / 2**30, 2),
                    settings=dict(config='inference/causal_consumer.yaml', latents=NLAT, hw=[OUT_H, OUT_W], kept_frames=fc.N_FRAMES))
+        if v.get('response') is not None:
+            log['native_commanded']=log.pop('commanded');log['online_response']=v['response'].metadata();v['response'].close()
         fc.save_run(dst, list(gen[1:]), v['frame0'], v['K'], log, preprocess='astronex')
         print(json.dumps(dict(scene=name, arm=CTX['arm']['name'], frames=len(gen) - 1, sec=log['seconds'], peak=log['peak_GiB'], events=len(v['events']))), flush=True)
 
@@ -125,29 +125,48 @@ def patch_sampler():
 
 
 def main():
+    global NLAT
     ap = argparse.ArgumentParser(); ap.add_argument('--arms', type=Path, required=True); ap.add_argument('--arm', required=True)
-    ap.add_argument('--scale', type=float, required=True); ap.add_argument('--out', type=Path, required=True); ap.add_argument('--videos', nargs='*', default=None)
+    ap.add_argument('--out', type=Path, required=True); ap.add_argument('--videos', nargs='*', default=None)
     ap.add_argument('--seed', type=int, default=7); ap.add_argument('--min_free_gib', type=float, default=10.)
+    ap.add_argument('--online-response',action='store_true');ap.add_argument('--latents',type=int,default=24)
     a = ap.parse_args(); a.out = a.out.resolve(); arm = [x for x in json.load(open(a.arms)) if x['name'] == a.arm][0]
     flags = dict(measure=int(arm['name']!='native'), write=int(arm.get('write') == 'measured'), replan=int(bool(arm.get('replan'))))
-    CTX.update(arm=arm, flags=flags, scale=a.scale, out=a.out, seed=a.seed, min_free=a.min_free_gib)
+    CTX.update(arm=arm, flags=flags, scale=None, out=a.out, seed=a.seed, min_free=a.min_free_gib)
+    if a.online_response:
+        if arm['name'] not in ('A','S','C') or arm.get('write')=='measured':raise ValueError('Online response requires command-only A/S/C arms')
+        if a.latents<16 or a.latents%8:raise ValueError('Complete Astronex blocks required')
+        NLAT=a.latents;fc.N_FRAMES=4*(NLAT-1)
+    else:
+        if a.latents!=24:raise ValueError('Custom duration requires online-response mode')
+        require_runtime_provider('astronex')
     from torchvision import transforms
     resize = transforms.Resize((OUT_H, OUT_W))                                         # = sample.py's I2V transform before ToTensor
     vids = a.videos or [s['name'] for s in fc.index()['scenes']]; rows = []; work = a.out / '_inputs' / arm['name']; work.mkdir(parents=True, exist_ok=True)
     for name in vids:
         if (a.out / arm['name'] / f'{name}_s{a.seed}.mp4').exists():
             continue
-        sc = fc.scene(name); CTX['scale']=float(sc['native_units_per_anchor_unit']); src = Image.open(sc['image_path']).convert('RGB')
+        sc = fc.scene(name); src = Image.open(sc['image_path']).convert('RGB')
         K, _ = fc.k_astronex(sc['K'], src.size, (OUT_W, OUT_H)); plan = [sc['c2w_ext'][4 * j].copy() for j in range(NLAT)]
         Kn = np.array([[K[0, 0] / OUT_W, 0, K[0, 2] / OUT_W], [0, K[1, 1] / OUT_H, K[1, 2] / OUT_H], [0, 0, 1]], np.float32)
-        with np.load(fc.BATCH/'trajectories'/f'{name}.npz') as z:native=z['native_w2c_latent']
-        native=np.concatenate([native,np.repeat(native[-1:],NLAT-len(native),axis=0)])
-        assert np.allclose(native,np.stack([w2c_astro(c) for c in plan]),atol=1e-6)
+        frame0 = np.asarray(resize(src))
+        anchor_depth = fc.remap_depth(sc['depth'],sc['K'],K,(OUT_H,OUT_W))
+        response=None
+        if a.online_response:
+            from camera_loop.native_response_runtime import BoundaryRuntime
+            response=BoundaryRuntime(plan,np.arange(NLAT)*4,model='astronex',arm=arm['name'],
+                out=a.out/arm['name']/f'{name}_s{a.seed}_response',anchor=frame0,K=K,depth=anchor_depth,workspace='@WORKSPACE@')
+            native=np.linalg.inv(response.control.commands)
+            unit_calibration=dict(status='physical_units_unidentified',mode='online_command_response')
+        else:
+            CTX['scale'], unit_calibration = runtime_anchor_scale('astronex', frame0, anchor_depth, K,
+                receipt=work/f'{name}_s{a.seed}_online_units.json')
+            native = np.stack([w2c_astro(c) for c in plan])
         np.savez(work/f'{name}_cam.npz',viewmats=native,Ks=np.stack([Kn]*NLAT))
         rows.append(dict(prompt=sc['prompts']['astronex'], image_path=sc['image_path'], camera_path=str(work / f'{name}_cam.npz'),
                          output_name=f'{name}.mp4', num_output_frames=NLAT - 1))
-        CTX['videos'].append(dict(name=name, plan=plan, cmd=[c.copy() for c in plan], measured={}, events=[], K=K, mpu=float(sc['metres_per_anchor_unit']),
-                                  anchor_depth=fc.remap_depth(sc['depth'],sc['K'],K,(OUT_H,OUT_W)), frame0=np.asarray(resize(src)), prompt=sc['prompts']['astronex']))
+        CTX['videos'].append(dict(name=name, plan=plan, response=response, cmd=[c.copy() for c in (plan if response is None else response.control.commands)], measured={}, events=[], K=K, unit_calibration=unit_calibration,
+                                  anchor_depth=anchor_depth, frame0=frame0, prompt=sc['prompts']['astronex']))
     if not rows:
         print('nothing to do'); return
     if fc.free_gib() < a.min_free_gib:

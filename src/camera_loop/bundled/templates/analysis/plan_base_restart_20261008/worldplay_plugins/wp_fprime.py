@@ -9,7 +9,7 @@ Same protocol as memorizon_plugins/gv_memorizon2.py on the dev scenes (batch_dev
     discrete actions are overwritten with the measured poses; replan=true -> the next chunk's command is re-planned from
     the measured pose of the last latent and rejoins the plan by SE(3) interpolation (as F'); cmd_gain=k -> commanded
     translations x k (control).
-  * --unit: WorldPlay translation units per gauge unit (default 1.0; calibrate on the call-1 executed ratio).
+  * Units require runtime native geometry; execution response cannot establish geometry units.
 WorldPlay settings kept from wan/generate.py: guidance 1, few-step (4), use_memory, context_window_length 16, first_chunk_size 4,
 544x960 (704x1280 OOMs on 32 GB at chunk 5). Local repo patches (sota_repos/worldplay, git diff): SDPA fallback for
 sageattention; tokens/latent from resolution.
@@ -17,6 +17,8 @@ Output: <out>/<arm>/<scene>_s<seed>.npz (frames 1..156 at 448x256) + .json (plan
 """
 import argparse, json, os, sys, time
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'fair_common_20261025'))
+from causal_units import runtime_anchor_scale, require_runtime_provider
 import numpy as np, torch
 from PIL import Image
 WP = '@WORKSPACE@/sota_repos/worldplay'; sys.path[:0] = [WP, WP + '/wan']
@@ -90,8 +92,8 @@ class WorldPlay:
 
 
 class Roller:
-    def __init__(self, wp, da3, scene, arm, seed, chunks, unit):
-        self.wp, self.da3, self.arm, self.seed, self.chunks, self.unit = wp, da3, arm, seed, chunks, unit
+    def __init__(self, wp, da3, scene, arm, seed, chunks, unit_receipt):
+        self.wp, self.da3, self.arm, self.seed, self.chunks = wp, da3, arm, seed, chunks
         z = np.load(BATCH / 'trajectories' / f'{scene}.npz')
         self.plan = np.linalg.inv(z['w2c'].astype(np.float64))[0:161:4]               # c2w per latent j (frame 4j), gauge
         self.K = z['intrinsics'][0].astype(np.float64)
@@ -101,6 +103,7 @@ class Roller:
         idx = json.load(open(BATCH / 'index.json')); sid = [s for s in idx['scenes'] if s['name'] == scene][0]['stream_id']
         self.text = idx['prompt']; self.anchor_depth = np.load(COMP / sid / 'anchor.npz')['depth']
         self.image = str(BATCH / 'images' / f'{scene}.png'); self.anchor = np.asarray(Image.open(self.image).convert('RGB'))
+        self.unit, self.unit_calibration = runtime_anchor_scale('worldplay', self.anchor, self.anchor_depth, self.K, receipt=unit_receipt)
         self.cmd = self.plan.copy()
         if arm.get('cmd_gain'):
             self.cmd[:, :3, 3] *= float(arm['cmd_gain'])
@@ -157,15 +160,16 @@ class Roller:
                 pipe.ctx['viewmats'][:, lo:hi] = vm2.to(pipe.ctx['viewmats'].dtype); pipe.ctx['action'][:, lo:hi] = act2.to(pipe.ctx['action'].dtype)
             r = [None if self.measured[j] is None else float(np.linalg.norm(self.measured[j][:3, 3] - self.cmd[j][:3, 3])) for j in range(max(1, lo), hi)]
             self.events.append(dict(kind='chunk', chunk=ci, residual=r, peak_GiB=torch.cuda.max_memory_allocated() / 2**30))
-        return np.stack(frames[1:]), dict(planned=self.plan[:n_lat].tolist(), commanded=self.cmd[:n_lat].tolist(), unit=self.unit,
+        return np.stack(frames[1:]), dict(planned=self.plan[:n_lat].tolist(), commanded=self.cmd[:n_lat].tolist(), unit=self.unit, unit_calibration=self.unit_calibration,
                                           measured=[None if m is None else m.tolist() for m in self.measured[:n_lat]], events=self.events)
 
 
 def main():
     p = argparse.ArgumentParser(); p.add_argument('--out', type=Path, required=True); p.add_argument('--arms', type=Path, required=True)
     p.add_argument('--scenes', nargs='+', default=['1740e916', '38dcc531']); p.add_argument('--seeds', nargs='+', type=int, default=[7, 11, 19])
-    p.add_argument('--chunks', type=int, default=10); p.add_argument('--unit', type=float, default=1.0); a = p.parse_args()
+    p.add_argument('--chunks', type=int, default=10); a = p.parse_args()
     arms = json.load(open(a.arms)); a.out.mkdir(parents=True, exist_ok=True)
+    require_runtime_provider('worldplay')
     wp = WorldPlay(); da3 = load_da3('cpu')
     for arm in arms:
         for scene in a.scenes:
@@ -174,7 +178,7 @@ def main():
                 if dst.exists():
                     continue
                 dst.parent.mkdir(parents=True, exist_ok=True); t0 = time.time()
-                frames, log = Roller(wp, da3, scene, arm, seed, a.chunks, a.unit).run()
+                frames, log = Roller(wp, da3, scene, arm, seed, a.chunks, dst.with_suffix(".online_units.json")).run()
                 np.savez_compressed(dst, frames=frames)
                 json.dump(dict(arm=arm, scene=scene, seed=seed, seconds=time.time() - t0, **log), open(dst.with_suffix('.json'), 'w'))
                 res = [x for e in log['events'] if e['kind'] == 'chunk' for x in e['residual'] if x is not None]

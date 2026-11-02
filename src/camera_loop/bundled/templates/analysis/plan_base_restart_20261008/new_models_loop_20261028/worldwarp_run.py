@@ -11,7 +11,7 @@ from common import rejoin,PoseWorker
 
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--batch',type=Path,required=True);ap.add_argument('--scene',required=True);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--arm',choices=['native','baseline','sham','correction'],required=True);ap.add_argument('--chunks',type=int,default=2);ap.add_argument('--seed',type=int,default=7)
- ap.add_argument('--scale_mode',choices=['anchor','legacy'],default='anchor');ap.add_argument('--camera_window',choices=['fixed','legacy'],default='fixed')
+ ap.add_argument('--scale_mode',choices=['anchor'],default='anchor');ap.add_argument('--camera_window',choices=['fixed','legacy'],default='fixed')
  a=ap.parse_args();a.out.mkdir(parents=True,exist_ok=False)
  if a.camera_window=='legacy' and a.chunks>1:raise ValueError('Legacy continuation indexing is structurally invalid; only allowed in one-chunk scale ablation')
  import torch,imageio.v2 as imageio
@@ -46,31 +46,31 @@ def main():
  imageio.mimwrite(cfg.paths.input_video_path,[anchor]*81,fps=16,macro_block_size=1)
  worker=None;events=[];prefix=[]
  sys.path.insert(0,str(R.parent/'continuous_eval_20261029'))
- from anchor_scale import fit_scale,freeze_scale,worldwarp_camera_window
+ from anchor_scale import worldwarp_camera_window
+ sys.path.insert(0,str(R.parent/'fair_common_20261025'))
+ from causal_units import OnlineDepthCalibration, array
  from src.ttt3r import ttt3r as geometry
- scale_state={}
- def calibrate_native(camera_poses,depth_maps,is_first_chunk):
-  if not is_first_chunk:
-   assert scale_state, 'Initial anchor scale must be frozen before continuation'
-   return camera_poses
-  assert not scale_state, 'Anchor calibration must run only once'
-  native=depth_maps[0,0].detach().float().cpu().numpy()
-  scale,receipt=fit_scale(depth,native)
-  scale,receipt=freeze_scale(scale,receipt,'worldwarp',a.scene)
-  receipt['calibrated_native_units_per_reference_unit']=scale
-  if a.scale_mode=='legacy':scale=1.0
-  receipt.update(applied_native_units_per_reference_unit=scale,scale_mode=a.scale_mode,camera_window=a.camera_window)
-  plan[:,:3,3]*=scale;depth[:]*=scale
+ scale_state={};source_window={}
+ units=OnlineDepthCalibration(depth,anchor,model='worldwarp',receipt=a.out/'online_units.json')
+ def calibrate_native(camera_poses,depth_maps,is_first_chunk,video_tensor):
+  scale_state.clear()
+  i=source_window['chunk']
+  if bool(is_first_chunk)!=(i==0) or video_tensor.shape[1]!=81:
+   raise ValueError('Unexpected WorldWarp source window; frame correspondence requires 81/1 chunks')
+  receipt=units.update(first_depth=array(depth_maps[0,0]),last_depth=array(depth_maps[0,-1]),
+   first_rgb=array(video_tensor[0,0].permute(1,2,0)),last_rgb=array(video_tensor[0,-1].permute(1,2,0)),
+   first_frame=max(0,(i-1)*80),last_frame=i*80,available_frame=max(0,len(prefix)-1),
+   context=f'chunk_{i}',source='initial_input' if i==0 else 'generated_prefix')
+  scale=units.scale_for(f'chunk_{i}')
   result=camera_poses.clone();result[...,:3,3]*=scale
-  receipt.update(model='worldwarp',native_depth_stage='TTT3R initial anchor depth',observer_pose_scale=scale)
+  receipt.update(applied_native_units_per_reference_unit=scale,camera_window=a.camera_window)
   scale_state.update(receipt)
-  (a.out/'scale_calibration.json').write_text(json.dumps(receipt,indent=2))
   return result
  # Native reconstruction and commanded poses must meet in the same units.
  source=textwrap.dedent(inspect.getsource(geometry.GS3DWarper.warp_with_validity_mask))
  marker='    print(f"  Generated depth and poses for {T_video} frames")'
  assert source.count(marker)==1, 'WorldWarp geometry hook changed; audit required'
- source=source.replace(marker,'    camera_poses = _calibrate_native(camera_poses, depth_maps, is_first_chunk)\n'+marker)
+ source=source.replace(marker,'    camera_poses = _calibrate_native(camera_poses, depth_maps, is_first_chunk, video_tensor)\n'+marker)
  scope=dict(geometry.__dict__,_calibrate_native=calibrate_native)
  exec(compile(source,str(a.out/'geometry_scale_hook.py'),'exec'),scope)
  geometry.GS3DWarper.warp_with_validity_mask=scope['warp_with_validity_mask']
@@ -89,6 +89,7 @@ def main():
    return torch.from_numpy(plan)[None].float(),torch.from_numpy(np.repeat(K[None],len(plan),axis=0))[None].float()
   def run_inference_chunk(self,i,input_video_path,unused_poses,unused_K,ctx,is_first,**kw):
    nonlocal worker,prefix
+   source_window['chunk']=i
    lo=i*80;target=plan[lo:lo+81].copy()
    if i and a.arm!='native':
     if worker is None:worker=PoseWorker(a.out/'observer')

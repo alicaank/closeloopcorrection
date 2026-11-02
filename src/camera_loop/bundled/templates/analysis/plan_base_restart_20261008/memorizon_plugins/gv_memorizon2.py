@@ -14,6 +14,9 @@ Arms (json): base fields as gv_memorizon.py (write, replan, gate, bank) plus
 """
 import argparse, json, sys, time, math
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'fair_common_20261025'))
+from causal_units import metric_prediction_scale
+
 import numpy as np, torch
 from PIL import Image
 from scipy.spatial.transform import Rotation, Slerp
@@ -147,8 +150,8 @@ class Roller:
         self.intr = (self.K[0, 0] * W / 448, self.K[1, 1] * H / 256, self.K[0, 2] * W / 448, self.K[1, 2] * H / 256)
         self.text = pipe.encode_prompt(stream['prompt']).to(pipe.device, pipe.dtype)
         da3.to('cuda'); pm = da3.inference(image=[self.anchor], intrinsics=self.K[None].astype(np.float32), infer_gs=False, process_res=504, export_dir=None); da3.to('cpu'); torch.cuda.empty_cache()
-        dm = np.asarray(pm.depth[0]); self.metric = float(np.median(dm[dm > 0])) if pm.is_metric else 1.0
-        self.unit = self.metric / TRAJ_SCALE
+        self.unit, self.unit_calibration = metric_prediction_scale(da3, pm, self.anchor, self.anchor_depth, self.K, divisor=TRAJ_SCALE)
+        self.metric = self.unit_calibration["metres_per_reference_unit"]
         self.dit, self.C = pipe.model.model, pipe.model.config.chunk_size
         self.frustum = Frustum.from_intrinsics(list(self.intr)); self.memory_size = memory_size
         first = pipe.encode_image(Image.fromarray(self.anchor).resize((W, H), Image.BICUBIC))
@@ -411,7 +414,7 @@ class Roller:
                 self.g_prev = float(np.linalg.norm(b[:3, 3] - a[:3, 3]) / max(np.linalg.norm(self.cmd[q_hi - 1][:3, 3] - self.cmd[q_lo - 1][:3, 3]), 1e-6))
             self.events.append(dict(kind='chunk', chunk=ci, cfg_w=w, g=self.g_prev, bank=[int(x) for x in bank],
                                     residual=[self.residual[j] for j in range(q_lo, q_hi)]))
-        return np.stack(self.frames), dict(metric_anchor_depth_m=self.metric, events=self.events, commanded=self.cmd.tolist(),
+        return np.stack(self.frames), dict(unit_calibration=self.unit_calibration, metric_anchor_depth_m=self.metric, events=self.events, commanded=self.cmd.tolist(),
                                             planned=self.plan.tolist(), measured=[None if m is None else m.tolist() for m in self.measured])
 
 

@@ -8,8 +8,7 @@ Changes vs vmem_fprime_fixed.py:
     K through the same transform (transform_img_and_K's own K branch, cross-checked with fair_common.k_vmem), normalised by 576;
   * defaults = the official navigation-demo settings the 10-24 control reproduced exactly: --first_step 4 (Navigator call size),
     --nms 0 (Navigator passes use_non_maximum_suppression=False for moves, navigation.py:187,236; our walking paths translate in
-    every call), --autocast 1 (app.py:156), --scale_mode global_demo (one translation factor for the whole path at the demo's
-    walking step size instead of the per-window renormalisation, which made VMem turn backwards);
+    every call), --autocast 1 (app.py:156), --scale_mode window (native normalization recomputed for each conditioning window; no frozen demo factor).
   * 160 frames = 40 calls of 4 (frames 1..160), saved with frame 0 = the processed input at the native 576x576 (before: npz at
     256x256) as a crf-12 mp4 + json with per-frame poses and the output K (fair_common.save_run); DA3 measurement on native
     frames with the anchor gauge depth resampled to the 576 crop;
@@ -26,32 +25,10 @@ MP = '@WORKSPACE@/analysis/plan_base_restart_20261008/memorizon_plugins'; sys.pa
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from realized_pose import load_da3
 import fair_common as fc
+from causal_units import capture_native_normalizer
 
 GL = np.diag([1.0, -1.0, -1.0, 1.0])
-DEMO_STEP = 0.025 * 22.867      # official forward walk: 0.1 / 4 frames per click x VMem's window factor 22.87 (steady state)
 SIDE = 576
-
-
-def global_scaler(pipe, plan_gl, mode='global'):
-    """verbatim vmem_fprime_fixed.global_scaler: pipeline.get_translation_scaling_factor with the factor frozen for the whole
-    plan (centring per window kept)."""
-    P = torch.as_tensor(np.asarray(plan_gl), dtype=torch.float64)
-    if mode == 'global_demo':
-        step = float(np.median(np.linalg.norm(np.diff(np.asarray(plan_gl)[:, :3, 3], axis=0), axis=1)))
-        factor = DEMO_STEP / step if step > 1e-6 else pipe.camera_scale
-    else:
-        d = torch.norm(P[:, :3, 3] - P[:, :3, 3].median(0, keepdim=True).values, dim=-1)
-        valid = d <= torch.clamp(torch.quantile(d, 0.97) * 10, max=1e6)
-        t0 = P[0, :3, 3] - P[valid, :3, 3].mean(0)
-        factor = pipe.camera_scale if float(torch.norm(t0)) < 1e-5 else pipe.camera_scale / float(torch.norm(t0)) + 0.01
-
-    def f(c2ws):
-        ref = c2ws
-        dist = torch.norm(ref[:, :3, 3] - ref[:, :3, 3].median(0, keepdim=True).values, dim=-1)
-        ok = dist <= torch.clamp(torch.quantile(dist, 0.97) * 10, max=1e6)
-        c2ws[:, :3, 3] -= ref[ok, :3, 3].mean(0, keepdim=True)
-        return factor, c2ws
-    return f, float(factor)
 
 
 class Run:
@@ -96,9 +73,8 @@ class Run:
     def run(self):
         torch.manual_seed(self.seed); np.random.seed(self.seed)
         pipe = self.pipe; pipe.reset()
-        if self.opt.scale_mode != 'window':
-            pipe.get_translation_scaling_factor, gf = global_scaler(pipe, self.plan @ GL, self.opt.scale_mode)
-            self.events.append(dict(kind='global_scale', mode=self.opt.scale_mode, factor=gf))
+        pipe.get_translation_scaling_factor = capture_native_normalizer(
+            pipe.get_translation_scaling_factor, self.events.append, lambda: len(pipe.pil_frames)-1)
         ac = torch.autocast('cuda') if self.opt.autocast else contextlib.nullcontext()
         orig = pipe.construct_and_store_scene
         try:
@@ -141,7 +117,7 @@ def main():
     p.add_argument('--arm', nargs='*', default=None); p.add_argument('--scenes', nargs='+', default=None); p.add_argument('--seeds', nargs='+', type=int, default=[7])
     p.add_argument('--frames', type=int, default=fc.N_FRAMES); p.add_argument('--first_step', type=int, default=4, choices=[4, 7])
     p.add_argument('--nms', default='0', choices=['cfg', '0', '1']); p.add_argument('--autocast', type=int, default=1)
-    p.add_argument('--scale_mode', default='global_demo', choices=['window', 'global', 'global_demo'])
+    p.add_argument('--scale_mode', default='window', choices=['window'])
     p.add_argument('--min_free_gib', type=float, default=10.); a = p.parse_args()
     arms = [x for x in json.load(open(a.arms)) if not a.arm or x['name'] in a.arm]; a.out = a.out.resolve(); a.out.mkdir(parents=True, exist_ok=True)
     scenes = a.scenes or [s['name'] for s in fc.index()['scenes']]

@@ -26,7 +26,7 @@ REQUIREMENTS = {
     "memorizon": (161, 161),
     "worldplay": (161, 173),
 }
-METRIC = {"lyra", "sana", "matrixgame", "astronex"}
+METRIC = {"lyra", "sana", "matrixgame"}
 
 
 def safe_name(name):
@@ -213,27 +213,8 @@ def validate_batch(batch, model=None, scenes=None):
                 raise ValueError(
                     "Historical WorldPlay normalization assumes a centered principal point"
                 )
-            if model == "worldplay":
-                positive(
-                    row["native_units_per_anchor_unit"], "native_units_per_anchor_unit"
-                )
-                if not row.get("native_scale_evidence"):
-                    raise ValueError(
-                        "WorldPlay native scale is unresolved; supply calibrated native_scale_evidence, never assume one"
-                    )
-            if model == "astronex":
-                scale = positive(
-                    row["native_units_per_anchor_unit"], "native_units_per_anchor_unit"
-                )
-                native = poses(a["native_w2c_latent"])
-                expected = np.linalg.inv(g["w2c_overrun"][np.arange(24) * 4])
-                expected[:, :3, 3] *= scale
-                if native.shape != (24, 4, 4) or not np.allclose(
-                    native, np.linalg.inv(expected), atol=1e-6
-                ):
-                    raise ValueError(
-                        "Astronex needs 24 native_w2c_latent poses matching its explicit scale and RGB 4j mapping"
-                    )
+            # Astronex/WorldPlay units are identified at runtime, never from
+            # recorded native poses or scalar metadata supplied by the batch.
             result["scenes"].append(
                 dict(
                     name=name,

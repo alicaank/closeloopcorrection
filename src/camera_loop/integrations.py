@@ -292,8 +292,6 @@ def command(
             scene,
             "--seed",
             "7",
-            "--scale",
-            "1",
         ]
     elif model in ["memorizon", "worldplay"]:
         script = F / ("mem_fair.py" if model == "memorizon" else "wp_fair.py")
@@ -320,14 +318,6 @@ def command(
                 else ["--arm", arm, "--latents", "42"]
             )
         )
-    if model == "worldplay" and (Path(b) / "index.json").is_file():
-        row = next(
-            r
-            for r in json.loads((Path(b) / "index.json").read_text())["scenes"]
-            if r["name"] == scene
-        )
-        if "native_units_per_anchor_unit" in row:
-            args += ["--unit", str(row["native_units_per_anchor_unit"])]
     env = dict(
         os.environ,
         CUDA_VISIBLE_DEVICES=device,

@@ -1,0 +1,23 @@
+{
+  "method_id": "measured-memory-v1",
+  "queue_pid": 2275896,
+  "report_pid": 2275898,
+  "freeze_sha256": "74ec17e2c11e10861e4ee3216626893509afa055ccfe7d84dbaf6c2e33049ed7",
+  "local_queue": "/home/hj/Alican/analysis/measured_memory_v1_20261101",
+  "cpu_protocol_tests_passed": 5,
+  "pairs": 20,
+  "generation_jobs": 40,
+  "started": 1793558104.7887366,
+  "first_pair_validation": {
+    "pair": "lingbot_0238de14_s7",
+    "prefix_rgb_exact": true,
+    "accepted_memory_writes": 1,
+    "score_sha256": "56a6e5c701eb532acaa213f6e622c9322b7133cc0e244b394c314db19bdbe5df",
+    "source_score": "analysis/measured_memory_v1_20261101/scores/lingbot_0238de14_s7/score.json",
+    "position_registration_valid": {
+      "commanded": true,
+      "measured": true
+    },
+    "checked": 1793558359.6836224
+  }
+}

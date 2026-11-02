@@ -17,6 +17,9 @@ Outputs per (arm, scene, seed): frames npz at 448x256 (frames 1..160), events js
 """
 import argparse, json, sys, time
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent.parent/'fair_common_20261025'))
+from causal_units import metric_prediction_scale
+
 import numpy as np, torch
 from PIL import Image
 from scipy.spatial.transform import Rotation, Slerp
@@ -89,8 +92,8 @@ def rollout(pipe, da3, scene, arm, seed, num_chunks=10, memory_size=6, num_steps
     torch.cuda.empty_cache(); da3.to('cuda')
     pm = da3.inference(image=[anchor448], intrinsics=K448[None].astype(np.float32), infer_gs=False, process_res=504, export_dir=None)
     da3.to('cpu'); torch.cuda.empty_cache()
-    dm = np.asarray(pm.depth[0]); metric = float(np.median(dm[dm > 0])) if pm.is_metric else 1.0
-    unit = metric / TRAJ_SCALE                # memorizon translation per gauge unit
+    unit, unit_calibration = metric_prediction_scale(da3, pm, anchor448, anchor_depth, K448, divisor=TRAJ_SCALE)
+    metric = unit_calibration["metres_per_reference_unit"]
 
     cmd = plan.copy()                      # what is commanded (replanning edits future rows)
     mem = plan.copy()                      # what is stored for written latents (measured or commanded)
@@ -173,7 +176,7 @@ def rollout(pipe, da3, scene, arm, seed, num_chunks=10, memory_size=6, num_steps
                            measured_valid=[measured[j] is not None for j in range(q_lo, q_hi)],
                            residual=[residual[j] for j in range(q_lo, q_hi)], excluded=sorted(int(e) for e in excluded)))
     frames = np.stack(frames)
-    return frames, dict(metric_anchor_depth_m=metric, events=events, commanded=cmd.tolist(), planned=plan.tolist(),
+    return frames, dict(unit_calibration=unit_calibration, metric_anchor_depth_m=metric, events=events, commanded=cmd.tolist(), planned=plan.tolist(),
                         measured=[None if m is None else m.tolist() for m in measured])
 
 

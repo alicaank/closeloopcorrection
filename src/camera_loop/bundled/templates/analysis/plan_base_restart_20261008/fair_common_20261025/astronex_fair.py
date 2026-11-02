@@ -114,6 +114,7 @@ def patch_sampler():
 
 
 def main():
+    raise RuntimeError('Legacy reference-calibrated entry point disabled; use long_domain_20261028/astronex_run.py with runtime native geometry')
     ap = argparse.ArgumentParser(); ap.add_argument('--arms', type=Path, required=True); ap.add_argument('--arm', required=True)
     ap.add_argument('--scale', type=float, required=True); ap.add_argument('--out', type=Path, required=True); ap.add_argument('--videos', nargs='*', default=None)
     ap.add_argument('--seed', type=int, default=7); ap.add_argument('--min_free_gib', type=float, default=10.)

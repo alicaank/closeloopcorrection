@@ -60,7 +60,7 @@ def driver_source(model):
         source=replace_once(source,' scope=dict(geometry.__dict__,_calibrate_native=calibrate_native)',
             " source=native_source('worldwarp',source)\n scope=dict(geometry.__dict__,_calibrate_native=calibrate_native)")
         needle='   path=super().run_inference_chunk('
-        source=replace_once(source,needle,"   mm.worldwarp_prepare(dict(locals(),prefix=prefix,K=K,depth=depth,a=a,plan=plan))\n"+needle)
+        source=replace_once(source,needle,"   mm.worldwarp_prepare(dict(locals(),prefix=prefix,K=K,depth=depth,a=a,plan=plan,scale_state=scale_state))\n"+needle)
     elif model in ('matrixgame','lyra'):
         child='matrix_child' if model=='matrixgame' else 'lyra_child'
         old="str(R/'mg35_stream_launch.py')" if model=='matrixgame' else "str(R/'lyra_plugin.py')"

@@ -5,6 +5,13 @@ The portable controller measures a generated endpoint and replans **future camer
 
 For paper writing, start with [the method reference](docs/paper_method_reference.md): equations, assumptions, implemented versus proposed components, per-model memory consumers, evaluation, and claim limits. See [measured-memory integration](docs/measured_memory.md) and the [dated development evidence](docs/paper_evidence_20261101.json) for the new seven-model path. Results are mixed; this is not a claim of universal tracking improvement.
 
+The primary candidate is now frozen as [measured-memory v1](docs/method_v1.md):
+memory reconstruction with the native baseline target policy, without adaptive
+gains or residual command correction. Its expanded development protocol fixes
+two common scenes, two seeds, and five qualified model paths before scoring.
+WorldWarp and Astronex remain qualification pending; Matrix-Game stays included
+despite its negative initial result.
+
 ## Quick start
 
 ```bash
@@ -174,6 +181,12 @@ See [running Spatia and Lyra-2 on 32 GB](docs/rtx-5090.md) for the inspected env
 
 ## Validation and scope
 
-The current 67-test CPU suite passes from source and an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
+The current 107-test CPU suite passes from source; the earlier 67-test revision also passed from an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. New regressions cover chunk-response timing, rejection transitions, bootstrap bounds, exact-input evaluation reuse and lossless RGB retention. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
 
 See [validation protocol](docs/validation.md). Source pins and available upstream license notices are retained under `src/camera_loop/bundled/`. No weights, datasets, generated videos, credentials or training checkpoints are included. See [NOTICE](NOTICE).
+
+Runtime unit conversion for VMem, WorldWarp, Memorizon, Astronex, and WorldPlay is documented in [online units](docs/online_units.md). Astronex/WorldPlay fail explicitly without an audited runtime native-geometry provider; no provider or physical calibration is claimed for their pose-only encoders.
+
+See [the November 2 audit corrections](docs/audit_fixes_20261102.md) for the
+implemented fixes, corrected historical accounting and frozen replacement
+experiments. GPU efficacy from those replacement experiments is still pending.

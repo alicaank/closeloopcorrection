@@ -115,6 +115,7 @@ def patch_sampler():
 
 
 def main():
+    raise RuntimeError('Legacy reference-calibrated entry point disabled; use long_domain_20261028/astronex_run.py with runtime native geometry')
     ap = argparse.ArgumentParser(); ap.add_argument('--arm', required=True, choices=list(ARMS)); ap.add_argument('--scale', type=float, required=True)
     ap.add_argument('--out', type=Path, required=True); ap.add_argument('--videos', nargs='*', default=None); ap.add_argument('--seed', type=int, default=7)
     ap.add_argument('--traj', default=None, help="diagnostic: Astronex's own trajectory string (e.g. 'w*31') instead of the recorded path; plan = its c2w / scale")

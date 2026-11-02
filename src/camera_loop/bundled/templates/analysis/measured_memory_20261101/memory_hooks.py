@@ -249,7 +249,7 @@ def lyra_memory(pipe,end):
 
 def worldwarp_prepare(L):
     WORLD.clear();WORLD.update(prefix=np.asarray(L['prefix']),K=L['K'].copy(),depth=L['depth'].copy(),out=L['a'].out,
-        plan=L['plan'],generator=L['self'])
+        plan=L['plan'],generator=L['self'],scale_state=L['scale_state'])
 
 
 def worldwarp_memory(L):
@@ -274,6 +274,11 @@ def worldwarp_memory(L):
     updated=old
     if write.applied:
         relative=np.linalg.inv(write.poses[-1])@write.poses
+        calibration=WORLD['scale_state']
+        if calibration.get('status')!='identified':raise ValueError('WorldWarp memory units unavailable')
+        scale=calibration['applied_native_units_per_reference_unit']
+        if not np.isfinite(scale) or scale<=0:raise ValueError('Invalid WorldWarp memory units')
+        relative[:,:3,3]*=scale
         updated=old.clone();updated[0]=torch.as_tensor(relative,device=old.device,dtype=old.dtype)
     append(WORLD['out'],dict(model='worldwarp',frame_ids=ids,applied=write.applied,reason=write.reason,
         stored=write.poses,quality=q,mechanism='Measured source poses before native depth-to-splat reconstruction; anchor is last source frame'))
