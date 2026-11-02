@@ -1,0 +1,307 @@
+{
+  "scope": "Timestamp-matched sampled visual inspection, not full-video review or a quality metric. Full-frame thumbnails may retain native crop/FOV differences. References are source RGB; stored poses may be VIPE-derived.",
+  "freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+  "script_sha256": "4a0cc541583146d9fd086eafa8136991b8409e6211c69c69a95887cb8a89796d",
+  "motion": [
+    {
+      "scene": "02267acf",
+      "model": "lingbot",
+      "frames": 77,
+      "source_sha256": "d9d283538e3bba540e22d746879649f1b4ea13392db50557b69ba759a1e3e3b9",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.01596046201830786,
+      "net_displacement": 0.013380137489722499,
+      "median_step": 0.00021058642975425065,
+      "maximum_step": 0.00041977150000456015,
+      "rotation_path_deg": 2.992243065546795
+    },
+    {
+      "scene": "02267acf",
+      "model": "sana",
+      "frames": 121,
+      "source_sha256": "d9d283538e3bba540e22d746879649f1b4ea13392db50557b69ba759a1e3e3b9",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.07042612601746241,
+      "net_displacement": 0.05817024597179974,
+      "median_step": 0.00027510859005207007,
+      "maximum_step": 0.0018929198462121603,
+      "rotation_path_deg": 4.567187307663179
+    },
+    {
+      "scene": "02267acf",
+      "model": "dreamx",
+      "frames": 69,
+      "source_sha256": "d9d283538e3bba540e22d746879649f1b4ea13392db50557b69ba759a1e3e3b9",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.013547558361081744,
+      "net_displacement": 0.011712380879160078,
+      "median_step": 0.00020729250815245702,
+      "maximum_step": 0.00033669161526301953,
+      "rotation_path_deg": 2.705575903483736
+    },
+    {
+      "scene": "02267acf",
+      "model": "matrixgame",
+      "frames": 337,
+      "source_sha256": "d9d283538e3bba540e22d746879649f1b4ea13392db50557b69ba759a1e3e3b9",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.45050828386738484,
+      "net_displacement": 0.41388330366736703,
+      "median_step": 0.001593477970947215,
+      "maximum_step": 0.0024528530151105674,
+      "rotation_path_deg": 22.108928530472895
+    },
+    {
+      "scene": "02267acf",
+      "model": "lyra",
+      "frames": 321,
+      "source_sha256": "d9d283538e3bba540e22d746879649f1b4ea13392db50557b69ba759a1e3e3b9",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.4312400111931406,
+      "net_displacement": 0.39613226543849084,
+      "median_step": 0.001623643967474669,
+      "maximum_step": 0.0024528530151105674,
+      "rotation_path_deg": 21.322283415554168
+    },
+    {
+      "scene": "c7418b7d",
+      "model": "lingbot",
+      "frames": 77,
+      "source_sha256": "8152a6ec9c6d078de9633549d7d064be2587e696c2044be4e54efaecf5cb1f4d",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.0811431883412141,
+      "net_displacement": 0.0792780291522373,
+      "median_step": 0.0011439823415943951,
+      "maximum_step": 0.0017392104700162377,
+      "rotation_path_deg": 4.30378524010707
+    },
+    {
+      "scene": "c7418b7d",
+      "model": "sana",
+      "frames": 121,
+      "source_sha256": "8152a6ec9c6d078de9633549d7d064be2587e696c2044be4e54efaecf5cb1f4d",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.11973398714787911,
+      "net_displacement": 0.11398796382094109,
+      "median_step": 0.0010147356042092656,
+      "maximum_step": 0.0017392104700162377,
+      "rotation_path_deg": 8.558275514011013
+    },
+    {
+      "scene": "c7418b7d",
+      "model": "dreamx",
+      "frames": 69,
+      "source_sha256": "8152a6ec9c6d078de9633549d7d064be2587e696c2044be4e54efaecf5cb1f4d",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.07257507364767711,
+      "net_displacement": 0.07086235982210044,
+      "median_step": 0.0012157551356901646,
+      "maximum_step": 0.0017392104700162377,
+      "rotation_path_deg": 3.6274651180018846
+    },
+    {
+      "scene": "c7418b7d",
+      "model": "matrixgame",
+      "frames": 337,
+      "source_sha256": "8152a6ec9c6d078de9633549d7d064be2587e696c2044be4e54efaecf5cb1f4d",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.4752267491440933,
+      "net_displacement": 0.4586807066852377,
+      "median_step": 0.0014564983925017287,
+      "maximum_step": 0.002478833087048249,
+      "rotation_path_deg": 23.10689546870271
+    },
+    {
+      "scene": "c7418b7d",
+      "model": "lyra",
+      "frames": 321,
+      "source_sha256": "8152a6ec9c6d078de9633549d7d064be2587e696c2044be4e54efaecf5cb1f4d",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.4459297480085218,
+      "net_displacement": 0.42950339718487784,
+      "median_step": 0.0014418231097039266,
+      "maximum_step": 0.002478833087048249,
+      "rotation_path_deg": 22.615756865218245
+    },
+    {
+      "scene": "0238de14",
+      "model": "lingbot",
+      "frames": 77,
+      "source_sha256": "5d1fe0d327ce739c751d3c982ff9478a8ce1d069ceb3c8001da2b0645154ee21",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.10285756957116661,
+      "net_displacement": 0.10162207578878406,
+      "median_step": 0.0013627811391493958,
+      "maximum_step": 0.0017003093065488908,
+      "rotation_path_deg": 6.855718875820903
+    },
+    {
+      "scene": "0238de14",
+      "model": "sana",
+      "frames": 121,
+      "source_sha256": "5d1fe0d327ce739c751d3c982ff9478a8ce1d069ceb3c8001da2b0645154ee21",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.18144523478138075,
+      "net_displacement": 0.17904856757050328,
+      "median_step": 0.0015349881920819072,
+      "maximum_step": 0.002172333983141166,
+      "rotation_path_deg": 10.608699866260462
+    },
+    {
+      "scene": "0238de14",
+      "model": "dreamx",
+      "frames": 69,
+      "source_sha256": "5d1fe0d327ce739c751d3c982ff9478a8ce1d069ceb3c8001da2b0645154ee21",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.0909465487075941,
+      "net_displacement": 0.09005317107190938,
+      "median_step": 0.0013421036810325347,
+      "maximum_step": 0.0017003093065488908,
+      "rotation_path_deg": 6.283637094936501
+    },
+    {
+      "scene": "0238de14",
+      "model": "matrixgame",
+      "frames": 337,
+      "source_sha256": "5d1fe0d327ce739c751d3c982ff9478a8ce1d069ceb3c8001da2b0645154ee21",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.6365788485361018,
+      "net_displacement": 0.6267970123311871,
+      "median_step": 0.0019842261001765268,
+      "maximum_step": 0.0026480849721120868,
+      "rotation_path_deg": 43.774192666085355
+    },
+    {
+      "scene": "0238de14",
+      "model": "lyra",
+      "frames": 321,
+      "source_sha256": "5d1fe0d327ce739c751d3c982ff9478a8ce1d069ceb3c8001da2b0645154ee21",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.6022224609717279,
+      "net_displacement": 0.5938970074134554,
+      "median_step": 0.0019648857509587843,
+      "maximum_step": 0.0026480849721120868,
+      "rotation_path_deg": 41.74800177046922
+    },
+    {
+      "scene": "924228bf",
+      "model": "lingbot",
+      "frames": 77,
+      "source_sha256": "7bc9e43de726536ef989a0d0948571699a1a37bd1656e74c7f8730db4c457407",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.008806167484792795,
+      "net_displacement": 0.00861080346220172,
+      "median_step": 0.00013604320714988142,
+      "maximum_step": 0.0001997371875627227,
+      "rotation_path_deg": 2.8270520358250164
+    },
+    {
+      "scene": "924228bf",
+      "model": "sana",
+      "frames": 121,
+      "source_sha256": "7bc9e43de726536ef989a0d0948571699a1a37bd1656e74c7f8730db4c457407",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.013910783788751093,
+      "net_displacement": 0.013297838035636533,
+      "median_step": 0.00012119626497123104,
+      "maximum_step": 0.0001997371875627227,
+      "rotation_path_deg": 4.471320045361495
+    },
+    {
+      "scene": "924228bf",
+      "model": "dreamx",
+      "frames": 69,
+      "source_sha256": "7bc9e43de726536ef989a0d0948571699a1a37bd1656e74c7f8730db4c457407",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.007753478416217971,
+      "net_displacement": 0.007572149105228755,
+      "median_step": 0.00013896159770413773,
+      "maximum_step": 0.0001997371875627227,
+      "rotation_path_deg": 2.6804671673123455
+    },
+    {
+      "scene": "924228bf",
+      "model": "matrixgame",
+      "frames": 337,
+      "source_sha256": "7bc9e43de726536ef989a0d0948571699a1a37bd1656e74c7f8730db4c457407",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.04744798801386281,
+      "net_displacement": 0.04556253847445909,
+      "median_step": 0.0001410580936461024,
+      "maximum_step": 0.0002394333607455564,
+      "rotation_path_deg": 10.955570730588825
+    },
+    {
+      "scene": "924228bf",
+      "model": "lyra",
+      "frames": 321,
+      "source_sha256": "7bc9e43de726536ef989a0d0948571699a1a37bd1656e74c7f8730db4c457407",
+      "position_units": "reference anchor-depth units, not established metric metres",
+      "path_length": 0.045112381137133034,
+      "net_displacement": 0.043389627035581024,
+      "median_step": 0.0001403318837178398,
+      "maximum_step": 0.0002394333607455564,
+      "rotation_path_deg": 10.328240870489108
+    }
+  ],
+  "pairs": [
+    {
+      "key": "lingbot_02267acf_s7",
+      "score": "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/scores/lingbot_02267acf_s7/score.json",
+      "score_sha256": "bf62592148d4332d1c768c28821ed1250a55af546d6f37a4dc6fc37719e29c8d",
+      "frames": [
+        0,
+        12,
+        13,
+        38,
+        57,
+        76
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/runs/lingbot_02267acf_s7/commanded/baseline/frames.lossless.mkv",
+          "sha256": "d1ba00b3dda512395815e6c7869f162edd53ef7a0379fde89900b5cdb2ab0e51"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/runs/lingbot_02267acf_s7/measured/baseline/frames.lossless.mkv",
+          "sha256": "95dc92c6599fe1cdb262c2e633c484c5260f6fbf303f6ada1fb60cc73ec3655c"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00001.jpg",
+          "sha256": "dbd275b79ec7f7fb46acaaec70b803d8f9147ff4559a7d00ceb40f34c01e0d03"
+        },
+        {
+          "frame": 12,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00013.jpg",
+          "sha256": "ad7f625e2b32768989ac033b36cb6d5bb59dcfe172d1e3b3fb8d6f57b6c3eac7"
+        },
+        {
+          "frame": 13,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00014.jpg",
+          "sha256": "44d4d6edb5254f2a2e447c1056c07a539012acd188b3807bf2bf3c6f4c1473d6"
+        },
+        {
+          "frame": 38,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00039.jpg",
+          "sha256": "788e21f2b52d1240dd8acc28957969b1c5c14abd6ec3747ead87e847248be050"
+        },
+        {
+          "frame": 57,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00058.jpg",
+          "sha256": "2739080127e44a227775b5c16cf7bcfaa03ca75f5a231fad7a21391bb9c4eec7"
+        },
+        {
+          "frame": 76,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00077.jpg",
+          "sha256": "50f49ff24ce403ac83772a45cc9e69f273b52f0ac9587851d59bb98d9b4915bb"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s7.jpg",
+      "sheet_sha256": "3e28405dbc54711d651dedee1213dafedc62ed2975f7504640b295b9e50d59e2",
+      "review_status": "awaiting_visual_inspection"
+    }
+  ]
+}

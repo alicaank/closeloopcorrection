@@ -1,0 +1,23 @@
+{
+  "reviewed_at": 1793662543.32159,
+  "method": "Direct inspection of the six-frame contact sheet, not full-video review",
+  "key": "lingbot_02267acf_s7",
+  "sheet_sha256": "3e28405dbc54711d651dedee1213dafedc62ed2975f7504640b295b9e50d59e2",
+  "score_sha256": "bf62592148d4332d1c768c28821ed1250a55af546d6f37a4dc6fc37719e29c8d",
+  "frames": [
+    0,
+    12,
+    13,
+    38,
+    57,
+    76
+  ],
+  "observations": [
+    "Source reference changes little over frames 0\u201376.",
+    "Commanded output preserves recognizable store content but drifts strongly toward the floor.",
+    "Measured output matches the commanded prefix at sampled frames 0 and 12, then shows severe overlapping/fragmented geometry already at frame 13.",
+    "Distortion persists at frames 38, 57 and 76; lower pose error does not represent successful visual control."
+  ],
+  "classification": "visual collapse; policy failure",
+  "temporal_limitation": "Six samples do not establish exact timing between samples or characterize oscillation."
+}

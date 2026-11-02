@@ -96,6 +96,10 @@ For the eventual broader evaluation:
    A negative scene need not cause rejection; a systematic quality regression
    or a result dominated by one model must remain explicit in the claim.
 
+The [matched visual and reference-motion audit](multiboundary_visual_audit_20261103.md)
+confirms the retained LingBot collapse and records target motion at each native
+horizon. Scene labels must not hide motion changes later in a longer rollout.
+
 ## More general extensions worth testing
 
 These are hypotheses, not implemented or validated improvements. Each should
