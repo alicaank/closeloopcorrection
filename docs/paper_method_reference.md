@@ -698,3 +698,9 @@ explicit residual fraction per chunk, permits return and accounts for recovery
 left unserved by speed/slew bounds. This is command geometry, not an identified
 plant gain. Its future-only wrapper supports nominal first-boundary issuance;
 DreamX native integration and authority qualification remain pending.
+
+The [generalization strategy](generalization_strategy_20261103.md) records the
+current decision criterion and complete short-cohort accounting. A general
+method may have scene-level losses; the paper should establish aggregate benefit
+on a frozen, representative evaluation and retain failures, rather than demand
+universal improvement or tune exceptions to individual development scenes.

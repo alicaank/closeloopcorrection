@@ -1,0 +1,78 @@
+{
+  "snapshot_time": 1793661630.2329528,
+  "scope": "Execution snapshot; resource qualification and broader scientific evaluation remain incomplete.",
+  "attempt_path": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification",
+  "manifest_sha256": "1f864fba823e81bb25d16bf51aeaaa82c6b3c75f96f81b0ec9dd38580f364fbc",
+  "frozen_sources_verified": 1749,
+  "cpu_validation": {
+    "passed": true,
+    "manifest_sha256": "1f864fba823e81bb25d16bf51aeaaa82c6b3c75f96f81b0ec9dd38580f364fbc",
+    "checks": [
+      "128 CPU tests",
+      "Native SANA driver compile",
+      "Parent source/input freeze verified"
+    ]
+  },
+  "status_snapshot": {
+    "pid": 2803222,
+    "phase": "sana_02267acf_s7_commanded",
+    "started": 1793661396.663331,
+    "manifest_sha256": "1f864fba823e81bb25d16bf51aeaaa82c6b3c75f96f81b0ec9dd38580f364fbc",
+    "jobs": {
+      "sana_02267acf_s7_commanded": {
+        "state": "running",
+        "started": 1793661396.8095803,
+        "argv": [
+          "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification/source/launch.py",
+          "sana",
+          "--memory-policy",
+          "commanded",
+          "--",
+          "--batch",
+          "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+          "--scene",
+          "02267acf",
+          "--seed",
+          "7",
+          "--out",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification/runs/sana_02267acf_s7/commanded",
+          "--arm",
+          "baseline",
+          "--frames",
+          "121"
+        ],
+        "pid": 2803226,
+        "min_host_available_bytes": 5273415680,
+        "peak_process_tree_rss_bytes": 70316748800
+      }
+    },
+    "failures": [],
+    "held_cases": {}
+  },
+  "process_check": {
+    "2803222": {
+      "running": true,
+      "status": "sleeping",
+      "created": 1793661395.88
+    },
+    "2803226": {
+      "running": true,
+      "status": "running",
+      "created": 1793661396.06
+    }
+  },
+  "prelaunch_revision": {
+    "before_sha256": "02616aea0f778d82e1d0706798a35df32ba1a418a83c1c8ad2f426cc41d84e59",
+    "after_sha256": "1f864fba823e81bb25d16bf51aeaaa82c6b3c75f96f81b0ec9dd38580f364fbc",
+    "reason": "Restrict manifest environment to explicit runtime keys; exclude CPU-validation CUDA mask and unrelated session metadata.",
+    "jobs_started": 0
+  },
+  "retention": "Only new-attempt raw frame containers may be replaced after exact RGB FFV1 verification; prior scientific outputs remain preserved.",
+  "artifact_hashes": {
+    "resource_protocol.json": "cd58282cb44987e8f7d06e7b489c53b2757484b5e6f25fd56fd08827b3fe02ef",
+    "cohort_report.py": "846576dfa403b508abf2f794fdfefa86d43d0bf5ac44dd1a8b06640b89333f54",
+    "sana_observer_lifetime.diff": "aec10bd71fdcc11051642587894596bb258743eda37d0e9d6da6a311d87a6042",
+    "README.md": "2b15fe2eff3c9f556c75c20b951d9b6a55c79b754655ea3d0afe803f2376702a"
+  }
+}

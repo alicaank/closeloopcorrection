@@ -15,8 +15,9 @@ despite its negative initial result.
 The [initial mechanism audit](docs/control_mechanism_audit_20261103.md) finds severe
 LingBot scene collapse after measured-memory writes in two matched seeds. Lower
 pose errors in these runs, including the earlier 77-frame result, are not
-successful correction. V1 remains a frozen experimental candidate; broader
-qualification is held while input range and visual validity are resolved.
+successful correction. V1 remains a frozen experimental candidate; these
+failures stay in the evidence while broader evaluation measures aggregate
+benefit and visual regressions. A changed encoder is a separate method version.
 
 The [cross-model component study](docs/memory_components_20261102.md) separates
 rotation and translation writes in LingBot, DreamX and SANA, and reviews the
@@ -47,6 +48,14 @@ The four moving-scene SANA generations are complete: F raises mean position
 error in both seeds, while reducing endpoint and rotation errors. It is not
 promoted on this one-boundary tradeoff. See the
 [figures and visual review](docs/fractional_recovery_gallery_20261103.md).
+
+The [generalization strategy and cohort accounting](docs/generalization_strategy_20261103.md)
+keep the main objective explicit: broad benefit does not require every scene to
+improve. The original cohort has 18 completed pairs, but all ten active pairs
+come from one scene. Three models show large position gains there; DreamX and
+the current MatrixGame host do not. Broader scene coverage remains necessary.
+A new frozen SANA resource qualification checks a fix for the observer process
+remaining in host memory between chunks before resuming longer evaluation.
 
 ## Quick start
 
@@ -217,7 +226,7 @@ See [running Spatia and Lyra-2 on 32 GB](docs/rtx-5090.md) for the inspected env
 
 ## Validation and scope
 
-The current 126-test CPU suite passes from source; the earlier 67-test revision also passed from an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. New regressions cover chunk-response timing, rejection transitions, bootstrap bounds, exact-input evaluation reuse, lossless RGB retention, bounded translation continuation, unsigned frame-order validation, fractional residual recovery, and nominal first-boundary issuance. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
+The current 128-test CPU suite passes from source; the earlier 67-test revision also passed from an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. New regressions cover chunk-response timing, rejection transitions, bootstrap bounds, exact-input evaluation reuse, lossless RGB retention, bounded translation continuation, unsigned frame-order validation, fractional residual recovery, and nominal first-boundary issuance. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
 
 See [validation protocol](docs/validation.md). Source pins and available upstream license notices are retained under `src/camera_loop/bundled/`. No weights, datasets, generated videos, credentials or training checkpoints are included. See [NOTICE](NOTICE).
 

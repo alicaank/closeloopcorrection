@@ -1,0 +1,1176 @@
+{
+  "scope": "Retrospective accounting of a prespecified two-scene development cohort. No failed scene is removed and no efficacy confidence interval is inferred from two scenes.",
+  "exact_input_rule": "For identical RGB, K and fixed scene reference, reuse the commanded estimate; keep original measured score for provenance. Invalid reference registration remains unavailable.",
+  "model_aggregation": "Within-model paired outcomes only; no pooled raw errors across native horizons or units.",
+  "rows": [
+    {
+      "key": "lingbot_0238de14_s7",
+      "model": "lingbot",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Recognizable playground in both arms. Measured arm has less lateral displacement of the play structure; some ghosting around rails. No severe patchwork collapse in samples."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.2031555452883857,
+          "measured": 0.1149312582847227,
+          "original_measured": 0.1149312582847227,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.088224287003663,
+          "reduction_percent": 43.42696473208538
+        },
+        "position_endpoint": {
+          "commanded": 0.29708352732459914,
+          "measured": 0.12762834207832682,
+          "original_measured": 0.12762834207832682,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.16945518524627232,
+          "reduction_percent": 57.03957630108597
+        },
+        "rotation_mean_deg": {
+          "commanded": 2.3325889799918924,
+          "measured": 2.254266267627532,
+          "original_measured": 2.254266267627532,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.07832271236436039,
+          "reduction_percent": 3.3577588266164504
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 3.3294797045209785,
+          "measured": 2.4991516200935147,
+          "original_measured": 2.4991516200935147,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.8303280844274639,
+          "reduction_percent": 24.938673850451522
+        }
+      }
+    },
+    {
+      "key": "lingbot_0238de14_s107",
+      "model": "lingbot",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Recognizable playground in both arms. Measured arm shows pronounced duplicated/ghosted rails and supports after the boundary. No severe patchwork collapse, but visible geometry degradation; position reduction must be read with worse rotation."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.19437401536978355,
+          "measured": 0.14613472851257037,
+          "original_measured": 0.14613472851257037,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.04823928685721318,
+          "reduction_percent": 24.8177652580985
+        },
+        "position_endpoint": {
+          "commanded": 0.2845364680856064,
+          "measured": 0.17956236831501746,
+          "original_measured": 0.17956236831501746,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.10497409977058894,
+          "reduction_percent": 36.893021297715045
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.4205810997923811,
+          "measured": 3.4930988606691313,
+          "original_measured": 3.4930988606691313,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 2.0725177608767504,
+          "reduction_percent": -145.89225220437257
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 2.1265133829915306,
+          "measured": 5.2032221480049285,
+          "original_measured": 5.2032221480049285,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 3.076708765013398,
+          "reduction_percent": -144.68325427066696
+        }
+      }
+    },
+    {
+      "key": "lingbot_924228bf_s7",
+      "model": "lingbot",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.009865184483080968,
+          "measured": 0.009865184483080968,
+          "original_measured": 0.009865184483080968,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "position_endpoint": {
+          "commanded": 0.018103595279508333,
+          "measured": 0.018103595279508333,
+          "original_measured": 0.018103595279508333,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.9551257729364009,
+          "measured": 0.9551257729364009,
+          "original_measured": 0.9551257729364009,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.179634682374415,
+          "measured": 1.179634682374415,
+          "original_measured": 1.179634682374415,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "lingbot_924228bf_s107",
+      "model": "lingbot",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.1711207155623569,
+          "measured": 1.1711207155623569,
+          "original_measured": 1.1711207155623569,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.6220582344333392,
+          "measured": 1.6220582344333392,
+          "original_measured": 1.6220582344333392,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "sana_0238de14_s7",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable. Commanded arm moves the play structure much farther to the right than reference; measured arm stays visually closer in these samples. No severe collapse; geometry and rotation are not independently verified."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.15410944895672765,
+          "measured": 0.02341466674001322,
+          "original_measured": 0.02341466674001322,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.13069478221671443,
+          "reduction_percent": 84.80646910457268
+        },
+        "position_endpoint": {
+          "commanded": 0.25187001490508987,
+          "measured": 0.038466376879970836,
+          "original_measured": 0.038466376879970836,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.21340363802511902,
+          "reduction_percent": 84.72768705934853
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.4907812742837489,
+          "measured": 1.169360027384877,
+          "original_measured": 1.169360027384877,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.678578753101128,
+          "reduction_percent": -138.26500493350173
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.5063644654065843,
+          "measured": 1.3580671653823446,
+          "original_measured": 1.3580671653823446,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.8517026999757603,
+          "reduction_percent": -168.19953969161074
+        }
+      }
+    },
+    {
+      "key": "sana_0238de14_s107",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable. Commanded arm moves the play structure much farther to the right than reference; measured arm stays visually closer in these samples. Some rail ghosting; no severe collapse."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.1701285052013007,
+          "measured": 0.031663523144424534,
+          "original_measured": 0.031663523144424534,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.13846498205687618,
+          "reduction_percent": 81.38846684924471
+        },
+        "position_endpoint": {
+          "commanded": 0.26911278255958887,
+          "measured": 0.036232826824076206,
+          "original_measured": 0.036232826824076206,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.23287995573551268,
+          "reduction_percent": 86.53619256600966
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.5291230005064663,
+          "measured": 1.037990380195173,
+          "original_measured": 1.037990380195173,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.5088673796887068,
+          "reduction_percent": -96.17185025062768
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.546462989848877,
+          "measured": 1.2642853020758413,
+          "original_measured": 1.2642853020758413,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.7178223122269644,
+          "reduction_percent": -131.3579008205984
+        }
+      }
+    },
+    {
+      "key": "sana_924228bf_s7",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy. Both continuations depart visibly from the nearly stationary reference; the uncorrected drift remains."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.8629790214545889,
+          "measured": 0.8629790214545889,
+          "original_measured": 0.8630473266242941,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.1514219067454965,
+          "measured": 1.1514219067454965,
+          "original_measured": 1.151397265529523,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "sana_924228bf_s107",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy. Both continuations depart visibly from the nearly stationary reference; the uncorrected drift remains."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.636595860919186,
+          "measured": 0.636595860919186,
+          "original_measured": 0.6365894713041632,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.0575878360538153,
+          "measured": 1.0575878360538153,
+          "original_measured": 1.0575985528710712,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "dreamx_0238de14_s7",
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable and visually nearly identical. No sampled severe collapse; no visible substantial control improvement."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.01894021063002013,
+          "measured": 0.01925072399899673,
+          "original_measured": 0.01925072399899673,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.0003105133689766011,
+          "reduction_percent": -1.639439893474253
+        },
+        "position_endpoint": {
+          "commanded": 0.025308889370979828,
+          "measured": 0.025735304844872568,
+          "original_measured": 0.025735304844872568,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.00042641547389274045,
+          "reduction_percent": -1.6848446711442238
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.8690099022647622,
+          "measured": 0.8727357620082731,
+          "original_measured": 0.8727357620082731,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.0037258597435109175,
+          "reduction_percent": -0.42874767408297676
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.295430087846769,
+          "measured": 1.3042973579571668,
+          "original_measured": 1.3042973579571668,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.008867270110397785,
+          "reduction_percent": -0.6845039491970374
+        }
+      }
+    },
+    {
+      "key": "dreamx_0238de14_s107",
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable and visually nearly identical. No sampled severe collapse; no visible substantial control improvement."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.01657964616058467,
+          "measured": 0.016637031210372393,
+          "original_measured": 0.016637031210372393,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 5.738504978772263e-05,
+          "reduction_percent": -0.34611745770634095
+        },
+        "position_endpoint": {
+          "commanded": 0.019857547840622054,
+          "measured": 0.019935537395225692,
+          "original_measured": 0.019935537395225692,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 7.798955460363785e-05,
+          "reduction_percent": -0.39274514270133953
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.2213153096243186,
+          "measured": 1.222852064750331,
+          "original_measured": 1.222852064750331,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.001536755126012368,
+          "reduction_percent": -0.12582787703570833
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.5496308702944432,
+          "measured": 1.5509136897972942,
+          "original_measured": 1.5509136897972942,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.0012828195028509182,
+          "reduction_percent": -0.08278226301771927
+        }
+      }
+    },
+    {
+      "key": "dreamx_924228bf_s7",
+      "model": "dreamx",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 2.6416151758430932,
+          "measured": 2.6416151758430932,
+          "original_measured": 2.6416151758430932,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 3.0578996671689382,
+          "measured": 3.0578996671689382,
+          "original_measured": 3.0578996671689382,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "dreamx_924228bf_s107",
+      "model": "dreamx",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 2.708059612803039,
+          "measured": 2.708059612803039,
+          "original_measured": 2.708059612803039,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 3.237720738753294,
+          "measured": 3.237720738753294,
+          "original_measured": 3.237720738753294,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "matrixgame_0238de14_s7",
+      "model": "matrixgame",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable. Strong contrast/saturation seam at frame 85 in both arms, then recovery. Measured arm ends with smaller visual displacement than commanded; score position worsens. No severe collapse."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.001955342563941706,
+          "measured": 0.002631787214722697,
+          "original_measured": 0.002631787214722697,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.0006764446507809912,
+          "reduction_percent": -34.59468756294908
+        },
+        "position_endpoint": {
+          "commanded": 0.0031253777044230493,
+          "measured": 0.00468483670717391,
+          "original_measured": 0.00468483670717391,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.0015594590027508608,
+          "reduction_percent": -49.89665730781617
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.33589184767149927,
+          "measured": 0.24258010774807626,
+          "original_measured": 0.24258010774807626,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.09331173992342301,
+          "reduction_percent": 27.780293142059666
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.3630778102874838,
+          "measured": 0.3131778961381198,
+          "original_measured": 0.3131778961381198,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.04989991414936401,
+          "reduction_percent": 13.74358683882483
+        }
+      }
+    },
+    {
+      "key": "matrixgame_0238de14_s107",
+      "model": "matrixgame",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable. Strong contrast/saturation seam at frame 85 in both arms, then recovery. Different continuation viewpoints; no severe collapse."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.004628661849346223,
+          "measured": 0.007867937566858186,
+          "original_measured": 0.007867937566858186,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.003239275717511963,
+          "reduction_percent": -69.98298477927256
+        },
+        "position_endpoint": {
+          "commanded": 0.004849647895331699,
+          "measured": 0.009274705054791561,
+          "original_measured": 0.009274705054791561,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.0044250571594598625,
+          "reduction_percent": -91.2449162282369
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.40683623629697285,
+          "measured": 0.37881650575911424,
+          "original_measured": 0.37881650575911424,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.02801973053785861,
+          "reduction_percent": 6.88722587567284
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.4755657638380734,
+          "measured": 0.5443091713772938,
+          "original_measured": 0.5443091713772938,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.06874340753922042,
+          "reduction_percent": -14.45507914287687
+        }
+      }
+    },
+    {
+      "key": "matrixgame_924228bf_s7",
+      "model": "matrixgame",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy. Contrast/saturation seam appears in both arms at frame 85."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.0013372127112982867,
+          "measured": 0.0013372127112982867,
+          "original_measured": 0.0013372127112982867,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "position_endpoint": {
+          "commanded": 0.002013974369391616,
+          "measured": 0.002013974369391616,
+          "original_measured": 0.002013974369391616,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.20842609852588842,
+          "measured": 0.20842609852588842,
+          "original_measured": 0.20842609852588842,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.3178709858447504,
+          "measured": 0.3178709858447504,
+          "original_measured": 0.3178709858447504,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "matrixgame_924228bf_s107",
+      "model": "matrixgame",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 0,
+      "identical_rgb_and_intrinsics": true,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 0,
+        "note": "Both arms visually identical in the displayed samples, consistent with zero accepted memory writes. Building remains recognizable. This is abstention, not evidence of active memory efficacy. Contrast/saturation seam appears in both arms at frame 85."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "original_measured": null,
+          "valid": false,
+          "outcome": "unavailable",
+          "delta": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.6245428550340731,
+          "measured": 0.6245428550340731,
+          "original_measured": 0.6245428550340731,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.829497583395332,
+          "measured": 0.829497583395332,
+          "original_measured": 0.829497583395332,
+          "valid": true,
+          "outcome": "tie",
+          "delta": 0.0,
+          "reduction_percent": 0.0
+        }
+      }
+    },
+    {
+      "key": "lyra_0238de14_s7",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable, with modest viewpoint/structure differences. Measured continuation roughly follows the reference play-structure position. No severe collapse; lower position score accompanies higher rotation error."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.010418082407776457,
+          "measured": 0.002684654692972965,
+          "original_measured": 0.002684654692972965,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.007733427714803492,
+          "reduction_percent": 74.23081726663021
+        },
+        "position_endpoint": {
+          "commanded": 0.01724525796730343,
+          "measured": 0.005477692642228726,
+          "original_measured": 0.005477692642228726,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.011767565325074702,
+          "reduction_percent": 68.23652825249532
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.043969803757946,
+          "measured": 0.12183723992928033,
+          "original_measured": 0.12183723992928033,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.07786743617133433,
+          "reduction_percent": -177.0929809011543
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.02304380082363316,
+          "measured": 0.14825403418330843,
+          "original_measured": 0.14825403418330843,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.12521023335967527,
+          "reduction_percent": -543.3575577135813
+        }
+      }
+    },
+    {
+      "key": "lyra_0238de14_s107",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "comparison_valid": true,
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "identical_rgb_and_intrinsics": false,
+      "visual_review": {
+        "severe_collapse_seen_in_samples": false,
+        "accepted_memory_writes": 1,
+        "note": "Both arms recognizable, with modest viewpoint/structure differences. No severe collapse; lower position score accompanies higher rotation error."
+      },
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.009011745916509472,
+          "measured": 0.0030568865995609113,
+          "original_measured": 0.0030568865995609113,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.005954859316948561,
+          "reduction_percent": 66.07886387519304
+        },
+        "position_endpoint": {
+          "commanded": 0.014867821819680539,
+          "measured": 0.006494722625421703,
+          "original_measured": 0.006494722625421703,
+          "valid": true,
+          "outcome": "win",
+          "delta": -0.008373099194258837,
+          "reduction_percent": 56.31691915473027
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.027190540041835166,
+          "measured": 0.18753446038103747,
+          "original_measured": 0.18753446038103747,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.1603439203392023,
+          "reduction_percent": -589.7048020837333
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.027750807165125426,
+          "measured": 0.17711279226542564,
+          "original_measured": 0.17711279226542564,
+          "valid": true,
+          "outcome": "loss",
+          "delta": 0.14936198510030022,
+          "reduction_percent": -538.2257323599731
+        }
+      }
+    },
+    {
+      "key": "lyra_924228bf_s7",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "failed",
+      "reason": "RuntimeError('lyra_924228bf_s7_commanded failed (1)')"
+    },
+    {
+      "key": "lyra_924228bf_s107",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "held",
+      "reason": "RuntimeError('lyra_924228bf_s7_commanded failed (1)')"
+    }
+  ],
+  "models": {
+    "lingbot": {
+      "prespecified": 4,
+      "completed": 4,
+      "active": 2,
+      "abstained": 2,
+      "active_scenes": [
+        "0238de14"
+      ],
+      "metrics": {
+        "position_mean": {
+          "win": 2,
+          "loss": 0,
+          "tie": 1,
+          "unavailable": 1,
+          "active_reduction_percent_range": [
+            24.8177652580985,
+            43.42696473208538
+          ]
+        },
+        "rotation_mean_deg": {
+          "win": 1,
+          "loss": 1,
+          "tie": 2,
+          "unavailable": 0,
+          "active_reduction_percent_range": [
+            -145.89225220437257,
+            3.3577588266164504
+          ]
+        }
+      }
+    },
+    "sana": {
+      "prespecified": 4,
+      "completed": 4,
+      "active": 2,
+      "abstained": 2,
+      "active_scenes": [
+        "0238de14"
+      ],
+      "metrics": {
+        "position_mean": {
+          "win": 2,
+          "loss": 0,
+          "tie": 0,
+          "unavailable": 2,
+          "active_reduction_percent_range": [
+            81.38846684924471,
+            84.80646910457268
+          ]
+        },
+        "rotation_mean_deg": {
+          "win": 0,
+          "loss": 2,
+          "tie": 2,
+          "unavailable": 0,
+          "active_reduction_percent_range": [
+            -138.26500493350173,
+            -96.17185025062768
+          ]
+        }
+      }
+    },
+    "dreamx": {
+      "prespecified": 4,
+      "completed": 4,
+      "active": 2,
+      "abstained": 2,
+      "active_scenes": [
+        "0238de14"
+      ],
+      "metrics": {
+        "position_mean": {
+          "win": 0,
+          "loss": 2,
+          "tie": 0,
+          "unavailable": 2,
+          "active_reduction_percent_range": [
+            -1.639439893474253,
+            -0.34611745770634095
+          ]
+        },
+        "rotation_mean_deg": {
+          "win": 0,
+          "loss": 2,
+          "tie": 2,
+          "unavailable": 0,
+          "active_reduction_percent_range": [
+            -0.42874767408297676,
+            -0.12582787703570833
+          ]
+        }
+      }
+    },
+    "matrixgame": {
+      "prespecified": 4,
+      "completed": 4,
+      "active": 2,
+      "abstained": 2,
+      "active_scenes": [
+        "0238de14"
+      ],
+      "metrics": {
+        "position_mean": {
+          "win": 0,
+          "loss": 2,
+          "tie": 1,
+          "unavailable": 1,
+          "active_reduction_percent_range": [
+            -69.98298477927256,
+            -34.59468756294908
+          ]
+        },
+        "rotation_mean_deg": {
+          "win": 2,
+          "loss": 0,
+          "tie": 2,
+          "unavailable": 0,
+          "active_reduction_percent_range": [
+            6.88722587567284,
+            27.780293142059666
+          ]
+        }
+      }
+    },
+    "lyra": {
+      "prespecified": 4,
+      "completed": 2,
+      "active": 2,
+      "abstained": 0,
+      "active_scenes": [
+        "0238de14"
+      ],
+      "metrics": {
+        "position_mean": {
+          "win": 2,
+          "loss": 0,
+          "tie": 0,
+          "unavailable": 0,
+          "active_reduction_percent_range": [
+            66.07886387519304,
+            74.23081726663021
+          ]
+        },
+        "rotation_mean_deg": {
+          "win": 0,
+          "loss": 2,
+          "tie": 0,
+          "unavailable": 0,
+          "active_reduction_percent_range": [
+            -589.7048020837333,
+            -177.0929809011543
+          ]
+        }
+      }
+    }
+  },
+  "sources": {
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/freeze.json": "74ec17e2c11e10861e4ee3216626893509afa055ccfe7d84dbaf6c2e33049ed7",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/status.json": "a5a9a4c30369061ca362d93708f98619bd157db3df13354add05f4728f5949ce",
+    "/home/hj/Alican/camera-closed-loop/docs/memory_component_evidence_20261102.json": "e3211fcc90e45b72dff7c6d103c46580cd3fddfc26603760161dfb4914054a35",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lingbot_0238de14_s7/score.json": "56a6e5c701eb532acaa213f6e622c9322b7133cc0e244b394c314db19bdbe5df",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lingbot_0238de14_s107/score.json": "834e63af0baa12c2a2d483af3f03c8e0500e35d8d3cf0f6ab85a81aa6ce13083",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lingbot_924228bf_s7/score.json": "0fcb297db97ffdd41bf052152cf35c2f7bd8b35cbb209c309784602a14e069df",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lingbot_924228bf_s107/score.json": "1051023b9a523b3230c1e738b9df3817d0e42849cb0a301bb1b3bc0953e7846a",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/sana_0238de14_s7/score.json": "4919d4714fea4f0ab34d9c239d783461d6b2d32fb66239011f7244aa36522a90",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/sana_0238de14_s107/score.json": "c9912bc6ae6b798dadc1e68c5dfbf906647849bb561ed0ec83a6ae037cb631c2",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/sana_924228bf_s7/score.json": "a19e617bd99c201bd393c37344aa659a114349bbb252b17306d753ab3bc3f5c7",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/sana_924228bf_s107/score.json": "bc389d01dc19317095d92f7a477eb5e9613cd9b6ec59cfebd8fff0997cb67523",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/dreamx_0238de14_s7/score.json": "da573fd2da9c4893d4230c151b4162f08ec9ebf2f7dc83e521dd2c1a7b64dff4",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/dreamx_0238de14_s107/score.json": "fdbfa1731ce401e83d7a1526f3995734d77d856943745c96fe22342bf3335cda",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/dreamx_924228bf_s7/score.json": "45747a35fbf755d1824b265c4e372af2ac40a7c5a8a7751fe9d4c42be583d6d1",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/dreamx_924228bf_s107/score.json": "019b564c66b612ff80c9b8de65b176a988a987a50546db2a41d8e867d05e41d7",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/matrixgame_0238de14_s7/score.json": "23bf13d2e063600844fa62ccc2256b95d719c8e0d2c64acb4920f24863f03f50",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/matrixgame_0238de14_s107/score.json": "a26baf466967c78a76aef49c1569d03d393127ffcd5b573193ed222eabef045c",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/matrixgame_924228bf_s7/score.json": "6e7b706c05a803512abfac9bf350cbf3667fe2f9adb71dc9c8695fca528d75a5",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/matrixgame_924228bf_s107/score.json": "ca6ac00bc4050794c90369d386383b9a28036073aa25a1afe27315d679addacd",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lyra_0238de14_s7/score.json": "21c05ed2a356ecb81862618d5b88a406824a0ddc46bd4629207cc2b34d375bad",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lyra_0238de14_s107/score.json": "e329a545aa040d22aa826789a30100d639bb99d145fb2e48f663896103d3e097"
+  },
+  "script_sha256": "846576dfa403b508abf2f794fdfefa86d43d0bf5ac44dd1a8b06640b89333f54"
+}

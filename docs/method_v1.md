@@ -21,6 +21,14 @@ a physically calibrated memory write and does not modify this frozen method.
 
 ## Primary algorithm
 
+**2026-11-03 decision update:** individual scientific losses do not veto broader
+evaluation or require a scene-specific policy. Keep this algorithm frozen and
+report aggregate benefits, visual regressions, abstentions and execution
+failures. The [generalization review](generalization_strategy_20261103.md)
+separates the completed short cohort from the resource-held repeated-memory
+cohort and records the new resource qualification. This changes the evaluation
+priority, not v1's camera policy or historical scores.
+
 The external target trajectory remains fixed. At each supported native memory
 boundary, observe already generated RGB with DA3, register poses through the
 fixed anchor depth, and require the same observer and SE(3) acceptance rules.
