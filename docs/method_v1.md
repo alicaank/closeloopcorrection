@@ -4,6 +4,13 @@ Method ID: **`measured-memory-v1`**. Status: algorithm frozen for expanded
 development evaluation; not a validated final paper method. This version fixes
 the following decisions before inspecting the expanded cohort's outcomes.
 
+**2026-11-02 evidence update:** the [matched mechanism audit](control_mechanism_audit_20261103.md)
+finds severe measured-memory continuation collapse in both LingBot seeds on
+`02267acf`, also visible in the earlier 77-frame pair. Their lower position
+scores do not establish successful correction. The frozen policy is preserved;
+expanded qualification is held. Input-range or visual guards would be a new
+version requiring matched reruns, not retrospective edits to this protocol.
+
 ## Primary algorithm
 
 The external target trajectory remains fixed. At each supported native memory

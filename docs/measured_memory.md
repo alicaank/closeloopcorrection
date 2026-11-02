@@ -5,6 +5,13 @@ policy to seven native adapters. It observes already generated frames and uses
 accepted poses when native history is consumed. It does not run calibration
 probes, train weights, or infer a causal control gain from an execution ratio.
 
+The [latest mechanism audit](control_mechanism_audit_20261103.md) identifies
+severe LingBot visual collapse after accepted writes in two seeds. Measured
+translation conditioning reaches 70–106 times the original plan's maximum
+normalized step. Existing observer/SE(3) checks do not reject this situation;
+the lower pose scores are not successful correction. The frozen runtime below
+does not yet implement an input-range gate or a validated collapse detector.
+
 `camera_loop.memory.stage_memory_write` validates timestamps, observer acceptance,
 finite rigid poses, and the fixed initial anchor. Rejection preserves the existing
 poses. An identity write preserves their original dtype and values. This function

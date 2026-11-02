@@ -12,6 +12,12 @@ two common scenes, two seeds, and five qualified model paths before scoring.
 WorldWarp and Astronex remain qualification pending; Matrix-Game stays included
 despite its negative initial result.
 
+The [latest mechanism audit](docs/control_mechanism_audit_20261103.md) finds severe
+LingBot scene collapse after measured-memory writes in two matched seeds. Lower
+pose errors in these runs, including the earlier 77-frame result, are not
+successful correction. V1 remains a frozen experimental candidate; broader
+qualification is held while input range and visual validity are resolved.
+
 ## Quick start
 
 ```bash

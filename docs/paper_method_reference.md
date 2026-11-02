@@ -11,6 +11,14 @@ Its [frozen protocol](method_v1_protocol.json) fixes the memory-only algorithm
 and expanded development cohort. The adaptive and future-command designs below
 remain separate components/ablations, not part of that candidate.
 
+The [latest mechanism audit](control_mechanism_audit_20261103.md) supersedes
+optimistic interpretations of the recent LingBot memory result: both matched
+seeds collapse visually despite lower camera errors. It also corrects VMem's
+command-log interpretation and separates observer variability from persistent
+Spatia boundary discontinuities. The candidate is frozen for reproducibility,
+not validated for broader deployment; the next version needs memory-input and
+visual-quality qualification as well as coordinate algebra.
+
 ## 1. What the method does, and which version is implemented
 
 We study inference-time camera tracking in a frozen, camera-conditioned video
