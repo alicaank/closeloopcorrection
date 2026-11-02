@@ -179,8 +179,13 @@ prefix mismatch or host-memory guard holds SANA while other models continue.
 Disk and source-integrity guards still hold the whole queue. Scientific losses
 remain results and do not trigger model holds.
 
-The queue was launched and its process confirmed live. Completion, GPU resource
-parity, repeated-memory efficacy and new visual reviews remain pending. See the
+The second SANA baseline also hit the host-memory guard after exporting 97
+frames, so the 121-frame resource qualification failed and SANA is held. All 97
+completed RGB frames match the prior retry exactly (maximum byte difference 0;
+the NPZ archives also have identical SHA256). This establishes partial-prefix
+equivalence only, not full-horizon qualification. The queue continued to DreamX:
+its commanded arm and lossless retention completed, and its measured arm was
+confirmed running. The remaining model/scene scope is preserved. See the
 [dated execution snapshot](generalization_execution_20261103.json); it is not a
 live status feed. The [audit artifacts](artifacts/generalization_20261103/README.md)
 include the preparation/queue/parity scripts and CPU evidence. Broad evaluation

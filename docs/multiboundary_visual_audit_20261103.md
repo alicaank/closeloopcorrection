@@ -49,3 +49,19 @@ The [inspection record](artifacts/generalization_20261103/visual_review/lingbot_
 records the scope of the human-readable observations. The generator queue and
 its frozen scientific sources were not changed by this audit. Additional
 completed pairs still require their own visual reviews.
+
+## Observer validity does not establish scene fidelity
+
+The [memory-event audit](artifacts/generalization_20261103/visual_review/lingbot_gate_audit.json)
+shows that all four writes passed the existing quality gate. After the visible
+failure, the write covering frames 12–28 contains a **138.74° adjacent stored
+rotation jump**; its anchor-depth p90/p10 ratio is still 1.084, comfortably
+inside the existing limit of 4. Subsequent writes also pass.
+
+This is direct evidence that the present proper-SE(3) and anchor-registration
+checks do not detect this visual failure. The jump inferred from collapsed RGB
+is not evidence of a physical camera reversal. It also occurs after the first
+visible failure, so it does not by itself identify that initial failure's cause.
+The deployed v1 gate is not a validated collapse detector, as the frozen protocol
+already states. A future image-consistency gate would need separate validation;
+no new threshold or scene-specific exception is inserted into this cohort.

@@ -1,0 +1,66 @@
+{
+  "source": "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/runs/lingbot_02267acf_s7/measured/baseline/memory_events.jsonl",
+  "sha256": "3636ea7085ab0c9d86ef124ae48a61aa8ac4f50e9192d13d32622409f520422f",
+  "events": [
+    {
+      "frame_ids": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "applied": true,
+      "quality_passed": true,
+      "max_adjacent_stored_rotation_deg": 0.19778010295662535,
+      "anchor_depth_p90_over_p10": [
+        1.090828037699189
+      ]
+    },
+    {
+      "frame_ids": [
+        12,
+        16,
+        20,
+        24,
+        28
+      ],
+      "applied": true,
+      "quality_passed": true,
+      "max_adjacent_stored_rotation_deg": 138.73858985802818,
+      "anchor_depth_p90_over_p10": [
+        1.084323468438189
+      ]
+    },
+    {
+      "frame_ids": [
+        28,
+        32,
+        36,
+        40,
+        44
+      ],
+      "applied": true,
+      "quality_passed": true,
+      "max_adjacent_stored_rotation_deg": 0.6991515877447683,
+      "anchor_depth_p90_over_p10": [
+        1.1143389450109416
+      ]
+    },
+    {
+      "frame_ids": [
+        44,
+        48,
+        52,
+        56,
+        60
+      ],
+      "applied": true,
+      "quality_passed": true,
+      "max_adjacent_stored_rotation_deg": 0.16915524364904552,
+      "anchor_depth_p90_over_p10": [
+        1.109377817858127
+      ]
+    }
+  ],
+  "interpretation": "The geometric validity checks continue accepting writes after visually confirmed collapse. Proper SE3 and anchor depth consistency do not certify current scene fidelity. Large later pose jumps cannot establish physical camera reversal from collapsed RGB, and do not explain the initial failure by themselves."
+}

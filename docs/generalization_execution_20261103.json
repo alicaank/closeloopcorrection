@@ -1,5 +1,5 @@
 {
-  "snapshot_time": 1793662405.0342658,
+  "snapshot_time": 1793662872.7710497,
   "scope": "Dated execution snapshot; full research goal remains incomplete.",
   "prior_resource_attempt": {
     "path": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification",
@@ -83,10 +83,10 @@
     "freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
     "pid": 2808063,
     "started": 1793662369.0425417,
-    "phase": "sana_02267acf_s7_commanded",
+    "phase": "dreamx_02267acf_s7_measured",
     "jobs": {
       "sana_02267acf_s7_commanded": {
-        "state": "running",
+        "state": "failed",
         "argv": [
           "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
           "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
@@ -109,7 +109,82 @@
         ],
         "started": 1793662369.1337156,
         "pid": 2808066,
-        "min_host_available_bytes": 41105321984
+        "min_host_available_bytes": 625233920,
+        "stop_reason": "host_memory_guard",
+        "returncode": -15,
+        "finished": 1793662690.885649
+      },
+      "dreamx_02267acf_s7_commanded": {
+        "state": "completed",
+        "argv": [
+          "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+          "dreamx",
+          "--memory-policy",
+          "commanded",
+          "--",
+          "--batch",
+          "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+          "--scene",
+          "02267acf",
+          "--seed",
+          "7",
+          "--out",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s7/commanded",
+          "--latents",
+          "18",
+          "--prefix-latents",
+          "6"
+        ],
+        "started": 1793662691.2177105,
+        "pid": 2810956,
+        "min_host_available_bytes": 7732170752,
+        "stop_reason": null,
+        "returncode": 0,
+        "finished": 1793662801.2626026
+      },
+      "dreamx_02267acf_s7_commanded_retain": {
+        "state": "completed",
+        "argv": [
+          "/home/hj/Alican/baselines/venv_vmem/bin/python",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+          "--spec",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_02267acf_s7.json",
+          "--arm",
+          "commanded"
+        ],
+        "started": 1793662801.5655677,
+        "pid": 2811454,
+        "min_host_available_bytes": 63508635648,
+        "stop_reason": null,
+        "returncode": 0,
+        "finished": 1793662806.567151
+      },
+      "dreamx_02267acf_s7_measured": {
+        "state": "running",
+        "argv": [
+          "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+          "dreamx",
+          "--memory-policy",
+          "measured",
+          "--",
+          "--batch",
+          "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+          "--scene",
+          "02267acf",
+          "--seed",
+          "7",
+          "--out",
+          "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s7/measured",
+          "--latents",
+          "18",
+          "--prefix-latents",
+          "6"
+        ],
+        "started": 1793662806.6325421,
+        "pid": 2811575,
+        "min_host_available_bytes": 9230626816
       }
     },
     "pairs": {
@@ -122,16 +197,43 @@
           "measured": true
         },
         "note": "Previously completed original pair; visual collapse despite lower pose error. Retained as a policy failure, not an efficacy success."
+      },
+      "sana_02267acf_s7": {
+        "state": "failed",
+        "reason": "RuntimeError('Reserve guard reached: host_memory_guard')"
       }
     },
-    "held_models": {},
-    "failures": []
+    "held_models": {
+      "sana": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    "failures": [
+      {
+        "pair": "sana_02267acf_s7",
+        "error": "RuntimeError('Reserve guard reached: host_memory_guard')"
+      }
+    ]
   },
   "process_exists": {
     "2808063": true,
-    "2808066": true
+    "2808066": false,
+    "2810956": false,
+    "2811454": false,
+    "2811575": true
   },
-  "gpu_resource_parity": "pending",
+  "gpu_resource_parity": {
+    "checked_at": 1793662744.3407125,
+    "shared_prefix_frames": 97,
+    "old_frames": 97,
+    "new_frames": 97,
+    "exact_rgb_equal": true,
+    "maximum_absolute_rgb_difference": 0,
+    "full_horizon_qualified": false,
+    "reason": "New 121-frame generation stopped at host-memory guard. Partial RGB equivalence does not qualify full rollout.",
+    "sources": {
+      "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification/runs/sana_02267acf_s7/commanded/frames.npz": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb",
+      "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/sana_02267acf_s7/commanded/frames.npz": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb"
+    }
+  },
   "artifact_hashes": {
     "run.py": "533765193910b56bb370b79b341eccf469a45e7a14d5952c89b7998d6a7986e4",
     "prepare_resume.py": "af252123d5d9a055d43b4f40280ee705d9c75190d96d96331fee7ff1e8f131fd",

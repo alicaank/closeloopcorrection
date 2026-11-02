@@ -1,0 +1,14 @@
+{
+  "checked_at": 1793662744.3407125,
+  "shared_prefix_frames": 97,
+  "old_frames": 97,
+  "new_frames": 97,
+  "exact_rgb_equal": true,
+  "maximum_absolute_rgb_difference": 0,
+  "full_horizon_qualified": false,
+  "reason": "New 121-frame generation stopped at host-memory guard. Partial RGB equivalence does not qualify full rollout.",
+  "sources": {
+    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification/runs/sana_02267acf_s7/commanded/frames.npz": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/sana_02267acf_s7/commanded/frames.npz": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb"
+  }
+}

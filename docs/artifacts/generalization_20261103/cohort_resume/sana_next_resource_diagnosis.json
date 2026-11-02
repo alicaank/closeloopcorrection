@@ -1,0 +1,15 @@
+{
+  "scope": "Next resource diagnosis, not an implemented or validated remedy",
+  "evidence": [
+    "Second resource attempt exported 97 frames exactly matching first retry; events end at observed_frame 72.",
+    "The fourth endpoint observer starts after the frame-97 archive write; its worker is terminated by the host-memory guard.",
+    "Minimum sampled available host RAM: 625233920 bytes. Closing workers and releasing consumed history references did not qualify 121 frames."
+  ],
+  "next_hypothesis": "Host/GPU residency during observer startup: temporarily keep the idle stage-1 model on GPU while the observer runs, then restore placement. This could free host weight storage without truncating history or changing precision. GPU capacity and exact-prefix equivalence must be checked in a new frozen attempt.",
+  "constraints": [
+    "Do not alter the running cohort or its frozen sources.",
+    "Do not shorten the original horizon or drop SANA from the planned denominator.",
+    "Do not remove the measured-memory observer; an auxiliary baseline observer alone is not the full problem.",
+    "Use shared GPU locks; other models continue while SANA is held."
+  ]
+}
