@@ -160,7 +160,10 @@ themselves resolve an infeasible or poorly identified actuator.
 1. Keep frozen v1 results and its failures. The expanded memory and response
    schedulers are held; no broad queue was resumed by this diagnosis. Do not
    present the LingBot camera-score reductions as efficacy evidence.
-2. For a new version, qualify the physical/native memory-coordinate mapping and
+2. For LingBot, prioritize a common plan/history normalization denominator and
+   a consistent rebuild of retained camera state and future inputs; the
+   [later scene-regime review](framing_review_20261103.md) narrows this diagnosis.
+   For interfaces with unresolved units, qualify their native coordinate contract and
    record the actual memory and future encoder inputs at every write. Derive
    any input envelope from the adapter contract or causal rollout evidence,
    not a model-specific fitted constant. A conservative out-of-envelope

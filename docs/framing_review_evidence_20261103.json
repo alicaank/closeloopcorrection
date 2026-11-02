@@ -1,0 +1,212 @@
+{
+  "scope": "Reanalysis of saved data; no new moving-scene generations. Raw scores and frozen protocols are unchanged.",
+  "scene_motion": {
+    "02267acf": {
+      "29": {
+        "max_rgb_step": 0.00023755268914363886,
+        "net_translation": 0.0028562815812210275,
+        "path_length": 0.003943603940004221
+      },
+      "49": {
+        "max_rgb_step": 0.00033669161526301953,
+        "net_translation": 0.007444048243213932,
+        "path_length": 0.009116493351478704
+      },
+      "77": {
+        "max_rgb_step": 0.00041977150000456015,
+        "net_translation": 0.013380137489722499,
+        "path_length": 0.01596046201830786
+      },
+      "161": {
+        "max_rgb_step": 0.0019098384141136861,
+        "net_translation": 0.12275700881502541,
+        "path_length": 0.13661657003153616
+      }
+    },
+    "0238de14": {
+      "29": {
+        "max_rgb_step": 0.0017003093065488908,
+        "net_translation": 0.034440873603666364,
+        "path_length": 0.03487217228327976
+      },
+      "49": {
+        "max_rgb_step": 0.0017003093065488908,
+        "net_translation": 0.06475843687001004,
+        "path_length": 0.06536051450545637
+      },
+      "77": {
+        "max_rgb_step": 0.0017003093065488908,
+        "net_translation": 0.10162207578878406,
+        "path_length": 0.10285756957116661
+      },
+      "161": {
+        "max_rgb_step": 0.00228527068327078,
+        "net_translation": 0.2542753337878204,
+        "path_length": 0.2580274969757418
+      }
+    }
+  },
+  "moving_pairs": {
+    "lingbot_0238de14_s7": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.2031555452883857,
+      "position_measured": 0.1149312582847227,
+      "position_reduction_percent": 43.42696473208538,
+      "rotation_commanded_deg": 2.3325889799918924,
+      "rotation_measured_deg": 2.254266267627532,
+      "rotation_change_deg": -0.07832271236436039
+    },
+    "lingbot_0238de14_s107": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.19437401536978355,
+      "position_measured": 0.14613472851257037,
+      "position_reduction_percent": 24.8177652580985,
+      "rotation_commanded_deg": 1.4205810997923811,
+      "rotation_measured_deg": 3.4930988606691313,
+      "rotation_change_deg": 2.0725177608767504
+    },
+    "dreamx_0238de14_s7": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.01894021063002013,
+      "position_measured": 0.01925072399899673,
+      "position_reduction_percent": -1.6394398934742593,
+      "rotation_commanded_deg": 0.8690099022647622,
+      "rotation_measured_deg": 0.8727357620082731,
+      "rotation_change_deg": 0.0037258597435109175
+    },
+    "dreamx_0238de14_s107": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.01657964616058467,
+      "position_measured": 0.016637031210372393,
+      "position_reduction_percent": -0.34611745770634084,
+      "rotation_commanded_deg": 1.2213153096243186,
+      "rotation_measured_deg": 1.222852064750331,
+      "rotation_change_deg": 0.001536755126012368
+    },
+    "sana_0238de14_s7": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.15410944895672765,
+      "position_measured": 0.02341466674001322,
+      "position_reduction_percent": 84.80646910457268,
+      "rotation_commanded_deg": 0.4907812742837489,
+      "rotation_measured_deg": 1.169360027384877,
+      "rotation_change_deg": 0.678578753101128
+    },
+    "sana_0238de14_s107": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.1701285052013007,
+      "position_measured": 0.031663523144424534,
+      "position_reduction_percent": 81.38846684924471,
+      "rotation_commanded_deg": 0.5291230005064663,
+      "rotation_measured_deg": 1.037990380195173,
+      "rotation_change_deg": 0.5088673796887068
+    },
+    "lyra_0238de14_s7": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.010418082407776457,
+      "position_measured": 0.002684654692972965,
+      "position_reduction_percent": 74.23081726663023,
+      "rotation_commanded_deg": 0.043969803757946,
+      "rotation_measured_deg": 0.12183723992928033,
+      "rotation_change_deg": 0.07786743617133433
+    },
+    "lyra_0238de14_s107": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.009011745916509472,
+      "position_measured": 0.0030568865995609113,
+      "position_reduction_percent": 66.07886387519304,
+      "rotation_commanded_deg": 0.027190540041835166,
+      "rotation_measured_deg": 0.18753446038103747,
+      "rotation_change_deg": 0.1603439203392023
+    },
+    "matrixgame_0238de14_s7": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.001955342563941706,
+      "position_measured": 0.002631787214722697,
+      "position_reduction_percent": -34.594687562949076,
+      "rotation_commanded_deg": 0.33589184767149927,
+      "rotation_measured_deg": 0.24258010774807626,
+      "rotation_change_deg": -0.09331173992342301
+    },
+    "matrixgame_0238de14_s107": {
+      "prefix_exact": true,
+      "accepted_writes": 1,
+      "position_commanded": 0.004628661849346223,
+      "position_measured": 0.007867937566858186,
+      "position_reduction_percent": -69.98298477927256,
+      "rotation_commanded_deg": 0.40683623629697285,
+      "rotation_measured_deg": 0.37881650575911424,
+      "rotation_change_deg": -0.02801973053785861
+    }
+  },
+  "lingbot_normalization": {
+    "lingbot_0238de14_s7": {
+      "plan_normalizer": 0.0065074339509010315,
+      "rows": [
+        {
+          "frame_ids": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "max_measured_step": 0.05449490761997587,
+          "max_normalized_measured_step": 8.374254434411956
+        }
+      ]
+    },
+    "lingbot_0238de14_s107": {
+      "plan_normalizer": 0.0065074339509010315,
+      "rows": [
+        {
+          "frame_ids": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "max_measured_step": 0.048782583221453193,
+          "max_normalized_measured_step": 7.496439240032343
+        }
+      ]
+    }
+  },
+  "sources": {
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009/trajectories/02267acf.npz": "d9d283538e3bba540e22d746879649f1b4ea13392db50557b69ba759a1e3e3b9",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009/trajectories/0238de14.npz": "5d1fe0d327ce739c751d3c982ff9478a8ce1d069ceb3c8001da2b0645154ee21",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lingbot_0238de14_s7/score.json": "56a6e5c701eb532acaa213f6e622c9322b7133cc0e244b394c314db19bdbe5df",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/runs/lingbot_0238de14_s7/measured/baseline/run.json": "1ed1270d38b471c6f27cff39c5e0964b5a5fdc2e9da6e3648c6dfea3a5ed8bc1",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/runs/lingbot_0238de14_s7/measured/baseline/memory_events.jsonl": "2274a7405ad9b1fb4ffe19f9a07d173565c282e393c13bcc8d3110b705bfb8f0",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lingbot_0238de14_s107/score.json": "834e63af0baa12c2a2d483af3f03c8e0500e35d8d3cf0f6ab85a81aa6ce13083",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/runs/lingbot_0238de14_s107/measured/baseline/run.json": "96736c517add5ba8eb67d3da6d0b9c1aaa8b612a690dadf91be021e8f308364a",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/runs/lingbot_0238de14_s107/measured/baseline/memory_events.jsonl": "625e8b683989ec02548f6010037f168e9f9f4ee62c83f62c2a7cb2134654d384",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/dreamx_0238de14_s7/score.json": "da573fd2da9c4893d4230c151b4162f08ec9ebf2f7dc83e521dd2c1a7b64dff4",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/dreamx_0238de14_s107/score.json": "fdbfa1731ce401e83d7a1526f3995734d77d856943745c96fe22342bf3335cda",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/sana_0238de14_s7/score.json": "4919d4714fea4f0ab34d9c239d783461d6b2d32fb66239011f7244aa36522a90",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/sana_0238de14_s107/score.json": "c9912bc6ae6b798dadc1e68c5dfbf906647849bb561ed0ec83a6ae037cb631c2",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lyra_0238de14_s7/score.json": "21c05ed2a356ecb81862618d5b88a406824a0ddc46bd4629207cc2b34d375bad",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/lyra_0238de14_s107/score.json": "e329a545aa040d22aa826789a30100d639bb99d145fb2e48f663896103d3e097",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/matrixgame_0238de14_s7/score.json": "23bf13d2e063600844fa62ccc2256b95d719c8e0d2c64acb4920f24863f03f50",
+    "/home/hj/Alican/analysis/measured_memory_v1_20261101/scores/matrixgame_0238de14_s107/score.json": "a26baf466967c78a76aef49c1569d03d393127ffcd5b573193ed222eabef045c",
+    "/home/hj/Alican/analysis/paired_response_followup_20261101/decision.json": "500db8ace127f88a944ea1da5376e21e713fca5829e9becae00fa62627093dca"
+  },
+  "dreamx_late_response": {
+    "name": "e43058cb / seed 7 / late",
+    "endpoint": 65,
+    "pnp_projected_gain": 0.1433979220685939,
+    "vipe_projected_gain": 0.12169828293777588,
+    "inverse_control_enabled": false,
+    "followup_screen_pass": false,
+    "scope": "Conditional later-history finite response; not a universal per-step gain or deployment constant."
+  },
+  "review_script_sha256": "0abcb3d340fd66d3f2c1b7f8af4e4ef5a8fdb139044a0d3a42e8ba71d6884c2b"
+}

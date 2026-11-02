@@ -1,0 +1,66 @@
+{
+  "name": "memory_rate_continuation_v1",
+  "cases": {
+    "sana_02267acf_s7": {
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 7,
+      "frames": 49,
+      "first_affected_frame": 25,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009"
+    },
+    "lyra_02267acf_s7": {
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 7,
+      "frames": 161,
+      "first_affected_frame": 81,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009"
+    },
+    "sana_02267acf_s107": {
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 107,
+      "frames": 49,
+      "first_affected_frame": 25,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009"
+    },
+    "lyra_02267acf_s107": {
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 107,
+      "frames": 161,
+      "first_affected_frame": 81,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009"
+    }
+  },
+  "arms": {
+    "M": "Full measured memory, original future targets",
+    "F": "Identical full measured memory plus bounded future translation from committed boundary"
+  },
+  "policy": {
+    "speed": "max(original plan maximum RGB step, measured incoming native-interval speed)",
+    "acceleration": "speed ceiling / native camera interval (SANA 8 RGB, Lyra 4 RGB)",
+    "recovery": "spread residual over remaining chunk duration",
+    "rotation": "preserve original future targets",
+    "direction": "nonnegative projection along planned chunk net direction; require forward-monotone native target intervals; abstain if bounded transition cannot meet it",
+    "lag": "retain and report endpoint residual; no retiming or repeated residual addition",
+    "units": "supported native geometry mapping required; no response gain fit"
+  },
+  "qualification": {
+    "sana": "Released metric-sidecar training contract; frame0 reference depth supplies estimated metric conversion; processed crop/K/depth consistent. Runtime receipt required.",
+    "lyra": "Initial native depth after optional MoGe alignment matched to reference depth at resized anchor pixels; apply common factor once to cameras and observer depth. Runtime depth fit required."
+  },
+  "scope": "Selected development scene and short one-boundary matched pairs, not generalization or closed-loop stability proof. No native-baseline arm; compares F directly to fresh M. Model/output velocity is not guaranteed by camera-command constraints.",
+  "controls": [
+    "Exact shared-prefix RGB/K/depth/query-key reuse",
+    "Identical accepted memory writes",
+    "Unchanged past command logs",
+    "Exact future rotation preservation in controller and native Lyra w2c",
+    "Fresh initial calibration per case, shared only within paired arms",
+    "All failures and abstentions retained",
+    "Initial-camera-only calibration; no target-trajectory motion fit or probe generation"
+  ],
+  "resources": "Serial shared GPU locks; 4 GiB launch / 2 GiB runtime disk reserve; 2 GiB available host RAM; 5400-second job timeout",
+  "other_models": "LingBot/DreamX unqualified native translation mappings; Astronex/WorldPlay likewise. MatrixGame retains causal block-decoding seam; WorldWarp continuation geometry qualification pending. No broad queue resumed."
+}

@@ -14,8 +14,8 @@ remain separate components/ablations, not part of that candidate.
 The [initial mechanism audit](control_mechanism_audit_20261103.md) supersedes
 optimistic interpretations of the recent LingBot memory result: both matched
 seeds collapse visually despite lower camera errors. It also corrects VMem's
-command-log interpretation and separates observer variability from persistent
-Spatia boundary discontinuities. The candidate is frozen for reproducibility,
+command-log interpretation and records Spatia boundary artifacts whose physical
+reversal versus geometry inconsistency remains unresolved. The candidate is frozen for reproducibility,
 not validated for broader deployment; the next version needs memory-input and
 visual-quality qualification as well as coordinate algebra.
 
@@ -27,6 +27,12 @@ appearance seams. Its reference comparisons, observer limitations, component
 controls and figures should accompany any paper interpretation of v1 scores.
 No component result establishes a universal physical unit mapping or a causal
 gain from one ordinary rollout pair.
+
+The [November 3 framing correction](framing_review_20261103.md) distinguishes
+near-stationary stress tests from moving-target efficacy, valid return after
+overshoot from instability, weak memory replay from future-command authority,
+and host decoding artifacts from model-level failures. Use that interpretation
+with the original immutable scores and the completed bounded-continuation pilot.
 
 ## 1. What the method does, and which version is implemented
 
@@ -653,7 +659,7 @@ use the rollout itself without probe generations or fitted per-model gains.
 | Deployment can write measured history without calibration probes | Implemented in the seven-model memory runtime |
 | A common camera/memory contract can support different native representations | Implemented with explicit model-specific writers |
 | `history_labels="measured"` alone updates KV/geometric memory | False; native rebuild/commit is required |
-| Measured memory improves every tested generator | Contradicted by the current Matrix-Game development pair |
+| Measured memory improves every tested generator | Not established; the tested Matrix-Game causal host has mixed scores and an unresolved decoder/export seam, while the near-stationary LingBot writer fails visually |
 | Chunk execution ratio identifies inverse-control gain | False without additional excitation, history, and observability assumptions |
 | The complete uncertainty/authority controller is deployed and validated | Not established |
 | The method is stable for arbitrary frozen generators | Not established; no applicable stability proof supplied |
@@ -678,3 +684,10 @@ the response-identifiability study and negative cases in experiments/analysis.
 Put source pins, thresholds, native schedules, preprocessing, runtime/memory
 costs, and failure accounting in the reproducibility appendix. Use only the
 components actually exercised by the reported experiment in its algorithm box.
+
+The [bounded-continuation pilot](memory_rate_20261102.md) records the next
+experimental policy after the cross-model memory-component audit. It compares
+the same measured-memory write with and without bounded future translation in
+SANA and Lyra. Its equations, native geometry prerequisites, abstentions, source
+freeze and evaluation scope are documented separately. It does not implement
+online differential-gain identification or establish closed-loop stability.

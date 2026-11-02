@@ -2,7 +2,7 @@
 
 This extends the earlier LingBot mechanism audit to other model interfaces. The experiment separates measured rotation, measured translation, full measured pose, and an artificial translation-amplitude intervention. It also reviews saved pairs for all seven implemented memory writers and all 18 completed expanded-v1 pairs against their reference RGB. The eleven-model coverage table below distinguishes new generations, historical evidence, and source-only checks.
 
-**Current conclusion:** a correct coordinate roundtrip and a lower estimated pose error do not suffice to qualify measured-memory control. LingBot's selected failure is reproduced by its measured translation component in both seeds. DreamX's corresponding interventions barely change RGB or pose estimates. SANA remains recognizable but can return toward the target after overshoot; earlier SANA and Lyra position reductions also have rotation tradeoffs. No universal translation-ratio cutoff or deployed calibration fix follows from these tests.
+**Current conclusion:** the 36 component runs diagnose one near-stationary scene, not general performance. LingBot's selected failure follows measured translation divided by a tiny plan-only normalizer. DreamX's tested memory replay barely changes RGB. SANA's return after overshoot can be valid correction, not evidence of instability. Its stronger moving-scene evidence is the 81–85% position reduction below, with a 0.5° to about 1.0–1.2° rotation tradeoff. Lyra's angular changes are small in absolute terms; their significance is unresolved. See the [framing correction and next-test specification](framing_review_20261103.md).
 
 This is selected development evidence, not a held-out generalization test. The frozen v1 algorithm, thresholds, historical scores, native checkpoints, and existing broad-queue holds are unchanged. No deployment probes or fitted model-specific constants are introduced.
 
@@ -46,6 +46,16 @@ All attribution controls pass. The full measured translation component is suffic
 
 For seed 7, the original plan normalizer is `0.0007368588703684509`. The full native plan's maximum step is 1; its observed prefix maximum is 0.74123. The measured prefix maximum is 105.61508, or 142.49 times the commanded **prefix** maximum. N therefore applies 0.0070182. These ratios describe this run's encoding; they do not establish the model's training support or identify physical units.
 
+This is strongly scene-conditioned. At 77 frames the target has maximum RGB
+step 0.000420 and net translation 0.01338. On moving scene `0238de14`, saved
+measured native steps peak at 8.37/7.50 under a plan normalizer of 0.0065074;
+those continuations remain recognizable. The priority is a consistent encoder
+denominator covering plan and observed history, with all retained state and
+future inputs re-encoded together. This is an operational normalization problem;
+a search for an arbitrary physical-to-native scalar is not its proposed remedy.
+The common-denominator change and its support/abstention gate still require
+qualification. N changed history alone and does not validate that replacement.
+
 ### Why the lower corrupted-video pose errors are misleading
 
 Full-video VIPE changes the estimated poses of the identical RGB prefix after seeing the corrupted continuation. In seed 7, maximum prefix position disagreement from A is 0.00073 for R, 0.16397 for T, 0.17139 for M, and 0.00338 for N. Initial-anchor registration still passes. The continuation can therefore affect the offline observer's reconstruction of a shared past.
@@ -59,6 +69,13 @@ The new seed-7 A/S/M videos are pixel-identical to the earlier mechanism run, bu
 Both seeds preserve recognizable room geometry across all six arms. Their intervention differences are visually small; A/S are exact. For seed 7, mean position error ranges only from 0.03663 to 0.03672, versus A's 0.03668. Mean rotation errors range from 0.498 to 0.505 degrees. Post-boundary pixel MAE against A is approximately 0.39–0.46 on a 0–255 scale (seed 107: 0.48–0.53). This is evidence of a small effect under the tested interface, not a demonstrated control improvement.
 
 These arms never vary the future camera inputs. They identify the effect of the tested memory intervention, not a differential future-command gain. The CPU encoder check below likewise establishes input behavior rather than generator response.
+
+The tested context-noise KV re-pass is therefore a weak actuator here. DreamX's
+next control experiment should vary future commands with memory held fixed.
+Earlier later-history probes recorded a VIPE projected gain of 0.1217, but
+other histories/seeds disagreed and the inverse-control screen remained closed.
+This is not a universal per-step gain or proof that every possible memory
+intervention is inert.
 
 Seed-7 measured/commanded prefix translation amplitude is about 12.44, yet it does not reproduce LingBot's collapse. Ratios have different representation semantics across models, and no universal ratio threshold is established.
 
@@ -82,6 +99,14 @@ Both seeds complete all six arms with exact prefix, future-camera and identity c
 | 107 | N | 0.01333 | 0.571 | +0.00992 |
 
 Progress is the boundary-to-end displacement projected along the planned continuation, in anchor-depth units. The lower position errors in seed 7 accompany backward estimated progress for T and M. The effect is seed dependent: seed 107 T stays forward, and M has almost zero projected progress. One boundary cannot establish a limit cycle. A scene can remain recognizable and score better while still showing a return toward an earlier overshot target.
+
+That return is consistent with faithful measured labels: the represented camera
+has passed the target and the unchanged future target lies behind it. Backward
+progress alone is not a failure criterion. The completed bounded-continuation
+ablation [reports higher position error when suppressing that return](memory_rate_20261102.md);
+it does not refute measured-memory correction or supersede the moving-scene
+results below. Repeated overshoot, error growth, or oscillation require a
+multi-boundary test.
 
 ### Post-hoc DA3 check of motion direction
 
@@ -126,7 +151,7 @@ The underlying 1,009-frame reference reconstructions passed their pre-existing s
 | SANA | Position reduction 84.8% / 81.4% | Measured play-structure position stays visually closer to the reference; no sampled severe collapse. Rotation worsens from 0.491°/0.529° to 1.169°/1.038° |
 | DreamX | Position worsens about 1.6% / 0.3% | Nearly identical appearance and very small metric changes; no demonstrated benefit |
 | MatrixGame | Position worsens about 34.6% / 70.0% | Both arms show a strong contrast/saturation seam at the native boundary, then recover. Rotation improves; this is a mixed result |
-| Lyra | Position reduction 74.2% / 66.1% | Recognizable continuations; rotation worsens from 0.044°/0.027° to 0.122°/0.188°. Small absolute angular values should accompany percentages |
+| Lyra | Position reduction 74.2% / 66.1% | Recognizable continuations; small absolute angular changes: 0.044°/0.027° to 0.122°/0.188°. Statistical and perceptual significance are unestablished; do not frame this as a demonstrated meaningful rotation penalty |
 
 Net continuation progress provides another distinction. In the active playground pairs, measured-memory SANA gives +0.00932 / −0.00622 along the planned continuation, versus commanded +0.22397 / +0.22889 and desired +0.03692 in each seed. The second seed therefore also has backward estimated net progress despite lower position error. Measured LingBot remains positive (+0.05145 / +0.10156), MatrixGame remains near its planned forward displacement (+0.15170 / +0.15736 versus desired +0.15596), and Lyra remains forward (+0.14807 / +0.14965 versus desired +0.14687). These endpoint projections do not exclude local reversals or establish physical camera motion; they avoid confusing lower position error with guaranteed forward progression.
 
@@ -140,11 +165,11 @@ Offline-prefix consistency also varies across models. Maximum shared-prefix posi
 
 | Model | Evidence checked here or retained from preceding audits | Remaining limitation |
 |---|---|---|
-| LingBot | New two-seed component generations; historical and expanded RGB; native encoder | Full measured translation can corrupt the selected scene; operational normalization is not physical calibration |
-| DreamX | New two-seed component generations; historical and expanded RGB; native encoder | Native translation scale and focal contract unresolved; tiny observed effects |
+| LingBot | New two-seed component generations; historical and expanded RGB; native encoder | Plan-only denominator amplifies near-stationary-scene drift; qualify joint plan/history normalization and state rebuild |
+| DreamX | New two-seed component generations; historical and expanded RGB; native encoder | Tested memory replay weak; prioritize future-command channel with focal/unit checks and conditional response identification |
 | SANA-WM | Completed two-seed component retry; historical and expanded RGB; native encoder | Estimated metric anchor, rotation tradeoffs; no long-horizon qualification |
-| MatrixGame | Historical and two-seed expanded active-write RGB, saved label ranges | Boundary appearance seam, worse position score; no new component generations |
-| Lyra | Historical and two-seed expanded active-write RGB, native-anchor scale receipts | Rotation tradeoffs; second-scene completion missing; no new component generations |
+| MatrixGame | Historical and two-seed expanded active-write RGB, saved label ranges | Causal host skips whole-history re-decode; separate decoder/export seam before a model-level null claim |
+| Lyra | Historical and two-seed expanded active-write RGB, native-anchor scale receipts | Small absolute angular changes of uncertain significance; second-scene completion missing |
 | Astronex | Historical RGB and stored-label ranges, existing source audit | Historical scale uses recorded reference trajectory; lossless prefix parity unverified |
 | WorldWarp | Historical RGB and stored-label ranges, existing continuation-scale code audit | Historical prefix mismatch; current chained continuation geometry needs fresh GPU qualification |
 | VMem | Earlier native issued-increment reconstruction and boundary receipts | Apparent absolute-path zigzags mostly reflect rebasing; complete old rendered-memory inputs were not logged |
@@ -180,7 +205,13 @@ An execution ratio from ordinary rollout chunks is not automatically a different
 
 For a revised version, qualify causal geometry units from supported native depth/metadata on the same emitted pixels, preserve a consistent gauge across retained memory and future commands, and log final encoder inputs. Where geometry cannot establish the conversion, abstain from claiming physical measured translation. A conservative envelope gate could reject the LingBot extreme input, but the plan's envelope is neither a proved training support nor proof of control authority. N must not be silently promoted to that gate or to a truthful measured-label algorithm.
 
-The SANA result also motivates testing memory reconstruction together with a separately frozen future-rate policy. When the generated prefix has already overshot the desired path, a faithful memory label can put the next unchanged target behind the represented camera. A return can lower position error while reversing motion. An appropriate next test would compare the same accepted memory write with and without future commands constrained by supported speed and acceleration, retain lag explicitly, and continue scoring against the original timestamps. This is a design hypothesis; the current one-boundary experiment does not qualify that controller or prove the mechanism across models. Unqualified native translation units still block faithful measured-translation claims.
+The completed SANA/Lyra bounded-continuation pilot is an ablation of a different
+objective: suppressing return motion after a measured-memory write. It is not
+the primary test of whether memory correction improves tracking. The next
+matched study should use moving scene `0238de14`, preserve the original
+fixed-time tracking objective, and distinguish each model's effective actuator.
+See the [revised test specification](framing_review_20261103.md). Keep the
+near-stationary scene as a separately reported stress condition.
 
 Then validate scene continuity independently of pose-registration success, with failures included in policy outcomes. Require identity replay, common-prefix parity, unchanged future inputs for memory-only attribution, and repeatable observer evidence. Broader evaluation should follow a named frozen revision with those qualifications, rather than changing v1 after seeing its scores. Online calibration remains causal and probe-free at deployment; matched component interventions belong to development validation.
 
