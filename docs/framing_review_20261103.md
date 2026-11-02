@@ -61,6 +61,14 @@ That is a tradeoff introduced by its non-reversal objective, not evidence
 against measured-memory correction. It remains an ablation, not the next
 default tracking controller.
 
+Its speed ceiling supplies no catch-up headroom when incoming speed and nominal
+speed already equal the plan maximum. Its forward halfspace also forbids useful
+return after an overshoot. These structural restrictions bias this ablation
+against tracking recovery. They do not prove that F can never outperform M for
+an arbitrary generator or a variable-speed plan. The replacement experiment
+uses [fractional recovery](fractional_recovery_20261103.md), explicit above-plan
+speed headroom and permission to return; it does not repeat the no-return arm.
+
 Existing moving-target 0238de14 pairs are more relevant to tracking efficacy:
 
 | Model | Position reduction, seeds 7 / 107 | Rotation, commanded → measured |
@@ -75,6 +83,12 @@ rather than a demonstrated meaningful rotation penalty. The separate 0.057°
 rotation-refit example shows translation-estimation sensitivity in another
 condition. It does **not** calibrate a universal rotation-noise floor for Lyra.
 These are two-seed development results, not held-out generalization estimates.
+In particular, LingBot's two seeds can qualify an encoder change and its native
+state rebuild, but cannot establish that a 25–43% effect exceeds seed variation.
+The reported baseline differences as large as 0.88 elsewhere need their exact
+metric/window verified before use as a variance estimate. A larger paired seed
+cohort and uncertainty intervals are required for an efficacy claim; two seeds
+do not supply a calibrated noise floor or a power calculation.
 
 ## DreamX needs a future-command experiment
 
@@ -83,14 +97,25 @@ commanded prefix translation amplitude changes pixels by roughly 0.4/255 in
 seed 7. This is weak actuation through that memory interface. It does not prove
 that every possible history rewrite is inert.
 
-There is separate future-command evidence: e43058cb, seed 7, later history,
-endpoint 65 has projected gains 0.1434 (PnP) and 0.1217 (VIPE). The earlier
-follow-up still failed its overall screen because other seed/history conditions
-disagreed. Thus 0.12 is a conditional response measurement, not a universal
-per-step constant. The next matched DreamX control test should hold memory
-fixed and intervene on future conditioning, checking the actual camera/focal
-contract. Do not add a weak memory channel merely to force a common actuator
-across models, or enable inverse scaling from this single number.
+The approximately 0.12 number discussed in the review is a passive execution
+ratio for one scene/seed under rejoin, not differential command authority. It
+cannot identify an inverse controller. There is also separate archived
+future-command evidence: e43058cb, seed 7, later history, endpoint 65 has
+projected gains 0.1434 (PnP) and 0.1217 (VIPE). The earlier follow-up still failed
+its overall screen because other seed/history conditions disagreed. That
+distinct, similarly rounded VIPE number must not be substituted for the passive
+ratio, or treated as a universal per-step constant. The next matched DreamX
+control test should hold memory fixed and intervene on future conditioning,
+checking the actual camera/focal contract. Do not add a weak memory channel
+merely to force a common actuator across models, or enable inverse scaling from
+this single number.
+
+Keep the first feedback command at the original plan amplitude. Subsequent
+accepted lag observations can drive fractional recovery and provide natural
+command variation. Variation alone does not establish identifiable authority:
+the estimator still needs excitation, observer qualification and prediction
+checks. The new issuance API enforces the nominal first boundary, but its CPU
+tests do not qualify a DreamX native GPU integration.
 
 ## MatrixGame and Spatia attribution
 
@@ -118,15 +143,16 @@ and absolute pose errors. Do not count return motion alone as failure.
 | Interface | First qualification / matched comparison |
 | --- | --- |
 | LingBot | Original normalization and identity replay; then a shared plan/history denominator applied to commanded-history and measured-history controls with identical future tensors. Rebuild every retained state affected by the gauge change; fail closed if that cannot be demonstrated. |
-| SANA | Native/observer-sham versus measured memory with unchanged future targets. Keep the bounded non-reversal policy as an explicitly separate objective ablation. |
+| SANA | Retain native/observer-sham versus measured-memory evidence. Fresh M/F pairs compare identical measured memory with original future targets versus fractional recovery: request 0.5 of the boundary residual per chunk, speed budget 2 times the plan maximum, returns allowed. These are explicit experimental settings, not fitted response gains. |
 | Lyra | Native/observer-sham versus measured memory; report sub-degree angular differences in absolute units and establish observer repeatability before significance claims. |
-| DreamX | Fixed-memory baseline/sham versus a separately frozen future-command correction. Qualify actual focal/translation inputs and conditional response before inverse adaptation. |
+| DreamX | Fixed-memory baseline/sham versus future correction: first feedback command remains exactly nominal; later observed lag drives bounded fractional recovery. Qualify actual focal/translation inputs and conditional response before inverse adaptation. |
 | MatrixGame | Same-latent block-versus-joint decode diagnostic, separated from causal policy scores. |
 | Spatia | Baseline/correction boundary geometry and image evidence; retain unresolved attribution until independent tests distinguish the alternatives. |
 
 First qualify the changed encoder/actuator at one boundary. Then freeze a run
 with at least three intervention boundaries to assess repeated overshoot and
-oscillation. This specification is not an executed new moving-scene GPU queue;
-the moving-scene figures above are reanalysis of the existing matched pairs.
-The completed new GPU work is the eight-run SANA/Lyra pilot and its 16 post-hoc
-observer checks, preserved under their original manifests.
+oscillation. The moving-scene figures above are reanalysis of existing matched
+pairs. The new SANA M/F experiment has its own frozen manifest and
+[execution record](fractional_recovery_20261103.md); it does not constitute
+execution of the other model rows. The earlier eight-run SANA/Lyra pilot and
+its 16 post-hoc observer checks retain their original manifests.

@@ -7,6 +7,16 @@ in every pair. This does not refute measured-memory correction.
 The implementation is `camera_loop.memory_rate.bounded_memory_continuation`.
 It is a separate experimental API, not the default `CorrectionSession` policy.
 
+Interpretation update: this F arm has a structural tracking disadvantage. At
+constant nominal speed equal to the plan maximum, its cap supplies no catch-up
+headroom unless incoming motion is already faster. Its nonnegative halfspace
+forbids a return toward an overshot target. The four observed losses therefore
+cannot diagnose generator resistance to corrective commands. This is not a
+universal theorem about arbitrary generators or varying-speed plans: the cap
+can leave headroom below the global plan maximum. The next
+[fractional-recovery experiment](fractional_recovery_20261103.md) explicitly
+requests part of the residual, supplies speed headroom and allows return.
+
 ## Question and matched intervention
 
 The memory-component experiments found that correcting history labels can

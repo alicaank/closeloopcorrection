@@ -691,3 +691,10 @@ the same measured-memory write with and without bounded future translation in
 SANA and Lyra. Its equations, native geometry prerequisites, abstentions, source
 freeze and evaluation scope are documented separately. It does not implement
 online differential-gain identification or establish closed-loop stability.
+
+The [fractional-recovery follow-up](fractional_recovery_20261103.md) addresses
+that ablation's missing catch-up headroom and forbidden return. It requests an
+explicit residual fraction per chunk, permits return and accounts for recovery
+left unserved by speed/slew bounds. This is command geometry, not an identified
+plant gain. Its future-only wrapper supports nominal first-boundary issuance;
+DreamX native integration and authority qualification remain pending.

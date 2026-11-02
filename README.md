@@ -37,6 +37,17 @@ separate objective ablation, not evidence against measured-memory correction or
 a replacement default. The [results and figures](docs/memory_rate_gallery_20261102.md)
 retain the fixed original targets and observer limitations.
 
+The new [fractional-recovery experiment](docs/fractional_recovery_20261103.md)
+removes that structural restriction: it requests an explicit fraction of the
+boundary residual, provides speed headroom and allows return after overshoot.
+It is a separate experimental API. Its future-only issuance wrapper also
+enforces an unchanged first feedback command for the proposed DreamX test;
+native DreamX qualification and differential-authority learning remain pending.
+The four moving-scene SANA generations are complete: F raises mean position
+error in both seeds, while reducing endpoint and rotation errors. It is not
+promoted on this one-boundary tradeoff. See the
+[figures and visual review](docs/fractional_recovery_gallery_20261103.md).
+
 ## Quick start
 
 ```bash
@@ -206,7 +217,7 @@ See [running Spatia and Lyra-2 on 32 GB](docs/rtx-5090.md) for the inspected env
 
 ## Validation and scope
 
-The current 115-test CPU suite passes from source; the earlier 67-test revision also passed from an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. New regressions cover chunk-response timing, rejection transitions, bootstrap bounds, exact-input evaluation reuse, lossless RGB retention, bounded translation continuation and unsigned frame-order validation. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
+The current 126-test CPU suite passes from source; the earlier 67-test revision also passed from an installed wheel. It covers geometry, controller semantics, calibration binding, quality/causality rejection, all 11 original launcher paths, the seven explicit memory launchers, and compilation after relocation. New regressions cover chunk-response timing, rejection transitions, bootstrap bounds, exact-input evaluation reuse, lossless RGB retention, bounded translation continuation, unsigned frame-order validation, fractional residual recovery, and nominal first-boundary issuance. GPU end-to-end portability has not yet been established. Historical v3 guard qualification remains separate from the locally GPU-tested memory runtime; WorldWarp's guarded continuation is limited to two chunks.
 
 See [validation protocol](docs/validation.md). Source pins and available upstream license notices are retained under `src/camera_loop/bundled/`. No weights, datasets, generated videos, credentials or training checkpoints are included. See [NOTICE](NOTICE).
 
