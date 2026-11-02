@@ -11,13 +11,22 @@ Its [frozen protocol](method_v1_protocol.json) fixes the memory-only algorithm
 and expanded development cohort. The adaptive and future-command designs below
 remain separate components/ablations, not part of that candidate.
 
-The [latest mechanism audit](control_mechanism_audit_20261103.md) supersedes
+The [initial mechanism audit](control_mechanism_audit_20261103.md) supersedes
 optimistic interpretations of the recent LingBot memory result: both matched
 seeds collapse visually despite lower camera errors. It also corrects VMem's
 command-log interpretation and separates observer variability from persistent
 Spatia boundary discontinuities. The candidate is frozen for reproducibility,
 not validated for broader deployment; the next version needs memory-input and
 visual-quality qualification as well as coordinate algebra.
+
+The [cross-model follow-up](memory_components_20261102.md) separates native
+rotation and translation interventions in LingBot, DreamX and SANA and reviews
+the other implemented memory writers. It distinguishes corrupted imagery,
+small intervention effects, backward estimated recovery, and native boundary
+appearance seams. Its reference comparisons, observer limitations, component
+controls and figures should accompany any paper interpretation of v1 scores.
+No component result establishes a universal physical unit mapping or a causal
+gain from one ordinary rollout pair.
 
 ## 1. What the method does, and which version is implemented
 

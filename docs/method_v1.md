@@ -11,6 +11,14 @@ scores do not establish successful correction. The frozen policy is preserved;
 expanded qualification is held. Input-range or visual guards would be a new
 version requiring matched reruns, not retrospective edits to this protocol.
 
+The subsequent [cross-model component study](memory_components_20261102.md)
+isolates the translation component in the selected LingBot failure and finds
+different responses in DreamX and SANA. It also reviews all 18 completed
+expanded pairs against reference RGB. SANA can show lower pose error together
+with backward estimated progress; unchanged zero-write pairs are abstentions,
+not active-control successes. The amplitude-controlled diagnostic arm is not
+a physically calibrated memory write and does not modify this frozen method.
+
 ## Primary algorithm
 
 The external target trajectory remains fixed. At each supported native memory

@@ -2,6 +2,11 @@
 
 Executed 2026-11-02 UTC; the artifact directory retains its `20261103` label.
 
+Follow-up: the [cross-model six-arm study](memory_components_20261102.md)
+separates rotation and translation, extends fresh generation to DreamX and
+SANA, and reviews the other memory writers. This page preserves the earlier
+four-arm experiment and its then-unresolved component attribution.
+
 The new matched LingBot experiment fails visually in both seeds. Measured-memory
 reconstruction changes the continuation while preserving every future camera
 tensor, but the changed continuation collapses. Its lower pose-estimation error
