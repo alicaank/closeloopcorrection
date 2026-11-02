@@ -1,0 +1,19 @@
+[2026-11-03 00:51:46,130] [WARNING] [real_accelerator.py:199:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[PYBOOT] host=prs-hj RANK=None LOCAL_RANK=None WORLD_SIZE=None MASTER_ADDR=None MASTER_PORT=None
+Loading models from: "/home/hj/Alican/sota_repos/matrix_game/Matrix-Game-3.5/checkpoints/Wan2.2-TI2V-5B/Wan2.2_VAE.pth"
+Detected non-safetensors files, which may cause slower loading. It's recommended to convert it to a safetensors file.
+Loaded model: {
+    "model_name": "wan_video_vae",
+    "model_class": "diffsynth.models.wan_video_vae.WanVideoVAE38",
+    "extra_kwargs": null
+}
+No wan_video_text_encoder models available. This is not an error.
+No wan_video_dit models available. This is not an error.
+Using wan_video_vae from "/home/hj/Alican/sota_repos/matrix_game/Matrix-Game-3.5/checkpoints/Wan2.2-TI2V-5B/Wan2.2_VAE.pth".
+No wan_video_image_encoder models available. This is not an error.
+No wan_video_motion_controller models available. This is not an error.
+No wan_video_vace models available. This is not an error.
+No wan_video_vap models available. This is not an error.
+No wans2v_audio_encoder models available. This is not an error.
+No wan_video_animate_adapter models available. This is not an error.
+{"passed": true, "model_class": "WanVideoVAE38", "parameters": 704688668, "dtype": "torch.bfloat16", "device": "cpu", "diffusion_and_text_models_loaded": false, "scope": "Actual native VAE-only loading. No GPU decode or RGB equivalence claimed."}

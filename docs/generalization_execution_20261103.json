@@ -1,5 +1,5 @@
 {
-  "snapshot_time": 1793663256.9499736,
+  "snapshot_time": 1793663637.5089135,
   "scope": "Dated execution snapshot; full research goal remains incomplete.",
   "prior_resource_attempt": {
     "path": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification",
@@ -247,7 +247,7 @@
         ],
         "started": 1793662992.0694094,
         "pid": 2813138,
-        "min_host_available_bytes": 35173109760
+        "min_host_available_bytes": 11656704000
       }
     },
     "pairs": {
@@ -346,6 +346,32 @@
         "Original eight SANA cases retained"
       ]
     },
+    "gpu_qualified": false
+  },
+  "matrix_decoder_audit": {
+    "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit",
+    "manifest_sha256": "fa019058b1a974be2e06fc784d50f3e7ffdb6962fe6a696538d703e7d99927ce",
+    "status_snapshot": {
+      "pid": 2818540,
+      "phase": "waiting_for_gpu_lock",
+      "started": 1793663587.6089,
+      "manifest_sha256": "fa019058b1a974be2e06fc784d50f3e7ffdb6962fe6a696538d703e7d99927ce",
+      "jobs": {},
+      "failures": [],
+      "held_cases": {}
+    },
+    "queue_process_exists": true,
+    "cpu_load": {
+      "passed": true,
+      "model_class": "WanVideoVAE38",
+      "parameters": 704688668,
+      "dtype": "torch.bfloat16",
+      "device": "cpu",
+      "diffusion_and_text_models_loaded": false,
+      "scope": "Actual native VAE-only loading. No GPU decode or RGB equivalence claimed."
+    },
+    "generation_jobs": 0,
+    "decode_jobs": 8,
     "gpu_qualified": false
   }
 }

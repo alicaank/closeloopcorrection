@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "model_class": "WanVideoVAE38",
+  "parameters": 704688668,
+  "dtype": "torch.bfloat16",
+  "device": "cpu",
+  "diffusion_and_text_models_loaded": false,
+  "scope": "Actual native VAE-only loading. No GPU decode or RGB equivalence claimed."
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "manifest_sha256": "fa019058b1a974be2e06fc784d50f3e7ffdb6962fe6a696538d703e7d99927ce",
+  "checks": [
+    "Actual released BF16 VAE-only CPU load",
+    "All eight saved latent/RGB inputs present and hashed",
+    "Native source freeze checked",
+    "Diagnostic scripts compile"
+  ],
+  "gpu_decode_qualified": false
+}

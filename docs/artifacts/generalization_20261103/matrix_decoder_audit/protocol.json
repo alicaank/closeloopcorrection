@@ -1,0 +1,25 @@
+{
+  "scope": "Offline decoder attribution only. All four original MatrixGame short-cohort pairs, both arms; no additional video generation and no replacement of causal outputs/scores.",
+  "cases": [
+    "matrixgame_0238de14_s7",
+    "matrixgame_0238de14_s107",
+    "matrixgame_924228bf_s7",
+    "matrixgame_924228bf_s107"
+  ],
+  "arms": [
+    "commanded",
+    "measured"
+  ],
+  "frames": 169,
+  "control": "Decode saved latents [0:22] and [21:43] separately; concatenate first 85 RGB frames and last 84 RGB frames. Require exact original RGB equality before attributing any difference.",
+  "treatment": "Decode the same complete 43-latent history with the released decoder and identical BF16/spatial tiling.",
+  "measurements": [
+    "Exact block-replay control",
+    "Equality of previously emitted first 85 RGB frames",
+    "Per-frame joint-vs-stream RGB difference",
+    "Adjacent-frame RGB difference, mean and contrast around seam 84\u219285",
+    "Lossless archived joint output for visual review"
+  ],
+  "limitations": "An offline export change is not a deployed causal correction. RGB differences are not camera velocities. No new aggregate method efficacy claim is made.",
+  "resource": "VAE-only loading, shared GPU locks, 4 GiB launch and 2 GiB runtime disk/host reserve. Original native inputs and outputs preserved."
+}

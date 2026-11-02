@@ -229,3 +229,23 @@ inspection: four writes, exact prefix, a 1.76% mean-position reduction and a
 the reference. No regeneration floor or population confidence interval was
 estimated; treat this as a small descriptive result. Details are in the
 [visual audit](multiboundary_visual_audit_20261103.md).
+
+### MatrixGame decoder attribution (queued)
+
+The saved latent history permits a [decoder-only audit](matrix_decoder_audit_20261103.md)
+of all four original MatrixGame short pairs, both arms, without new generation.
+It first requires exact reconstruction of the causal block export, then compares
+whole-history decoding of the same latents and checks whether previously emitted
+RGB changes. The VAE clears temporal state at each decode call, providing a
+specific possible seam mechanism. CPU VAE-only loading passed; GPU equivalence
+and the decoder effect remain pending. No live cohort source or score is changed.
+
+### Full-cohort coverage accounting
+
+The [40-pair coverage snapshot](generalization_coverage_20261103.json) keeps each
+original scene/seed/model case visible. At this snapshot two pairs have scores
+(one reused LingBot visual failure and one new DreamX pair); MatrixGame is
+running, one SANA case failed and its seven remaining parent cases are held by
+the model-level resource guard. Other cases are pending. The separate SANA retry
+appears beside those original failures/holds rather than replacing them. This is
+execution coverage, not a count of successful camera-control outcomes.
