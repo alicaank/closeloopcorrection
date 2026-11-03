@@ -13,7 +13,7 @@
       "seed": 7,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_02267acf_s7",
@@ -22,7 +22,7 @@
       "seed": 7,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_02267acf_s7",
@@ -43,7 +43,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_02267acf_s7",
@@ -52,7 +52,7 @@
       "seed": 7,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_c7418b7d_s7",
@@ -61,7 +61,7 @@
       "seed": 7,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_c7418b7d_s7",
@@ -70,7 +70,7 @@
       "seed": 7,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_c7418b7d_s7",
@@ -91,7 +91,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_c7418b7d_s7",
@@ -100,7 +100,7 @@
       "seed": 7,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_0238de14_s7",
@@ -109,7 +109,7 @@
       "seed": 7,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_0238de14_s7",
@@ -118,7 +118,7 @@
       "seed": 7,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_0238de14_s7",
@@ -139,7 +139,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_0238de14_s7",
@@ -148,7 +148,7 @@
       "seed": 7,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_924228bf_s7",
@@ -157,7 +157,7 @@
       "seed": 7,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_924228bf_s7",
@@ -166,7 +166,7 @@
       "seed": 7,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_924228bf_s7",
@@ -187,7 +187,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_924228bf_s7",
@@ -196,7 +196,7 @@
       "seed": 7,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_02267acf_s107",
@@ -205,7 +205,7 @@
       "seed": 107,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_02267acf_s107",
@@ -214,7 +214,7 @@
       "seed": 107,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_02267acf_s107",
@@ -235,7 +235,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_02267acf_s107",
@@ -244,7 +244,7 @@
       "seed": 107,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_c7418b7d_s107",
@@ -253,7 +253,7 @@
       "seed": 107,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_c7418b7d_s107",
@@ -262,7 +262,7 @@
       "seed": 107,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_c7418b7d_s107",
@@ -283,7 +283,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_c7418b7d_s107",
@@ -292,7 +292,7 @@
       "seed": 107,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_0238de14_s107",
@@ -301,7 +301,7 @@
       "seed": 107,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_0238de14_s107",
@@ -310,7 +310,7 @@
       "seed": 107,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_0238de14_s107",
@@ -331,7 +331,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_0238de14_s107",
@@ -340,7 +340,7 @@
       "seed": 107,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lingbot_924228bf_s107",
@@ -349,7 +349,7 @@
       "seed": 107,
       "frames": 77,
       "first_affected_frame": 13,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "sana_924228bf_s107",
@@ -358,7 +358,7 @@
       "seed": 107,
       "frames": 121,
       "first_affected_frame": 25,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "dreamx_924228bf_s107",
@@ -379,7 +379,7 @@
       "frames": 337,
       "blocks": 4,
       "first_affected_frame": 85,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     },
     {
       "key": "lyra_924228bf_s107",
@@ -388,7 +388,7 @@
       "seed": 107,
       "frames": 321,
       "first_affected_frame": 81,
-      "stage": "source_prepared_gpu_qualification_pending"
+      "stage": "queued_conditional_reuse_and_matched_generation"
     }
   ],
   "parent_freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
@@ -396,10 +396,15 @@
   "dreamx_manifest_sha256": "afbedc28cdcac69a275556c39b7f3560b61e754e485be04367cfdafb5b5f96f2",
   "other_host_preparation_sha256": "cc1f822a790e7558f2622688e72795974cc250007729f541b1373eaa975f59af",
   "remaining_work": [
-    "Freeze and queue the other 32 legacy comparisons after baseline/memory reuse qualification or matched regeneration",
-    "GPU control and attribution gates",
-    "Common scoring and visual review",
+    "GPU host/control/attribution gates and runtime reuse qualification",
+    "Common scoring and visual review of all cases including failures",
     "Aggregate policy selection before broader held-out evaluation"
   ],
-  "completed": false
+  "completed": false,
+  "other_model_manifests": {
+    "lingbot": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lingbot/manifest.json",
+    "sana": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/sana/manifest.json",
+    "matrixgame": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/matrixgame/manifest.json",
+    "lyra": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lyra/manifest.json"
+  }
 }

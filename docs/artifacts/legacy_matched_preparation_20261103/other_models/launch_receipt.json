@@ -1,0 +1,22 @@
+{
+  "lingbot": {
+    "pid": 3025932,
+    "queue": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lingbot",
+    "launched": 1793690938.0347087
+  },
+  "sana": {
+    "pid": 3025933,
+    "queue": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/sana",
+    "launched": 1793690938.0351074
+  },
+  "matrixgame": {
+    "pid": 3025934,
+    "queue": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/matrixgame",
+    "launched": 1793690938.0354238
+  },
+  "lyra": {
+    "pid": 3025935,
+    "queue": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lyra",
+    "launched": 1793690938.0356867
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "model": "lyra",
+  "cases": {
+    "lyra_02267acf_s7": {
+      "key": "lyra_02267acf_s7",
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_c7418b7d_s7": {
+      "key": "lyra_c7418b7d_s7",
+      "model": "lyra",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_0238de14_s7": {
+      "key": "lyra_0238de14_s7",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_924228bf_s7": {
+      "key": "lyra_924228bf_s7",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_02267acf_s107": {
+      "key": "lyra_02267acf_s107",
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_c7418b7d_s107": {
+      "key": "lyra_c7418b7d_s107",
+      "model": "lyra",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_0238de14_s107": {
+      "key": "lyra_0238de14_s107",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    },
+    "lyra_924228bf_s107": {
+      "key": "lyra_924228bf_s107",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 321,
+      "first_affected_frame": 81
+    }
+  },
+  "first_case": "lyra_02267acf_s7",
+  "scope": "All eight original cases for this model within the full five-model, 40-case comparison.",
+  "arms": {
+    "B": "Native future commands, commanded history, original causal endpoint observer",
+    "S": "Full-horizon native identity/sham command encoding, commanded history",
+    "L": "Existing correction arm and commanded history; explicit legacy actuator as documented",
+    "M": "Baseline future policy and measured memory"
+  },
+  "reuse": "Only complete baseline-arm outputs with the correct model/scene/seed, memory policy and exact original generated-source hashes (including children); copied source equivalence already qualified. Decode lossless RGB, verify retained raw hash and horizon, bind artifact hashes. Otherwise generate a fresh matched arm.",
+  "execution": "First full-horizon B/S identity; then all eight B/L comparisons; only then M and complete triplets. Scientific/registration failures retained. A memory failure cannot suppress already completed legacy comparisons.",
+  "gates": "Exact raw B/S full-horizon identity on the first prespecified case; exact B/L and B/L/M pre-intervention RGB and matching intrinsics for every scored case.",
+  "primary_metric": "Mean fixed-time position from the original first-affected frame to the original native endpoint. Rotation, endpoint, whole-rollout, quality, unavailable registration and failures remain visible.",
+  "legacy_caveat": "Preserve the actual legacy host/controller and its observer acceptance behavior. No newly fitted gain, bounded non-reversal rule or measured-memory rewrite is added to L. DreamX uses its separately documented corrected common host.",
+  "parent_manifest": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json",
+  "parent_manifest_sha256": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
+  "parent_overlay_hashes": {
+    "lyra": "ed2f36ed5606fd579971e739a7754581d55b658bf9f87fd858e5424c8cb43c80",
+    "lyra_child": "dc0545efdecc299911ee31adc241e28380a2bde90ba199108f91396d677465dd"
+  },
+  "copied_overlay_hashes": {
+    "lyra": "b8f7ccf22021daa3558a5e63ab0e0010e1d1f56bc52ad0ff7192ef9b95f3880f",
+    "lyra_child": "9f44acb72e866ed2fae4f31d327f92d30634e7b20a9701d3eb5a586b31a2ffbf"
+  },
+  "guards": "4 GiB launch / 2 GiB runtime disk reserve; 2 GiB host-memory reserve; shared GPU locks"
+}

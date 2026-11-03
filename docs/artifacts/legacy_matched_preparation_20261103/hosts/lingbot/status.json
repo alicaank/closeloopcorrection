@@ -1,0 +1,9 @@
+{
+  "pid": 3025932,
+  "phase": "waiting_for_gpu_lock",
+  "started": 1793690938.0669496,
+  "manifest_sha256": "35ac033003529d87c1bf8e38264cd1ec31f1b72b6928f729a332f0dc9103704a",
+  "jobs": {},
+  "failures": [],
+  "held_cases": {}
+}

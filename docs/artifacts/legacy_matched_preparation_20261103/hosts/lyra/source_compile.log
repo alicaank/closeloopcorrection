@@ -1,0 +1,2 @@
+{"model": "lyra", "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_run.py", "sha256": "b8f7ccf22021daa3558a5e63ab0e0010e1d1f56bc52ad0ff7192ef9b95f3880f", "compiled": true}
+{"model": "lyra_child", "source": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_plugin.py", "sha256": "9f44acb72e866ed2fae4f31d327f92d30634e7b20a9701d3eb5a586b31a2ffbf", "compiled": true}

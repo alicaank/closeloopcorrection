@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "manifest_sha256": "b1569d2214a06a0dcef73596ce1a3d54d6f372c8bc1dba37213794de9af161d5",
+  "gpu_qualified": false,
+  "checks": [
+    "Eight reuse/attribution CPU tests",
+    "Native-interpreter generated source compilation",
+    "Copied host byte equality and normalized overlay equality to its parent",
+    "All inherited source/input hashes verified",
+    "Original eight cases and horizons retained"
+  ]
+}

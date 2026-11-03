@@ -7,14 +7,22 @@ Legacy rejoin remains a leading main-method candidate following the [historical 
 | Model | Cases | RGB frames | State at this snapshot |
 | --- | ---: | ---: | --- |
 | DreamX | 8 | 69 | New common driver CPU-qualified; 32 generations queued behind existing GPU work |
-| LingBot | 8 | 77 | Frozen source copied and generated overlay equivalence checked; comparison queue pending |
-| SANA | 8 | 121 | Transition-order resource host copied and source equivalence checked; GPU/reuse qualification pending |
-| MatrixGame | 8 | 337 | Observer-lifetime resource host copied and source equivalence checked; comparison queue pending |
-| Lyra | 8 | 321 | Observer-resource host copied and source equivalence checked; GPU/reuse qualification pending |
+| LingBot | 8 | 77 | Conditional reuse and matched generation queued; GPU gates pending |
+| SANA | 8 | 121 | Transition-order resource host queued; GPU/reuse qualification pending |
+| MatrixGame | 8 | 337 | Observer-lifetime resource host queued; GPU/reuse qualification pending |
+| Lyra | 8 | 321 | Observer-resource host queued; GPU/reuse qualification pending |
 
 The scenes are `02267acf`, `c7418b7d`, `0238de14`, and `924228bf`; seeds are 7 and 107. The other four models' source files are byte-identical to their respective parents. Six generated driver/child overlays compile and match after normalizing only the copied source directory. This proves source equivalence, not GPU execution equivalence or availability of all paired results.
 
 The DreamX queue is `analysis/legacy_rejoin_matched_20261103/dreamx_host/run_queue.py`, launched as PID 3021657 and confirmed alive waiting on the shared GPU lock. Its manifest SHA256 is `afbedc28cdcac69a275556c39b7f3560b61e754e485be04367cfdafb5b5f96f2`: eight cases, 32 generations and 88 total generation/retention/gate/scoring jobs. No new GPU efficacy result is claimed here. The earlier frozen queues and outputs remain unchanged.
+
+The remaining 32 cases are now also queued as four independent, guarded model queues under `analysis/legacy_rejoin_matched_20261103/hosts/`. LingBot, SANA, MatrixGame and Lyra launched as PIDs 3025932, 3025933, 3025934 and 3025935 respectively; each was verified alive waiting for the shared GPU lock. Each has 58 jobs: source-qualified output reuse or fresh generation, sham/prefix gates, and common scoring. The first prespecified case receives a newly generated full-horizon sham. All eight baseline/legacy comparisons precede memory-arm completion and triplet scoring, so a later memory failure cannot suppress completed legacy evidence.
+
+Reuse is conditional, not inferred from an old score. A reference must have matching model, scene, seed and baseline-arm metadata, the requested commanded/measured policy, completed parent and child receipts, and the exact parent generated-source hashes. The cloned source must match that parent apart from its relocated directory. Runtime then decodes the lossless RGB, checks the original horizon and retained raw-RGB hash, and binds the actual artifact hashes. Missing or source-incompatible references trigger a new matched generation in an owned directory. A corrupt archive fails qualification rather than being silently accepted. Later gates/scoring recheck the bindings.
+
+At preparation, 14 LingBot and 12 MatrixGame baseline/memory outputs passed metadata checks; SANA and Lyra references were still pending in their earlier queues. These are potential reuse counts, not completed runtime qualifications. The first LingBot pair uses an older generated-source hash and will be regenerated in the matched host. Existing outputs and failures remain intact. The new queues never delete reference outputs; only their own newly generated raw files may be replaced after verified FFV1 retention.
+
+Eight additional CPU tests verify source/policy/seed/completion rejection, child-receipt requirements, receipt location, and detection of modified bound artifacts. Native-interpreter source compilation, all inherited source/input hashes, scientific-arm argument routing and the legacy-before-memory execution order also passed. None establishes GPU parity or efficacy. See the [four-model preparation receipt](artifacts/legacy_matched_preparation_20261103/other_models/preparation.json) and [launch verification](artifacts/legacy_matched_preparation_20261103/other_models/launch_verification.json).
 
 ## DreamX's common causal driver
 
@@ -41,6 +49,6 @@ The independent offline VIPE evaluator scores all three observed arms with one c
 
 Raw RGB is retained through verified lossless FFV1 round trips. The queue preserves the established 4 GiB launch / 2 GiB runtime disk reserves and 2 GiB host-memory reserve. Resource failures, rejected observations, failed attribution gates and missing registrations remain visible. GPU gating or scientific failure does not permit selecting replacement scenes.
 
-Remaining work is to freeze and queue the other 32 cases after qualifying baseline/memory reuse or arranging matched regeneration, run GPU gates and scoring, review visuals and boundary behavior, and select the policy from aggregate evidence before broader held-out evaluation.
+All 40 cases are now represented in launched queues. Remaining work is runtime reuse qualification or matched regeneration, GPU gates and scoring, visual and boundary-behavior review, and aggregate policy selection before broader held-out evaluation. No ranking between legacy rejoin and memory-only is established by queue preparation.
 
 [Full 40-case plan](artifacts/legacy_matched_preparation_20261103/plan.json) · [Four-model source preparation](artifacts/legacy_matched_preparation_20261103/host_preparation.json) · [DreamX frozen manifest](artifacts/legacy_matched_preparation_20261103/dreamx_host/manifest.json) · [CPU qualification](artifacts/legacy_matched_preparation_20261103/dreamx_host/cpu_validation.json). The archived scripts and manifests retain workspace-specific paths; the manifest records all frozen dependency hashes.

@@ -1,0 +1,34 @@
+{
+  "lingbot": {
+    "cases": 8,
+    "jobs": 58,
+    "mandatory_new_generations": 9,
+    "maximum_generations_with_fallback": 25,
+    "metadata_eligible": 14,
+    "manifest_sha256": "35ac033003529d87c1bf8e38264cd1ec31f1b72b6928f729a332f0dc9103704a"
+  },
+  "sana": {
+    "cases": 8,
+    "jobs": 58,
+    "mandatory_new_generations": 9,
+    "maximum_generations_with_fallback": 25,
+    "metadata_eligible": 0,
+    "manifest_sha256": "2bf661d7bd3966d5a86682d15ec49b106de5bafac56750f4dcea3d5fb36fecd0"
+  },
+  "matrixgame": {
+    "cases": 8,
+    "jobs": 58,
+    "mandatory_new_generations": 9,
+    "maximum_generations_with_fallback": 25,
+    "metadata_eligible": 12,
+    "manifest_sha256": "b1569d2214a06a0dcef73596ce1a3d54d6f372c8bc1dba37213794de9af161d5"
+  },
+  "lyra": {
+    "cases": 8,
+    "jobs": 58,
+    "mandatory_new_generations": 9,
+    "maximum_generations_with_fallback": 25,
+    "metadata_eligible": 0,
+    "manifest_sha256": "ef9d906c93b59de8a10fb97445c6a19b025222ff11471d2e13f3f47b69a3d9b3"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "verified_at": 1793691101.4567153,
+  "queues": {
+    "lingbot": {
+      "pid": 3025932,
+      "phase": "waiting_for_gpu_lock",
+      "command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lingbot/run_queue.py ",
+      "manifest_sha256": "35ac033003529d87c1bf8e38264cd1ec31f1b72b6928f729a332f0dc9103704a",
+      "jobs_started": 0
+    },
+    "sana": {
+      "pid": 3025933,
+      "phase": "waiting_for_gpu_lock",
+      "command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/sana/run_queue.py ",
+      "manifest_sha256": "2bf661d7bd3966d5a86682d15ec49b106de5bafac56750f4dcea3d5fb36fecd0",
+      "jobs_started": 0
+    },
+    "matrixgame": {
+      "pid": 3025934,
+      "phase": "waiting_for_gpu_lock",
+      "command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/matrixgame/run_queue.py ",
+      "manifest_sha256": "b1569d2214a06a0dcef73596ce1a3d54d6f372c8bc1dba37213794de9af161d5",
+      "jobs_started": 0
+    },
+    "lyra": {
+      "pid": 3025935,
+      "phase": "waiting_for_gpu_lock",
+      "command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lyra/run_queue.py ",
+      "manifest_sha256": "ef9d906c93b59de8a10fb97445c6a19b025222ff11471d2e13f3f47b69a3d9b3",
+      "jobs_started": 0
+    }
+  }
+}
