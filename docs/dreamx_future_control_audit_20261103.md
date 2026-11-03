@@ -22,6 +22,16 @@ initial-anchor registration; this audit applies no additional trajectory or
 scale fit. We compare their F-arm positions at the latest available RGB frame,
 and the directions from each estimated position toward the same target.
 
+**The original online and offline RGB inputs also differ in preprocessing.**
+`future_hook.py` quantizes raw prefix decoder output for DA3. The native final
+export applies `postprocess_video_frames` with `--color_correction_strength 1.0`
+before saving the frames used by VIPE. That function applies chunk-relative Lab
+color correction. The online request images and decoder latents were not
+retained, so exact pixel parity between those paths cannot be checked afterward.
+The table therefore compares the two complete observation pipelines at matching
+frame indices, not two estimators on verified identical images. It does not
+isolate an estimator defect or a temporal-context effect.
+
 | Seed | Available RGB frame | Position disagreement | Residual-direction cosine |
 | --- | ---: | ---: | ---: |
 | 7 | 32 | 0.006598 | 0.336 |
@@ -33,7 +43,7 @@ and the directions from each estimated position toward the same target.
 
 Position values use the fixed anchor-depth units, not verified metres. These
 are observer differences, not errors against ground truth. Causal context,
-offline optimization, geometry predictions and registration can all contribute.
+offline optimization, RGB preprocessing, geometry predictions and registration can all contribute.
 They cannot identify which estimate is more accurate. The first nominal
 boundary at frame 20 is also retained in the machine-readable audit.
 
@@ -57,7 +67,11 @@ commands, retune the frozen cases or retroactively reject inconvenient scores.
   scalar length ratios alone as camera-control authority.
 - Before proposing gain changes from these cases, compare independent observers
   using matched causal RGB windows and inspect scale/pose stability across
-  overlapping windows. That follow-up is not executed by this CPU audit.
+  overlapping windows. Reusing final exported RGB in both estimators is a new
+  matched-input diagnostic, not an exact replay of the original online DA3 input.
+  That follow-up is not executed by this CPU audit.
+  The [matched exported-image diagnostic](dreamx_matched_observers_20261103.md)
+  has now passed its CPU selection preflight and is queued separately.
 - Continue the frozen near-stationary cases and matched multi-model legacy
   study. Two seeds on one development scene do not settle method selection.
 

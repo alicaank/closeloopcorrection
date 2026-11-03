@@ -33,6 +33,9 @@ def main():
         assert hashes[str(path.relative_to(ROOT))] == manifest['sources'][str(path)]
     path = track(BASE / 'future_hook.py')
     assert hashes[str(path.relative_to(ROOT))] == manifest['sources'][str(path)]
+    for path in [BASE / 'run.py', ROOT / 'analysis/plan_base_restart_20261008/model_readiness_20261027/repos/dreamx/inference_ar_forcing.py', ROOT / 'analysis/plan_base_restart_20261008/model_readiness_20261027/repos/dreamx/utils/postprocess.py']:
+        track(path)
+        assert hashes[str(path.relative_to(ROOT))] == manifest['sources'][str(path)]
     rows = []
     for seed in (7, 107):
         key = f'dreamx_0238de14_s{seed}'
@@ -94,7 +97,7 @@ def main():
     result = dict(
         scope='Two completed moving-scene DreamX F runs; replay of frozen float64 issuance, not native bf16 encoder replay.',
         definition='Command recovery is the requested geometric endpoint change before bridging, not observed generator recovery. Speed ratios cover per-RGB-frame proposals, not physical speed.',
-        observer_comparison='Online DA3 and offline VIPE poses at the same available RGB frame, each registered by its existing initial-anchor procedure. No additional trajectory alignment or scale fit. Neither observer is ground truth; causal windows and full-video fits differ.',
+        observer_comparison='Online DA3 and offline VIPE poses at the same available RGB frame index, each registered by its existing initial-anchor procedure. No additional trajectory alignment or scale fit. Neither observer is ground truth; causal windows and full-video fits differ. Online DA3 uses raw decoder RGB; offline VIPE uses the exported RGB after Lab color correction at strength 1.0. Original online RGB/latents were not retained. This is not a verified identical-input estimator comparison.',
         cases=rows, input_sha256=hashes,
         script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     (OUT / 'audit.json').write_text(json.dumps(result, indent=2, allow_nan=False) + '\n')

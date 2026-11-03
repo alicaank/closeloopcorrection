@@ -1,7 +1,7 @@
 {
   "scope": "Two completed moving-scene DreamX F runs; replay of frozen float64 issuance, not native bf16 encoder replay.",
   "definition": "Command recovery is the requested geometric endpoint change before bridging, not observed generator recovery. Speed ratios cover per-RGB-frame proposals, not physical speed.",
-  "observer_comparison": "Online DA3 and offline VIPE poses at the same available RGB frame, each registered by its existing initial-anchor procedure. No additional trajectory alignment or scale fit. Neither observer is ground truth; causal windows and full-video fits differ.",
+  "observer_comparison": "Online DA3 and offline VIPE poses at the same available RGB frame index, each registered by its existing initial-anchor procedure. No additional trajectory alignment or scale fit. Neither observer is ground truth; causal windows and full-video fits differ. Online DA3 uses raw decoder RGB; offline VIPE uses the exported RGB after Lab color correction at strength 1.0. Original online RGB/latents were not retained. This is not a verified identical-input estimator comparison.",
   "cases": [
     {
       "key": "dreamx_0238de14_s7",
@@ -274,6 +274,9 @@
     "analysis/dreamx_future_command_20261103/source/camera_loop/geometry.py": "28929d5cc1b5ac1f3f3812b39e596ad713f19c4d9a6deafe77508875ac662672",
     "analysis/dreamx_future_command_20261103/source/camera_loop/memory_rate.py": "83ff492c03c7ed4a3b5ddc14693f0f5edd741dfe19d8e83d3c5b722447fb05d4",
     "analysis/dreamx_future_command_20261103/future_hook.py": "4adb26d0c13da6113c499d72583d26c6c96b497cfa0837470eac7cb42e9f3f1f",
+    "analysis/dreamx_future_command_20261103/run.py": "87f643eb5628a32897fdb714a14918c44ea50f4bc9ebdf88ab732542d3c266d8",
+    "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/dreamx/inference_ar_forcing.py": "fdf5b6d8b3a72704ea83405ed178e021e7ea047614fe3554da5a1f2e2abb7b16",
+    "analysis/plan_base_restart_20261008/model_readiness_20261027/repos/dreamx/utils/postprocess.py": "f96c45ec1f12df317f2b44ae6460960b52d12e72770830f0df2a9f0775c4afdd",
     "analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/score.json": "840608f669444f019a0921e1040858b18012b038ebe4742a75a2b522b4ca03fe",
     "analysis/dreamx_future_command_20261103/gates/dreamx_0238de14_s7_identity.json": "693e9ba977b02fa64db4104d2fcfe35d6f9e76399da6cc50bb17dd5d1ce99698",
     "analysis/dreamx_future_command_20261103/gates/dreamx_0238de14_s7_attribution.json": "c42280683fd7d91d19464a1e3892d2910dac52e2bfe657509902654d0e870d1a",
@@ -287,5 +290,5 @@
     "analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s107/F.npz": "1792b217b76caff8d86748b88d87d00b844142d2fad0032e4ffaec2167307a68",
     "analysis/dreamx_future_command_20261103/runs/dreamx_0238de14_s107/F/future_events.json": "d3c5f4e6d5645deb6c6903213feddc242d703fc10b2fbff3140230e37bfa75e4"
   },
-  "script_sha256": "c28a292ea4734b1ec0f58cc80f28adc19ec4706c00fb04f95f8c35c17626d49c"
+  "script_sha256": "13c0e27ac00bdbd5d061ef46a8b6b840d1be11cff4f0f807ed9464f3e241e0af"
 }

@@ -1,4 +1,45 @@
-# DreamX command-only pilot: frozen protocol and two moving-scene results
+# DreamX command-only pilot: frozen protocol and three reviewed results
+
+## Near-stationary stress case: 02267acf, seed 7
+
+The third completed case passes all 69-frame A/S identity checks and the 33-frame
+S/F prefix/native-state attribution checks. F changes three future chunks after
+one nominal boundary; memory remains commanded. This is a qualified negative
+position result, retained alongside the moving-scene improvements.
+
+| Metric, frames 33–68 | S | F | Change |
+| --- | ---: | ---: | --- |
+| Mean position | 0.027188 | 0.028816 | 5.99% higher |
+| Endpoint position | 0.062988 | 0.066292 | 5.25% higher |
+| Mean rotation | 0.9714° | 0.9447° | 0.0267° lower |
+| Endpoint rotation | 1.3669° | 1.2915° | 0.0754° lower |
+
+Both arms retain recognizable furniture and displays in the six inspected
+timestamps. Both drift from the nearly stationary reference and change scene
+details; there is no sampled near-total noise collapse. The images alone do not
+distinguish physical motion from generated geometry changes.
+
+The first active command proposal serves the requested 0.5 residual fraction.
+At the last two boundaries, the reported command-space fractions are only
+0.00257 and −0.01941: the nominal speed budget clips all nine proposed frames
+and slew limiting clips five. Incoming velocity exceeds the nominal budget,
+so the policy slews down rather than stopping instantaneously. This constrains
+the return within the short chunk; it is not evidence that the generator ignored
+a fully served 50% correction. These fractions describe commands, not camera
+execution, and are not learned gains.
+
+The mean-position regression is 0.001628 anchor units. Independent full-video
+VIPE fits differ on identical prefix RGB by mean 0.000786 and maximum 0.001626;
+this contextual sensitivity is not a calibrated significance test. Seed 107 of
+this scene remains pending. A scene-specific failure does not settle aggregate
+method quality, and the frozen settings are not retuned using this result.
+
+![Near-stationary reference and both arms](artifacts/dreamx_future_command_20261103/third_result/contact_sheet.jpg)
+
+[Score](artifacts/dreamx_future_command_20261103/third_result/score.json) ·
+[Visual, command and sensitivity review](artifacts/dreamx_future_command_20261103/third_result/dreamx_02267acf_s7.review.json) ·
+[A/S identity](artifacts/dreamx_future_command_20261103/third_result/dreamx_02267acf_s7_identity.json) ·
+[S/F attribution](artifacts/dreamx_future_command_20261103/third_result/dreamx_02267acf_s7_attribution.json).
 
 ## Moving-scene replication: two seeds, one scene
 
@@ -6,7 +47,7 @@ Both planned seeds on moving development scene `0238de14` have completed all
 69 RGB frames. Both pass full A/S identity and S/F prefix/native-state attribution.
 Each F run changes three future native chunks after the nominal first feedback;
 memory labels stay commanded. This is command correction, with no learned inverse
-gain. The two near-stationary cases remain pending at this review snapshot.
+gain. The first near-stationary result is reported above.
 
 | Seed | Mean position S → F | Endpoint position S → F | Mean rotation S → F | Endpoint rotation S → F |
 | --- | --- | --- | --- | --- |
