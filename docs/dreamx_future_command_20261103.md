@@ -1,8 +1,44 @@
-# DreamX command-only pilot: frozen protocol and first reviewed result
+# DreamX command-only pilot: frozen protocol and two moving-scene results
+
+## Moving-scene replication: two seeds, one scene
+
+Both planned seeds on moving development scene `0238de14` have completed all
+69 RGB frames. Both pass full A/S identity and S/F prefix/native-state attribution.
+Each F run changes three future native chunks after the nominal first feedback;
+memory labels stay commanded. This is command correction, with no learned inverse
+gain. The two near-stationary cases remain pending at this review snapshot.
+
+| Seed | Mean position S → F | Endpoint position S → F | Mean rotation S → F | Endpoint rotation S → F |
+| --- | --- | --- | --- | --- |
+| 7 | 0.014894 → 0.013970 (−6.20%) | 0.024509 → 0.022865 (−6.71%) | 0.6067° → 0.6788° | 0.7004° → 0.6119° |
+| 107 | 0.026960 → 0.025077 (−6.98%) | 0.042044 → 0.035081 (−16.56%) | 1.8818° → 1.8739° | 1.6294° → 1.6934° |
+
+All metrics above cover frames 33–68 in fixed anchor-depth units, not verified
+metres. Both seeds descriptively improve position; rotation changes are mixed.
+Two seeds of one scene do not establish generalization or superiority over legacy
+rejoin. The native camera contract differs from historical DreamX comparisons.
+
+For seed 107, the absolute mean-position reduction is 0.001883. The independently
+fitted trajectories disagree on their identical RGB prefix by mean 0.000850,
+p90 0.001322 and maximum 0.001361 position units. Mean/max prefix rotation
+disagreement is 0.0490°/0.1005°. This contextual sensitivity is not a calibrated
+noise floor or significance test; the second seed does not resolve that limitation.
+
+Direct inspection of six seed-107 timestamps shows a recognizable playground
+and similar S/F images, both departing from the reference viewpoint/detail.
+No near-total noise collapse or obvious large frame-32→33 jump is visible in
+these samples. Full-video continuity and physical camera motion remain unverified.
+
+![Second seed: reference, observer-only and future correction](artifacts/dreamx_future_command_20261103/second_result/contact_sheet.jpg)
+
+[Second score](artifacts/dreamx_future_command_20261103/second_result/score.json) ·
+[Visual and sensitivity review](artifacts/dreamx_future_command_20261103/second_result/dreamx_0238de14_s107.review.json) ·
+[A/S identity](artifacts/dreamx_future_command_20261103/second_result/dreamx_0238de14_s107_identity.json) ·
+[S/F attribution](artifacts/dreamx_future_command_20261103/second_result/dreamx_0238de14_s107_attribution.json).
 
 ## First completed pair: moving scene 0238de14, seed 7
 
-The first of four planned cases has completed the original 69 RGB frames.
+The first completed case retained the original 69 RGB frames.
 A/S observer identity passes for all 69 frames. S/F attribution passes for
 frames 0–32, native inputs and shared boundary/cache receipts. F's first feedback
 is nominal; its later three accepted observations change three future native
@@ -96,7 +132,7 @@ Four CPU tests using the actual released encoder pass, covering nominal parity,
 the explicit native anchor, next-slice isolation, rejected-observation rebasing,
 and invalid timestamp/intrinsics rejection. The actual source overlay compiles
 and native CLI startup passes. At freezing, GPU parity and efficacy were unverified;
-the completed first-case qualification and descriptive result are reported above.
+the completed two-seed qualification and descriptive results are reported above.
 
 At the original protocol snapshot the queue was waiting for the standard GPU lock.
 It has 36 jobs including gates, retention and scoring; required gate failures
