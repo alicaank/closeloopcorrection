@@ -1,0 +1,67 @@
+{
+  "scope": "Only assets unreferenced by all retained HTML/JS/JSON/CSS/Markdown; copied outside deployment with SHA256 verification. No experiment sources deleted.",
+  "files": [
+    {
+      "path": "evidence/visual_review_manifest_3f4b441dac.json",
+      "bytes": 59512,
+      "sha256": "3f4b441dac35bb2553585791452ed0fd31f5c2443e248e96342f43f998aaedb2"
+    },
+    {
+      "path": "evidence/visual_review_lingbot_924228bf_s7.abstention_rgb_71f3b89ae7.json",
+      "bytes": 31726,
+      "sha256": "71f3b89ae7557b0830fb57e6392dd1a134eeca8c04ac4b6dec9abb6fe63af14b"
+    },
+    {
+      "path": "evidence/cohort_resume_status_cdc3fc3486.json",
+      "bytes": 65935,
+      "sha256": "cdc3fc3486a79bb16ad78fb92416b4e4d13354032576dc3a463f932df4932700"
+    },
+    {
+      "path": "evidence/matrix_observer_lifetime_status_c9960898a9.json",
+      "bytes": 230,
+      "sha256": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684"
+    },
+    {
+      "path": "evidence/docs_matrix_decoder_audit_20261103_f2c2eb248d.md",
+      "bytes": 3768,
+      "sha256": "f2c2eb248dd56ccdebcecd6b066c00fa2aef6e904b101c889735224822a75399"
+    },
+    {
+      "path": "evidence/docs_multiboundary_visual_audit_20261103_a94a377efe.md",
+      "bytes": 17546,
+      "sha256": "a94a377efe4646b45903dabf2b69408f6d4b72577681f3e6c4b55d436bf7e980"
+    },
+    {
+      "path": "evidence/matrix_decoder_audit_status_e9523aa323.json",
+      "bytes": 227,
+      "sha256": "e9523aa323c095cd357a7e324ab804996515fc70686dde1d9d31a7858211c0b5"
+    },
+    {
+      "path": "evidence/docs_generalization_strategy_20261103_1dfb4c0690.md",
+      "bytes": 17233,
+      "sha256": "1dfb4c0690628c3c78ffc4133a6b61fcfeb4322e306f766bb656e96cf350ae82"
+    },
+    {
+      "path": "evidence/docs_generalization_coverage_20261103_e381732a5d.json",
+      "bytes": 103622,
+      "sha256": "e381732a5d1134b9368ed03aee845746a3e6853edd8605ef4911d51b18b7c080"
+    },
+    {
+      "path": "evidence/visual_review_dreamx_924228bf_s7.abstention_rgb_e59ca2c0bf.json",
+      "bytes": 28543,
+      "sha256": "e59ca2c0bf537dd6cd97847b27b137d59ead9249fb79229bf22a2f3328cea0b6"
+    },
+    {
+      "path": "evidence/online_response_v2_resume_20261103_status_e397c7b2fa.json",
+      "bytes": 372,
+      "sha256": "e397c7b2fa0a0311a246b4be3cc089a8f64b47ad9430ef46d50ac7653840fa40"
+    },
+    {
+      "path": "evidence/sana_observer_residency_status_d699c5f539.json",
+      "bytes": 230,
+      "sha256": "d699c5f53924f1f7b0a7f9f9d6566053e47dff2c3586ef0647b17444c51613fd"
+    }
+  ],
+  "bytes_retained_outside_deployment": 328944,
+  "static_bytes": 266959252
+}
