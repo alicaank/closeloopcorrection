@@ -1,4 +1,37 @@
-# DreamX command-only pilot: frozen protocol and three reviewed results
+# DreamX command-only pilot: all four cases reviewed
+
+All 12 generations completed their original 69 RGB frames. All four A/S identity
+and S/F prefix/native-state gates pass. Both moving-scene seeds lower mean
+position error by about 6–7%; the near-stationary seeds have opposite signs.
+These development results do not establish broad generalization or a matched
+ranking against legacy rejoin. All four remain in the report.
+
+## Final case: near-stationary 02267acf, seed 107
+
+| Metric, frames 33–68 | S | F | Change |
+| --- | ---: | ---: | --- |
+| Mean position | 0.045350 | 0.045022 | 0.72% lower |
+| Endpoint position | 0.072455 | 0.069610 | 3.93% lower |
+| Mean rotation | 0.9110° | 0.8794° | 0.0316° lower |
+| Endpoint rotation | 0.9852° | 0.9471° | 0.0381° lower |
+
+The absolute mean-position reduction is only 0.000328 anchor units. Both arms
+retain a recognizable room in six sampled timestamps while drifting from the
+reference and changing scene detail. There is no sampled near-total collapse;
+this does not establish full-video continuity or physical motion.
+
+All three active command proposals clip every one of their nine speed steps;
+their command-space recovery fractions are 0.1763, −0.0041 and −0.0029 despite
+requesting 0.5. Slew limits also apply. This is substantial unserved requested
+recovery, not a measured generator gain. Near-stationary seed dependence and
+observer sensitivity remain unresolved; no frozen setting was retuned.
+
+![Final case: reference and both arms](artifacts/dreamx_future_command_20261103/fourth_result/contact_sheet.jpg)
+
+[Score](artifacts/dreamx_future_command_20261103/fourth_result/score.json) ·
+[Visual and command review](artifacts/dreamx_future_command_20261103/fourth_result/dreamx_02267acf_s107.review.json) ·
+[A/S identity](artifacts/dreamx_future_command_20261103/fourth_result/dreamx_02267acf_s107_identity.json) ·
+[S/F attribution](artifacts/dreamx_future_command_20261103/fourth_result/dreamx_02267acf_s107_attribution.json).
 
 ## Near-stationary stress case: 02267acf, seed 7
 
@@ -31,7 +64,7 @@ execution, and are not learned gains.
 The mean-position regression is 0.001628 anchor units. Independent full-video
 VIPE fits differ on identical prefix RGB by mean 0.000786 and maximum 0.001626;
 this contextual sensitivity is not a calibrated significance test. Seed 107 of
-this scene remains pending. A scene-specific failure does not settle aggregate
+this scene is reported above. A scene-specific failure does not settle aggregate
 method quality, and the frozen settings are not retuned using this result.
 
 ![Near-stationary reference and both arms](artifacts/dreamx_future_command_20261103/third_result/contact_sheet.jpg)
@@ -117,7 +150,7 @@ remain unresolved from one scene/seed.
 [Visual and prefix-sensitivity review](artifacts/dreamx_future_command_20261103/first_result/dreamx_0238de14_s7.review.json) ·
 [Full A/S identity](artifacts/dreamx_future_command_20261103/first_result/dreamx_0238de14_s7_identity.json) ·
 [S/F attribution](artifacts/dreamx_future_command_20261103/first_result/dreamx_0238de14_s7_attribution.json).
-The remaining cases continue in the frozen queue. This input/FOV contract remains
+All four frozen cases have now completed. This input/FOV contract remains
 separate from historical DreamX comparisons.
 
 ## Frozen design
@@ -178,7 +211,7 @@ Four CPU tests using the actual released encoder pass, covering nominal parity,
 the explicit native anchor, next-slice isolation, rejected-observation rebasing,
 and invalid timestamp/intrinsics rejection. The actual source overlay compiles
 and native CLI startup passes. At freezing, GPU parity and efficacy were unverified;
-the completed two-seed qualification and descriptive results are reported above.
+the completed four-case qualification and descriptive results are reported above.
 
 At the original protocol snapshot the queue was waiting for the standard GPU lock.
 It has 36 jobs including gates, retention and scoring; required gate failures

@@ -1,0 +1,29 @@
+{
+  "deployment": {
+    "id": "appgdep_6ae9ac55c4b48191a8a12371d65ef271",
+    "project_id": "appgprj_6ae3401d14148191a33a2534e734aa9a",
+    "title": "Camera Correction \u00b7 Evaluation Lab",
+    "version_id": "appgprj_6ae3401d14148191a33a2534e734aa9a~appgver_d7fed7dee9f48191bcca49d519816723",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://camera-correction-results-20261029.alicankk.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae3401d14148191a33a2534e734aa9a",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-03T09:42:07.831588+00:00"
+  },
+  "source": {
+    "project_id": "appgprj_6ae3401d14148191a33a2534e734aa9a",
+    "checkout_path": "/home/hj/Alican/sites/camera-correction-results",
+    "commit_sha": "40c5f3871c231d51af30f8b356ba5b03bab63dc4",
+    "archive": "/home/hj/Alican/sites/camera-correction-results-update9.tar.gz"
+  },
+  "scope": "199 existing comparisons preserved exactly; four reviewed DreamX future-command pairs added. Shared queue snapshot refreshed; same owner-private audience retained.",
+  "validation": "203 browser selections; 25 studies; desktop and 390px mobile; video sync; 965 referenced assets present. Directly inspected new desktop/mobile screenshots.",
+  "page_id": null,
+  "archive_sha256": "89757cd10527ef80d8f790def6681340b3e7cf671b577adb136c8aa1da7d6a73",
+  "archive_bytes": 217832841,
+  "archive_removed_after_success": true
+}
