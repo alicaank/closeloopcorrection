@@ -9,6 +9,12 @@ SANA's separate residency retry also failed after an exact 97-frame prefix; its
 MatrixGame observer-lifetime retry is running. Retry results and other diagnostic
 queues remain separate from this original-attempt table.
 
+Five MatrixGame retries now pass full-horizon/prefix qualification and sampled
+visual review. Including those retries, **21 / 40 unique pairs** have qualified
+results. The [MatrixGame review](matrix_full_horizon_review_20261103.md) retains
+the original execution failures and reports three lower/one higher mean-position
+errors plus one abstention; this does not change the original-attempt table below.
+
 | Model | Scored / planned | Active / abstained | Mean position lower / higher / unavailable | Mean rotation lower / higher / equal |
 | --- | ---: | ---: | --- | --- |
 | LingBot | 8 / 8 | 6 / 2 | 6 / 0 / 2 | 3 / 3 / 2 |

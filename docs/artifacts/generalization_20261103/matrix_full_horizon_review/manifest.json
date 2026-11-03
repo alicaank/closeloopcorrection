@@ -1,0 +1,457 @@
+{
+  "scope": "Original 337-frame retry; sampled RGB review, not a full-video quality metric. Stored reference poses may be VIPE-derived, not independent GT.",
+  "queue_manifest_sha256": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
+  "script_sha256": "3b07f1850d7defec62285a1134594188cbf984c938d52c64db2a1f93f6e126ad",
+  "pairs": [
+    {
+      "key": "matrixgame_02267acf_s7",
+      "frames": [
+        0,
+        84,
+        85,
+        168,
+        252,
+        336
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_02267acf_s7.jpg",
+      "sheet_sha256": "43c0374a77b9a40aa1fd2aadeb6d945e0bb3c640f07fb169ad763fa3f12b4df6",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7/score.json",
+      "score_sha256": "cd14235a41d1df99a1dbce10481b8b162bc1967f6212d66300b2adb7388cc33d",
+      "gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7/attribution_gate.json",
+      "gate_sha256": "04be733282a5477d89c52281769707f1f34e32cb50f5b322e2239094c3543f4a",
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/commanded/frames.lossless.mkv",
+          "sha256": "08bcd23e420309dc2e4a9e1c609d74ee7725144959b4ef0478efd70fa576659b"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/measured/frames.lossless.mkv",
+          "sha256": "a2635795c79934694fc0dde9d6d7c787e203ce33190cdf243bd364ca94f68b84"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00001.jpg",
+          "sha256": "dbd275b79ec7f7fb46acaaec70b803d8f9147ff4559a7d00ceb40f34c01e0d03"
+        },
+        {
+          "frame": 84,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00085.jpg",
+          "sha256": "c7471b190c7127e71cd24ef9f9694e4865224efe7c5f87aec82732acc9ad7ceb"
+        },
+        {
+          "frame": 85,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00086.jpg",
+          "sha256": "f08a1cdddba701980ab4de7c7869ab9ac38399b212077fa870e9c9d34d9c46d6"
+        },
+        {
+          "frame": 168,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00169.jpg",
+          "sha256": "64304ce43ee274963a9a2ac064d11ed567020cbf45e64701da0703cf6b0ab45f"
+        },
+        {
+          "frame": 252,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00253.jpg",
+          "sha256": "2c22d39aff7a5ebffdebc0e0d4909acbbb58f0753e20c499b2369df5d317cd44"
+        },
+        {
+          "frame": 336,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00337.jpg",
+          "sha256": "7a9ac3dd78a2cadebf22b38845d63a7d7e89a684755c78190388b076f8d2e6c3"
+        }
+      ],
+      "accepted_writes": 3,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.009245519258263288,
+          "measured": 0.009011587670536012,
+          "measured_minus_commanded": -0.0002339315877272763,
+          "reduction_percent": 2.530215785535218
+        },
+        "position_endpoint": {
+          "commanded": 0.010796066096136954,
+          "measured": 0.010775255269064591,
+          "measured_minus_commanded": -2.08108270723633e-05,
+          "reduction_percent": 0.19276305727518495
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.2475131452274446,
+          "measured": 0.21972075525361726,
+          "measured_minus_commanded": -0.027792389973827353,
+          "reduction_percent": 11.228652097765712
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.19281076782693268,
+          "measured": 0.3015502412963056,
+          "measured_minus_commanded": 0.1087394734693729,
+          "reduction_percent": -56.396992084476146
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "classification": "Small numeric pose improvement with retained scene content and appearance drift; efficacy not established.",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_02267acf_s7.review.json",
+      "inspection_sha256": "45ebe4d4477141610d95c78dbe5c1e56449caaf703b3f68dc3002d4bf56a883c"
+    },
+    {
+      "key": "matrixgame_c7418b7d_s7",
+      "frames": [
+        0,
+        84,
+        85,
+        168,
+        252,
+        336
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_c7418b7d_s7.jpg",
+      "sheet_sha256": "5a88352effdcccb6491085629ea8c3b4eca34276721aa78b51adb9f4abc0e809",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7/score.json",
+      "score_sha256": "9b0f31beccb7b1b7334f75cf46fbeeb7b71eece627a38bc69adfc78469fa2487",
+      "gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7/attribution_gate.json",
+      "gate_sha256": "b7dd6e61807f962466937bf2ce0ebc5f88b9c7b3ec9a4ab73768bbbfd7d5e1eb",
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s7/commanded/frames.lossless.mkv",
+          "sha256": "7f4cd470f1a3383a7eca33ca3a9bcba645ea28709cd3a0ceb8870aac00cd6ef8"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s7/measured/frames.lossless.mkv",
+          "sha256": "a67977b980bd29761d97e80342bd08c418402cadfab7c147e0b0e390ee97968e"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00001.jpg",
+          "sha256": "65b3f2c26077985214a150a8151375533ed9fc6fec2981e692eec6744bc2e948"
+        },
+        {
+          "frame": 84,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00085.jpg",
+          "sha256": "9c39a95d141920b764570d8149ca8b0a6c97254d5d7e0087505fa7c2492eed33"
+        },
+        {
+          "frame": 85,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00086.jpg",
+          "sha256": "e75d6c226ee0aa5bea4ef55f44b9fa9f6990e54fc5bed3c5774ba2a4561e818d"
+        },
+        {
+          "frame": 168,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00169.jpg",
+          "sha256": "4faf7af491b20d7fa6b2cc5a10df8bbbda34a3a7c0c994fffba22318afa9fbea"
+        },
+        {
+          "frame": 252,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00253.jpg",
+          "sha256": "0956465cb0f8a83660848327229af1122edc2e4b724af6f691b7e663d0fd27ef"
+        },
+        {
+          "frame": 336,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00337.jpg",
+          "sha256": "a51d2d2b737d538f865b0da52354d861e37ea96e1b213fe80864e7360c88db54"
+        }
+      ],
+      "accepted_writes": 3,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.02758244551535417,
+          "measured": 0.009028256369504502,
+          "measured_minus_commanded": -0.018554189145849668,
+          "reduction_percent": 67.26810766478704
+        },
+        "position_endpoint": {
+          "commanded": 0.0270044513434949,
+          "measured": 0.010070189940071686,
+          "measured_minus_commanded": -0.016934261403423218,
+          "reduction_percent": 62.70914816235476
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.3254605110731715,
+          "measured": 0.2794114667215611,
+          "measured_minus_commanded": -0.04604904435161039,
+          "reduction_percent": 14.148888355078334
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.3274428167873894,
+          "measured": 0.3088258155585605,
+          "measured_minus_commanded": -0.018617001228828922,
+          "reduction_percent": 5.685573258709491
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "classification": "Numeric position benefit with recognizable scene and appearance drift; sampled review does not establish clean visual success.",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_c7418b7d_s7.review.json",
+      "inspection_sha256": "c4014f5211b13f50cfd2bee4ddedc764d9a1afa56149ac8da2412ad05a966255"
+    },
+    {
+      "key": "matrixgame_0238de14_s7",
+      "frames": [
+        0,
+        84,
+        85,
+        168,
+        252,
+        336
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_0238de14_s7.jpg",
+      "sheet_sha256": "1cd6f1e9d1e2ef27ed40aebd2d89ddc85dd62dda98d31870497f45fd4c93b14e",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7/score.json",
+      "score_sha256": "6ce541f73e7cff339dc52a61dcb527ca4e0eb6edd936365aa1129b4e16e32ba2",
+      "gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7/attribution_gate.json",
+      "gate_sha256": "dcc8cd8d1ea6a0217ed81cde486876da0b1f8e0618ec03abf72eacae750fc366",
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s7/commanded/frames.lossless.mkv",
+          "sha256": "9b4767840ec7fa4ccfe49628ae47a1076682c54706a5032d02af2cd54d27f91c"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s7/measured/frames.lossless.mkv",
+          "sha256": "2e5551230e308f58777dcd66101618d5553de497a12193b531451863c470879d"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00001.jpg",
+          "sha256": "1c1ce356899d698179fd103617162a53cb397e2f0a07cb128aa9c3e80b5d01d2"
+        },
+        {
+          "frame": 84,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00085.jpg",
+          "sha256": "ab20792858d107d86649e5dd44784be16ce26e1db638f2674931be06216405e9"
+        },
+        {
+          "frame": 85,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00086.jpg",
+          "sha256": "8198a47eca1395c4ede8c8f506419a72a9a0e426448390c6f66909fe14c2583e"
+        },
+        {
+          "frame": 168,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00169.jpg",
+          "sha256": "c6392194a2974697f5b4cc47db63e0d4ff6d3da7d2d443999a4e90248503e6d5"
+        },
+        {
+          "frame": 252,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00253.jpg",
+          "sha256": "566b4a1deddf720e21c1db1932b0a5de9dd314a30c283a721aa54019a0f3e28a"
+        },
+        {
+          "frame": 336,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00337.jpg",
+          "sha256": "b9ea911a8ba9eed6f2618d17b964eacfd5601556139c133ad6cb0dcfd0bc6388"
+        }
+      ],
+      "accepted_writes": 3,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.01015599642845679,
+          "measured": 0.013006224349358298,
+          "measured_minus_commanded": 0.002850227920901508,
+          "reduction_percent": -28.06448329299582
+        },
+        "position_endpoint": {
+          "commanded": 0.029555709876147977,
+          "measured": 0.031492989931546256,
+          "measured_minus_commanded": 0.0019372800553982793,
+          "reduction_percent": -6.5546727299610605
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.4159594588249044,
+          "measured": 0.3074961294876109,
+          "measured_minus_commanded": -0.10846332933729352,
+          "reduction_percent": 26.075456883155166
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.44508117063021796,
+          "measured": 0.6021160005160233,
+          "measured_minus_commanded": 0.15703482988580536,
+          "reduction_percent": -35.28229011877767
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "classification": "Position regression despite lower mean rotation; recognizable playground with appearance artifacts.",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_0238de14_s7.review.json",
+      "inspection_sha256": "42c16c579f696fabd99833c125fec280964855c05281283fbd84a7c9528b5e1d"
+    },
+    {
+      "key": "matrixgame_924228bf_s7",
+      "frames": [
+        0,
+        84,
+        85,
+        168,
+        252,
+        336
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_924228bf_s7.jpg",
+      "sheet_sha256": "59ab010a099efcc3a9482e88ef95d9921a6f544768b274a797e34ae5dd077fad",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7/score.json",
+      "score_sha256": "2ea2ac04206ebc35ec77c40b79a86fd4dfe6474a702f1d9009a7faa2406a736c",
+      "gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7/attribution_gate.json",
+      "gate_sha256": "38e21b90b19ceeeee137e2559dfb409086670a789602bcce2c0a314050929a4e",
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/commanded/frames.lossless.mkv",
+          "sha256": "309bf084a1767113309ad8260500b6abfec9d6749f61766b029780ce4f6b6a1c"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/measured/frames.lossless.mkv",
+          "sha256": "162bae7e389d034d11c0d53c3123d86b2558f1b7bf9d690cc0a69d0683aac94b"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00001.jpg",
+          "sha256": "b9daaffd753414529be50d4a3c05d75e9c81ce42d5703013277c126b0ff5fdea"
+        },
+        {
+          "frame": 84,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00085.jpg",
+          "sha256": "3567d82164ff34c4bd98833a48734899a1e0436a9cff207e943b599e6be5b83c"
+        },
+        {
+          "frame": 85,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00086.jpg",
+          "sha256": "fe07822b5326c6717d2382c0ed04efee6b52972c067eb08ebd2145d08f23a555"
+        },
+        {
+          "frame": 168,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00169.jpg",
+          "sha256": "2c9bf9b9a6dc92104a381050a678e578a5dfcebfb04d3dfd072db716be0aa002"
+        },
+        {
+          "frame": 252,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00253.jpg",
+          "sha256": "74affa309b222dae4b5208462b8edb5b6f624f08ad712a743b1a967f0694d063"
+        },
+        {
+          "frame": 336,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00337.jpg",
+          "sha256": "379838f498cc25988a7e82a5c28896dd59ba469dbf7cf31d0ed2095e898acb68"
+        }
+      ],
+      "accepted_writes": 0,
+      "delta": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.1811934820345734,
+          "measured": 0.1811934820345734,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.2781822422236036,
+          "measured": 0.2781822422236036,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "classification": "Abstention with unavailable position registration; not an active correction success.",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_924228bf_s7.review.json",
+      "inspection_sha256": "a60f23a9f99d6fd5e7573724de091c4a206698ce484edfe0065e0718b4f70e24"
+    },
+    {
+      "key": "matrixgame_02267acf_s107",
+      "frames": [
+        0,
+        84,
+        85,
+        168,
+        252,
+        336
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_02267acf_s107.jpg",
+      "sheet_sha256": "18b911d8b25aca9dffe7742385cd54206b46fb17bace05eccc61f243041f37cc",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107/score.json",
+      "score_sha256": "061c6fd52f8065e94428222fab354251464cad47612887c02966298120cb425f",
+      "gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107/attribution_gate.json",
+      "gate_sha256": "380c53d933d28610d0d1a992e84cb847a9885c21676f8ec4936140c0ecb49c91",
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s107/commanded/frames.lossless.mkv",
+          "sha256": "0853a3c1e9524720c3904b3eb3f444d83d20f45ebce4bf7469e4d0bf8f73f2c9"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s107/measured/frames.lossless.mkv",
+          "sha256": "1ca67e00a70ed478cd9bdccb21e4d759a083e38532efdb57fbe91c828febafad"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00001.jpg",
+          "sha256": "dbd275b79ec7f7fb46acaaec70b803d8f9147ff4559a7d00ceb40f34c01e0d03"
+        },
+        {
+          "frame": 84,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00085.jpg",
+          "sha256": "c7471b190c7127e71cd24ef9f9694e4865224efe7c5f87aec82732acc9ad7ceb"
+        },
+        {
+          "frame": 85,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00086.jpg",
+          "sha256": "f08a1cdddba701980ab4de7c7869ab9ac38399b212077fa870e9c9d34d9c46d6"
+        },
+        {
+          "frame": 168,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00169.jpg",
+          "sha256": "64304ce43ee274963a9a2ac064d11ed567020cbf45e64701da0703cf6b0ab45f"
+        },
+        {
+          "frame": 252,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00253.jpg",
+          "sha256": "2c22d39aff7a5ebffdebc0e0d4909acbbb58f0753e20c499b2369df5d317cd44"
+        },
+        {
+          "frame": 336,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00337.jpg",
+          "sha256": "7a9ac3dd78a2cadebf22b38845d63a7d7e89a684755c78190388b076f8d2e6c3"
+        }
+      ],
+      "accepted_writes": 3,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.016961036160141423,
+          "measured": 0.010633141071450018,
+          "measured_minus_commanded": -0.006327895088691405,
+          "reduction_percent": 37.308422840121125
+        },
+        "position_endpoint": {
+          "commanded": 0.024917258967525578,
+          "measured": 0.012647064249853825,
+          "measured_minus_commanded": -0.012270194717671754,
+          "reduction_percent": 49.243758046032994
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.3846205502407069,
+          "measured": 0.3353893808040955,
+          "measured_minus_commanded": -0.04923116943661138,
+          "reduction_percent": 12.799932142419603
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.8494172520457768,
+          "measured": 0.5154412728597494,
+          "measured_minus_commanded": -0.3339759791860274,
+          "reduction_percent": 39.31824770237052
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "classification": "Numeric pose improvement with substantial foreground hallucination in both arms; visual fidelity tradeoff.",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_02267acf_s107.review.json",
+      "inspection_sha256": "42b450be1604e4d1fc7bec4f017ae8a9559ab36383acfef52d59be4fdfbffe76"
+    }
+  ]
+}

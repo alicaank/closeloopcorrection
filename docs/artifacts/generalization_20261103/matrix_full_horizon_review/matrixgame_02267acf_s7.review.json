@@ -1,0 +1,23 @@
+{
+  "key": "matrixgame_02267acf_s7",
+  "reviewed_at": 1793687547.1702378,
+  "method": "Direct inspection of six timestamp-matched source/commanded/measured RGB thumbnails; unblinded qualitative assessment, not full-video review.",
+  "sheet_sha256": "43c0374a77b9a40aa1fd2aadeb6d945e0bb3c640f07fb169ad763fa3f12b4df6",
+  "score_sha256": "cd14235a41d1df99a1dbce10481b8b162bc1967f6212d66300b2adb7388cc33d",
+  "frames": [
+    0,
+    84,
+    85,
+    168,
+    252,
+    336
+  ],
+  "observations": [
+    "Both arms retain the table, chairs and wall displays at all six sampled timestamps; no near-total scene collapse is visible.",
+    "Both outputs show increased contrast/saturation at frame 85 compared with frame 84.",
+    "Later frames change the right-hand foreground and room framing relative to the source reference.",
+    "Mean position reduction is only 0.000234 anchor units (2.53%); no matched regeneration/noise floor is available. Endpoint rotation worsens despite lower mean rotation."
+  ],
+  "classification": "Small numeric pose improvement with retained scene content and appearance drift; efficacy not established.",
+  "temporal_limitation": "Static sampled thumbnails do not resolve physical camera reversal, exclude between-sample collapse, or quantify perceptual video quality."
+}

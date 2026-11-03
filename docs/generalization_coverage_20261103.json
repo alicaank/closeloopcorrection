@@ -1,5 +1,5 @@
 {
-  "snapshot_time": 1793670221.8032377,
+  "snapshot_time": 1793687547.1965334,
   "original_planned_pairs": 40,
   "models": {
     "lingbot": {
@@ -8,7 +8,9 @@
         "reused": 1,
         "completed": 7
       },
-      "scored": 8
+      "scored": 8,
+      "qualified_unique_pairs": 8,
+      "qualified_retries": 0
     },
     "sana": {
       "planned": 8,
@@ -16,14 +18,18 @@
         "failed": 1,
         "held": 7
       },
-      "scored": 0
+      "scored": 0,
+      "qualified_unique_pairs": 0,
+      "qualified_retries": 0
     },
     "dreamx": {
       "planned": 8,
       "execution_counts": {
         "completed": 8
       },
-      "scored": 8
+      "scored": 8,
+      "qualified_unique_pairs": 8,
+      "qualified_retries": 0
     },
     "matrixgame": {
       "planned": 8,
@@ -31,7 +37,9 @@
         "failed": 1,
         "held": 7
       },
-      "scored": 0
+      "scored": 0,
+      "qualified_unique_pairs": 5,
+      "qualified_retries": 5
     },
     "lyra": {
       "planned": 8,
@@ -39,7 +47,9 @@
         "failed": 1,
         "held": 7
       },
-      "scored": 0
+      "scored": 0,
+      "qualified_unique_pairs": 0,
+      "qualified_retries": 0
     }
   },
   "rows": [
@@ -89,7 +99,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "visual collapse; policy failure"
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_02267acf_s7",
@@ -130,10 +141,10 @@
         }
       },
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {
           "sana_02267acf_s7_commanded": {
-            "state": "running",
+            "state": "failed",
             "started": 1793670097.1942174,
             "argv": [
               "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
@@ -156,12 +167,23 @@
               "121"
             ],
             "pid": 2875889,
-            "min_host_available_bytes": 29476188160,
-            "peak_process_tree_rss_bytes": 54535778304
+            "min_host_available_bytes": 2000998400,
+            "peak_process_tree_rss_bytes": 71553585152,
+            "returncode": -15,
+            "stop_reason": "host_memory_guard",
+            "finished": 1793670409.2796998
           }
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_02267acf_s7",
@@ -319,7 +341,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Small numerical pose difference with visually similar sampled outputs; efficacy unresolved at this sample size."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_02267acf_s7",
@@ -406,10 +429,206 @@
         }
       },
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
+        "jobs": {
+          "matrixgame_02267acf_s7_commanded": {
+            "state": "completed",
+            "started": 1793672817.1358917,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "02267acf",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/commanded",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2896968,
+            "min_host_available_bytes": 10533142528,
+            "peak_process_tree_rss_bytes": 53315801088,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793674148.7349596
+          },
+          "matrixgame_02267acf_s7_resource_prefix": {
+            "state": "completed",
+            "started": 1793674149.0756464,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/check.py",
+              "--pair",
+              "matrixgame_02267acf_s7",
+              "--resource-prefix"
+            ],
+            "pid": 2904780,
+            "min_host_available_bytes": 61455618048,
+            "peak_process_tree_rss_bytes": 2090196992,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793674159.1121843
+          },
+          "matrixgame_02267acf_s7_commanded_retain": {
+            "state": "completed",
+            "started": 1793674159.2060094,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_02267acf_s7.json",
+              "--arm",
+              "commanded"
+            ],
+            "pid": 2904880,
+            "min_host_available_bytes": 60899127296,
+            "peak_process_tree_rss_bytes": 2566234112,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793674174.220826
+          },
+          "matrixgame_02267acf_s7_measured": {
+            "state": "completed",
+            "started": 1793674174.3080385,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "02267acf",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/measured",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2905027,
+            "min_host_available_bytes": 9071292416,
+            "peak_process_tree_rss_bytes": 55515037696,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793675550.5260625
+          },
+          "matrixgame_02267acf_s7_measured_retain": {
+            "state": "completed",
+            "started": 1793675550.8449144,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_02267acf_s7.json",
+              "--arm",
+              "measured"
+            ],
+            "pid": 2914228,
+            "min_host_available_bytes": 61365284864,
+            "peak_process_tree_rss_bytes": 2188599296,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793675565.9387586
+          },
+          "matrixgame_02267acf_s7_score": {
+            "state": "completed",
+            "started": 1793675566.0455897,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/score_memory_pair.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_02267acf_s7.json",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7"
+            ],
+            "pid": 2914375,
+            "min_host_available_bytes": 58160893952,
+            "peak_process_tree_rss_bytes": 5904801792,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793675596.0770106
+          },
+          "matrixgame_02267acf_s7_attribution": {
+            "state": "completed",
+            "started": 1793675596.1563349,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/check.py",
+              "--pair",
+              "matrixgame_02267acf_s7"
+            ],
+            "pid": 2914647,
+            "min_host_available_bytes": 63065870336,
+            "peak_process_tree_rss_bytes": 6160384,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793675601.1618462
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "qualified_retry": {
+        "attempt": "matrix_observer_lifetime",
+        "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7/score.json",
+        "score_sha256": "cd14235a41d1df99a1dbce10481b8b162bc1967f6212d66300b2adb7388cc33d",
+        "qualification_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7/attribution_gate.json",
+        "qualification_gate_sha256": "04be733282a5477d89c52281769707f1f34e32cb50f5b322e2239094c3543f4a",
+        "resource_parity_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json",
+        "resource_parity_gate_sha256": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
+        "horizon": 336,
+        "comparison_valid": true,
+        "prefix_exact": true,
+        "accepted_writes": 3,
+        "delta": {
+          "position_mean": {
+            "commanded": 0.009245519258263288,
+            "measured": 0.009011587670536012,
+            "measured_minus_commanded": -0.0002339315877272763,
+            "reduction_percent": 2.530215785535218
+          },
+          "position_endpoint": {
+            "commanded": 0.010796066096136954,
+            "measured": 0.010775255269064591,
+            "measured_minus_commanded": -2.08108270723633e-05,
+            "reduction_percent": 0.19276305727518495
+          },
+          "rotation_mean_deg": {
+            "commanded": 0.2475131452274446,
+            "measured": 0.21972075525361726,
+            "measured_minus_commanded": -0.027792389973827353,
+            "reduction_percent": 11.228652097765712
+          },
+          "rotation_endpoint_deg": {
+            "commanded": 0.19281076782693268,
+            "measured": 0.3015502412963056,
+            "measured_minus_commanded": 0.1087394734693729,
+            "reduction_percent": -56.396992084476146
+          }
+        },
+        "position_valid": {
+          "commanded": true,
+          "measured": true
+        },
+        "visual_review": {
+          "review_status": "sampled_visual_review_complete",
+          "classification": "Small numeric pose improvement with retained scene content and appearance drift; efficacy not established."
+        }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "lyra_02267acf_s7",
@@ -453,7 +672,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_c7418b7d_s7",
@@ -611,7 +831,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_c7418b7d_s7",
@@ -622,10 +843,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_c7418b7d_s7",
@@ -783,7 +1012,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Visually similar sampled outputs with a small numerical pose regression; efficacy unresolved."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_c7418b7d_s7",
@@ -794,10 +1024,189 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
+        "jobs": {
+          "matrixgame_c7418b7d_s7_commanded": {
+            "state": "completed",
+            "started": 1793675601.2445788,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "c7418b7d",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s7/commanded",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2914672,
+            "min_host_available_bytes": 9930420224,
+            "peak_process_tree_rss_bytes": 54691672064,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793676983.0388913
+          },
+          "matrixgame_c7418b7d_s7_commanded_retain": {
+            "state": "completed",
+            "started": 1793676983.3591413,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_c7418b7d_s7.json",
+              "--arm",
+              "commanded"
+            ],
+            "pid": 2923039,
+            "min_host_available_bytes": 61178908672,
+            "peak_process_tree_rss_bytes": 2151915520,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793676998.38248
+          },
+          "matrixgame_c7418b7d_s7_measured": {
+            "state": "completed",
+            "started": 1793676998.4755073,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "c7418b7d",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s7/measured",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2923184,
+            "min_host_available_bytes": 9904082944,
+            "peak_process_tree_rss_bytes": 54708867072,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793678424.7300947
+          },
+          "matrixgame_c7418b7d_s7_measured_retain": {
+            "state": "completed",
+            "started": 1793678425.0333397,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_c7418b7d_s7.json",
+              "--arm",
+              "measured"
+            ],
+            "pid": 2932454,
+            "min_host_available_bytes": 60939247616,
+            "peak_process_tree_rss_bytes": 2376970240,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793678440.0492432
+          },
+          "matrixgame_c7418b7d_s7_score": {
+            "state": "completed",
+            "started": 1793678440.1424127,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/score_memory_pair.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_c7418b7d_s7.json",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7"
+            ],
+            "pid": 2932601,
+            "min_host_available_bytes": 57936605184,
+            "peak_process_tree_rss_bytes": 6124134400,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793678470.1864789
+          },
+          "matrixgame_c7418b7d_s7_attribution": {
+            "state": "completed",
+            "started": 1793678470.2678308,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/check.py",
+              "--pair",
+              "matrixgame_c7418b7d_s7"
+            ],
+            "pid": 2932872,
+            "min_host_available_bytes": 63124127744,
+            "peak_process_tree_rss_bytes": 5722112,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793678475.2734654
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "qualified_retry": {
+        "attempt": "matrix_observer_lifetime",
+        "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7/score.json",
+        "score_sha256": "9b0f31beccb7b1b7334f75cf46fbeeb7b71eece627a38bc69adfc78469fa2487",
+        "qualification_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7/attribution_gate.json",
+        "qualification_gate_sha256": "b7dd6e61807f962466937bf2ce0ebc5f88b9c7b3ec9a4ab73768bbbfd7d5e1eb",
+        "resource_parity_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json",
+        "resource_parity_gate_sha256": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
+        "horizon": 336,
+        "comparison_valid": true,
+        "prefix_exact": true,
+        "accepted_writes": 3,
+        "delta": {
+          "position_mean": {
+            "commanded": 0.02758244551535417,
+            "measured": 0.009028256369504502,
+            "measured_minus_commanded": -0.018554189145849668,
+            "reduction_percent": 67.26810766478704
+          },
+          "position_endpoint": {
+            "commanded": 0.0270044513434949,
+            "measured": 0.010070189940071686,
+            "measured_minus_commanded": -0.016934261403423218,
+            "reduction_percent": 62.70914816235476
+          },
+          "rotation_mean_deg": {
+            "commanded": 0.3254605110731715,
+            "measured": 0.2794114667215611,
+            "measured_minus_commanded": -0.04604904435161039,
+            "reduction_percent": 14.148888355078334
+          },
+          "rotation_endpoint_deg": {
+            "commanded": 0.3274428167873894,
+            "measured": 0.3088258155585605,
+            "measured_minus_commanded": -0.018617001228828922,
+            "reduction_percent": 5.685573258709491
+          }
+        },
+        "position_valid": {
+          "commanded": true,
+          "measured": true
+        },
+        "visual_review": {
+          "review_status": "sampled_visual_review_complete",
+          "classification": "Numeric position benefit with recognizable scene and appearance drift; sampled review does not establish clean visual success."
+        }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "lyra_c7418b7d_s7",
@@ -811,7 +1220,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_0238de14_s7",
@@ -969,7 +1379,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Scene-fidelity failure despite lower position and rotation errors."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_0238de14_s7",
@@ -980,10 +1391,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_0238de14_s7",
@@ -1141,7 +1560,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Visually similar sampled outputs with small mixed pose changes; efficacy unresolved."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_0238de14_s7",
@@ -1152,10 +1572,189 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
+        "jobs": {
+          "matrixgame_0238de14_s7_commanded": {
+            "state": "completed",
+            "started": 1793678475.3554137,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "0238de14",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s7/commanded",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2932887,
+            "min_host_available_bytes": 10018394112,
+            "peak_process_tree_rss_bytes": 54714900480,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793679826.5619216
+          },
+          "matrixgame_0238de14_s7_commanded_retain": {
+            "state": "completed",
+            "started": 1793679826.874653,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_0238de14_s7.json",
+              "--arm",
+              "commanded"
+            ],
+            "pid": 2941138,
+            "min_host_available_bytes": 61255159808,
+            "peak_process_tree_rss_bytes": 2038030336,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793679841.8906171
+          },
+          "matrixgame_0238de14_s7_measured": {
+            "state": "completed",
+            "started": 1793679841.983569,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "0238de14",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s7/measured",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2941275,
+            "min_host_available_bytes": 9258840064,
+            "peak_process_tree_rss_bytes": 56170586112,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793681248.4735036
+          },
+          "matrixgame_0238de14_s7_measured_retain": {
+            "state": "completed",
+            "started": 1793681248.7876582,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_0238de14_s7.json",
+              "--arm",
+              "measured"
+            ],
+            "pid": 2950543,
+            "min_host_available_bytes": 61316812800,
+            "peak_process_tree_rss_bytes": 2023882752,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793681263.8031423
+          },
+          "matrixgame_0238de14_s7_score": {
+            "state": "completed",
+            "started": 1793681263.8866773,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/score_memory_pair.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_0238de14_s7.json",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7"
+            ],
+            "pid": 2950691,
+            "min_host_available_bytes": 57923227648,
+            "peak_process_tree_rss_bytes": 5999816704,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793681293.9155138
+          },
+          "matrixgame_0238de14_s7_attribution": {
+            "state": "completed",
+            "started": 1793681293.9955604,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/check.py",
+              "--pair",
+              "matrixgame_0238de14_s7"
+            ],
+            "pid": 2950953,
+            "min_host_available_bytes": 63172247552,
+            "peak_process_tree_rss_bytes": 6942720,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793681299.001529
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "qualified_retry": {
+        "attempt": "matrix_observer_lifetime",
+        "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7/score.json",
+        "score_sha256": "6ce541f73e7cff339dc52a61dcb527ca4e0eb6edd936365aa1129b4e16e32ba2",
+        "qualification_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7/attribution_gate.json",
+        "qualification_gate_sha256": "dcc8cd8d1ea6a0217ed81cde486876da0b1f8e0618ec03abf72eacae750fc366",
+        "resource_parity_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json",
+        "resource_parity_gate_sha256": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
+        "horizon": 336,
+        "comparison_valid": true,
+        "prefix_exact": true,
+        "accepted_writes": 3,
+        "delta": {
+          "position_mean": {
+            "commanded": 0.01015599642845679,
+            "measured": 0.013006224349358298,
+            "measured_minus_commanded": 0.002850227920901508,
+            "reduction_percent": -28.06448329299582
+          },
+          "position_endpoint": {
+            "commanded": 0.029555709876147977,
+            "measured": 0.031492989931546256,
+            "measured_minus_commanded": 0.0019372800553982793,
+            "reduction_percent": -6.5546727299610605
+          },
+          "rotation_mean_deg": {
+            "commanded": 0.4159594588249044,
+            "measured": 0.3074961294876109,
+            "measured_minus_commanded": -0.10846332933729352,
+            "reduction_percent": 26.075456883155166
+          },
+          "rotation_endpoint_deg": {
+            "commanded": 0.44508117063021796,
+            "measured": 0.6021160005160233,
+            "measured_minus_commanded": 0.15703482988580536,
+            "reduction_percent": -35.28229011877767
+          }
+        },
+        "position_valid": {
+          "commanded": true,
+          "measured": true
+        },
+        "visual_review": {
+          "review_status": "sampled_visual_review_complete",
+          "classification": "Position regression despite lower mean rotation; recognizable playground with appearance artifacts."
+        }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "lyra_0238de14_s7",
@@ -1169,7 +1768,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_924228bf_s7",
@@ -1327,7 +1927,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_924228bf_s7",
@@ -1338,10 +1939,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_924228bf_s7",
@@ -1499,7 +2108,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_924228bf_s7",
@@ -1510,10 +2120,189 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
+        "jobs": {
+          "matrixgame_924228bf_s7_commanded": {
+            "state": "completed",
+            "started": 1793681299.0829103,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "924228bf",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/commanded",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2950969,
+            "min_host_available_bytes": 9792765952,
+            "peak_process_tree_rss_bytes": 54877691904,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793682720.3403845
+          },
+          "matrixgame_924228bf_s7_commanded_retain": {
+            "state": "completed",
+            "started": 1793682720.6471908,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_924228bf_s7.json",
+              "--arm",
+              "commanded"
+            ],
+            "pid": 2959479,
+            "min_host_available_bytes": 60879785984,
+            "peak_process_tree_rss_bytes": 2378518528,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793682735.6631901
+          },
+          "matrixgame_924228bf_s7_measured": {
+            "state": "completed",
+            "started": 1793682735.7594788,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "924228bf",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/measured",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2959623,
+            "min_host_available_bytes": 9134235648,
+            "peak_process_tree_rss_bytes": 55523131392,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793684152.1670785
+          },
+          "matrixgame_924228bf_s7_measured_retain": {
+            "state": "completed",
+            "started": 1793684152.4741268,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_924228bf_s7.json",
+              "--arm",
+              "measured"
+            ],
+            "pid": 2968453,
+            "min_host_available_bytes": 60568096768,
+            "peak_process_tree_rss_bytes": 2641248256,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793684167.4902887
+          },
+          "matrixgame_924228bf_s7_score": {
+            "state": "completed",
+            "started": 1793684167.587372,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/score_memory_pair.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_924228bf_s7.json",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7"
+            ],
+            "pid": 2968602,
+            "min_host_available_bytes": 57726672896,
+            "peak_process_tree_rss_bytes": 6183120896,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793684187.6083624
+          },
+          "matrixgame_924228bf_s7_attribution": {
+            "state": "completed",
+            "started": 1793684187.688896,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/check.py",
+              "--pair",
+              "matrixgame_924228bf_s7"
+            ],
+            "pid": 2968799,
+            "min_host_available_bytes": 63156916224,
+            "peak_process_tree_rss_bytes": 6426624,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793684192.6949265
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "qualified_retry": {
+        "attempt": "matrix_observer_lifetime",
+        "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7/score.json",
+        "score_sha256": "2ea2ac04206ebc35ec77c40b79a86fd4dfe6474a702f1d9009a7faa2406a736c",
+        "qualification_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7/attribution_gate.json",
+        "qualification_gate_sha256": "38e21b90b19ceeeee137e2559dfb409086670a789602bcce2c0a314050929a4e",
+        "resource_parity_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json",
+        "resource_parity_gate_sha256": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
+        "horizon": 336,
+        "comparison_valid": true,
+        "prefix_exact": true,
+        "accepted_writes": 0,
+        "delta": {
+          "position_mean": {
+            "commanded": null,
+            "measured": null,
+            "measured_minus_commanded": null,
+            "reduction_percent": null
+          },
+          "position_endpoint": {
+            "commanded": null,
+            "measured": null,
+            "measured_minus_commanded": null,
+            "reduction_percent": null
+          },
+          "rotation_mean_deg": {
+            "commanded": 0.1811934820345734,
+            "measured": 0.1811934820345734,
+            "measured_minus_commanded": 0.0,
+            "reduction_percent": 0.0
+          },
+          "rotation_endpoint_deg": {
+            "commanded": 0.2781822422236036,
+            "measured": 0.2781822422236036,
+            "measured_minus_commanded": 0.0,
+            "reduction_percent": 0.0
+          }
+        },
+        "position_valid": {
+          "commanded": false,
+          "measured": false
+        },
+        "visual_review": {
+          "review_status": "sampled_visual_review_complete",
+          "classification": "Abstention with unavailable position registration; not an active correction success."
+        }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "lyra_924228bf_s7",
@@ -1527,7 +2316,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_02267acf_s107",
@@ -1685,7 +2475,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Severe sampled visual collapse despite reduced positional error; policy failure retained in cohort."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_02267acf_s107",
@@ -1696,10 +2487,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_02267acf_s107",
@@ -1857,7 +2656,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_02267acf_s107",
@@ -1868,10 +2668,189 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
+        "jobs": {
+          "matrixgame_02267acf_s107_commanded": {
+            "state": "completed",
+            "started": 1793684192.7772377,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "02267acf",
+              "--seed",
+              "107",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s107/commanded",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2968814,
+            "min_host_available_bytes": 10143367168,
+            "peak_process_tree_rss_bytes": 54485762048,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793685524.7783577
+          },
+          "matrixgame_02267acf_s107_commanded_retain": {
+            "state": "completed",
+            "started": 1793685525.0913856,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_02267acf_s107.json",
+              "--arm",
+              "commanded"
+            ],
+            "pid": 2996252,
+            "min_host_available_bytes": 60893061120,
+            "peak_process_tree_rss_bytes": 2469662720,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793685540.1082435
+          },
+          "matrixgame_02267acf_s107_measured": {
+            "state": "completed",
+            "started": 1793685540.1951885,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "02267acf",
+              "--seed",
+              "107",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s107/measured",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 2996392,
+            "min_host_available_bytes": 9230196736,
+            "peak_process_tree_rss_bytes": 55469678592,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793686921.8736246
+          },
+          "matrixgame_02267acf_s107_measured_retain": {
+            "state": "completed",
+            "started": 1793686922.1747627,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_02267acf_s107.json",
+              "--arm",
+              "measured"
+            ],
+            "pid": 3005152,
+            "min_host_available_bytes": 60716118016,
+            "peak_process_tree_rss_bytes": 2100113408,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793686937.1908317
+          },
+          "matrixgame_02267acf_s107_score": {
+            "state": "completed",
+            "started": 1793686937.2828677,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/score_memory_pair.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_02267acf_s107.json",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107"
+            ],
+            "pid": 3005314,
+            "min_host_available_bytes": 57543458816,
+            "peak_process_tree_rss_bytes": 6290165760,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793686967.31564
+          },
+          "matrixgame_02267acf_s107_attribution": {
+            "state": "completed",
+            "started": 1793686967.3928502,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/check.py",
+              "--pair",
+              "matrixgame_02267acf_s107"
+            ],
+            "pid": 3005584,
+            "min_host_available_bytes": 62850514944,
+            "peak_process_tree_rss_bytes": 7081984,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793686972.3988016
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "qualified_retry": {
+        "attempt": "matrix_observer_lifetime",
+        "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107/score.json",
+        "score_sha256": "061c6fd52f8065e94428222fab354251464cad47612887c02966298120cb425f",
+        "qualification_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107/attribution_gate.json",
+        "qualification_gate_sha256": "380c53d933d28610d0d1a992e84cb847a9885c21676f8ec4936140c0ecb49c91",
+        "resource_parity_gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json",
+        "resource_parity_gate_sha256": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
+        "horizon": 336,
+        "comparison_valid": true,
+        "prefix_exact": true,
+        "accepted_writes": 3,
+        "delta": {
+          "position_mean": {
+            "commanded": 0.016961036160141423,
+            "measured": 0.010633141071450018,
+            "measured_minus_commanded": -0.006327895088691405,
+            "reduction_percent": 37.308422840121125
+          },
+          "position_endpoint": {
+            "commanded": 0.024917258967525578,
+            "measured": 0.012647064249853825,
+            "measured_minus_commanded": -0.012270194717671754,
+            "reduction_percent": 49.243758046032994
+          },
+          "rotation_mean_deg": {
+            "commanded": 0.3846205502407069,
+            "measured": 0.3353893808040955,
+            "measured_minus_commanded": -0.04923116943661138,
+            "reduction_percent": 12.799932142419603
+          },
+          "rotation_endpoint_deg": {
+            "commanded": 0.8494172520457768,
+            "measured": 0.5154412728597494,
+            "measured_minus_commanded": -0.3339759791860274,
+            "reduction_percent": 39.31824770237052
+          }
+        },
+        "position_valid": {
+          "commanded": true,
+          "measured": true
+        },
+        "visual_review": {
+          "review_status": "sampled_visual_review_complete",
+          "classification": "Numeric pose improvement with substantial foreground hallucination in both arms; visual fidelity tradeoff."
+        }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "lyra_02267acf_s107",
@@ -1885,7 +2864,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_c7418b7d_s107",
@@ -2043,7 +3023,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_c7418b7d_s107",
@@ -2054,10 +3035,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_c7418b7d_s107",
@@ -2215,7 +3204,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_c7418b7d_s107",
@@ -2226,10 +3216,39 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
+        "jobs": {
+          "matrixgame_c7418b7d_s107_commanded": {
+            "state": "running",
+            "started": 1793686972.4777267,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "c7418b7d",
+              "--seed",
+              "107",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s107/commanded",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 3005599,
+            "min_host_available_bytes": 22245027840,
+            "peak_process_tree_rss_bytes": 42389864448
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lyra_c7418b7d_s107",
@@ -2243,7 +3262,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_0238de14_s107",
@@ -2401,7 +3421,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Pose benefit with boundary ghosting and altered structure; visual fidelity tradeoff retained, not clean success."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_0238de14_s107",
@@ -2412,10 +3433,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_0238de14_s107",
@@ -2573,7 +3602,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_0238de14_s107",
@@ -2584,10 +3614,11 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lyra_0238de14_s107",
@@ -2601,7 +3632,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lingbot_924228bf_s107",
@@ -2759,7 +3791,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "sana_924228bf_s107",
@@ -2770,10 +3803,18 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "sana_02267acf_s7_commanded",
+        "queue_phase": "held",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "additional_resource_attempts": [
+        {
+          "name": "transition_order",
+          "queue_phase": "waiting_for_gpu_lock",
+          "jobs": {}
+        }
+      ],
+      "has_qualified_result": false
     },
     {
       "key": "dreamx_924228bf_s107",
@@ -2931,7 +3972,8 @@
       "visual_review": {
         "review_status": "sampled_visual_review_complete",
         "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
-      }
+      },
+      "has_qualified_result": true
     },
     {
       "key": "matrixgame_924228bf_s107",
@@ -2942,10 +3984,11 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "matrixgame_c7418b7d_s107_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     },
     {
       "key": "lyra_924228bf_s107",
@@ -2959,7 +4002,8 @@
         "queue_phase": "waiting_for_gpu_lock",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
-      }
+      },
+      "has_qualified_result": false
     }
   ],
   "interpretation": "Coverage accounting only. Execution success, active writes, numeric pose changes and visual quality are distinct. Pending/held cases are not efficacy results; retries do not erase failures.",
@@ -2971,16 +4015,21 @@
     },
     "sana_supplement": {
       "pid": 2815420,
-      "phase": "sana_02267acf_s7_commanded",
-      "process_exists": true
+      "phase": "held",
+      "process_exists": false
     },
     "matrix_supplement": {
       "pid": 2834118,
-      "phase": "waiting_for_gpu_lock",
+      "phase": "matrixgame_c7418b7d_s107_commanded",
       "process_exists": true
     },
     "lyra_supplement": {
       "pid": 2846474,
+      "phase": "waiting_for_gpu_lock",
+      "process_exists": true
+    },
+    "sana_transition": {
+      "pid": 3004366,
       "phase": "waiting_for_gpu_lock",
       "process_exists": true
     }
@@ -2988,12 +4037,42 @@
   "input_hashes": {
     "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
     "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "96899ff79945fe84ebaf9e706dfc62df4318f51ee3157eabd30a863e3f42606d",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/manifest.json": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "60c4343c097f1e91fdf7dfd5fc8b502a79cd2f2bc09b537509613b04f8083f7c",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "94870c6e3edb92dfe04ca1e9259ae4b9625b12d5d64aea43138d3c1ca731c789",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "b9f3b6fd444db279721b71aa18b4d2a01c1470023e693301c9c7ea679ae2c2b4",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json": "ebbc307ca09a43d6675ef6d131a06da8cb63bbcb7ff02360ca7409d8cfadb31d",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "ea7d10b9cfecd4cc6684944fc2e80b49be0a4e4e389357e8b8fe504b3d2068be"
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "ea7d10b9cfecd4cc6684944fc2e80b49be0a4e4e389357e8b8fe504b3d2068be",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json": "d4dab83fd3cc038b777dcb73b77d51dcaa78f8e1e2ce6ab55749ef36c9abcc3b",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/manifest.json": "9b801ecc3cf94c9409b09512ea863bddb3de3bf5b28f0cff1b3a14e862a74910",
+    "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/scores/lingbot_02267acf_s7/score.json": "bf62592148d4332d1c768c28821ed1250a55af546d6f37a4dc6fc37719e29c8d",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s7/score.json": "0d480ea5d6d93ca43acf76f2fc95842cd6b08c2312d304e5460b9f0b96c35bad",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7/attribution_gate.json": "04be733282a5477d89c52281769707f1f34e32cb50f5b322e2239094c3543f4a",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s7/score.json": "cd14235a41d1df99a1dbce10481b8b162bc1967f6212d66300b2adb7388cc33d",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s7/score.json": "f0aa1f4be67925b506185ae5a1e35e95a5c91a3fc9c78b9eca2e7b165a946b21",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s7/score.json": "f0314936a880182f6f8b23b0df9d6bed58b472fc41ac35ec53252e3f1057ec2e",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7/attribution_gate.json": "b7dd6e61807f962466937bf2ce0ebc5f88b9c7b3ec9a4ab73768bbbfd7d5e1eb",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_c7418b7d_s7/score.json": "9b0f31beccb7b1b7334f75cf46fbeeb7b71eece627a38bc69adfc78469fa2487",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s7/score.json": "8426f81cb7ff88345082c0f9bcc63c09f8926d7ebcfc23d8376051468ad7588f",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_0238de14_s7/score.json": "c6f3128807c43a473cfdac2a36c97b8e9197e0a8b81c4fdddbea02da6013b937",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7/attribution_gate.json": "dcc8cd8d1ea6a0217ed81cde486876da0b1f8e0618ec03abf72eacae750fc366",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s7/score.json": "6ce541f73e7cff339dc52a61dcb527ca4e0eb6edd936365aa1129b4e16e32ba2",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7/score.json": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s7/score.json": "6ce7aecbb0185e2a8f1b7f8d91c0db7ba89560b3268a702f9d6b074d0893257b",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7/attribution_gate.json": "38e21b90b19ceeeee137e2559dfb409086670a789602bcce2c0a314050929a4e",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_924228bf_s7/score.json": "2ea2ac04206ebc35ec77c40b79a86fd4dfe6474a702f1d9009a7faa2406a736c",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_02267acf_s107/score.json": "895844b37f01dcd488960b132da74a7986930d743fc81c42d075ab038d61b726",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s107/score.json": "600dac6d4d74eff58c1e771c5d03f3e2373762252d794f43d02e87ed39f8a228",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107/attribution_gate.json": "380c53d933d28610d0d1a992e84cb847a9885c21676f8ec4936140c0ecb49c91",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_02267acf_s107/score.json": "061c6fd52f8065e94428222fab354251464cad47612887c02966298120cb425f",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s107/score.json": "d96bb0193fd0d345f59175f5dc16ceee7467c077433d1b6d4a3758d01b274b17",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s107/score.json": "2945f7cf9e732eb169c3571cde95e2c51ad9ffaf5b434ca1b9c7328124cd8712",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s107/score.json": "1b84e7cc5ec8857b3804b50ac5af84ecf12569347b5bfce8edcb9ccce3d5c9a9",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_0238de14_s107/score.json": "72296e93c0bbc74088d401896f863406de7858ab2e99378a821725c932965aec",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s107/score.json": "ccde0f129eb6bc17bb46daaca5e85cb130f4b325d472c76b2550aaaa3b3d250e",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s107/score.json": "1f7783d48a2f1d4938b37899926e8e300dca8b9098d7770a1376060c3698b917",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/manifest.json": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/manifest.json": "3a28b857d13a5be4147811d57f2afbe76e94ddbcbf20a09587b3331a7755bb81"
   }
 }
