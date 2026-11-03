@@ -21,9 +21,16 @@ def sha(path):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--review-dir', type=Path, default=ROOT / 'visual_review')
+parser.add_argument('--pair', help='Audit only this zero-write pair, preserving other receipts.')
 args = parser.parse_args()
 manifest = json.loads((args.review_dir / 'manifest.json').read_text())
-for pair in manifest['pairs']:
+if args.pair:
+    selected = [pair for pair in manifest['pairs'] if pair['key'] == args.pair]
+    assert len(selected) == 1, 'Unknown or duplicate pair'
+    assert json.loads(Path(selected[0]['score']).read_text())['accepted_memory_writes'] == 0, 'Pair is not an abstention'
+else:
+    selected = manifest['pairs']
+for pair in selected:
     score = json.loads(Path(pair['score']).read_text())
     if score['accepted_memory_writes'] != 0:
         continue

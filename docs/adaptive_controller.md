@@ -1,5 +1,12 @@
 # Shared adaptive-controller pilot
 
+**Completed-pilot audit (November 3):** [response fitting and observation acceptance](observer_recovery_audit_20261103.md)
+are now replayed for all eight B/C cases. Only two LingBot C runs use non-unit
+gains; the other six pairs have exactly identical RGB and commands. In particular,
+all three SANA runs clip every controlled chunk and never activate response fitting.
+Independent scores of identical RGB must not be presented as control effects.
+The queue description below records the original protocol, not current live status.
+
 `AdaptiveController` is the new stateful experimental controller. `CorrectionSession` remains available with its existing boundary-rejoin behavior. The pilot connects the same new controller to LingBot's normalized relative cameras and SANA's absolute cameras/rays.
 
 The controller retains the original timestamped plan, a separate predicted/observed state, stored command labels, and the issued native relative transforms. It writes future commands only. The controller never rewrites generator memory, and predictions are never presented as measured poses. A host with an existing measured-memory policy can explicitly supply the label under which it has already rebuilt its memory.

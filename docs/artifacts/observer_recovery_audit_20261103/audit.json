@@ -1,0 +1,6047 @@
+{
+  "scope": "All eight prespecified shared-controller pilot cases, B/C arms; archived evidence and exact response-fit replay only.",
+  "limitations": [
+    "Does not evaluate the stronger observer on historical legacy RGB.",
+    "Does not isolate observation gating from the simultaneously changed recovery controller.",
+    "Replays logged full-precision issued transforms, not final quantized native camera tensors.",
+    "Response fit on passive closed-loop observations is not an identified differential actuation gain.",
+    "A passed observation check does not prove visual scene preservation."
+  ],
+  "summary": {
+    "lingbot_B": {
+      "runs": 5,
+      "observations": 50,
+      "accepted": 19,
+      "rejected": 31,
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "runs_with_nonidentity_gain": 0
+    },
+    "lingbot_C": {
+      "runs": 5,
+      "observations": 50,
+      "accepted": 20,
+      "rejected": 30,
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 12,
+      "response_update_chunks": 12,
+      "nonidentity_gain_chunks": 10,
+      "runs_with_nonidentity_gain": 2
+    },
+    "sana_B": {
+      "runs": 3,
+      "observations": 18,
+      "accepted": 17,
+      "rejected": 1,
+      "clipped_chunks": 18,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "runs_with_nonidentity_gain": 0
+    },
+    "sana_C": {
+      "runs": 3,
+      "observations": 18,
+      "accepted": 17,
+      "rejected": 1,
+      "clipped_chunks": 18,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "runs_with_nonidentity_gain": 0
+    }
+  },
+  "runs": [
+    {
+      "id": "lingbot_e43058cb_s7",
+      "model": "lingbot",
+      "arm": "B",
+      "observations": 10,
+      "accepted": 2,
+      "rejected": 8,
+      "rejection_reasons": {
+        "shared_position_disagreement": 8,
+        "shared_rotation_disagreement": 7
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 10
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 1.7556858738417014,
+        "camera_endpoint": 2.987916423908737,
+        "rotation_mean": 14.44230881662293,
+        "rotation_endpoint": 33.193753999194925
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.3769275362318841,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5120609639019598,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_e43058cb_s7",
+      "model": "lingbot",
+      "arm": "C",
+      "observations": 10,
+      "accepted": 2,
+      "rejected": 8,
+      "rejection_reasons": {
+        "shared_position_disagreement": 8,
+        "shared_rotation_disagreement": 7
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 1,
+      "response_update_chunks": 1,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "response_samples_updated": 1,
+        "observation_rejected": 8
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 1.7561242782969633,
+        "camera_endpoint": 2.9899090331193405,
+        "rotation_mean": 14.435218344171645,
+        "rotation_endpoint": 33.14906259978915
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.3769275362318841,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5120609639019598,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement",
+            "shared_rotation_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_74310829_s7",
+      "model": "lingbot",
+      "arm": "B",
+      "observations": 10,
+      "accepted": 1,
+      "rejected": 9,
+      "rejection_reasons": {
+        "anchor_depth_fit": 9
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 10
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 1.8352693325281186,
+        "camera_endpoint": 2.9295207151835867,
+        "rotation_mean": 35.18939504522773,
+        "rotation_endpoint": 82.60690579038987
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_74310829_s7",
+      "model": "lingbot",
+      "arm": "C",
+      "observations": 10,
+      "accepted": 1,
+      "rejected": 9,
+      "rejection_reasons": {
+        "anchor_depth_fit": 9
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "observation_rejected": 9
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 1.8351485328525712,
+        "camera_endpoint": 2.929381148688574,
+        "rotation_mean": 35.1883943246797,
+        "rotation_endpoint": 82.60414001068705
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "anchor_depth_fit"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_d3f042a2_s107",
+      "model": "lingbot",
+      "arm": "B",
+      "observations": 10,
+      "accepted": 7,
+      "rejected": 3,
+      "rejection_reasons": {
+        "shared_position_disagreement": 3
+      },
+      "clipped_chunks": 2,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 10
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.5098446306524359,
+        "camera_endpoint": 0.8839266535533151,
+        "rotation_mean": 3.295028906746417,
+        "rotation_endpoint": 4.742336048353865
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.9304148164487186,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7620406721077894,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.48558893067295655,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5684859100463361,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4914545923684448,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.18237062851021604,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_d3f042a2_s107",
+      "model": "lingbot",
+      "arm": "C",
+      "observations": 10,
+      "accepted": 7,
+      "rejected": 3,
+      "rejection_reasons": {
+        "shared_position_disagreement": 3
+      },
+      "clipped_chunks": 2,
+      "eligible_response_pairs": 3,
+      "response_update_chunks": 3,
+      "nonidentity_gain_chunks": 3,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 4,
+        "response_samples_updated": 3,
+        "observation_rejected": 3
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.2331373067455143,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        1,
+        0,
+        3,
+        1,
+        1,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.5069364105899166,
+        "camera_endpoint": 0.8657114812020017,
+        "rotation_mean": 3.2114523003526427,
+        "rotation_endpoint": 4.479524912870181
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.9304148164487186,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7620406721077894,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.48558893067295655,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5684859100463361,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4914545923684448,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            false
+          ],
+          "fitted_sample_counts": [
+            1,
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.2331373067455143,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            1,
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.2331373067455143,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 156,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.25306580446656185,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            1,
+            0,
+            3,
+            1,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.2331373067455143,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        }
+      ]
+    },
+    {
+      "id": "lingbot_a4e9bdb6_s7",
+      "model": "lingbot",
+      "arm": "B",
+      "observations": 10,
+      "accepted": 7,
+      "rejected": 3,
+      "rejection_reasons": {
+        "insufficient_projected_image_support": 1,
+        "shared_position_disagreement": 2
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 10
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.46382952916348985,
+        "camera_endpoint": 1.1572611727735815,
+        "rotation_mean": 3.2476990061120388,
+        "rotation_endpoint": 9.847676165205105
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7947998573182219,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7095233247647947,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.6428291287934859,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4959991795663826,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.428623735321288,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.39801914557888723,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "insufficient_projected_image_support"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_a4e9bdb6_s7",
+      "model": "lingbot",
+      "arm": "C",
+      "observations": 10,
+      "accepted": 8,
+      "rejected": 2,
+      "rejection_reasons": {
+        "shared_position_disagreement": 2
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 7,
+      "response_update_chunks": 7,
+      "nonidentity_gain_chunks": 7,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "response_samples_updated": 7,
+        "observation_rejected": 2
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.1054277218933115,
+        1.0,
+        1.1587979218438833,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        6,
+        0,
+        7,
+        0,
+        1,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.42605248085084374,
+        "camera_endpoint": 0.9721366618168892,
+        "rotation_mean": 3.1159557033155543,
+        "rotation_endpoint": 9.188125981516343
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7947998573182219,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7095233247647947,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.6428291287934859,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            2,
+            0,
+            3,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.178404055191654,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 76,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.49986280231972646,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            3,
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0226441701580289,
+            1.0,
+            1.1862113441173983,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 92,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.38154037272860125,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            4,
+            0,
+            5,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0465284889074464,
+            1.0,
+            1.1674448182404178,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 108,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4769259920143643,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            5,
+            0,
+            6,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0920231967511633,
+            1.0,
+            1.1631603864651765,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 124,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.1689134346952431,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            true,
+            false,
+            true,
+            false,
+            true,
+            false
+          ],
+          "fitted_sample_counts": [
+            6,
+            0,
+            7,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.1054277218933115,
+            1.0,
+            1.1587979218438833,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            6,
+            0,
+            7,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.1054277218933115,
+            1.0,
+            1.1587979218438833,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            6,
+            0,
+            7,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.1054277218933115,
+            1.0,
+            1.1587979218438833,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": true
+        }
+      ]
+    },
+    {
+      "id": "lingbot_e43058cb_s107",
+      "model": "lingbot",
+      "arm": "B",
+      "observations": 10,
+      "accepted": 2,
+      "rejected": 8,
+      "rejection_reasons": {
+        "shared_position_disagreement": 8,
+        "insufficient_projected_image_support": 2
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 10
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 1.7152496318569361,
+        "camera_endpoint": 3.4115951565363787,
+        "rotation_mean": 13.932382161336772,
+        "rotation_endpoint": 23.660842859118976
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.37194202898550727,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4181408622543737,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": false,
+          "rejection_reasons": [
+            "insufficient_projected_image_support",
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": false,
+          "rejection_reasons": [
+            "insufficient_projected_image_support",
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "lingbot_e43058cb_s107",
+      "model": "lingbot",
+      "arm": "C",
+      "observations": 10,
+      "accepted": 2,
+      "rejected": 8,
+      "rejection_reasons": {
+        "shared_position_disagreement": 8,
+        "insufficient_projected_image_support": 2
+      },
+      "clipped_chunks": 1,
+      "eligible_response_pairs": 1,
+      "response_update_chunks": 1,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "response_samples_updated": 1,
+        "observation_rejected": 8
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 1.7149178294184388,
+        "camera_endpoint": 3.414511193164378,
+        "rotation_mean": 13.506207201823338,
+        "rotation_endpoint": 22.64147262759174
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 12,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.37194202898550727,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 28,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4181408622543737,
+          "clipped": false,
+          "response_eligible": true,
+          "response_status": "response_samples_updated",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 44,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 60,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 76,
+          "accepted": false,
+          "rejection_reasons": [
+            "insufficient_projected_image_support",
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 92,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 108,
+          "accepted": false,
+          "rejection_reasons": [
+            "insufficient_projected_image_support",
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 124,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 140,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 156,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": false,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "sana_0f12b97e_s7",
+      "model": "sana",
+      "arm": "B",
+      "observations": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "rejection_reasons": {},
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 6
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.06221973683406569,
+        "camera_endpoint": 0.24163324534641178,
+        "rotation_mean": 3.131351536049073,
+        "rotation_endpoint": 5.5077035931162275
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 24,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 48,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.9548380860121025,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 72,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8821199974457983,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 96,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.861640960697256,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 120,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5681189162416919,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 144,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5866094479804567,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "sana_0f12b97e_s7",
+      "model": "sana",
+      "arm": "C",
+      "observations": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "rejection_reasons": {},
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "previous_chunk_clipped": 5
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.06211262654258468,
+        "camera_endpoint": 0.24127861141267704,
+        "rotation_mean": 3.1313723196811507,
+        "rotation_endpoint": 5.507739226633594
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 24,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 48,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.9548380860121025,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 72,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8821199974457983,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 96,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.861640960697256,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 120,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5681189162416919,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 144,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5866094479804567,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "sana_a4e9bdb6_s7",
+      "model": "sana",
+      "arm": "B",
+      "observations": 6,
+      "accepted": 5,
+      "rejected": 1,
+      "rejection_reasons": {
+        "shared_position_disagreement": 1
+      },
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 6
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.27708139811570415,
+        "camera_endpoint": 0.5620877360615459,
+        "rotation_mean": 2.1123932160884706,
+        "rotation_endpoint": 8.948532571411492
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 24,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 48,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8450277316722968,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 72,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.788994938825003,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 96,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.6086419527367433,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 120,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4822338332373816,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 144,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "sana_a4e9bdb6_s7",
+      "model": "sana",
+      "arm": "C",
+      "observations": 6,
+      "accepted": 5,
+      "rejected": 1,
+      "rejection_reasons": {
+        "shared_position_disagreement": 1
+      },
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "previous_chunk_clipped": 4,
+        "observation_rejected": 1
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.2770888203146628,
+        "camera_endpoint": 0.5620996722396401,
+        "rotation_mean": 2.112434370759295,
+        "rotation_endpoint": 8.948304723682059
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 24,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 48,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8450277316722968,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 72,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.788994938825003,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 96,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.6086419527367433,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 120,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.4822338332373816,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 144,
+          "accepted": false,
+          "rejection_reasons": [
+            "shared_position_disagreement"
+          ],
+          "confidence": 0.0,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "observation_rejected",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "sana_0f12b97e_s107",
+      "model": "sana",
+      "arm": "B",
+      "observations": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "rejection_reasons": {},
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "identity_response_arm": 6
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.1131577358282498,
+        "camera_endpoint": 0.36526589892484496,
+        "rotation_mean": 3.0060805927390097,
+        "rotation_endpoint": 4.034965672282907
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 24,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 48,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.9394558157128738,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 72,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8753885538818214,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 96,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.6855244668952004,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 120,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8240345824674955,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 144,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7342461503647018,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "identity_response_arm",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    },
+    {
+      "id": "sana_0f12b97e_s107",
+      "model": "sana",
+      "arm": "C",
+      "observations": 6,
+      "accepted": 6,
+      "rejected": 0,
+      "rejection_reasons": {},
+      "clipped_chunks": 6,
+      "eligible_response_pairs": 0,
+      "response_update_chunks": 0,
+      "nonidentity_gain_chunks": 0,
+      "response_status_counts": {
+        "no_consecutive_accepted_pair": 1,
+        "previous_chunk_clipped": 5
+      },
+      "response_replay_max_abs_error": 0.0,
+      "final_gains": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "final_sample_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": {
+        "position_valid": true,
+        "camera_mean": 0.11318248950923145,
+        "camera_endpoint": 0.3653179903811694,
+        "rotation_mean": 3.0061951932641797,
+        "rotation_endpoint": 4.035232370508743
+      },
+      "config": {
+        "return_frames": 64.0,
+        "feedback_gain": 0.5,
+        "acceleration_frames": 12.0,
+        "response_min": 0.75,
+        "response_max": 1.5,
+        "response_prior": 4.0,
+        "response_min_samples": 3,
+        "response_min_cosine": 0.8
+      },
+      "events": [
+        {
+          "frame": 24,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.5,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "no_consecutive_accepted_pair",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 48,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.9394558157128738,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 72,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8753885538818214,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 96,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.6855244668952004,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 120,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.8240345824674955,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        },
+        {
+          "frame": 144,
+          "accepted": true,
+          "rejection_reasons": [],
+          "confidence": 0.7342461503647018,
+          "clipped": true,
+          "response_eligible": false,
+          "response_status": "previous_chunk_clipped",
+          "response_update_axes": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "fitted_sample_counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "gains": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "nonidentity_gain": false
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "id": "lingbot_e43058cb_s7",
+      "exact_rgb_archive": true,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.0,
+      "original_C_minus_B": {
+        "camera_mean": 0.0004384044552618871,
+        "camera_endpoint": 0.001992609210603735,
+        "rotation_mean": -0.007090472451285024,
+        "rotation_endpoint": -0.04469139940577804
+      },
+      "identical_input_canonical_C_minus_B": {
+        "camera_mean": 0.0,
+        "camera_endpoint": 0.0,
+        "rotation_mean": 0.0,
+        "rotation_endpoint": 0.0
+      },
+      "interpretation": "Identical RGB/K/reference: repeated observer differences are not a control effect."
+    },
+    {
+      "id": "lingbot_74310829_s7",
+      "exact_rgb_archive": true,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.0,
+      "original_C_minus_B": {
+        "camera_mean": -0.00012079967554745608,
+        "camera_endpoint": -0.00013956649501256635,
+        "rotation_mean": -0.0010007205480278003,
+        "rotation_endpoint": -0.002765779702826876
+      },
+      "identical_input_canonical_C_minus_B": {
+        "camera_mean": 0.0,
+        "camera_endpoint": 0.0,
+        "rotation_mean": 0.0,
+        "rotation_endpoint": 0.0
+      },
+      "interpretation": "Identical RGB/K/reference: repeated observer differences are not a control effect."
+    },
+    {
+      "id": "lingbot_d3f042a2_s107",
+      "exact_rgb_archive": false,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.04015905970184963,
+      "original_C_minus_B": {
+        "camera_mean": -0.00290822006251934,
+        "camera_endpoint": -0.018215172351313424,
+        "rotation_mean": -0.08357660639377418,
+        "rotation_endpoint": -0.26281113548368396
+      },
+      "identical_input_canonical_C_minus_B": null,
+      "interpretation": "Active response policy; paired efficacy requires its existing attribution and evaluation qualifications."
+    },
+    {
+      "id": "lingbot_a4e9bdb6_s7",
+      "exact_rgb_archive": false,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.06636690480377994,
+      "original_C_minus_B": {
+        "camera_mean": -0.03777704831264611,
+        "camera_endpoint": -0.18512451095669236,
+        "rotation_mean": -0.1317433027964845,
+        "rotation_endpoint": -0.6595501836887614
+      },
+      "identical_input_canonical_C_minus_B": null,
+      "interpretation": "Active response policy; paired efficacy requires its existing attribution and evaluation qualifications."
+    },
+    {
+      "id": "lingbot_e43058cb_s107",
+      "exact_rgb_archive": true,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.0,
+      "original_C_minus_B": {
+        "camera_mean": -0.0003318024384972862,
+        "camera_endpoint": 0.002916036627999219,
+        "rotation_mean": -0.42617495951343365,
+        "rotation_endpoint": -1.0193702315272368
+      },
+      "identical_input_canonical_C_minus_B": {
+        "camera_mean": 0.0,
+        "camera_endpoint": 0.0,
+        "rotation_mean": 0.0,
+        "rotation_endpoint": 0.0
+      },
+      "interpretation": "Identical RGB/K/reference: repeated observer differences are not a control effect."
+    },
+    {
+      "id": "sana_0f12b97e_s7",
+      "exact_rgb_archive": true,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.0,
+      "original_C_minus_B": {
+        "camera_mean": -0.00010711029148100654,
+        "camera_endpoint": -0.0003546339337347493,
+        "rotation_mean": 2.078363207758116e-05,
+        "rotation_endpoint": 3.56335173661293e-05
+      },
+      "identical_input_canonical_C_minus_B": {
+        "camera_mean": 0.0,
+        "camera_endpoint": 0.0,
+        "rotation_mean": 0.0,
+        "rotation_endpoint": 0.0
+      },
+      "interpretation": "Identical RGB/K/reference: repeated observer differences are not a control effect."
+    },
+    {
+      "id": "sana_a4e9bdb6_s7",
+      "exact_rgb_archive": true,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.0,
+      "original_C_minus_B": {
+        "camera_mean": 7.42219895866203e-06,
+        "camera_endpoint": 1.1936178094140715e-05,
+        "rotation_mean": 4.1154670824550266e-05,
+        "rotation_endpoint": -0.00022784772943396092
+      },
+      "identical_input_canonical_C_minus_B": {
+        "camera_mean": 0.0,
+        "camera_endpoint": 0.0,
+        "rotation_mean": 0.0,
+        "rotation_endpoint": 0.0
+      },
+      "interpretation": "Identical RGB/K/reference: repeated observer differences are not a control effect."
+    },
+    {
+      "id": "sana_0f12b97e_s107",
+      "exact_rgb_archive": true,
+      "exact_intrinsics": true,
+      "exact_reference_plan": true,
+      "saved_command_max_abs_difference": 0.0,
+      "original_C_minus_B": {
+        "camera_mean": 2.475368098164843e-05,
+        "camera_endpoint": 5.2091456324454555e-05,
+        "rotation_mean": 0.00011460052516998331,
+        "rotation_endpoint": 0.0002666982258361372
+      },
+      "identical_input_canonical_C_minus_B": {
+        "camera_mean": 0.0,
+        "camera_endpoint": 0.0,
+        "rotation_mean": 0.0,
+        "rotation_endpoint": 0.0
+      },
+      "interpretation": "Identical RGB/K/reference: repeated observer differences are not a control effect."
+    }
+  ],
+  "input_sha256": {
+    "analysis/shared_controller_pilot_v2/manifest.json": "a24eb30ecfddf0bf4f94b1dd7a90031d1d05b2706264235d002a376db9d229d7",
+    "analysis/shared_controller_pilot_v2/frozen/camera_loop/adaptive.py": "409bd7c4f119c304b26509dfdf5de7b0e26247fd74df16849df046b55d2b54c4",
+    "analysis/shared_controller_pilot_v2/frozen/camera_loop/geometry.py": "28929d5cc1b5ac1f3f3812b39e596ad713f19c4d9a6deafe77508875ac662672",
+    "analysis/shared_controller_pilot_v2/frozen/camera_loop/alignment.py": "fa70b1c1941c4b68b339826313d11b306cdb2457e33f2a7eadadd812214794cf",
+    "analysis/shared_controller_pilot_v2/frozen/camera_loop/evidence.py": "7b87942d70510fda7da3ab4a7ff77f7e655fd848d7135b02fcc7a37abb5b6414",
+    "analysis/shared_controller_pilot_v2/frozen/camera_loop/quality.py": "68e3ac1c2bccd6c4fd285d86011911dfe1c758b93cdb31ab6740eec776781055",
+    "analysis/shared_controller_pilot_v2/lingbot_pair.py": "226875b41db588367750f58424033feb0864e89aec3f4dcea27b8be9cd27be1f",
+    "analysis/shared_controller_pilot_v2/sana_run.py": "dd4af129620ecc61e2f8b1828bb0f60ea079e43c5957e0c8dffabe1f36aac3f2",
+    "analysis/shared_controller_pilot_v2/observer_worker.py": "e22bbc7061d8cd7d9734b1f06ecd9c7b04da4ea7be48d8f382df022b24b6ee1f",
+    "analysis/shared_controller_pilot_v2/worker.py": "4491913141dfc071ab3f138cbfc83c7b32717e87c4cb96ce1aad66da7aca883a",
+    "analysis/shared_controller_pilot_v2/scores/lingbot_e43058cb_s7.json": "4ffa9e044d14fd05e978c16fb38c24f0261106ace3569e1c4c2d005a984626d1",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/run.json": "c44a007e9c68873e6312e88356799637d3fde99becccc2e789664815b6a8d3ad",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/frames.npz": "2f827aa080e545885e748576164cc1c3fd3673bc43ac5dcdadce8f963f53e0b5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_000.json": "8a7a637c1d52ad3fb18cc1df58271788c3c508da291d6222bd686836ee0ae2c9",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_001.json": "b49c876f8e474aab7c11da7a42d6fc9b82766e68fbb6307c18f58dc1001aa576",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_002.json": "21b79319ef4920cdeb4154f4e91524a51a9643ecd7640fcaa81dfdb9ddcbb0d5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_003.json": "e9d57304835695dc57101d7d00e4d7b13a160b6f4d3900ab1174141e518c81ff",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_004.json": "a8565bd09e67b49041c17985469ec96ecf93e956f4d90c341cb889c4e4bfb493",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_005.json": "89069339c9169b7cebdcbb97f5eef6e91e2d7efe438b4c3832bfba9d87ec6126",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_006.json": "f53984f18ff0fb74c221f859bba994e809848382edb43e240b08014d1162d6f9",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_007.json": "e8ffa0674813f916aad64ff360a4f120a3294b975d70bf0e34cda84e5a3daced",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_008.json": "02a8ac9f3b7f7e6207f6d927130c27459627c927a6e7aea40a631fbf18770c8e",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/B/observer/evidence_009.json": "31d905c8e351e32a1686a570ef58dc2bedc012b639db1a004f3addd6190f3955",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/run.json": "1378b86854f4beef66ecb0661d0401c1e7cb0260af079ec9cde3560b7a536bf0",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/frames.npz": "2f827aa080e545885e748576164cc1c3fd3673bc43ac5dcdadce8f963f53e0b5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_000.json": "24b8350983d0365e9c77b22406828c7172b44ada9d5f3331f6695ba95a2e6b7d",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_001.json": "ee2949e9a9a284bad30066440269be5bad002aef4493993e47c564a55de89c1b",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_002.json": "fcce513056ff18da99df1408e431cc320dd47126f49f13c9cddbf0798ae138fa",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_003.json": "7dc5ba037142d3d6af2cb86c89671b9866f6ec160264fd5a05326a73c731b3d7",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_004.json": "7fcafeee0630965e399e6327896536cb8b56267eaca201d362c0ea30a3632cac",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_005.json": "8226eb83c394ea711d7babb6ec9d2e61dadc1014761346663e0ebee7db8a13a8",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_006.json": "57026da11a72511a3d86bd872215249e78bb82738d8eb4fad919346a42f5f3b3",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_007.json": "d23c3ba115e971ba2dbd04abea5038ed6afca1f8b8e7e8cb917a2a33077aa9b4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_008.json": "f3ced60865a55291dd28fb77cb4069451cd9f0a994f34cb7ab6799754e29902c",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s7/C/observer/evidence_009.json": "b5872496f77626735d571815adab934f6d52082ec68392499b8366788e1ce991",
+    "analysis/shared_controller_pilot_v2/scores/lingbot_74310829_s7.json": "5b60813f93af676a4db5cc4f58dee41bd8aba8b16f753486ff2b25040a96b947",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/run.json": "06a627a5bffd01544e130a117eb42ac07fd4673ccf0184c37e76d297157f9387",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/frames.npz": "2026e832740a3cb933ea584f4c9d3a7f8e13dbedcf63bc4bc5eb903a023db5e4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_000.json": "ac7a7ece76cda8b0895bd3c3a5f6abdf0af2a9c790eb3268b44964dfd82414ee",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_001.json": "4418af3be6c98fa970976de23a0737d104a35ffb3648245d1bb3668f31529cbe",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_002.json": "4f88d44afbcc0f9b9a13a135a9593588a41592917a729047f941758ff4ab7b87",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_003.json": "0595cf82bd8ed63f303cc5a36f20c1dcaa12aa5e8fa6f07a1a102a8cfa690f09",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_004.json": "32712228aa49a04d36a452dea5797dc4291b03f38bcc3ce2ff9ef8d73e9c8212",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_005.json": "d4727a15af185537686857d3a921c466f57325dc692e14f00e6d84d13421e216",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_006.json": "4842df271ebbffb14c6bc635b203df2e1d5bf17335295018e2e9f95900b46cf1",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_007.json": "e945817c6efb5e3d61e7c32881d7737715f83ed991a2dc21c542d9a0f6a3c1e5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_008.json": "78eb5d170e8e1b30c1749445bcc66ed984984d065f091c29b447ced9a35f0253",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/observer/evidence_009.json": "e556495a227bcbeff27df5fda67d9406d80f186b0b4caf9e6335132893989223",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/run.json": "4bc1ea968ac7929beeed8a180d9558d1ce1b8c06fc0701f7711f59770b219920",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/frames.npz": "2026e832740a3cb933ea584f4c9d3a7f8e13dbedcf63bc4bc5eb903a023db5e4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_000.json": "6f7acc3ae02176aa73a09a5080ee28a3a973472e2554564e180a156a08dc6b82",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_001.json": "46dcaa48445dd8c12df29d8acad20eeb8ee307561d8b58e79a62fe6fb6d3dbf1",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_002.json": "5bf762f9ad4bac0a2f979d25ebf612f553fa5b17713b8d96cdf1156cc83084ba",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_003.json": "206a03ab6ef71b82bcc61984763fbe878ba87dd7b69a5f57fef52893adb852b0",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_004.json": "1448aeb48deb61812b6e5095ec9ab039c3d401c54835337692b9a2b75b458243",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_005.json": "e9722f817af8004708c3a6acedcfe54aaeadb5e0afddcee332ccfa2934d0aeb9",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_006.json": "82abddb9491c8e9457475e174f767fb183f2c3300515fa58dc1aa62e220e4382",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_007.json": "4f659f7b1b8e770f4e9bd5ec95c97786e1f20112096baf5578619f39afc9f719",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_008.json": "31c77f5aefaf2eb08b41ee71fedbd67555337a4e77198955a12e66bb29e364ec",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/observer/evidence_009.json": "54ebd2244dd458fbe0915ae86d610955336a3c62048d30702fd7b8d756944a51",
+    "analysis/shared_controller_pilot_v2/scores/lingbot_d3f042a2_s107.json": "32fd2343ef3cf33490ddfde1d7c65a1fbe87971525563c6d9fbe75dcecc4d0b4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/run.json": "3de8469a7b5a049856257bf8d858ee745e403474fe117ade476bdce516c25cfd",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/frames.npz": "ec5b1a03038f5d4881c078c5c803a3d917ebe02d44ad0d10efe7de0454129c5c",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_000.json": "09cea8bdc072fd534b472bb869ab2a46f800a03a5e23efc3c4659754caa4b3d2",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_001.json": "2f8c830f106a36659ebedde3f82e204860824a228703ae26e8c9b6f0c872c67e",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_002.json": "e3d9fcf1cc62c6f348c4f4c794e4bad4066751527e8224cd1bb6e067863afdcf",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_003.json": "7c7adf2916c9096ef345d312ffe5dcbee7693c1184b4b439a592cbfdce7ad62f",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_004.json": "8dbe62f654b721aaa68b24fe5e61411b0daaa215a4cd33616fc4c0e6477235da",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_005.json": "6e1875d933840923902064826b7efebfc1045ae6758ecca7980be6b7dd59791d",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_006.json": "c00361784056858dcbff606800bc9b9b6a3d8fdcd8ad46fc217638a410af39c1",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_007.json": "529484704a8bb7077968d486c2a949d2ed8768bf11445ceb065a971b45e19b70",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_008.json": "3503817760b2f057f540e9e22ed21b2f8654b4bf49a7d0f4f84fc6dcbef43d96",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/B/observer/evidence_009.json": "ea3fece94e48b0dc09fd1b4397ea06b89a8b26b6e6dd4ee4790b89a7c3766a78",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/run.json": "59dcf74e209d84d277da8b995ee2da911f5d96672f820e100a75ec06b71be9bf",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/frames.npz": "d4057b4e4e6dd0764a3a28908fdd35899ee0a7b4cf4e67c12aebcb89b0e5f99c",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_000.json": "1f485c203c032ed7dfb4d28a6b9591ec4f29fcc47481a4752add7c82b8515ee7",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_001.json": "45e49becf503de3614f11ae2db51469b740358d749a485faa960e26eda44eac8",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_002.json": "a93d06dfa107f1b3ab8b40005fa4cf21edb2026e37ac8c50f733660bf8181ce5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_003.json": "d1eaeb45620743bd0e2318131ea1dbfbaabb5ed786a15005bf3de17f7106476b",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_004.json": "692891871f99c81088dc7ca5e6c819251b7a35dd8d9ff070c04b4b62310c3ece",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_005.json": "bdc72cab91e82df4fe91853e2036d8c86752a252c1cee71319a66c6ae0be4921",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_006.json": "aca0f263d33f526686435cce8385c869968549ca4c09c4132b47819e69562166",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_007.json": "01c374d15e340505a328ed81f8da1511f655f1017fc6663cfa339e552081f0a4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_008.json": "2856515f864201aa159ac14f8d99dd832f74bfa56142f0d3d19abf5a299cf3d0",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_d3f042a2_s107/C/observer/evidence_009.json": "f93cb44bdcf4d96f8e90632ed492bbb5cdbbad979ec6f59e6aa98c30407839c4",
+    "analysis/shared_controller_pilot_v2/scores/lingbot_a4e9bdb6_s7.json": "747328237d896a443d23816a7070193df4d727219eff7048843e4663ceaa098b",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/run.json": "db5217cfb329ba9b2294ed3e15413730858428ed969b74d0ff941fa97ca385d5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/frames.npz": "fbaeda6a707cb0541d4e21f3e51a976d9a89addaf77ab7ba14aed0d25d0bb79f",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_000.json": "f2e61a96e86dd098ef0eb22ef1f3ce2b0caff5cc35044705216cc6f2649fce4a",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_001.json": "d37d35e68017cd28906e6ab1fcfeefb62535366c152bc10290e81abac2b40a40",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_002.json": "21654d7c28c3101cd7ed8ba084e3678cacc94d2d6d76d52b3b4a4c8c53f58dcb",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_003.json": "51f1da33ef175ddca7ffea121bf30a00a1b558ea9a7b47e9e6723fe23815fd8e",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_004.json": "ebdb455b06dfb4b73440947236fd299030c753b36e11d40b7b99df607a7557f2",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_005.json": "196d129ea1003526eec97a00791b16b38ff311e80886dcb3a8cb4422da37d901",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_006.json": "1546d383bf4ad783e3391d1917f6def84e716c6d945e13995019079c50980621",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_007.json": "29463cb71689d74a6c1d6526e290776e460eecf7ae8c1fd8e02b90d3f9897132",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_008.json": "7ed5d81093d3ff0174806a0ddde2489e7fa9441174a0950ee9e896128635b2ee",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/B/observer/evidence_009.json": "f190fccd98953ebc522739d6ccedaa93c22d949d0bd7b15e50240327cc953f0e",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/run.json": "f88f96004afb7b9ec15351eb9104e8320f59beed37afe6734056beff3204d96d",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/frames.npz": "1adc48066968720da7081fb8f4d97dde39dddd73bec70258012f67bb5218534c",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_000.json": "a57bf9ff502b3ab5e5c2fb4c5d4da8de9d012f41d26038a031ad70e5c4b3b091",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_001.json": "a3c87a706e3f8dc39b30f356243559359b5faa578e1492d8efa570ee0237dd2d",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_002.json": "ec979c544bcff3a533b44311c8b0c1dabddf0746c9b7d31b37e9db779cfdc0c1",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_003.json": "93afa3bb5789ec153a2afd796dd9fb12d5d56c2d76da856e0cb414ab2395d0e4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_004.json": "885591b8d190fde5fdb60214b3625a205d4631af3d26336cd92f64cd7695a4da",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_005.json": "75dcb9ca97f2f63b2fac8ca3cd3d7593dec6c58dc8b8d5a9660f49d04133b3d6",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_006.json": "97970f6f2fa9a763d892b9809a046315064534e12afd307f552d1219d1505909",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_007.json": "9a04c5bbac77f1d4d236dc1943910933a6361ca95b2033555a3c617cbb9a85b1",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_008.json": "4576d6990036094a62772ada7efe8578dd44cff4b9a6f65abe29ab1eab0e0010",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_a4e9bdb6_s7/C/observer/evidence_009.json": "00d3fec0c95bab134ebb98333d17e8181d2055b3151532de1d1e66a8b85bcb31",
+    "analysis/shared_controller_pilot_v2/scores/lingbot_e43058cb_s107.json": "515f91dbd5a55f77c8361da405e21e4da1fc46ca55f40022022945792210bec6",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/run.json": "d5f1bb123ab6334498496b4395a2ac1341574878cd6a109993c3773c3d825313",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/frames.npz": "b97126453772777e9bb22f994fdde89b0cba4a7fbce56025645d03e7312969c5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_000.json": "6512dc4d66e59a1fb23b391c653703c5602cc6707e0338b88790f81d0e785944",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_001.json": "19dd8f238218b8a345a696b25c7f6682ff8740596b1ca9b48aa493c11a75b23a",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_002.json": "ea86a4ca0f35a2d47b23f913e303a1bbf0ecf90038c32a413921469c34a9f847",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_003.json": "a0b984f961f1a654cf08d99b50a167aad2d465787b3269422231ca693552ebc8",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_004.json": "4ce3c8be80b8dfc19ac831f2db54d730a1c7f9fe1244f5eeae5e10ca9b1d3c0d",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_005.json": "4038cb756f2e8e2968be74e57fed64ec33d50798eb428646232c484b0e5e8b4b",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_006.json": "f8f1c932049d9e70d0eda0385e7e23a7fe53e05a6d2604a16a9f07bead0f4bec",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_007.json": "8249c4ef3ed0fc4873dce44300b2bbcdd2740b894d56487e5a53e92dd1d7aea7",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_008.json": "67e4abb118b6639d295b4c233f89d37557e2fae682404b4816d6f4549626851e",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/B/observer/evidence_009.json": "c3541c78419bc46f2666f97ddcf91db68262ae77846a987e54ebfc8fd7b4efd8",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/run.json": "e9a98d6bc82f13a4a3fd4cb770172e0a58bf5171c90dadb2d7289006e473ae47",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/frames.npz": "b97126453772777e9bb22f994fdde89b0cba4a7fbce56025645d03e7312969c5",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_000.json": "dbe9e1216f3fbd6001893f9374de2c2e34b6c115340b4b8518112f2cbe16f630",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_001.json": "28b72ee7899bde689804b4f722a07d1687c2dc39ad687a8f647a721968adab84",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_002.json": "0397c2a1b03cf8b1496884b660ed70f994c9bb961187d89840f0a23ee16a2abb",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_003.json": "14c71f9db8e7d0564a505319f0796fadd62b39a8b2fd6de6bb16972c1e2f35ff",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_004.json": "05f91793a55d87b6f7bd0597d8e8f01b2e5f6202a7c5743948f42fd9cc271fd4",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_005.json": "15406f5387bc46069357ee8577e6171ac0d868180cffd8dfea1e15a073183b9f",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_006.json": "995d2db4e321f13aa7adda688008eb3be912b46fb32cf15361e75e00009eb506",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_007.json": "ade4d0e6dbdb0a5c8203b0be44b502fc252997afef84bdf035d265e08795b240",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_008.json": "6979bcd55d5aaf995eb09291b03e26ed19c189fa696f408499ba367dd3eb0f4a",
+    "analysis/shared_controller_pilot_v2/runs/lingbot_e43058cb_s107/C/observer/evidence_009.json": "d0bca1738b49b052bc70d57e53057da221582b20967c158f28c0f621033a31a5",
+    "analysis/shared_controller_pilot_v2/scores/sana_0f12b97e_s7.json": "ece7950470aaaf09a704d7fefef0fda31871afd1e09de34225f1ffdd930c9e69",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/run.json": "452a90925188a661899b658809cd02680ad75009d4b2b2c9baebd002232c6403",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/frames.npz": "7d96a710ed727593655418af94289a4c6daa9001f5eb57379c962d0cd6249744",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/controller.json": "b32ed85bfdf45be279c8f1cb0fb08e462c60ec9fd31cc04e380dbf9932995b9d",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/observer/evidence_000.json": "7b40b8e81f04add066bae0f622ac1641b35cd93d669c585e02f490504e8341cb",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/observer/evidence_001.json": "5df9a1f6a16138c898cc8de44b5cd00ce16a8cd0a575bc8b846d11f0abc13d15",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/observer/evidence_002.json": "806000196f31dc99a73bee89a06c54dc00e954db73b1975432e3fed3a666a592",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/observer/evidence_003.json": "c371e9097f3b1e147bd8a7ec61341799ed25dfe2c18a2958fca8e0a4a01e8c93",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/observer/evidence_004.json": "4224421ff16a5f04af846cce9a2c7e4de0f7e0650f068525a7a9b5ade61be0b8",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/B/observer/evidence_005.json": "2f49f1ab7550abd70906d4090d41e6c3be83aa0beafe3348193ba8ac71a4055d",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/run.json": "8dc2d177711c86b60b7c21eb2cef3bb73317311dc18d5f0107ab9b8a23f4c5a7",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/frames.npz": "7d96a710ed727593655418af94289a4c6daa9001f5eb57379c962d0cd6249744",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/controller.json": "b2d508558a97edf9eb0d096bde870e1e03ca3ee18591a4f49b69942260d6f26b",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/observer/evidence_000.json": "7a2abfd7051c0e43a8a32d13c4c3b2dc7674f28e3b64ef34802bc004e56e2afe",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/observer/evidence_001.json": "b2d5a23226bd034853eaf0ee7fef3b8ed40d981445c5daf7d492369522f508ba",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/observer/evidence_002.json": "d00a2fe5abbd66817a0b43b707245645c9e498621d7d0d2b7fc5179b3771c440",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/observer/evidence_003.json": "70dcd19a0aeaac893a40be5ae8e87fa2c85f51c1d1d176a00c1f219f64bf596d",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/observer/evidence_004.json": "73d8fc182e7d2fe7bde11e0f93b9d68453301f12ecea28c481921c50bef84660",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s7/C/observer/evidence_005.json": "0ddd823f23387120f69707ffb4148a870871ca32169135bde26d1eaa385fe77a",
+    "analysis/shared_controller_pilot_v2/scores/sana_a4e9bdb6_s7.json": "ebc739294fe159fa371c305446994d05dafbf2945292a79e609d98748590c1a5",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/run.json": "9f8167a103699a071c737b6f5ceb77df13beb4ba281016e689ce90b99b4160e3",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/frames.npz": "8f5bb67b2de8942fcfd06f0bb2618269323b5ed5cf1bdd486741abaaec32292a",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/controller.json": "a148b26d7537bced9d4d3eefd571f37f6044b4cda1dfb69e8ce3608e2ced04ab",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/observer/evidence_000.json": "0d3e09eb91d09d0cc6806caefb5996d97481eb1e2296b6f9be1943e29e3728dc",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/observer/evidence_001.json": "45e2c0b48e19b4a53814bbab5e762597782d13b875dc7802347afa00b6a54d27",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/observer/evidence_002.json": "1e1c57e2db07ad1d633f31e64a7ce95e541ff0365755b3b7fe5712928b111df0",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/observer/evidence_003.json": "7e93eb0ca4a3b379a8366431f96f9eb1c16457a89d0332941459635fd73c10aa",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/observer/evidence_004.json": "223f23a9413cd953c40a5ab0f18cf813110be1bc5921bc51a2f386c7a882e690",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/B/observer/evidence_005.json": "ce783f1d32926df31dbe6fead1d593b9803bc8a47b98a9792dbe93b415d486c5",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/run.json": "b791a923fd19306a62805f3b3a16a056cd3c6d8229cfbe858dbff4eaa8f80d13",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/frames.npz": "8f5bb67b2de8942fcfd06f0bb2618269323b5ed5cf1bdd486741abaaec32292a",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/controller.json": "0ba05da4d4946562bb1153406faa3843441b36050b265f77782536e4cce8445d",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/observer/evidence_000.json": "34916185c432499ce5449b6abaf2b91befa9b49e69c1f1da87426c234f1ac6f2",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/observer/evidence_001.json": "6ef142b57e149cb0012180819bf1c2f5418876f46e2b8982dd8b22f00bfe572d",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/observer/evidence_002.json": "db5f42c8959cfb6a8424e3bc1407383a1216b51040aca91690bf87e74bc7eab2",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/observer/evidence_003.json": "4518c4ae7bd070eed0932591c3129c91571c23b252a3058209cd4f842f25a869",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/observer/evidence_004.json": "8bff980de4604eb72c5678c701cb62f1f868fd50288476c4b8e34477dfe1f12c",
+    "analysis/shared_controller_pilot_v2/runs/sana_a4e9bdb6_s7/C/observer/evidence_005.json": "409f1d0282f3919cf14e794ed3d6d997cea756620e082aa9873737694730e665",
+    "analysis/shared_controller_pilot_v2/scores/sana_0f12b97e_s107.json": "1b99a8c43ecafc89ef36d64b6db83f30ab7a9d50cf2a6d7460d26ff3399420ad",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/run.json": "8daa23a0e7354eabc25ada1bdef219cfd2d5430d83ac3b265cd0cafb038179ad",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/frames.npz": "dba21455462e0e4449ae437efeca54db85877e3aed319b1ce1a0f56edd0e48c3",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/controller.json": "293e27e93757b2abf129d2a455e7567b75ec58904b1d7d6b381dae29665d42a2",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/observer/evidence_000.json": "bf4e0fb2a466e35ca6e354cd6e7f08ba920d1891e5270f6a900aae4d082f94af",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/observer/evidence_001.json": "2cd929dfdfad25f023665e091c61023845da60048d105c93486276cb8411b44d",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/observer/evidence_002.json": "8d126cd0e501cdb30791aaa9f3bed083e7d79fac98de72616032c46909050541",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/observer/evidence_003.json": "910e99cfd27ae7ed4d4032357b40421a242b869baca3df31d5acde470bca988a",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/observer/evidence_004.json": "8e4330a1fd14fe1c2125e71d8d68c77659fa120a94c0cd4d6ce4ad25fac2283a",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/B/observer/evidence_005.json": "7707af11e2a0e99b9553219176fc8e3d3b55f40973f16fe1622e5b6bc3322084",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/run.json": "f9df85ca4a8640074518de206ca3f6ef1787be4aacbaf2f0afa13a05d570d29f",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/frames.npz": "dba21455462e0e4449ae437efeca54db85877e3aed319b1ce1a0f56edd0e48c3",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/controller.json": "3fe1e4dc97d1ce20b220165158e1460a74ac1fc608cefac3b4e6684571d003be",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/observer/evidence_000.json": "fdb26e3dca1945f2c3a44f86201309f465cc82f2c5ef27c660a6325c1bc259a3",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/observer/evidence_001.json": "b87604e11610137c0df663b739e30482ec5ff3dbedeb5ab7d82791ae53df9ab8",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/observer/evidence_002.json": "62d18fefd1794fa3942f9b9bafde73e0ad14a5c89e3c48793ab0ff871760660c",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/observer/evidence_003.json": "9e3eec11847b7bfea488a20df4b679002c2b997ec068f44ca2b154b18e61be16",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/observer/evidence_004.json": "d870e1628d8f7ca8dad399bc217f611bb518c835d406baab72d207e750a7e928",
+    "analysis/shared_controller_pilot_v2/runs/sana_0f12b97e_s107/C/observer/evidence_005.json": "b066a374348a0b099f47e1b2bd8bd442706049829df556f9eb337ccaa4828b4f"
+  },
+  "script_sha256": "328a0a30ceaba26d8b3c479550e26c8d6c4ea909c2965e1066f0c92a9d462275"
+}
