@@ -26,7 +26,7 @@ The positive evidence is not solely a VGGT effect. The later VIPE registration a
 
 DreamX and LingBot seed-7 RE10K cohorts show 32.53% and 46.07% lower mean position under VGGT. These are meaningful historical leads, but the corresponding videos still require comparison under the same current scoring contract as any new competing policy. Lower LPIPS/DINO changes support appearance similarity, not a guarantee of preserved geometry or smooth camera motion.
 
-The negative evidence remains visible: Spatia’s VIPE aggregate worsens position by 6.15% and rotation by 27.27%. MatrixGame’s DL3DV aggregate improves position by 42.97%, yet only 3/7 scenes improve and rotation worsens 14.86%; a minority of large changes drives its mean. LingBot seed 107 worsens mean rotation and DINO. Historical Astronex reference-trajectory calibration and VMem demo normalization retain their previously documented limitations.
+The negative evidence remains visible: Spatia’s VIPE aggregate worsens position by 6.15% and rotation by 27.27%. MatrixGame’s DL3DV aggregate improves position by 42.97%, yet only 3/7 scenes improve and rotation worsens 14.86%; a minority of large changes drives its mean. LingBot seed 107 worsens mean rotation and DINO. Historical Astronex reference-trajectory calibration remains a limitation. The [VMem archive replay](vmem_legacy_failure_replay_20261103.md) corrects an earlier protocol description: this cohort used per-window normalization, not frozen demo normalization; its retrieved context and applied scales were not logged.
 
 ## Next comparison and decision rule
 

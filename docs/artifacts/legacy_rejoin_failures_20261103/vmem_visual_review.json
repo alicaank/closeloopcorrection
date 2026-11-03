@@ -1,0 +1,50 @@
+[
+  {
+    "scene": "74310829",
+    "source": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scores/vmem_74310829.jpg",
+    "artifact": "vmem_74310829_four_arms.jpg",
+    "sha256": "625cc57420e398c64f9505674a0832a2e4ea0ea1cd2a77d24ab971a336fa2c45",
+    "frames": [
+      0,
+      7,
+      13,
+      20,
+      27,
+      33,
+      40
+    ],
+    "directly_inspected": true
+  },
+  {
+    "scene": "d3f042a2",
+    "source": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scores/vmem_d3f042a2.jpg",
+    "artifact": "vmem_d3f042a2_four_arms.jpg",
+    "sha256": "1486b2574959e7607840e7fee687c7321df97027f5b49f9d124e2a1c94361a83",
+    "frames": [
+      0,
+      7,
+      13,
+      20,
+      27,
+      33,
+      40
+    ],
+    "directly_inspected": true
+  },
+  {
+    "scene": "e43058cb",
+    "source": "analysis/plan_base_restart_20261008/continuous_eval_20261029/scores/vmem_e43058cb.jpg",
+    "artifact": "vmem_e43058cb_four_arms.jpg",
+    "sha256": "eee38eed9cbda57583a9cca637330923f1efffaed4bdbd2cf647992e533fd827",
+    "frames": [
+      0,
+      7,
+      13,
+      20,
+      27,
+      33,
+      40
+    ],
+    "directly_inspected": true
+  }
+]

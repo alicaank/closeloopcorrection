@@ -163,6 +163,13 @@ does not establish it as the cause. `334ff324` and `0238de14` also regress.
 
 ## VMem: published combined correction hides command-only failure
 
+The [40-run command replay](vmem_legacy_failure_replay_20261103.md) verifies the
+latest-memory bridge and corrects the protocol description: these runs used
+`scale_mode=window`, not `global_demo`. Adding command correction to measured
+memory helps 5/10 scenes, with a 0.01632 reduction in aggregate mean position.
+The replay also separates the mixed-coordinate logged command residual from
+physical tracking error and documents substantial DA3/VGGT disagreement.
+
 The website's historical correction arm is `replan_measured`, which changes both
 future commands and memory labels. All four saved arms are available for the same
 ten scenes/seeds:
