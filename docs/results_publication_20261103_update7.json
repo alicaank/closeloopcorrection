@@ -1,0 +1,43 @@
+{
+  "id": "appgdep_6ae99f1448d08191be90db4c5cbb4227",
+  "project_id": "appgprj_6ae3401d14148191a33a2534e734aa9a",
+  "title": "Camera Correction · Evaluation Lab",
+  "version_id": "appgprj_6ae3401d14148191a33a2534e734aa9a~appgver_9b5e49be531c8191a8fca3c6ffa5cb2a",
+  "type": "publish",
+  "status": "succeeded",
+  "url": "https://camera-correction-results-20261029.alicankk.chatgpt.site",
+  "has_mcp": false,
+  "screenshot_asset_pointer": null,
+  "provider_deployment_id": "site---6ae3401d14148191a33a2534e734aa9a",
+  "failure_message": null,
+  "env_set_revision": 0,
+  "updated_at": "2026-11-03T08:45:31.086922+00:00",
+  "source_commit": "6bc58d3b527e93c82a72309d9ea2a8c48a505ac9",
+  "archive_bytes": 212789732,
+  "previous_comparisons_preserved": 198,
+  "qualified_memory_pairs": 23,
+  "planned_memory_pairs": 40,
+  "site_audience": "Existing owner-private custom access preserved",
+  "checks": {
+    "browser_passed": true,
+    "comparison_selectors": 198,
+    "invalid_position_cases": 30,
+    "unqualified_comparisons": 2,
+    "study_cards": 24,
+    "referenced_assets": 918,
+    "missing_assets": 0,
+    "mobile_width": 390,
+    "mobile_overflow": false,
+    "javascript_errors": 0,
+    "http_errors": 0,
+    "earlier_queue_holds_preserved_per_resume": 2
+  },
+  "changes": [
+    "VMem 40-run exact command replay and actual per-window normalization documented",
+    "Command addition to measured memory: 5/10 cases lower; mean delta -0.0163164 anchor units",
+    "Three directly inspected VMem four-arm sheets linked",
+    "Current second-resume queue snapshots with both earlier holds"
+  ],
+  "new_efficacy_result": false,
+  "qa_directory": "docs/artifacts/results_publication_20261103_update7"
+}
