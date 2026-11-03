@@ -18,6 +18,11 @@ metres. Both seeds descriptively improve position; rotation changes are mixed.
 Two seeds of one scene do not establish generalization or superiority over legacy
 rejoin. The native camera contract differs from historical DreamX comparisons.
 
+The [issuance and observer audit](dreamx_future_control_audit_20261103.md)
+reproduces both saved command sequences exactly. The speed cap clips no proposed
+steps, but online DA3 and offline VIPE disagree substantially on seed 7's residual
+direction. This adds a measurement limitation beyond the identical-prefix check.
+
 For seed 107, the absolute mean-position reduction is 0.001883. The independently
 fitted trajectories disagree on their identical RGB prefix by mean 0.000850,
 p90 0.001322 and maximum 0.001361 position units. Mean/max prefix rotation
