@@ -156,3 +156,13 @@ pairs. The new SANA M/F experiment has its own frozen manifest and
 [execution record](fractional_recovery_20261103.md); it does not constitute
 execution of the other model rows. The earlier eight-run SANA/Lyra pilot and
 its 16 post-hoc observer checks retain their original manifests.
+
+### DreamX native timing preflight
+
+The [future-only preflight](dreamx_future_preflight_20261103.md) now qualifies
+an explicit memory-anchor bridge with the released encoder on four scenes.
+The last native camera can precede the latest emitted RGB by three frames;
+recovery and native relative encoding must use their respective timestamps.
+The generic issuance API supports this distinction. Focal-contract alignment
+and native GPU qualification remain pending; this preflight does not queue an
+unqualified future-only efficacy run or change the frozen memory cohort.

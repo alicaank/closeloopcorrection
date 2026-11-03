@@ -104,5 +104,39 @@ class FractionalRecoveryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             issue_fractional_future(self.plan,self.plan,self.history(-6),self.ids+1,**args)
 
+    def test_delayed_memory_anchor_bridges_at_native_reference_not_rgb_endpoint(self):
+        from scipy.spatial.transform import Rotation
+        history=self.history(-6)
+        history[21,:3,:3]=Rotation.from_euler('z',20,degrees=True).as_matrix()
+        args=dict(next_end=33,available_frame=24,feedback_index=1,nominal_boundaries=1,
+                  history_labels='commanded',native_stride=4,recovery_fraction=.5,
+                  speed_multiplier=2.,memory_anchor_frame=21)
+        issued=issue_fractional_future(self.plan,self.plan,history,self.ids,**args)
+        desired=fractional_memory_continuation(self.plan[:33],history,self.ids,
+                  native_stride=4,recovery_fraction=.5,speed_multiplier=2.)
+        np.testing.assert_allclose(np.linalg.inv(self.plan[21])@issued.commands[25:33],
+                  np.linalg.inv(history[21])@desired.commands[25:33],atol=1e-12)
+        np.testing.assert_array_equal(issued.commands[:25],self.plan[:25])
+        np.testing.assert_array_equal(issued.commands[33:],self.plan[33:])
+        self.assertEqual(issued.receipt['memory_anchor_frame'],21)
+        self.assertEqual(issued.receipt['available_frame'],24)
+        # The endpoint bridge is a different operation when the native anchor
+        # and newest observation disagree in orientation or translation.
+        wrong=self.plan[24]@np.linalg.inv(history[-1])@desired.commands[25:33]
+        self.assertGreater(np.max(np.abs(issued.commands[25:33]-wrong)),.1)
+
+    def test_memory_anchor_requires_explicit_causal_observation(self):
+        args=dict(next_end=33,available_frame=24,feedback_index=1,nominal_boundaries=1,
+                  history_labels='commanded',native_stride=4,recovery_fraction=.5,
+                  speed_multiplier=2.)
+        for anchor in [-1,25,True,20.5]:
+            with self.assertRaisesRegex(ValueError,'Memory anchor'):
+                issue_fractional_future(self.plan,self.plan,self.history(-6),self.ids,
+                                        memory_anchor_frame=anchor,**args)
+        ids=np.array([0,16,24])
+        with self.assertRaisesRegex(ValueError,'Memory anchor'):
+            issue_fractional_future(self.plan,self.plan,self.history(-6)[ids],ids,
+                                    memory_anchor_frame=21,**args)
+
 
 if __name__=='__main__':unittest.main()

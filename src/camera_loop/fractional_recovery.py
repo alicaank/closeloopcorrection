@@ -86,13 +86,17 @@ down, never instantaneously truncated. Unserved recovery is reported once.
 def issue_fractional_future(plan, issued_commands, measured, frame_ids, *, next_end,
                             available_frame, feedback_index, nominal_boundaries,
                             history_labels, native_stride, recovery_fraction,
-                            speed_multiplier):
+                            speed_multiplier, memory_anchor_frame=None):
     """Issue a future chunk, with explicit nominal warmup and memory bridge.
 
 For DreamX's proposed future-only arm, nominal_boundaries=1 leaves the first
 feedback command exactly nominal. Later accepted observations drive recovery;
 no inverse response is inferred here. The host owns the monotone feedback index
 and must skip native re-encoding when the receipt reports no intervention.
+The native memory anchor can precede the latest emitted RGB frame. Recovery
+uses the latest observation, while the bridge uses the observed pose at that
+explicit anchor. This preserves the native relative-camera reference without
+rewriting already emitted commands.
 """
     target=poses(plan); issued=poses(issued_commands).copy(); history=poses(measured)
     ids=np.asarray(frame_ids)
@@ -110,6 +114,11 @@ and must skip native re-encoding when the receipt reports no intervention.
             or not isinstance(native_stride,(int,np.integer)) or native_stride<1):
         raise ValueError('Invalid causal issuance contract')
     b=int(available_frame)
+    anchor=b if memory_anchor_frame is None else memory_anchor_frame
+    if (isinstance(anchor,(bool,np.bool_)) or not isinstance(anchor,(int,np.integer))
+            or anchor<0 or anchor>b or np.count_nonzero(ids==anchor)!=1):
+        raise ValueError('Memory anchor must be an explicitly observed emitted frame')
+    anchor_index=int(np.flatnonzero(ids==anchor)[0])
     if feedback_index<nominal_boundaries:
         if not np.array_equal(issued[b+1:next_end],target[b+1:next_end]):
             raise ValueError("Nominal bootstrap requires untouched planned future commands")
@@ -117,14 +126,16 @@ and must skip native re-encoding when the receipt reports no intervention.
         return RateContinuation(issued,dict(applied=False, reason='nominal_bootstrap',
             feedback_index=int(feedback_index), nominal_boundaries=int(nominal_boundaries),
             history_labels=history_labels, response_gain='not fitted',
+            memory_anchor_frame=int(anchor), available_frame=b,
             bootstrap_policy='preserve original plan amplitude; no rescaling'))
     result=fractional_memory_continuation(target[:next_end],history,ids,
         native_stride=native_stride,recovery_fraction=recovery_fraction,speed_multiplier=speed_multiplier)
     future=result.commands[b+1:next_end]
-    bridge=issued[b]@np.linalg.inv(history[-1]) if history_labels=='commanded' else np.eye(4)
+    bridge=issued[anchor]@np.linalg.inv(history[anchor_index]) if history_labels=='commanded' else np.eye(4)
     issued[b+1:next_end]=bridge@future
     changed=not np.array_equal(issued[b+1:next_end],np.asarray(issued_commands)[b+1:next_end])
     receipt=dict(result.receipt, applied=changed, feedback_index=int(feedback_index),
                  history_labels=history_labels, memory_bridge=bridge.tolist(),
+                 memory_anchor_frame=int(anchor), available_frame=b,
                  reference_rotation_targets_unchanged=True)
     return RateContinuation(issued,receipt)
