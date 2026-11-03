@@ -33,4 +33,34 @@ The negative evidence remains visible: Spatia’s VIPE aggregate worsens positio
 
 The currently running frozen cohorts remain intact. This reassessment changes method-selection priority, not already issued commands, frozen manifests, stored scores or the website’s dated publication snapshot.
 
+## What the legacy command correction actually does
+
+Source inspection of the current bundled drivers confirms an explicit future-command intervention. This is a reconstruction of the available implementation, not yet a proof that every historical score used these exact source bytes. Historical source versions and unit conversions still need qualification before calling a new run an exact reproduction.
+
+The shared `rejoin(measured, previous_command, future_plan)` adds a linearly decaying translation offset to the next planned chunk: for sample fraction `a = (i + 1) / n`, the desired translation is `p_i + (1 - a) * (m - u_previous)`. It similarly decays the relative rotation to identity using SLERP. The final desired pose returns to the planned chunk endpoint. An identity measurement returns the future plan unchanged.
+
+This policy can both catch up from lag and return after overshoot. For an ideal translation-only executor, a uniformly spaced plan with step `v`, boundary error `e = m - u_previous`, and `n` future samples requires step `v - e/n`. A negative error increases speed; a sufficiently positive error reverses motion. This algebra explains the available corrective action; it does not prove that a frozen generator executes it or remains stable. The restrictive bounded, non-reversal policy removed these actions. Its losses therefore cannot establish that command correction itself is ineffective.
+
+The desired world-frame curve and the native conditioning values are distinct. Several adapters bridge the desired curve into the frame of the stored commanded history, so their final encoded pose need not numerically equal the world-frame target.
+
+| Model | Future-command implementation | History treatment in legacy driver |
+| --- | --- | --- |
+| LingBot | Rejoin against the previous issued command; encode the first future relative step from the measured pose. Reuse the plan-derived translation denominator. | Existing cached conditioning remains intact; no measured-history rewrite. The denominator support issue still needs a separately identified ablation. |
+| DreamX | Rejoin the next three native camera samples. Use the measured pose as the temporary camera-encoding anchor and copy only future camera tensors after the native cache update. | No measured KV re-pass in this legacy path. Changing a temporary encoding anchor is not a persisted measured-memory write. |
+| SANA | Rejoin against the planned boundary; transform the desired curve by `issued_boundary @ inverse(measured)` before encoding future ray/Plücker tensors. | Previously issued history labels remain commanded. |
+| MatrixGame | Rejoin and bridge against the issued boundary before encoding the next 84 frames. | Refresh clean-context camera conditioning with the commands actually issued for those frames, not externally measured poses. This commanded-history consistency operation is part of the legacy arm. |
+| Lyra | Rejoin against the planned boundary; bridge from the actual last native camera label before passing the future chunk to the native step. | Retain native history labels and normal cache updates; no external measured-history rewrite. |
+
+The inspected paths are under `src/camera_loop/bundled/templates/analysis/plan_base_restart_20261008/`: `new_models_loop_20261028/{common,lingbot_pair,dreamx_run,sana_run}.py` and `continuous_eval_20261029/{mg35_stream_launch,lyra_plugin}.py`.
+
+## Qualification before the matched comparison
+
+The comparison retains all 40 original cases: LingBot, SANA, DreamX, MatrixGame and Lyra; scenes `02267acf`, `c7418b7d`, `0238de14`, `924228bf`; seeds 7 and 107. Their native RGB horizons remain 77, 121, 69, 337 and 321 respectively. Three scientific arms are native future commands with commanded history, explicit legacy rejoin, and measured-memory v1. Observer-only and identity controls qualify the host and encoding; they are not substituted for an efficacy arm.
+
+LingBot, SANA, MatrixGame and Lyra expose an existing correction arm, but reuse of their baseline/memory outputs still requires the same input, resource host, observer configuration and native conditioning. SANA and Lyra resource retries remain qualification work; a source-level match does not establish completed-run equivalence. MatrixGame uses the same causal block export in all arms; its offline whole-history decoder audit cannot silently replace scoring RGB.
+
+DreamX requires an explicit integration decision before launch. The current memory cohort uses a different driver from legacy rejoin. The legacy observer truncates to the last native camera-anchor frame, leaving three available RGB frames unused; the current future-command pilot also uses a newly prepared fixed-intrinsics input grid. Neither is interchangeable with the old memory cohort by changing an arm label. A common, calibrated input grid and declared observation schedule require newly matched arms unless reuse is demonstrated. Align the first intervention across arms and verify raw pre-intervention RGB, latent/RNG/cache receipts and untouched camera slices. Keep any necessary timing or calibration changes visible as a corrected legacy implementation, rather than claiming exact historical reproduction.
+
+This source review prepares the comparison; it does not mean the additional legacy generation queue has launched or that legacy has already beaten memory-only in a matched test.
+
 [Machine-readable evidence and source hashes](artifacts/legacy_rejoin_reassessment_20261103/result.json) · [audit script](artifacts/legacy_rejoin_reassessment_20261103/audit.py). The script is an archival workspace-specific audit copy.
