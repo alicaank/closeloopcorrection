@@ -1,0 +1,25 @@
+{
+  "reviewed_at_utc": "2026-11-03T09:57:55.101076+00:00",
+  "scope": "Astronex 0238de14 seed 7 reference/A/C contact sheet",
+  "image_sha256": "28648d037393dcd909971b0b8075a5b3ceaf15d91e9ae86d6eea0c85f4227459",
+  "sample_frame_ids": [
+    0,
+    106,
+    212,
+    318,
+    424,
+    530,
+    636
+  ],
+  "observations": [
+    "Reference moves around playground; generated views diverge from its composition.",
+    "Late generated frames contain distorted/duplicated railings and smeared background structures.",
+    "A and C show the same sampled artifacts; full RGB identity verified separately."
+  ],
+  "limits": [
+    "Sparse static samples do not establish physical zigzag or full-video smoothness.",
+    "No exact onset or complete scene-collapse claim.",
+    "Reference poses are not asserted independent ground truth."
+  ],
+  "audit_sha256": "f84982fe32150cd6487d5cf866f07aa0783734357edcd1a96e90f68b882a785b"
+}

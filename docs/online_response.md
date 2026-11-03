@@ -103,7 +103,7 @@ only to WorldPlay, but that retry stopped before launching any job because the
 8 GiB disk reserve was unavailable. Both queue PIDs are gone; their failures
 remain preserved.
 
-A fresh attempt is now queued at
+A fresh attempt was launched at
 `analysis/online_response_v2_resume_20261103/`, after SHA256-identical archived
 outputs were hardlinked to recover space. Every output path and byte was retained;
 no additional DL3DV scenes or protected model assets were removed. The current
@@ -116,10 +116,24 @@ unchanged; disk availability will be rechecked after acquiring the GPU locks.
 CPU validation passed 19 tests against the copied frozen package, both native
 CLI checks, the evaluator CLI and import binding. The actual Astronex native
 initialization branch also executes in single-process mode under the stripped
-environment. **No GPU response-calibration or tracking outcome is available yet.**
-This command-response ablation remains separate from measured-memory v1 and does
-not establish a physical native-unit conversion.
+environment. The completed seed-7 Astronex A/S/C runs now have a full
+637-frame identity and visual review: all three have identical native commands
+and exported RGB. The controller accepted 11 of 20 observations but activated
+no axis and issued no correction. This is a verified abstention result, not a
+positive correction result or a test of an active controller's efficacy.
+
+WorldPlay completed A/S, but its decoded-prefix identity gate failed: prefixes
+match through frame 44 and first differ at boundary 60 despite identical native
+commands. The queue is terminal `held`; WorldPlay C and both models' seed-107
+groups did not run. The identity gate remains required. The originally queued
+ten-generation scope is incomplete.
+
+See [the completed-result review](online_response_review_20261103.md) for full
+checks, scores, sampled visual findings and the WorldPlay failure localization.
+This command-response ablation remains separate from measured-memory v1 and
+does not establish a physical native-unit conversion.
 
 [Execution snapshot and prior failures](online_response_execution_20261103.json)
 and [CPU qualification](artifacts/online_response_resume_20261103/cpu_validation.json)
-record the current evidence. The snapshot is dated, not a live queue feed.
+record the launch-time evidence. They are preserved historical snapshots, not
+the current terminal state or a live queue feed.
