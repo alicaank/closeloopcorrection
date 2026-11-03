@@ -1,0 +1,24 @@
+{
+  "key": "matrixgame_0238de14_s107",
+  "reviewed_at": 1793693338.3013122,
+  "method": "Direct inspection of six timestamp-matched reference/commanded/measured RGB thumbnails; unblinded qualitative assessment, not full-video review.",
+  "sheet_sha256": "77a0390349dfd046efa0a1e9f93674f8e58b486a484b186812a656a9f13909b5",
+  "score_sha256": "b57b6e197a33714f7d52764c10954a7563bb845bc1d6e95d1fc7dae3c0298d69",
+  "frames": [
+    0,
+    84,
+    85,
+    168,
+    252,
+    336
+  ],
+  "observations": [
+    "The playground tower, green slide, stairs, planter, trees and surrounding buildings remain recognizable in both arms at the sampled timestamps.",
+    "Both generated arms show a pronounced contrast/brightness change between frames 84 and 85.",
+    "Later views differ from the reference in staircase scale/placement and foliage/object detail. Both arms retain the overall playground scene; this does not establish geometric or pixel fidelity.",
+    "Measured memory lowers mean position error from 0.010054 to 0.008280 reference units (17.64%), but raises endpoint position from 0.018663 to 0.018899 and mean rotation from 0.5736 to 0.7399 degrees; endpoint rotation rises from 1.2631 to 1.9732 degrees.",
+    "No near-total scene loss or large invented foreground structure is visible in these six samples. Physical camera reversal and between-sample failures remain untested."
+  ],
+  "classification": "Lower mean position with worse endpoint position and rotation; recognizable playground with appearance/layout drift.",
+  "temporal_limitation": "Six static timestamps do not establish full-video quality, smoothness, physical motion direction, or absence of between-sample failures."
+}

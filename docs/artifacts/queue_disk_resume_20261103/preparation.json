@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "attempts": [
+    {
+      "label": "matrix_memory",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory",
+      "runner_sha256": "0ffcf07e1309a8ebea077938dbf5a4e1ae4ca44f9b68c42b9bb8afcb7a970f09",
+      "resume_sha256": "6c226b022c0a88818ea8195d6ac1caab6cc37577919026ee29b9d20286c455ea",
+      "skipped": 40,
+      "remaining": 9,
+      "frozen_source_files_verified": 1760
+    },
+    {
+      "label": "legacy_dreamx",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_dreamx",
+      "runner_sha256": "f3114661d899f3b488b3459f4e60da986233787e190f7034ad5ca3e32388b480",
+      "resume_sha256": "5fdb96de1a93ac36d7587792b544567c9f86d787fb189659079c381ec5a88233",
+      "skipped": 0,
+      "remaining": 88,
+      "frozen_source_files_verified": 2039
+    },
+    {
+      "label": "legacy_lingbot",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_lingbot",
+      "runner_sha256": "8aacea7fbc17ad23d6a8b012916f1d41f973e8c382c74544f6e7f0479a02db6e",
+      "resume_sha256": "70afe2a3f6d16c6b8e9440db51f4407ca8063bf070135a28888a6abde3d90479",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1802
+    },
+    {
+      "label": "legacy_sana",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_sana",
+      "runner_sha256": "4ef107d7660656322c43df176c269129ee38090b90f8215673f502b0eb63e224",
+      "resume_sha256": "75becb7bbfad08bb68d2270977d3cf787d7a33652267fb91bb0ab6ef623e968f",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1772
+    },
+    {
+      "label": "legacy_matrixgame",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_matrixgame",
+      "runner_sha256": "2fbd0e8b251a2d219ce4d2fb44f9342fb093420452eb05f363e71b4419429252",
+      "resume_sha256": "57fe2376f904a1dcf7e72196831ec111e160640e3fe1a1fc34e62e7a35303440",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1771
+    },
+    {
+      "label": "legacy_lyra",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_lyra",
+      "runner_sha256": "8865df56983a46ceda35c274c7eff77b3c4b944088703d0d63f52ae73917f90b",
+      "resume_sha256": "7ee671f806338b0bcc7812bff835b31d01f625a412c69eea43dab9c14957304f",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1812
+    },
+    {
+      "label": "lyra_memory",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory",
+      "runner_sha256": "f379ff1c1e7dd7053f2561ca9f870050904e6c645427a9588a7e72b32cde1683",
+      "resume_sha256": "cac1225947313b3b6c7febba5c0b9838479448d696d7f8d054cafb95971a6391",
+      "skipped": 0,
+      "remaining": 51,
+      "frozen_source_files_verified": 1801
+    },
+    {
+      "label": "sana_transition",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition",
+      "runner_sha256": "f68c1074be22e616eb5ba22a2821ce495c090e7e7d602dcc6385936aa5bcbc78",
+      "resume_sha256": "6bee0a3920b9b4e187c224fefd7e1e1753211219eb0b774251aa4165e25ae9d2",
+      "skipped": 0,
+      "remaining": 49,
+      "frozen_source_files_verified": 1761
+    },
+    {
+      "label": "dreamx_future",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/dreamx_future",
+      "runner_sha256": "04acf4f4553c25b47b4cac53f8402ee41215f8969e34d32b464845447dfebed5",
+      "resume_sha256": "f2d6efb3bd9b94896c35f2a82dc3eb7e83928118fca86c733ec626b76c60be26",
+      "skipped": 0,
+      "remaining": 36,
+      "frozen_source_files_verified": 2037
+    },
+    {
+      "label": "lingbot_gauge",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lingbot_gauge",
+      "runner_sha256": "43518a4be8af561bd3d53da3d2422cbafce9c7448156856d151fa8d0aae69b7b",
+      "resume_sha256": "01d4c96cf234e45bf815ed25ab906a947a243c21e2e0c8fef9a666b5428ecd03",
+      "skipped": 0,
+      "remaining": 52,
+      "frozen_source_files_verified": 1786
+    }
+  ]
+}

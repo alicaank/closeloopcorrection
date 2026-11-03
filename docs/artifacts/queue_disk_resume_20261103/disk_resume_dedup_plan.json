@@ -1,0 +1,146 @@
+{
+  "created": 1793692947.3490143,
+  "free_before": 4183965696,
+  "groups": [
+    {
+      "sha256": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb",
+      "size": 193561116,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/sana_02267acf_s7/commanded/frames.npz",
+          "device": 66311,
+          "inode": 38285552,
+          "nlink": 2
+        },
+        {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_lifetime_qualification/runs/sana_02267acf_s7/commanded/frames.npz",
+          "device": 66311,
+          "inode": 38285552,
+          "nlink": 2
+        },
+        {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/runs/sana_02267acf_s7/commanded/frames.npz",
+          "device": 66311,
+          "inode": 38288285,
+          "nlink": 1
+        }
+      ]
+    },
+    {
+      "sha256": "66944a711f8f16efaa6ee4dcea886c101f813404a42e2ddcc599d4356deae782",
+      "size": 8396913,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/lyra_02267acf_baseline/review_frames.npz",
+          "device": 66311,
+          "inode": 48266052,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/lyra_02267acf_sham/review_frames.npz",
+          "device": 66311,
+          "inode": 48266584,
+          "nlink": 1
+        }
+      ]
+    },
+    {
+      "sha256": "5a257501d651d149c38936cc43079757785b5ff7ceb7bbd2b832140e1053d013",
+      "size": 13510454,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/spatia_02267acf_sham/review_frames.npz",
+          "device": 66311,
+          "inode": 48267111,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/spatia_02267acf_baseline/review_frames.npz",
+          "device": 66311,
+          "inode": 48267036,
+          "nlink": 1
+        }
+      ]
+    },
+    {
+      "sha256": "efe0f30a188e812c4f3c27cc00beb396930bf8cfca7b634a4a6fc7ee07f3c6c2",
+      "size": 8321924,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/lyra_02267acf_baseline/review_frames.npz",
+          "device": 66311,
+          "inode": 48264010,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/lyra_02267acf_sham/review_frames.npz",
+          "device": 66311,
+          "inode": 48264507,
+          "nlink": 1
+        }
+      ]
+    },
+    {
+      "sha256": "eded8806879456571a8c926992178c4fb03370d637135cbbe6e929c1dc10528d",
+      "size": 13591521,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/spatia_02267acf_sham/review_frames.npz",
+          "device": 66311,
+          "inode": 48264867,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/spatia_02267acf_baseline/review_frames.npz",
+          "device": 66311,
+          "inode": 48264802,
+          "nlink": 1
+        }
+      ]
+    },
+    {
+      "sha256": "2a1decebe32262faa44bd2dc4fc8283586442252ef6a087fd21c5adb2f5eb338",
+      "size": 18003825,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_sham/review_frames.npz",
+          "device": 66311,
+          "inode": 48262515,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_baseline/review_frames.npz",
+          "device": 66311,
+          "inode": 48262478,
+          "nlink": 1
+        }
+      ]
+    },
+    {
+      "sha256": "b1881e1fb0ea0821922aa82ab380493e7fc8f42eb811d85a312d0848c39363e1",
+      "size": 7231200,
+      "files": [
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/astronex_minwm_018300_baseline/review_frames.npz",
+          "device": 66311,
+          "inode": 48265256,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/astronex_minwm_018300_sham/review_frames.npz",
+          "device": 66311,
+          "inode": 48265270,
+          "nlink": 1
+        },
+        {
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/astronex_minwm_018300_native/review_frames.npz",
+          "device": 66311,
+          "inode": 48265284,
+          "nlink": 1
+        }
+      ]
+    }
+  ],
+  "changes": [],
+  "scope": "SHA256-identical completed/held RGB archives only; all paths and bytes retained; no checkpoint/runtime/configuration removed."
+}

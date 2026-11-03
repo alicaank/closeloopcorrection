@@ -7,9 +7,27 @@ T=R/'sana_observer_transition'
 def read(p):
     raw=p.read_bytes();captured[str(p)]=hashlib.sha256(raw).hexdigest();return json.loads(raw)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-freeze=read(Q/'freeze.json');state=read(Q/'status.json');supp=read(S/'status.json');matrix_supp=read(M/'status.json');lyra_supp=read(L/'status.json')
+def effective_state(root,label):
+    original=read(root/'status.json')
+    attempt=R.parent/'queue_disk_resume_20261103'/label
+    if not (attempt/'status.json').exists():return original
+    provenance=read(attempt/'resume.json');resumed=read(attempt/'status.json')
+    assert provenance['original_root']==str(root)
+    assert provenance['original_status_sha256']==captured[str(root/'status.json')]
+    assert provenance['original_manifest_sha256']==sha(root/'manifest.json')
+    assert resumed['resume_provenance']==provenance
+    assert set(provenance['completed_jobs_skipped'])==set(original['jobs'])
+    assert all(v['state']=='completed' and v['returncode']==0 for v in original['jobs'].values())
+    assert not set(original['jobs']).intersection(resumed['jobs']), 'Resume reran a completed job'
+    # Combine in memory for coverage only. Never rewrite either attempt record.
+    combined=dict(resumed,jobs={**original['jobs'],**resumed['jobs']})
+    combined['previous_queue_attempt']={k:original[k] for k in ['pid','phase','failures','finished']}
+    combined['previous_queue_attempt'].update(status=str(root/'status.json'),sha256=provenance['original_status_sha256'])
+    combined['resume_status']=str(attempt/'status.json')
+    return combined
+freeze=read(Q/'freeze.json');state=read(Q/'status.json');supp=read(S/'status.json');matrix_supp=effective_state(M,'matrix_memory');lyra_supp=effective_state(L,'lyra_memory')
 visual=read(R/'visual_review/manifest.json');visual_by_key={x['key']:x for x in visual['pairs']}
-transition=read(T/'status.json')
+transition=effective_state(T,'sana_transition')
 matrix_manifest=read(M/'manifest.json')
 assert matrix_manifest['protocol']['parent_freeze_sha256']==sha(Q/'freeze.json')
 resource_gate=read(M/'resource_prefix.json') if (M/'resource_prefix.json').exists() else {}
@@ -39,9 +57,13 @@ for pair in freeze['pairs']:
         sj={k:v for k,v in supplement['jobs'].items() if k.startswith(key+'_')}
         row['resource_supplement']=dict(queue_phase=supplement['phase'],jobs=sj,
             note='Separate original-horizon retry; the parent execution failure/hold remains in this record.')
+        if 'previous_queue_attempt' in supplement:
+            row['resource_supplement'].update(previous_queue_attempt=supplement['previous_queue_attempt'],resume_status=supplement['resume_status'])
     if model=='sana':
         row['additional_resource_attempts']=[dict(name='transition_order',queue_phase=transition['phase'],
             jobs={k:v for k,v in transition['jobs'].items() if k.startswith(key+'_')})]
+        if 'previous_queue_attempt' in transition:
+            row['additional_resource_attempts'][0].update(previous_queue_attempt=transition['previous_queue_attempt'],resume_status=transition['resume_status'])
     if model=='matrixgame':
         scorepath=M/'scores'/key/'score.json';gatepath=scorepath.with_name('attribution_gate.json')
         if gatepath.exists():

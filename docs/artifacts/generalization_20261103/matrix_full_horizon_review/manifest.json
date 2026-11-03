@@ -542,6 +542,96 @@
       "classification": "Lower position and rotation errors with recognizable scene; appearance/layout drift remains.",
       "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_c7418b7d_s107.review.json",
       "inspection_sha256": "17fee58c38cf805000548349533525b1d3687b43c4b65bd1cfe01eb4c1a39904"
+    },
+    {
+      "key": "matrixgame_0238de14_s107",
+      "frames": [
+        0,
+        84,
+        85,
+        168,
+        252,
+        336
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_0238de14_s107.jpg",
+      "sheet_sha256": "77a0390349dfd046efa0a1e9f93674f8e58b486a484b186812a656a9f13909b5",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s107/score.json",
+      "score_sha256": "b57b6e197a33714f7d52764c10954a7563bb845bc1d6e95d1fc7dae3c0298d69",
+      "gate": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/scores/matrixgame_0238de14_s107/attribution_gate.json",
+      "gate_sha256": "abf8f942ddb433ea8506562d6d6c3163f2fe35c1216634c5f761765fa9a26da0",
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s107/commanded/frames.lossless.mkv",
+          "sha256": "3e82257857ea14e196fb9d20eb4f730a6fb18f49729a6b4235ff32659bed6ada"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s107/measured/frames.lossless.mkv",
+          "sha256": "accf5d49c2a81b861985693de5729e95550e49fc16a5854fbf8d838484cea400"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00001.jpg",
+          "sha256": "1c1ce356899d698179fd103617162a53cb397e2f0a07cb128aa9c3e80b5d01d2"
+        },
+        {
+          "frame": 84,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00085.jpg",
+          "sha256": "ab20792858d107d86649e5dd44784be16ce26e1db638f2674931be06216405e9"
+        },
+        {
+          "frame": 85,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00086.jpg",
+          "sha256": "8198a47eca1395c4ede8c8f506419a72a9a0e426448390c6f66909fe14c2583e"
+        },
+        {
+          "frame": 168,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00169.jpg",
+          "sha256": "c6392194a2974697f5b4cc47db63e0d4ff6d3da7d2d443999a4e90248503e6d5"
+        },
+        {
+          "frame": 252,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00253.jpg",
+          "sha256": "566b4a1deddf720e21c1db1932b0a5de9dd314a30c283a721aa54019a0f3e28a"
+        },
+        {
+          "frame": 336,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00337.jpg",
+          "sha256": "b9ea911a8ba9eed6f2618d17b964eacfd5601556139c133ad6cb0dcfd0bc6388"
+        }
+      ],
+      "accepted_writes": 3,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.010053504345404623,
+          "measured": 0.008280214431469075,
+          "measured_minus_commanded": -0.0017732899139355478,
+          "reduction_percent": 17.638525364005087
+        },
+        "position_endpoint": {
+          "commanded": 0.01866324728110591,
+          "measured": 0.01889918275594848,
+          "measured_minus_commanded": 0.00023593547484257113,
+          "reduction_percent": -1.2641716164872596
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.5736168414688324,
+          "measured": 0.739949880056368,
+          "measured_minus_commanded": 0.16633303858753556,
+          "reduction_percent": -28.99723762670823
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.2630810786405604,
+          "measured": 1.9732034298088619,
+          "measured_minus_commanded": 0.7101223511683015,
+          "reduction_percent": -56.22143844737172
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "classification": "Lower mean position with worse endpoint position and rotation; recognizable playground with appearance/layout drift.",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/matrixgame_0238de14_s107.review.json",
+      "inspection_sha256": "0004743f0b93d17eb8e864234a4585bfeb1042e7430c2480a7234d793f5291b5"
     }
   ]
 }

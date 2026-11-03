@@ -1,0 +1,156 @@
+{
+  "checked_at": 1793693376.3784218,
+  "all_ten_processes_live": true,
+  "free_disk_bytes": 4884869120,
+  "observations": [
+    {
+      "label": "matrix_memory",
+      "pid": 3035678,
+      "process_created": 1793693049.88,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/run_queue.py"
+      ],
+      "phase": "matrixgame_924228bf_s107_commanded",
+      "status_sha256": "1ffb7bf36775abe510f64fb38d11b4de341cb3a0efe248d1d6954afd5bff826f",
+      "children": [
+        {
+          "pid": 3036177,
+          "name": "python"
+        },
+        {
+          "pid": 3036238,
+          "name": "python"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "label": "legacy_dreamx",
+      "pid": 3035715,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_dreamx/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "9b31cded9bcd172b85117f76b5ce4158d3786deaed3c31d77d7cd47c6ab4e919",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "legacy_lingbot",
+      "pid": 3035716,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_lingbot/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "c6e8df3bf1c2e5fc93db400395eaf362974c892e8927c171d3d094321e9849b0",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "legacy_sana",
+      "pid": 3035717,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_sana/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "a60b0630165bc8fcbd53eacc385cb8c0c3679b551cc370b70fe48cea199d2719",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "legacy_matrixgame",
+      "pid": 3035718,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_matrixgame/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "300056e35222534041a3a93a0810e9b3209546ed3ce8d3f2ff2778b73cbaa09e",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "legacy_lyra",
+      "pid": 3035719,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_lyra/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "8980ac6e789a34ea41a3abc7a476e1771a7e0225b2a3c247af3c82954db5a0f6",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "lyra_memory",
+      "pid": 3035720,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "6f653dad7cd1597398914c7c9489dcdb2a643112235315c3850fafdcec6a24bc",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "sana_transition",
+      "pid": 3035721,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "858db7518b496cf0217f7564ff0d40842c64e3f151944aa04531848dcf75a7b0",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "dreamx_future",
+      "pid": 3035722,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/dreamx_future/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "8535a7b4e150874a09a8a9894ee717db5aeceba497a7f64f34414009298ced65",
+      "children": [],
+      "failures": []
+    },
+    {
+      "label": "lingbot_gauge",
+      "pid": 3035723,
+      "process_created": 1793693058.09,
+      "process_state": "sleeping",
+      "cmdline": [
+        "/home/hj/Alican/baselines/venv_vmem/bin/python",
+        "/home/hj/Alican/analysis/queue_disk_resume_20261103/lingbot_gauge/run_queue.py"
+      ],
+      "phase": "waiting_for_gpu_lock",
+      "status_sha256": "3a219ceac92910d72a2eb77e910b94fa8f75f0be0207fe6fe809efd6a65b6e6c",
+      "children": [],
+      "failures": []
+    }
+  ]
+}

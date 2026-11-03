@@ -1,0 +1,12 @@
+{
+  "pid": 2858822,
+  "phase": "held",
+  "started": 1793668392.4914927,
+  "manifest_sha256": "89cb0e918ee1c3246521b023f346df7dbf9a398396a540f82ee56fc59bc175f5",
+  "jobs": {},
+  "failures": [
+    "RuntimeError('4 GiB launch reserve; originals retained')"
+  ],
+  "held_cases": {},
+  "finished": 1793692686.0463653
+}

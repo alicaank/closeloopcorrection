@@ -56,13 +56,15 @@ error in both seeds, while reducing endpoint and rotation errors. It is not
 promoted on this one-boundary tradeoff. See the
 [figures and visual review](docs/fractional_recovery_gallery_20261103.md).
 
-The [generalization strategy and cohort accounting](docs/generalization_strategy_20261103.md)
-keep the main objective explicit: broad benefit does not require every scene to
-improve. The original cohort has 18 completed pairs, but all ten active pairs
-come from one scene. Three models show large position gains there; DreamX and
-the current MatrixGame host do not. Broader scene coverage remains necessary.
-A new frozen SANA resource qualification checks a fix for the observer process
-remaining in host memory between chunks before resuming longer evaluation.
+The [generalization strategy](docs/generalization_strategy_20261103.md) keeps the
+main objective explicit: broad benefit does not require every scene to improve.
+[Original-horizon coverage](docs/generalization_coverage_20261103.json) is now
+23/40 qualified pairs: eight LingBot, eight DreamX and seven MatrixGame. SANA and
+Lyra remain incomplete. The [MatrixGame review](docs/matrix_full_horizon_review_20261103.md)
+retains seed-dependent tracking tradeoffs and visual artifacts. Ten experiment
+queues, including the separate matched legacy study, have
+[resumed after disk holds](docs/queue_disk_resume_20261103.md) with their original
+protocols and resource limits. Earlier failed attempts remain in the evidence.
 
 ## Quick start
 
