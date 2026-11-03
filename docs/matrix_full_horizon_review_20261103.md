@@ -1,8 +1,8 @@
-# MatrixGame: first five full-horizon paired results
+# MatrixGame: first six full-horizon paired results
 
-The observer-lifetime retry has completed five of the eight prespecified MatrixGame pairs at the original **337 RGB frames**, with the first affected frame at **85**. All five pass exact pre-intervention RGB equality. The first commanded retry is byte-identical across all 337 frames to the original completed baseline. The resource fix changes observer lifetime; it does not shorten the run or change the memory policy. The original failed attempt remains in the execution record.
+The observer-lifetime retry has completed six of the eight prespecified MatrixGame pairs at the original **337 RGB frames**, with the first affected frame at **85**. All six pass exact pre-intervention RGB equality. The first commanded retry is byte-identical across all 337 frames to the original completed baseline. The resource fix changes observer lifetime; it does not shorten the run or change the memory policy. The original failed attempt remains in the execution record.
 
-These five qualified retries bring unique qualified cohort coverage to **21 / 40** pairs: eight LingBot, eight DreamX and five MatrixGame. This is a partial, dated snapshot; it does not establish benefit across the five-model cohort.
+These six qualified retries bring unique qualified cohort coverage to **22 / 40** pairs: eight LingBot, eight DreamX and six MatrixGame. This is a partial, dated snapshot; it does not establish benefit across the five-model cohort.
 
 | Scene / seed | Writes | Mean position, commanded → measured | Reduction | Mean rotation, degrees | Sampled RGB interpretation |
 | --- | ---: | --- | ---: | --- | --- |
@@ -11,8 +11,9 @@ These five qualified retries bring unique qualified cohort coverage to **21 / 40
 | 0238de14_s7 | 3 | 0.010156 → 0.013006 | -28.06% | 0.4160 → 0.3075 | Position regression despite lower mean rotation; recognizable playground with appearance artifacts. |
 | 924228bf_s7 | 0 | Unavailable in both arms | — | 0.1812 → 0.1812 | Abstention with unavailable position registration; not an active correction success. |
 | 02267acf_s107 | 3 | 0.016961 → 0.010633 | +37.31% | 0.3846 → 0.3354 | Numeric pose improvement with substantial foreground hallucination in both arms; visual fidelity tradeoff. |
+| c7418b7d_s107 | 3 | 0.044111 → 0.007786 | +82.35% | 0.8714 → 0.3542 | Lower position and rotation errors with recognizable scene; appearance/layout drift remains. |
 
-Three of four position-valid pairs have lower mean position error; one worsens. All four have lower mean rotation error, but two have higher endpoint rotation error. These are numeric directions, not statistically established wins. Position uses fixed reference anchor-depth units, not established metres; reference trajectories may themselves be VIPE-derived. No raw-error average is pooled across scenes or models.
+Four of five position-valid pairs have lower mean position error; one worsens. All five have lower mean rotation error, but two have higher endpoint rotation error. These are numeric directions, not statistically established wins. Position uses fixed reference anchor-depth units, not established metres; reference trajectories may themselves be VIPE-derived. No raw-error average is pooled across scenes or models.
 
 The small `02267acf/s7` position reduction is only 0.000234 anchor units and lacks a matched regeneration/noise floor. The stronger percentage on `02267acf/s107` accompanies large invented foreground structures in both arms. On moving scene `0238de14/s7`, mean position worsens 28.06%, even though mean rotation improves. These qualifications remain attached to the results.
 
@@ -43,3 +44,7 @@ This is direct, unblinded inspection of six matched timestamps per arm, not a fu
 **matrixgame_02267acf_s107**
 ![matrixgame_02267acf_s107 reference, commanded and measured samples](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_02267acf_s107.jpg)
 [Inspection notes](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_02267acf_s107.review.json) · [score](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_02267acf_s107.score.json)
+
+**matrixgame_c7418b7d_s107**
+![matrixgame_c7418b7d_s107 reference, commanded and measured samples](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_c7418b7d_s107.jpg)
+[Inspection notes](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_c7418b7d_s107.review.json) · [score](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_c7418b7d_s107.score.json)

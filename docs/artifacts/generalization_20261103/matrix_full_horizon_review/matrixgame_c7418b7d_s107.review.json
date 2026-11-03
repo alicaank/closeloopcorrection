@@ -1,0 +1,24 @@
+{
+  "key": "matrixgame_c7418b7d_s107",
+  "reviewed_at": 1793691356.73636,
+  "method": "Direct inspection of six timestamp-matched source/commanded/measured RGB thumbnails; unblinded qualitative assessment, not full-video review.",
+  "sheet_sha256": "efb2bc52eb1dc4905c64058946a0955c0b13e314e35e45384b0a2f24b1a34e8b",
+  "score_sha256": "9d1ecbf983dbfc18ade641ee0e1c92d2e6f91300f3a0da712aa70b1bdb2aef56",
+  "frames": [
+    0,
+    84,
+    85,
+    168,
+    252,
+    336
+  ],
+  "observations": [
+    "The note-covered wall, central display counter, ceiling and shelves remain recognizable in both arms across the sampled frames.",
+    "Both arms show a contrast/brightness pulse at the first boundary, frame 85.",
+    "The later generated views differ from the reference in wall-note detail, shelf extent and relative layout. The measured arm retains scene content in these samples; this does not establish pixel or geometry fidelity.",
+    "Mean position decreases from 0.044111 to 0.007786 reference units (82.35%); mean rotation decreases from 0.8714 to 0.3542 degrees. Endpoint position and rotation also decrease.",
+    "No near-total scene loss or large invented foreground structure is visible in these six samples. Between-sample failures and physical camera reversal remain untested."
+  ],
+  "classification": "Lower position and rotation errors with recognizable scene; appearance/layout drift remains.",
+  "temporal_limitation": "Six static timestamps do not establish full-video quality, smoothness, physical motion direction, or absence of between-sample failures."
+}

@@ -13,7 +13,7 @@ main queue has finished with holds. SANA's separate full-horizon residency retry
 also failed at the host-memory guard after saving an exact 97-frame prefix.
 A [transition-order retry](sana_observer_transition_20261103.md) is now queued.
 The MatrixGame observer-lifetime retry is running, and its decoder-only audit
-has completed. Five MatrixGame full-horizon retries have since been qualified and visually reviewed, giving **21/40 unique qualified pairs**; those retry results remain separate from the original-attempt table. SANA, MatrixGame and Lyra retain their original resource failures/holds.
+has completed. Six MatrixGame full-horizon retries have since been qualified and visually reviewed, giving **22/40 unique qualified pairs**; those retry results remain separate from the original-attempt table. SANA, MatrixGame and Lyra retain their original resource failures/holds.
 The [original-attempt accounting](primary_cohort_accounting_20261103.md) records
 12 active pairs, four exact-RGB abstentions and the 24 cases missing paired scores. See the
 [coverage ledger](generalization_coverage_20261103.json) and
