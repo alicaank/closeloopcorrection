@@ -1,0 +1,1125 @@
+{
+  "snapshot_time": 1793670356.5069568,
+  "original_pairs": 40,
+  "primary_method": "measured-memory-v1",
+  "script_sha256": "f3908429a346790640134e44c58f0059024b78d7c2733b11fc0deb4b1c440e53",
+  "main_queue_phase": "finished_with_holds",
+  "models": {
+    "lingbot": {
+      "planned": 8,
+      "scored": 8,
+      "execution_counts": {
+        "reused": 1,
+        "completed": 7
+      },
+      "active_pairs": 6,
+      "zero_write_pairs": 2,
+      "full_rgb_equality_verified": 2,
+      "visually_reviewed": 8,
+      "qualified_pairs": 8,
+      "metric_outcomes": {
+        "position_mean": {
+          "lower": 6,
+          "unavailable": 2
+        },
+        "position_endpoint": {
+          "lower": 6,
+          "unavailable": 2
+        },
+        "rotation_mean_deg": {
+          "lower": 3,
+          "higher": 3,
+          "equal": 2
+        },
+        "rotation_endpoint_deg": {
+          "lower": 4,
+          "higher": 2,
+          "equal": 2
+        }
+      }
+    },
+    "sana": {
+      "planned": 8,
+      "scored": 0,
+      "execution_counts": {
+        "failed": 1,
+        "held": 7
+      },
+      "active_pairs": 0,
+      "zero_write_pairs": 0,
+      "full_rgb_equality_verified": 0,
+      "visually_reviewed": 0,
+      "qualified_pairs": 0,
+      "metric_outcomes": {
+        "position_mean": {},
+        "position_endpoint": {},
+        "rotation_mean_deg": {},
+        "rotation_endpoint_deg": {}
+      }
+    },
+    "dreamx": {
+      "planned": 8,
+      "scored": 8,
+      "execution_counts": {
+        "completed": 8
+      },
+      "active_pairs": 6,
+      "zero_write_pairs": 2,
+      "full_rgb_equality_verified": 2,
+      "visually_reviewed": 8,
+      "qualified_pairs": 8,
+      "metric_outcomes": {
+        "position_mean": {
+          "lower": 2,
+          "higher": 4,
+          "unavailable": 2
+        },
+        "position_endpoint": {
+          "lower": 4,
+          "higher": 2,
+          "unavailable": 2
+        },
+        "rotation_mean_deg": {
+          "lower": 3,
+          "higher": 3,
+          "equal": 2
+        },
+        "rotation_endpoint_deg": {
+          "lower": 3,
+          "higher": 3,
+          "equal": 2
+        }
+      }
+    },
+    "matrixgame": {
+      "planned": 8,
+      "scored": 0,
+      "execution_counts": {
+        "failed": 1,
+        "held": 7
+      },
+      "active_pairs": 0,
+      "zero_write_pairs": 0,
+      "full_rgb_equality_verified": 0,
+      "visually_reviewed": 0,
+      "qualified_pairs": 0,
+      "metric_outcomes": {
+        "position_mean": {},
+        "position_endpoint": {},
+        "rotation_mean_deg": {},
+        "rotation_endpoint_deg": {}
+      }
+    },
+    "lyra": {
+      "planned": 8,
+      "scored": 0,
+      "execution_counts": {
+        "failed": 1,
+        "held": 7
+      },
+      "active_pairs": 0,
+      "zero_write_pairs": 0,
+      "full_rgb_equality_verified": 0,
+      "visually_reviewed": 0,
+      "qualified_pairs": 0,
+      "metric_outcomes": {
+        "position_mean": {},
+        "position_endpoint": {},
+        "rotation_mean_deg": {},
+        "rotation_endpoint_deg": {}
+      }
+    }
+  },
+  "rows": [
+    {
+      "key": "lingbot_02267acf_s7",
+      "model": "lingbot",
+      "scene": "02267acf",
+      "seed": 7,
+      "state": "reused",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/scores/lingbot_02267acf_s7/score.json",
+      "score_sha256": "bf62592148d4332d1c768c28821ed1250a55af546d6f37a4dc6fc37719e29c8d",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.7845576861629469,
+          "measured": 0.20208641066166666,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.5824712755012802,
+          "reduction_percent": 74.24199466453321
+        },
+        "position_endpoint": {
+          "commanded": 1.4183759682442938,
+          "measured": 0.19772234766545513,
+          "outcome": "lower",
+          "measured_minus_commanded": -1.2206536205788387,
+          "reduction_percent": 86.05994799036243
+        },
+        "rotation_mean_deg": {
+          "commanded": 5.259427983216586,
+          "measured": 3.9966089821973645,
+          "outcome": "lower",
+          "measured_minus_commanded": -1.2628190010192215,
+          "reduction_percent": 24.010576911577
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 14.589834386183304,
+          "measured": 5.2804805589564685,
+          "outcome": "lower",
+          "measured_minus_commanded": -9.309353827226836,
+          "reduction_percent": 63.80712474737117
+        }
+      },
+      "visual_assessment": "visual collapse; policy failure",
+      "visual_scope": "Direct inspection of the six-frame contact sheet, not full-video review"
+    },
+    {
+      "key": "sana_02267acf_s7",
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 7,
+      "state": "failed",
+      "reason": "RuntimeError('Reserve guard reached: host_memory_guard')"
+    },
+    {
+      "key": "dreamx_02267acf_s7",
+      "model": "dreamx",
+      "scene": "02267acf",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s7/score.json",
+      "score_sha256": "0d480ea5d6d93ca43acf76f2fc95842cd6b08c2312d304e5460b9f0b96c35bad",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.038172201442309796,
+          "measured": 0.037501119870134166,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.0006710815721756302,
+          "reduction_percent": 1.7580373853728233
+        },
+        "position_endpoint": {
+          "commanded": 0.03906622062192726,
+          "measured": 0.03799637471827492,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.0010698459036523403,
+          "reduction_percent": 2.7385446726624294
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.8242846566079871,
+          "measured": 0.8099843026157411,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.014300353992246051,
+          "reduction_percent": 1.7348805267216088
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.8540434950653951,
+          "measured": 0.8262398595347843,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.027803635530610826,
+          "reduction_percent": 3.255529219677725
+        }
+      },
+      "visual_assessment": "Small numerical pose difference with visually similar sampled outputs; efficacy unresolved at this sample size.",
+      "visual_scope": "Six-frame sampled visual review"
+    },
+    {
+      "key": "matrixgame_02267acf_s7",
+      "model": "matrixgame",
+      "scene": "02267acf",
+      "seed": 7,
+      "state": "failed",
+      "reason": "RuntimeError('Reserve guard reached: host_memory_guard')"
+    },
+    {
+      "key": "lyra_02267acf_s7",
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 7,
+      "state": "failed",
+      "reason": "RuntimeError('Reserve guard reached: host_memory_guard')"
+    },
+    {
+      "key": "lingbot_c7418b7d_s7",
+      "model": "lingbot",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s7/score.json",
+      "score_sha256": "f0aa1f4be67925b506185ae5a1e35e95a5c91a3fc9c78b9eca2e7b165a946b21",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.6593978972335489,
+          "measured": 0.12830980254365806,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.5310880946898908,
+          "reduction_percent": 80.54136916693675
+        },
+        "position_endpoint": {
+          "commanded": 1.2382072058936069,
+          "measured": 0.16878861425562597,
+          "outcome": "lower",
+          "measured_minus_commanded": -1.069418591637981,
+          "reduction_percent": 86.36830625340997
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.9007205284492934,
+          "measured": 4.359089053831129,
+          "outcome": "higher",
+          "measured_minus_commanded": 2.4583685253818355,
+          "reduction_percent": -129.33876856622894
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 4.056759487170712,
+          "measured": 8.354430142843507,
+          "outcome": "higher",
+          "measured_minus_commanded": 4.297670655672794,
+          "reduction_percent": -105.93851248179614
+        }
+      },
+      "visual_assessment": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "sana_c7418b7d_s7",
+      "model": "sana",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_c7418b7d_s7",
+      "model": "dreamx",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s7/score.json",
+      "score_sha256": "f0314936a880182f6f8b23b0df9d6bed58b472fc41ac35ec53252e3f1057ec2e",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.033153739915330084,
+          "measured": 0.03385859025494148,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.0007048503396113945,
+          "reduction_percent": -2.1260055167576315
+        },
+        "position_endpoint": {
+          "commanded": 0.07371149932643337,
+          "measured": 0.07475596742224984,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.0010444680958164726,
+          "reduction_percent": -1.416967644615418
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.9071650844442438,
+          "measured": 1.9359844310639547,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.02881934661971086,
+          "reduction_percent": -1.5111091774265017
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.9486176746296684,
+          "measured": 2.047873594962259,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.09925592033259067,
+          "reduction_percent": -5.093658013312135
+        }
+      },
+      "visual_assessment": "Visually similar sampled outputs with a small numerical pose regression; efficacy unresolved.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "matrixgame_c7418b7d_s7",
+      "model": "matrixgame",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_c7418b7d_s7",
+      "model": "lyra",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lingbot_0238de14_s7",
+      "model": "lingbot",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s7/score.json",
+      "score_sha256": "8426f81cb7ff88345082c0f9bcc63c09f8926d7ebcfc23d8376051468ad7588f",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.617993256574073,
+          "measured": 0.30262563843396484,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.31536761814010816,
+          "reduction_percent": 51.030915756005186
+        },
+        "position_endpoint": {
+          "commanded": 1.099901136966785,
+          "measured": 0.359341675518618,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.740559461448167,
+          "reduction_percent": 67.32963868829336
+        },
+        "rotation_mean_deg": {
+          "commanded": 4.532030589892882,
+          "measured": 2.9700741815952076,
+          "outcome": "lower",
+          "measured_minus_commanded": -1.5619564082976742,
+          "reduction_percent": 34.46482492375658
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 8.467064944261615,
+          "measured": 3.821326172369873,
+          "outcome": "lower",
+          "measured_minus_commanded": -4.645738771891742,
+          "reduction_percent": 54.86834933326334
+        }
+      },
+      "visual_assessment": "Scene-fidelity failure despite lower position and rotation errors.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "sana_0238de14_s7",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_0238de14_s7",
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_0238de14_s7/score.json",
+      "score_sha256": "c6f3128807c43a473cfdac2a36c97b8e9197e0a8b81c4fdddbea02da6013b937",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.017468729434435577,
+          "measured": 0.01776682461982963,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.0002980951853940525,
+          "reduction_percent": -1.7064502974465132
+        },
+        "position_endpoint": {
+          "commanded": 0.03122701842578843,
+          "measured": 0.030699498095210276,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.0005275203305781552,
+          "reduction_percent": 1.6893073920323733
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.029506553575344,
+          "measured": 0.9863540985502791,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.04315245502506493,
+          "reduction_percent": 4.19156681180921
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.6772756684746751,
+          "measured": 0.64418936094158,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.03308630753309516,
+          "reduction_percent": 4.885205400573509
+        }
+      },
+      "visual_assessment": "Visually similar sampled outputs with small mixed pose changes; efficacy unresolved.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "matrixgame_0238de14_s7",
+      "model": "matrixgame",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_0238de14_s7",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lingbot_924228bf_s7",
+      "model": "lingbot",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7/score.json",
+      "score_sha256": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "rejected_writes": 4,
+      "position_valid": false,
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.546151711347021,
+          "measured": 1.546151711347021,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.9421014079706629,
+          "measured": 1.9421014079706629,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "visual_assessment": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review",
+      "full_rgb_equality_verified": true
+    },
+    {
+      "key": "sana_924228bf_s7",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_924228bf_s7",
+      "model": "dreamx",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s7/score.json",
+      "score_sha256": "6ce7aecbb0185e2a8f1b7f8d91c0db7ba89560b3268a702f9d6b074d0893257b",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "rejected_writes": 4,
+      "position_valid": false,
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "rotation_mean_deg": {
+          "commanded": 3.9727717123661015,
+          "measured": 3.9727717123661015,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 5.003824900167467,
+          "measured": 5.003824900167467,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "visual_assessment": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review",
+      "full_rgb_equality_verified": true
+    },
+    {
+      "key": "matrixgame_924228bf_s7",
+      "model": "matrixgame",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_924228bf_s7",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 7,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lingbot_02267acf_s107",
+      "model": "lingbot",
+      "scene": "02267acf",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_02267acf_s107/score.json",
+      "score_sha256": "895844b37f01dcd488960b132da74a7986930d743fc81c42d075ab038d61b726",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.6530304914255702,
+          "measured": 0.527340254626803,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.12569023679876723,
+          "reduction_percent": 19.24722328422744
+        },
+        "position_endpoint": {
+          "commanded": 1.2395414182176718,
+          "measured": 1.0391151496489808,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.20042626856869106,
+          "reduction_percent": 16.16938858379437
+        },
+        "rotation_mean_deg": {
+          "commanded": 9.441131362684297,
+          "measured": 10.06880290359778,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.6276715409134823,
+          "reduction_percent": -6.648266153718923
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 21.505305068998645,
+          "measured": 15.550100276742459,
+          "outcome": "lower",
+          "measured_minus_commanded": -5.955204792256186,
+          "reduction_percent": 27.69179406267069
+        }
+      },
+      "visual_assessment": "Severe sampled visual collapse despite reduced positional error; policy failure retained in cohort.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "sana_02267acf_s107",
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_02267acf_s107",
+      "model": "dreamx",
+      "scene": "02267acf",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s107/score.json",
+      "score_sha256": "600dac6d4d74eff58c1e771c5d03f3e2373762252d794f43d02e87ed39f8a228",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.032730435357102655,
+          "measured": 0.03324248521169921,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.0005120498545965538,
+          "reduction_percent": -1.56444559630777
+        },
+        "position_endpoint": {
+          "commanded": 0.0673810446699804,
+          "measured": 0.06853084119786221,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.0011497965278818023,
+          "reduction_percent": -1.7064094709621793
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.6438166111167528,
+          "measured": 0.627268699387394,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.016547911729358766,
+          "reduction_percent": 2.5702834384243447
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.608250398846722,
+          "measured": 0.5918777563966119,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.016372642450110164,
+          "reduction_percent": 2.6917602489293295
+        }
+      },
+      "visual_assessment": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "matrixgame_02267acf_s107",
+      "model": "matrixgame",
+      "scene": "02267acf",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_02267acf_s107",
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lingbot_c7418b7d_s107",
+      "model": "lingbot",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s107/score.json",
+      "score_sha256": "d96bb0193fd0d345f59175f5dc16ceee7467c077433d1b6d4a3758d01b274b17",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.6725432786295911,
+          "measured": 0.16001398625761432,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.5125292923719768,
+          "reduction_percent": 76.2076298519157
+        },
+        "position_endpoint": {
+          "commanded": 1.2884411276553882,
+          "measured": 0.18936641992366585,
+          "outcome": "lower",
+          "measured_minus_commanded": -1.0990747077317224,
+          "reduction_percent": 85.30267189869505
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.7066579628288825,
+          "measured": 1.8258274044730403,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.11916944164415777,
+          "reduction_percent": -6.982620082036102
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.9172935337502788,
+          "measured": 4.097615102220306,
+          "outcome": "higher",
+          "measured_minus_commanded": 2.1803215684700277,
+          "reduction_percent": -113.71871495363878
+        }
+      },
+      "visual_assessment": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "sana_c7418b7d_s107",
+      "model": "sana",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_c7418b7d_s107",
+      "model": "dreamx",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s107/score.json",
+      "score_sha256": "2945f7cf9e732eb169c3571cde95e2c51ad9ffaf5b434ca1b9c7328124cd8712",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.03872637278325624,
+          "measured": 0.0383948774809156,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.00033149530234063973,
+          "reduction_percent": 0.8559936769600205
+        },
+        "position_endpoint": {
+          "commanded": 0.08432506253211958,
+          "measured": 0.08282056063124418,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.0015045019008753935,
+          "reduction_percent": 1.7841693272416204
+        },
+        "rotation_mean_deg": {
+          "commanded": 2.6330017574951188,
+          "measured": 2.707157182377204,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.07415542488208526,
+          "reduction_percent": -2.8163834175573177
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 2.2307819040148704,
+          "measured": 2.389602704272392,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.15882080025752154,
+          "reduction_percent": -7.119512668256917
+        }
+      },
+      "visual_assessment": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "matrixgame_c7418b7d_s107",
+      "model": "matrixgame",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_c7418b7d_s107",
+      "model": "lyra",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lingbot_0238de14_s107",
+      "model": "lingbot",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s107/score.json",
+      "score_sha256": "1b84e7cc5ec8857b3804b50ac5af84ecf12569347b5bfce8edcb9ccce3d5c9a9",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.5433808572444334,
+          "measured": 0.15494844647427242,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.388432410770161,
+          "reduction_percent": 71.48437520231401
+        },
+        "position_endpoint": {
+          "commanded": 0.961400508543771,
+          "measured": 0.1668878416138734,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.7945126669298976,
+          "reduction_percent": 82.64117398204233
+        },
+        "rotation_mean_deg": {
+          "commanded": 3.9086640245223916,
+          "measured": 2.529080442718204,
+          "outcome": "lower",
+          "measured_minus_commanded": -1.3795835818041877,
+          "reduction_percent": 35.29552740140571
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 7.536765254064935,
+          "measured": 2.5955818227185037,
+          "outcome": "lower",
+          "measured_minus_commanded": -4.941183431346431,
+          "reduction_percent": 65.56106319858398
+        }
+      },
+      "visual_assessment": "Pose benefit with boundary ghosting and altered structure; visual fidelity tradeoff retained, not clean success.",
+      "visual_scope": "Direct inspection of six timestamp-matched reference/output samples and all 77 frames of both generated arms as thumbnails; not a native-resolution video-quality assessment"
+    },
+    {
+      "key": "sana_0238de14_s107",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_0238de14_s107",
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_0238de14_s107/score.json",
+      "score_sha256": "72296e93c0bbc74088d401896f863406de7858ab2e99378a821725c932965aec",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "rejected_writes": 0,
+      "position_valid": true,
+      "metrics": {
+        "position_mean": {
+          "commanded": 0.024618948752922764,
+          "measured": 0.024667373031306988,
+          "outcome": "higher",
+          "measured_minus_commanded": 4.8424278384223696e-05,
+          "reduction_percent": -0.19669515083772518
+        },
+        "position_endpoint": {
+          "commanded": 0.04455207509586156,
+          "measured": 0.044426838518471255,
+          "outcome": "lower",
+          "measured_minus_commanded": -0.00012523657739030303,
+          "reduction_percent": 0.2811015583916904
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.7908832688200491,
+          "measured": 1.802275895673506,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.011392626853456989,
+          "reduction_percent": -0.6361456970315656
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.870836422974247,
+          "measured": 1.8986342894328563,
+          "outcome": "higher",
+          "measured_minus_commanded": 0.027797866458609377,
+          "reduction_percent": -1.4858523234445298
+        }
+      },
+      "visual_assessment": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review"
+    },
+    {
+      "key": "matrixgame_0238de14_s107",
+      "model": "matrixgame",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_0238de14_s107",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lingbot_924228bf_s107",
+      "model": "lingbot",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s107/score.json",
+      "score_sha256": "ccde0f129eb6bc17bb46daaca5e85cb130f4b325d472c76b2550aaaa3b3d250e",
+      "frames": 77,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "rejected_writes": 4,
+      "position_valid": false,
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.9257107061357026,
+          "measured": 1.9257107061357026,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 2.3774875751645617,
+          "measured": 2.3774875751645617,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "visual_assessment": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review",
+      "full_rgb_equality_verified": true
+    },
+    {
+      "key": "sana_924228bf_s107",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "dreamx_924228bf_s107",
+      "model": "dreamx",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "completed",
+      "reason": null,
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s107/score.json",
+      "score_sha256": "1f7783d48a2f1d4938b37899926e8e300dca8b9098d7770a1376060c3698b917",
+      "frames": 69,
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "rejected_writes": 4,
+      "position_valid": false,
+      "metrics": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "outcome": "unavailable"
+        },
+        "rotation_mean_deg": {
+          "commanded": 3.4049797728836517,
+          "measured": 3.4049797728836517,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 4.60141394771829,
+          "measured": 4.60141394771829,
+          "outcome": "equal",
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "visual_assessment": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit.",
+      "visual_scope": "Direct inspection of six-frame contact sheet; not full-video review",
+      "full_rgb_equality_verified": true
+    },
+    {
+      "key": "matrixgame_924228bf_s107",
+      "model": "matrixgame",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    },
+    {
+      "key": "lyra_924228bf_s107",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 107,
+      "state": "held",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard"
+    }
+  ],
+  "input_sha256": {
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "96899ff79945fe84ebaf9e706dfc62df4318f51ee3157eabd30a863e3f42606d",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "ea7d10b9cfecd4cc6684944fc2e80b49be0a4e4e389357e8b8fe504b3d2068be",
+    "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/scores/lingbot_02267acf_s7/score.json": "bf62592148d4332d1c768c28821ed1250a55af546d6f37a4dc6fc37719e29c8d",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s7.review.json": "1cfe4fe1c15f8b9fbbb61ef7e054db1bb43737bd6ad6af7ace15986e9ddd31cb",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s7/score.json": "0d480ea5d6d93ca43acf76f2fc95842cd6b08c2312d304e5460b9f0b96c35bad",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_02267acf_s7.review.json": "a514576cbd05ea96fe6196975c84f1d123b24ef4af0e3d0ea2ba67a79d0c3b01",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s7/score.json": "f0aa1f4be67925b506185ae5a1e35e95a5c91a3fc9c78b9eca2e7b165a946b21",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_c7418b7d_s7.review.json": "45b5449318184fb39a3d85479c79db8009daf15485e7708da37cce30cdda0a8d",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s7/score.json": "f0314936a880182f6f8b23b0df9d6bed58b472fc41ac35ec53252e3f1057ec2e",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_c7418b7d_s7.review.json": "e59ec6391b2a9377d4ed2079dbaac3337699836fbbbad8f0f1824b251a762539",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s7/score.json": "8426f81cb7ff88345082c0f9bcc63c09f8926d7ebcfc23d8376051468ad7588f",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_0238de14_s7.review.json": "a9380d5ca8fc73bb15179620944c51ed793b3c01b56fd752c22c2f9cbca964bb",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_0238de14_s7/score.json": "c6f3128807c43a473cfdac2a36c97b8e9197e0a8b81c4fdddbea02da6013b937",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_0238de14_s7.review.json": "8423ff76edd5062e81d502f04125660c5f08d4ae03a77f3ec7fa44007124df7a",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7/score.json": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s7.review.json": "c9ac4267293954df6b2509152dbcff50d9dcf6aadd84f56f416ea80b98562a41",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s7.abstention_rgb.json": "060baafb21598302e7079605d0779d9616e4a22a7a9202ac97dfe7197d10cba5",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s7/score.json": "6ce7aecbb0185e2a8f1b7f8d91c0db7ba89560b3268a702f9d6b074d0893257b",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s7.review.json": "1a2b32e6012b834fea53e6107786c5e3c82a12b62bda992f9a7d2cebc9ae4e8c",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s7.abstention_rgb.json": "d007254d7a2be68d65ea0e9f4b9c6b722d53fdadadd81f027a65806e84024a62",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_02267acf_s107/score.json": "895844b37f01dcd488960b132da74a7986930d743fc81c42d075ab038d61b726",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s107.review.json": "50b1406b61201b19251149cbdb2a0888d979231199369e177ee2f54af6b20f5d",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s107/score.json": "600dac6d4d74eff58c1e771c5d03f3e2373762252d794f43d02e87ed39f8a228",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_02267acf_s107.review.json": "257eb9a89ea5347a1a31ccc1a5948bfe4dc4c23993431dd9a70eaed91b64391f",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s107/score.json": "d96bb0193fd0d345f59175f5dc16ceee7467c077433d1b6d4a3758d01b274b17",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_c7418b7d_s107.review.json": "9c4f73603ea556e546842ee0d8ab3a135c9eaed75e70a8e71f9838af09c5abfc",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s107/score.json": "2945f7cf9e732eb169c3571cde95e2c51ad9ffaf5b434ca1b9c7328124cd8712",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_c7418b7d_s107.review.json": "69a3b030de7c2c37de6a9f576f9fa7ececf8a6528cd9ea9ac90872d95484bc95",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s107/score.json": "1b84e7cc5ec8857b3804b50ac5af84ecf12569347b5bfce8edcb9ccce3d5c9a9",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_0238de14_s107.review.json": "0b97ccddda674f679c9faa200f93b2c46f04a5f1f57d2ec1c72c7f8c4dadb27c",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_0238de14_s107/score.json": "72296e93c0bbc74088d401896f863406de7858ab2e99378a821725c932965aec",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_0238de14_s107.review.json": "f3d88c2fb45119e2c8c8c977e9cd8f4e62d1bce0f9a1006a56d3bf7036c0d80f",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s107/score.json": "ccde0f129eb6bc17bb46daaca5e85cb130f4b325d472c76b2550aaaa3b3d250e",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s107.review.json": "de73996666770057f19ba8bce2a83c543e193e803244d5bae6087d0060c0f155",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s107.abstention_rgb.json": "424dd8f37cfd8ce98201d457d8f50eb435e546bea6e6c14eecf431ef3e786c94",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s107/score.json": "1f7783d48a2f1d4938b37899926e8e300dca8b9098d7770a1376060c3698b917",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s107.review.json": "caec4eeb304f2956ecbbbae8934bf50d67816abb4853e926e5d80a508234db6f",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s107.abstention_rgb.json": "e11f29c33c3d1b3a91e6ec09441913d8cbc182712d18e7be72a430ca04645d39"
+  },
+  "interpretation": "Descriptive development-cohort accounting. Strict numeric lower/higher/equal is not significance or overall success. Invalid position stays unavailable; missing executions stay missing. Visual assessments are unblinded qualitative reviews, not a calibrated quality metric. No raw-error mean is pooled across scenes or models, and no primary metric or inclusion rule is changed. Resource retry outcomes must be reconciled separately without overwriting these original attempts."
+}

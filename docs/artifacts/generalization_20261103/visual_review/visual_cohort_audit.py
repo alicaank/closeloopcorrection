@@ -5,7 +5,7 @@ memory with the live generation queue. Stored references are not asserted to
 be independent ground-truth geometry. No generated result selects the frames.
 """
 from pathlib import Path
-import hashlib,json,subprocess
+import argparse,hashlib,json,subprocess
 import numpy as np
 from PIL import Image,ImageDraw
 R=Path(__file__).resolve().parent;W=R.parents[1];Q=R/'cohort_resume'
@@ -14,6 +14,11 @@ FF=W/'analysis/plan_base_restart_20261008/model_controls_20261024/bin/ffmpeg'
 def read(p):return json.loads(p.read_text())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 frozen=read(Q/'freeze.json');state=read(Q/'status.json');batch=W/frozen['protocol']['batch']
+parser=argparse.ArgumentParser();parser.add_argument('--pair',action='append');args=parser.parse_args()
+selected=set(args.pair or [])
+assert selected.issubset({p['key'] for p in frozen['pairs']})
+previous=read(OUT/'manifest.json') if selected and (OUT/'manifest.json').exists() else None
+if previous:assert previous['freeze_sha256']==sha(Q/'freeze.json')
 index={x['name']:x for x in read(batch/'index.json')['scenes']}
 motion=[]
 for scene in frozen['protocol']['scenes']:
@@ -30,6 +35,7 @@ for scene in frozen['protocol']['scenes']:
 review=[]
 for pair in frozen['pairs']:
     key=pair['key'];ps=state['pairs'].get(key,{})
+    if selected and key not in selected:continue
     if ps.get('state') not in ('completed','confounded','reused'):continue
     scorepath=Path(ps['score']);score=read(scorepath);spec=score['spec'];n=score['horizon']+1
     ids=sorted({0,spec['first_affected_frame']-1,spec['first_affected_frame'],n//2,(3*n)//4,n-1})
@@ -64,6 +70,10 @@ for pair in frozen['pairs']:
             item.update(review_status='sampled_visual_review_complete',inspection_record=str(inspected),
                         inspection_sha256=sha(inspected),classification=previous['classification'])
     review.append(item)
+if previous:
+    by_key={r['key']:r for r in previous['pairs'] if r['key'] not in selected}
+    by_key.update({r['key']:r for r in review})
+    review=[by_key[p['key']] for p in frozen['pairs'] if p['key'] in by_key]
 out=dict(scope='Timestamp-matched sampled visual inspection, not full-video review or a quality metric. Full-frame thumbnails may retain native crop/FOV differences. References are source RGB; stored poses may be VIPE-derived.',
          freeze_sha256=sha(Q/'freeze.json'),script_sha256=sha(Path(__file__)),motion=motion,pairs=review)
 (OUT/'manifest.json').write_text(json.dumps(out,indent=2)+'\n')

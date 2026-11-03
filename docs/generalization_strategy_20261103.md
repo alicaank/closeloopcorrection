@@ -7,11 +7,13 @@ remain in the evaluation; they do not automatically veto the method or trigger
 a model-specific exception. Conversely, a few large gains cannot establish
 generality when all active interventions come from one scene.
 
-Current development snapshot: **14/40 original repeated-memory pairs are scored
-and visually reviewed**, seven LingBot and seven DreamX. The resumed main queue is
-running; all seven supplementary queue processes were confirmed alive waiting
-for its GPU locks. SANA, MatrixGame and Lyra retain their original resource
-failures/holds, with full-horizon retries queued separately. See the
+Current development snapshot: **16/40 original repeated-memory pairs are scored
+and visually reviewed**, all eight LingBot and all eight DreamX pairs. The resumed
+main queue has finished with holds. SANA's separate full-horizon residency retry
+has started; six other supplementary queue processes remain alive waiting for
+GPU locks. SANA, MatrixGame and Lyra retain their original resource failures/holds.
+The [original-attempt accounting](primary_cohort_accounting_20261103.md) records
+12 active pairs, four exact-RGB abstentions and the 24 cases missing paired scores. See the
 [coverage ledger](generalization_coverage_20261103.json) and
 [visual audit](multiboundary_visual_audit_20261103.md). The execution narrative
 below preserves earlier attempts and is not a live status feed.
@@ -257,13 +259,13 @@ and the decoder effect remain pending. No live cohort source or score is changed
 ### Full-cohort coverage accounting
 
 The [40-pair coverage snapshot](generalization_coverage_20261103.json) keeps each
-original scene/seed/model case visible. The latest linked snapshot has 14 scored
-and reviewed pairs, including one reused LingBot pair. The main queue is running
-DreamX; SANA, MatrixGame and Lyra are held after one original execution failure
-each. Their separate full-horizon resource retries appear beside those original
-failures/holds rather than replacing them. Two completed pairs accepted no
-writes and have unavailable position metrics; every decoded RGB frame is exact
-between their arms. Coverage is not a count of successful control outcomes.
+original scene/seed/model case visible. The latest linked snapshot has 16 scored
+and reviewed pairs, including one reused LingBot pair. The main queue finished
+with SANA, MatrixGame and Lyra held after one original execution failure each.
+SANA's separate full-horizon residency retry is now running; the retries appear
+beside original failures/holds rather than replacing them. Four completed pairs
+accepted no writes and have unavailable position metrics; every decoded RGB
+frame is exact between their arms. Coverage is not a count of successful control outcomes.
 
 ### MatrixGame observer-lifetime supplement
 

@@ -1,7 +1,7 @@
 {
   "scope": "Timestamp-matched sampled visual inspection, not full-video review or a quality metric. Full-frame thumbnails may retain native crop/FOV differences. References are source RGB; stored poses may be VIPE-derived.",
   "freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
-  "script_sha256": "07108abedfc0519970aa440df09d5889297f24bdb4e3ecae36adcf0faac09a86",
+  "script_sha256": "7d926062ec44ac4d502cf2d752047ab2c3e1689930bdbb87a9c6f3450d7e40ff",
   "motion": [
     {
       "scene": "02267acf",
@@ -1098,6 +1098,128 @@
       "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_0238de14_s107.review.json",
       "inspection_sha256": "f3d88c2fb45119e2c8c8c977e9cd8f4e62d1bce0f9a1006a56d3bf7036c0d80f",
       "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
+    },
+    {
+      "key": "lingbot_924228bf_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s107/score.json",
+      "score_sha256": "ccde0f129eb6bc17bb46daaca5e85cb130f4b325d472c76b2550aaaa3b3d250e",
+      "frames": [
+        0,
+        12,
+        13,
+        38,
+        57,
+        76
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s107/commanded/baseline/frames.lossless.mkv",
+          "sha256": "b29d7f1426a1cdafe01e79ddf0387bcacb229f01e0f357ca2d38d856a793bd86"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s107/measured/baseline/frames.lossless.mkv",
+          "sha256": "1ca830828879afdada0a6d3a733e3860edf386eeddbefc97366f93cc3478c41a"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00001.jpg",
+          "sha256": "b9daaffd753414529be50d4a3c05d75e9c81ce42d5703013277c126b0ff5fdea"
+        },
+        {
+          "frame": 12,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00013.jpg",
+          "sha256": "b8e92946ce8cbdec8439843fda0b82b3876e42031adcae2c6398e415d0b8a3e2"
+        },
+        {
+          "frame": 13,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00014.jpg",
+          "sha256": "58c5a256066014bb17656e1388f345198dbe3357845f80ec2910d79546b08484"
+        },
+        {
+          "frame": 38,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00039.jpg",
+          "sha256": "015583eb475ba2f6ef22f15ef379c8d1b86182d494474ab8ee9e9873b2059855"
+        },
+        {
+          "frame": 57,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00058.jpg",
+          "sha256": "de8aa5742d3375674a81737315c4ef9c0d0fc0c4a2ee1cd65a3619a8afeec088"
+        },
+        {
+          "frame": 76,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00077.jpg",
+          "sha256": "c4568f193cf1c664347d1e4fa65d4f0e1c51926499d5582fb267037d1269c538"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s107.jpg",
+      "sheet_sha256": "44416bca817185dffed101996cf90795f196e4f0c6c647ee96cd96f18ab817b8",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s107.review.json",
+      "inspection_sha256": "de73996666770057f19ba8bce2a83c543e193e803244d5bae6087d0060c0f155",
+      "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
+    },
+    {
+      "key": "dreamx_924228bf_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s107/score.json",
+      "score_sha256": "1f7783d48a2f1d4938b37899926e8e300dca8b9098d7770a1376060c3698b917",
+      "frames": [
+        0,
+        20,
+        21,
+        34,
+        51,
+        68
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s107/commanded/frames.lossless.mkv",
+          "sha256": "9541342cfedfe08718e62229aab349ef4902e0ea40e1f0c2a0fb6253aabd9b37"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s107/measured/frames.lossless.mkv",
+          "sha256": "22e5b8acb7df02857c45534a6ad62eee6c8d79437553d76dfb2fea7b5ffd1bc3"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00001.jpg",
+          "sha256": "b9daaffd753414529be50d4a3c05d75e9c81ce42d5703013277c126b0ff5fdea"
+        },
+        {
+          "frame": 20,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00021.jpg",
+          "sha256": "fb06238add951250856aef79a29ec4bb341f2de1ec185360d7b51ef6ed922c54"
+        },
+        {
+          "frame": 21,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00022.jpg",
+          "sha256": "8c22ead316df576b47d75e4647a89573f6125b5afcffae6d2388f7fd0ceac2a4"
+        },
+        {
+          "frame": 34,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00035.jpg",
+          "sha256": "b071d637dfcdca41aab80a3479d8bb7ae2b175c3a01869578e7d8dd430ed2be9"
+        },
+        {
+          "frame": 51,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00052.jpg",
+          "sha256": "4d802626b3d5ddac18a9176775ce6c1911a105d7babc691c8eb26697edd65ec3"
+        },
+        {
+          "frame": 68,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00069.jpg",
+          "sha256": "8ccdaa2b8100895055521946bb701d7e35fd309b8d0dd18bcc7d99f8f8f4e162"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s107.jpg",
+      "sheet_sha256": "a7f422cd766d05a95c886190b7ef71cb745d4ac50e8bb8f69c5cf46663020b84",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s107.review.json",
+      "inspection_sha256": "caec4eeb304f2956ecbbbae8934bf50d67816abb4853e926e5d80a508234db6f",
+      "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
     }
   ]
 }

@@ -6,8 +6,8 @@ reference video; stored camera poses may be VIPE-derived and are not claimed
 as independent ground truth. Translation is in each scene's reference
 anchor-depth units, not established metric metres.
 
-Latest reviewed snapshot: **14/40 original pairs**, seven LingBot and seven DreamX.
-Twelve have valid positional registration; two are zero-write abstentions with
+Latest reviewed snapshot: **16/40 original pairs**, eight LingBot and eight DreamX.
+Twelve have valid positional registration; four are zero-write abstentions with
 unavailable position metrics. Three reviewed LingBot pairs have visible scene
 fidelity failures despite lower position-error scores; the additional moving-scene
 seed-107 pair has boundary ghosting and structural changes with recognizable
@@ -282,3 +282,22 @@ floor was measured; these small changes do not establish reliable efficacy or
 differential memory authority. This brings sampled reviews to 14 original pairs.
 
 ![DreamX moving-scene second seed](artifacts/generalization_20261103/visual_review/dreamx_0238de14_s107.jpg)
+
+## Final original LingBot/DreamX cases: seed-107 abstentions
+
+Both `924228bf`, seed-107 pairs accept zero writes. All 77 LingBot RGB frames
+and all 69 DreamX RGB frames are exactly equal between their arms, verified by
+native-resolution per-frame SHA256 after lossless decoding. Position is
+unregistered in both arms. Mean rotation is identical within each pair:
+LingBot **1.92571°**, DreamX **3.40498°**. Six-frame inspection shows recognizable
+building/tree geometry with viewpoint drift relative to the reference and no
+visible difference between the arms.
+
+[LingBot equality receipt](artifacts/generalization_20261103/visual_review/lingbot_924228bf_s107.abstention_rgb.json),
+[DreamX equality receipt](artifacts/generalization_20261103/visual_review/dreamx_924228bf_s107.abstention_rgb.json),
+[LingBot sheet](artifacts/generalization_20261103/visual_review/lingbot_924228bf_s107.jpg),
+and [DreamX sheet](artifacts/generalization_20261103/visual_review/dreamx_924228bf_s107.jpg)
+complete the original two-model evidence. These are abstentions with missing
+position metrics, not successful active corrections. The
+[40-case accounting](primary_cohort_accounting_20261103.md) retains all original
+resource failures/holds while full-horizon retries proceed separately.

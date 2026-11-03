@@ -1,39 +1,35 @@
 {
-  "snapshot_time": 1793669672.6938145,
+  "snapshot_time": 1793670221.8032377,
   "original_planned_pairs": 40,
   "models": {
     "lingbot": {
       "planned": 8,
       "execution_counts": {
         "reused": 1,
-        "completed": 6,
-        "running": 1
+        "completed": 7
       },
-      "scored": 7
+      "scored": 8
     },
     "sana": {
       "planned": 8,
       "execution_counts": {
         "failed": 1,
-        "held": 6,
-        "held_by_model": 1
+        "held": 7
       },
       "scored": 0
     },
     "dreamx": {
       "planned": 8,
       "execution_counts": {
-        "completed": 7,
-        "pending": 1
+        "completed": 8
       },
-      "scored": 7
+      "scored": 8
     },
     "matrixgame": {
       "planned": 8,
       "execution_counts": {
         "failed": 1,
-        "held": 6,
-        "held_by_model": 1
+        "held": 7
       },
       "scored": 0
     },
@@ -41,8 +37,7 @@
       "planned": 8,
       "execution_counts": {
         "failed": 1,
-        "held": 6,
-        "held_by_model": 1
+        "held": 7
       },
       "scored": 0
     }
@@ -135,8 +130,36 @@
         }
       },
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
-        "jobs": {},
+        "queue_phase": "sana_02267acf_s7_commanded",
+        "jobs": {
+          "sana_02267acf_s7_commanded": {
+            "state": "running",
+            "started": 1793670097.1942174,
+            "argv": [
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/source/launch.py",
+              "sana",
+              "--memory-policy",
+              "commanded",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "02267acf",
+              "--seed",
+              "7",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/runs/sana_02267acf_s7/commanded",
+              "--arm",
+              "baseline",
+              "--frames",
+              "121"
+            ],
+            "pid": 2875889,
+            "min_host_available_bytes": 29476188160,
+            "peak_process_tree_rss_bytes": 54535778304
+          }
+        },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
     },
@@ -599,7 +622,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -957,7 +980,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -1315,7 +1338,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -1673,7 +1696,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -2031,7 +2054,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -2389,7 +2412,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -2585,7 +2608,7 @@
       "model": "lingbot",
       "scene": "924228bf",
       "seed": 107,
-      "execution_state": "running",
+      "execution_state": "completed",
       "reason": null,
       "jobs": {
         "lingbot_924228bf_s107_commanded": {
@@ -2635,7 +2658,7 @@
           "finished": 1793669630.9041173
         },
         "lingbot_924228bf_s107_measured": {
-          "state": "running",
+          "state": "completed",
           "argv": [
             "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
             "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
@@ -2658,8 +2681,84 @@
           ],
           "started": 1793669630.958532,
           "pid": 2870302,
-          "min_host_available_bytes": 40150962176
+          "min_host_available_bytes": 27152650240,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669770.994419
+        },
+        "lingbot_924228bf_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_924228bf_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793669771.2076714,
+          "pid": 2872314,
+          "min_host_available_bytes": 63022587904,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669776.2123632
+        },
+        "lingbot_924228bf_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_924228bf_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s107"
+          ],
+          "started": 1793669776.2657616,
+          "pid": 2872400,
+          "min_host_available_bytes": 61232852992,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669786.2710018
         }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s107/score.json",
+      "score_sha256": "ccde0f129eb6bc17bb46daaca5e85cb130f4b325d472c76b2550aaaa3b3d250e",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "delta": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.9257107061357026,
+          "measured": 1.9257107061357026,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 2.3774875751645617,
+          "measured": 2.3774875751645617,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "position_valid": {
+        "commanded": false,
+        "measured": false
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
       }
     },
     {
@@ -2667,11 +2766,11 @@
       "model": "sana",
       "scene": "924228bf",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "waiting_for_gpu_lock",
+        "queue_phase": "sana_02267acf_s7_commanded",
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
@@ -2681,16 +2780,165 @@
       "model": "dreamx",
       "scene": "924228bf",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "dreamx_924228bf_s107_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "924228bf",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s107/commanded",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793669786.3152041,
+          "pid": 2872586,
+          "min_host_available_bytes": 7547322368,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669911.3515055
+        },
+        "dreamx_924228bf_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_924228bf_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793669911.569311,
+          "pid": 2874020,
+          "min_host_available_bytes": 63492251648,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669916.5755842
+        },
+        "dreamx_924228bf_s107_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "924228bf",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s107/measured",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793669916.621711,
+          "pid": 2874172,
+          "min_host_available_bytes": 7749984256,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793670076.6735816
+        },
+        "dreamx_924228bf_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_924228bf_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793670076.8779337,
+          "pid": 2875511,
+          "min_host_available_bytes": 63164559360,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793670081.8809834
+        },
+        "dreamx_924228bf_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_924228bf_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s107"
+          ],
+          "started": 1793670081.9387712,
+          "pid": 2875642,
+          "min_host_available_bytes": 62000836608,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793670096.9464247
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s107/score.json",
+      "score_sha256": "1f7783d48a2f1d4938b37899926e8e300dca8b9098d7770a1376060c3698b917",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "delta": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 3.4049797728836517,
+          "measured": 3.4049797728836517,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 4.60141394771829,
+          "measured": 4.60141394771829,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "position_valid": {
+        "commanded": false,
+        "measured": false
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
+      }
     },
     {
       "key": "matrixgame_924228bf_s107",
       "model": "matrixgame",
       "scene": "924228bf",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -2704,7 +2952,7 @@
       "model": "lyra",
       "scene": "924228bf",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -2718,12 +2966,12 @@
   "queue_processes": {
     "cohort": {
       "pid": 2808063,
-      "phase": "lingbot_924228bf_s107_measured",
-      "process_exists": true
+      "phase": "finished_with_holds",
+      "process_exists": false
     },
     "sana_supplement": {
       "pid": 2815420,
-      "phase": "waiting_for_gpu_lock",
+      "phase": "sana_02267acf_s7_commanded",
       "process_exists": true
     },
     "matrix_supplement": {
@@ -2739,13 +2987,13 @@
   },
   "input_hashes": {
     "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "42ae214613a56733869efe2726fc1039002b21057c6f2c57d36d024389db164a",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "96899ff79945fe84ebaf9e706dfc62df4318f51ee3157eabd30a863e3f42606d",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/manifest.json": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "d699c5f53924f1f7b0a7f9f9d6566053e47dff2c3586ef0647b17444c51613fd",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "60c4343c097f1e91fdf7dfd5fc8b502a79cd2f2bc09b537509613b04f8083f7c",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json": "ebbc307ca09a43d6675ef6d131a06da8cb63bbcb7ff02360ca7409d8cfadb31d",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "3f4b441dac35bb2553585791452ed0fd31f5c2443e248e96342f43f998aaedb2"
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "ea7d10b9cfecd4cc6684944fc2e80b49be0a4e4e389357e8b8fe504b3d2068be"
   }
 }

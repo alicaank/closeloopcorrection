@@ -1,0 +1,69 @@
+{
+  "captured_at": 1793670293.5353212,
+  "queues": [
+    {
+      "queue": "memory_generalization_20261103/cohort_resume",
+      "phase": "finished_with_holds",
+      "pid": 2808063,
+      "process_exists": false,
+      "status_sha256": "96899ff79945fe84ebaf9e706dfc62df4318f51ee3157eabd30a863e3f42606d"
+    },
+    {
+      "queue": "memory_generalization_20261103/sana_observer_residency",
+      "phase": "sana_02267acf_s7_commanded",
+      "pid": 2815420,
+      "process_exists": true,
+      "status_sha256": "c237f8de32f4d126990f1614f13b9e233f93abbac173ac8b53e904c42ff673ea",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/run_queue.py "
+    },
+    {
+      "queue": "memory_generalization_20261103/matrix_decoder_audit",
+      "phase": "waiting_for_gpu_lock",
+      "pid": 2818540,
+      "process_exists": true,
+      "status_sha256": "e9523aa323c095cd357a7e324ab804996515fc70686dde1d9d31a7858211c0b5",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/run_queue.py "
+    },
+    {
+      "queue": "online_response_v2_resume_20261103",
+      "phase": "waiting_for_gpu_lock",
+      "pid": 2822450,
+      "process_exists": true,
+      "status_sha256": "e397c7b2fa0a0311a246b4be3cc089a8f64b47ad9430ef46d50ac7653840fa40",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/online_response_v2_resume_20261103/run_queue.py "
+    },
+    {
+      "queue": "memory_generalization_20261103/matrix_observer_lifetime",
+      "phase": "waiting_for_gpu_lock",
+      "pid": 2834118,
+      "process_exists": true,
+      "status_sha256": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/run_queue.py "
+    },
+    {
+      "queue": "dreamx_future_command_20261103",
+      "phase": "waiting_for_gpu_lock",
+      "pid": 2840845,
+      "process_exists": true,
+      "status_sha256": "12a989747d7206ef0c28fbd618e56f8fdb5adafdd220cc2899e223035d5e84ad",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/dreamx_future_command_20261103/run_queue.py "
+    },
+    {
+      "queue": "memory_generalization_20261103/lyra_observer_resources",
+      "phase": "waiting_for_gpu_lock",
+      "pid": 2846474,
+      "process_exists": true,
+      "status_sha256": "ebbc307ca09a43d6675ef6d131a06da8cb63bbcb7ff02360ca7409d8cfadb31d",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/run_queue.py "
+    },
+    {
+      "queue": "lingbot_shared_gauge_20261103/pilot",
+      "phase": "waiting_for_gpu_lock",
+      "pid": 2858822,
+      "process_exists": true,
+      "status_sha256": "39cdc711832d7d73eec328ecb9b75b5403dfe438587fafc58f7eba6387faa29d",
+      "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/lingbot_shared_gauge_20261103/pilot/run_queue.py "
+    }
+  ],
+  "interpretation": "Original main queue terminal with holds; no restart. SANA full-horizon resource qualification running; other supplements waiting. Live process checks supplement state files."
+}
