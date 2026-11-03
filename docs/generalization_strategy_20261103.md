@@ -13,7 +13,7 @@ main queue has finished with holds. SANA's separate full-horizon residency retry
 also failed at the host-memory guard after saving an exact 97-frame prefix.
 A [transition-order retry](sana_observer_transition_20261103.md) is now queued.
 The MatrixGame observer-lifetime retry is running, and its decoder-only audit
-has completed; those results remain separate from the original attempts. SANA, MatrixGame and Lyra retain their original resource failures/holds.
+has completed. Five MatrixGame full-horizon retries have since been qualified and visually reviewed, giving **21/40 unique qualified pairs**; those retry results remain separate from the original-attempt table. SANA, MatrixGame and Lyra retain their original resource failures/holds.
 The [original-attempt accounting](primary_cohort_accounting_20261103.md) records
 12 active pairs, four exact-RGB abstentions and the 24 cases missing paired scores. See the
 [coverage ledger](generalization_coverage_20261103.json) and
@@ -22,7 +22,9 @@ below preserves earlier attempts and is not a live status feed.
 
 ## Keep the core method and its extensions separate
 
-The primary candidate remains [measured-memory v1](method_v1.md): infer executed
+The final paper method is not selected. The [legacy-rejoin reassessment](legacy_rejoin_reassessment_20261103.md) verifies strong earlier aggregate results, including benefits retained under VIPE, and restores legacy rejoin as a central candidate. Freezing an experiment does not establish a policy ranking.
+
+The ongoing memory experiment remains [measured-memory v1](method_v1.md): infer executed
 poses from generated RGB, register geometry using the anchor contract, reconcile
 the supported native memory, and retain the native future target policy.
 Generator weights remain fixed. No probe generations or fitted per-model gains

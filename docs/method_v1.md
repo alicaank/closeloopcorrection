@@ -19,6 +19,11 @@ with backward estimated progress; unchanged zero-write pairs are abstentions,
 not active-control successes. The amplitude-controlled diagnostic arm is not
 a physically calibrated memory write and does not modify this frozen method.
 
+**Method-selection update:** “frozen” fixes this experiment’s policy, not the
+final paper method. The [legacy rejoin reassessment](legacy_rejoin_reassessment_20261103.md)
+retains strong earlier tracking evidence and requires a matched policy comparison.
+Memory-only is not presumed superior; its added value must be demonstrated.
+
 ## Primary algorithm
 
 **2026-11-03 decision update:** individual scientific losses do not veto broader
