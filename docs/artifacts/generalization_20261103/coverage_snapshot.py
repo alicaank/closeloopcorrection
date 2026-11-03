@@ -9,21 +9,30 @@ def read(p):
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def effective_state(root,label):
     original=read(root/'status.json')
-    attempt=R.parent/'queue_disk_resume_20261103'/label
-    if not (attempt/'status.json').exists():return original
-    provenance=read(attempt/'resume.json');resumed=read(attempt/'status.json')
-    assert provenance['original_root']==str(root)
-    assert provenance['original_status_sha256']==captured[str(root/'status.json')]
-    assert provenance['original_manifest_sha256']==sha(root/'manifest.json')
-    assert resumed['resume_provenance']==provenance
-    assert set(provenance['completed_jobs_skipped'])==set(original['jobs'])
-    assert all(v['state']=='completed' and v['returncode']==0 for v in original['jobs'].values())
-    assert not set(original['jobs']).intersection(resumed['jobs']), 'Resume reran a completed job'
-    # Combine in memory for coverage only. Never rewrite either attempt record.
-    combined=dict(resumed,jobs={**original['jobs'],**resumed['jobs']})
-    combined['previous_queue_attempt']={k:original[k] for k in ['pid','phase','failures','finished']}
-    combined['previous_queue_attempt'].update(status=str(root/'status.json'),sha256=provenance['original_status_sha256'])
-    combined['resume_status']=str(attempt/'status.json')
+    combined=original;previous=[];previous_root=root
+    for name in ['queue_disk_resume_20261103','queue_disk_resume_v2_20261103']:
+        attempt=R.parent/name/label
+        if not (attempt/'status.json').exists():break
+        provenance=read(attempt/'resume.json');resumed=read(attempt/'status.json')
+        assert provenance['original_root']==str(root)
+        assert provenance['original_status_sha256']==captured[str(root/'status.json')]
+        assert provenance['original_manifest_sha256']==sha(root/'manifest.json')
+        assert resumed['resume_provenance']==provenance
+        assert set(provenance['completed_jobs_skipped'])==set(combined['jobs'])
+        assert all(v['state']=='completed' and v['returncode']==0 for v in combined['jobs'].values())
+        for prior in provenance.get('previous_attempts',[]):
+            for filename,key in [('status.json','status_sha256'),('run_queue.py','runner_sha256'),('resume.json','resume_sha256')]:
+                path=Path(prior['root'])/filename
+                assert sha(path)==prior[key]
+                captured[str(path)]=prior[key]
+        assert not set(combined['jobs']).intersection(resumed['jobs']), 'Resume reran a completed job'
+        item={k:combined[k] for k in ['pid','phase','failures','finished']}
+        item.update(status=str(previous_root/'status.json'),sha256=sha(previous_root/'status.json'))
+        previous.append(item)
+        # Combine in memory for coverage only. Never rewrite an attempt record.
+        combined=dict(resumed,jobs={**combined['jobs'],**resumed['jobs']})
+        combined.update(previous_queue_attempt=item,previous_queue_attempts=previous.copy(),resume_status=str(attempt/'status.json'))
+        previous_root=attempt
     return combined
 freeze=read(Q/'freeze.json');state=read(Q/'status.json');supp=read(S/'status.json');matrix_supp=effective_state(M,'matrix_memory');lyra_supp=effective_state(L,'lyra_memory')
 visual=read(R/'visual_review/manifest.json');visual_by_key={x['key']:x for x in visual['pairs']}
@@ -58,12 +67,12 @@ for pair in freeze['pairs']:
         row['resource_supplement']=dict(queue_phase=supplement['phase'],jobs=sj,
             note='Separate original-horizon retry; the parent execution failure/hold remains in this record.')
         if 'previous_queue_attempt' in supplement:
-            row['resource_supplement'].update(previous_queue_attempt=supplement['previous_queue_attempt'],resume_status=supplement['resume_status'])
+            row['resource_supplement'].update(previous_queue_attempt=supplement['previous_queue_attempt'],previous_queue_attempts=supplement['previous_queue_attempts'],resume_status=supplement['resume_status'])
     if model=='sana':
         row['additional_resource_attempts']=[dict(name='transition_order',queue_phase=transition['phase'],
             jobs={k:v for k,v in transition['jobs'].items() if k.startswith(key+'_')})]
         if 'previous_queue_attempt' in transition:
-            row['additional_resource_attempts'][0].update(previous_queue_attempt=transition['previous_queue_attempt'],resume_status=transition['resume_status'])
+            row['additional_resource_attempts'][0].update(previous_queue_attempt=transition['previous_queue_attempt'],previous_queue_attempts=transition['previous_queue_attempts'],resume_status=transition['resume_status'])
     if model=='matrixgame':
         scorepath=M/'scores'/key/'score.json';gatepath=scorepath.with_name('attribution_gate.json')
         if gatepath.exists():

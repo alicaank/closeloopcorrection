@@ -1,0 +1,45 @@
+--- /home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/matrixgame/run_queue.py
++++ /home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_matrixgame/run_queue.py
+@@ -2,16 +2,24 @@
+ import fcntl,hashlib,json,os,signal,subprocess,time,shutil
+ from pathlib import Path
+ import psutil
+-W=Path('/home/hj/Alican');R=Path(__file__).resolve().parent
++W=Path('/home/hj/Alican');R=Path('/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/matrixgame');A=Path(__file__).resolve().parent
+ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
++RESUME_SHA='52e2b6b1a8c7561d28e866ece93b0e59d71f5448d2ab8588a31c80a655c9129e'
+ def main():
+-    if (R/'status.json').exists():raise FileExistsError('Preserve queue state')
++    if (A/'status.json').exists():raise FileExistsError('Preserve queue state')
+     m=json.loads((R/'manifest.json').read_text());proof=json.loads((R/'cpu_validation.json').read_text())
+     assert proof['passed'] and proof['manifest_sha256']==sha(R/'manifest.json')
+     state=dict(pid=os.getpid(),phase='waiting_for_gpu_lock',started=time.time(),manifest_sha256=sha(R/'manifest.json'),jobs={},failures=[],held_cases={})
++    state['resume_provenance']=json.loads((A/'resume.json').read_text())
+     def save():
+-        p=R/'status.tmp';p.write_text(json.dumps(state,indent=2)+'\n');p.replace(R/'status.json')
++        p=A/'status.tmp';p.write_text(json.dumps(state,indent=2)+'\n');p.replace(A/'status.json')
+     def verify():
++        assert sha(R/'status.json') == '9ab9cbe0bf803df192573dcdd4059dff68ca0c9d9df7e6d19cea9b0e82272e43'
++        assert sha(R/'run_queue.py') == 'fb4bded874ee66ab76385334bc0af35624af8c9e133553f1e7eee31109de2c9a'
++        assert sha(A/'resume.json') == RESUME_SHA
++        assert sha(Path('/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_matrixgame/status.json')) == '0b4135b3ea45937070d7ff605de090ab82d904937ee754c9956577a79673179e'
++        assert sha(Path('/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_matrixgame/run_queue.py')) == '2fbd0e8b251a2d219ce4d2fb44f9342fb093420452eb05f363e71b4419429252'
++        assert sha(Path('/home/hj/Alican/analysis/queue_disk_resume_20261103/legacy_matrixgame/resume.json')) == '57fe2376f904a1dcf7e72196831ec111e160640e3fe1a1fc34e62e7a35303440'
+         assert sha(R/'manifest.json')==state['manifest_sha256']
+         for p,h in m['sources'].items():
+             if sha(p)!=h:raise RuntimeError('Frozen source/input changed: '+p)
+@@ -48,12 +56,13 @@
+         verify()
+         if subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip():raise RuntimeError('GPU occupied outside queue')
+         for entry in m['jobs']:
++            if entry['name'] in []:continue
+             if entry['case'] in state['held_cases']:
+                 state['jobs'][entry['name']]=dict(state='skipped',reason='case qualification failed');save();continue
+             verify()
+             if shutil.disk_usage(R).free<4*2**30:raise RuntimeError('4 GiB launch reserve; originals retained')
+             key=entry['name'];state['phase']=key;rec=dict(state='running',started=time.time(),argv=entry['argv']);state['jobs'][key]=rec;save()
+-            with (R/'logs'/f'{key}.log').open('x') as log:
++            with (A/'logs'/f'{key}.log').open('x') as log:
+                 active=subprocess.Popen(entry['argv'],env=dict(env,**entry.get('env',{})),cwd=W,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);rec['pid']=active.pid;save();reason=None
+                 while active.poll() is None:
+                     available=psutil.virtual_memory().available

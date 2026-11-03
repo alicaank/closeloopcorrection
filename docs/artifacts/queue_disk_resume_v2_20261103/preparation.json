@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "attempts": [
+    {
+      "label": "matrix_memory",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory",
+      "runner_sha256": "b674310d8cf1dcb6b3ea31431ac4093c26eff166bed1b0433a54922626ef8cea",
+      "resume_sha256": "aed5f71b3cfe872e939f54ec19f34450dedec82fef83132a4094c729e532e5ad",
+      "skipped": 44,
+      "remaining": 5,
+      "frozen_source_files_verified": 1760
+    },
+    {
+      "label": "legacy_dreamx",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_dreamx",
+      "runner_sha256": "1903da1c69867c3d38fe344effa7b9ed3a9484ad5ba5766ea15f5509f6534a38",
+      "resume_sha256": "d13ffbcc9e4ed450fa5b7ac31e038acac09fa056a7a94c4c4a2cadd459192b52",
+      "skipped": 0,
+      "remaining": 88,
+      "frozen_source_files_verified": 2039
+    },
+    {
+      "label": "legacy_lingbot",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_lingbot",
+      "runner_sha256": "49c2c2182787cadf6def297233116af512ef96f2b449d283ba23147deb6b9923",
+      "resume_sha256": "b00ef2e2e837c1483fb1435f0923edce42710d9bacc557818d152a1449624b02",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1802
+    },
+    {
+      "label": "legacy_sana",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_sana",
+      "runner_sha256": "de57c26c119e3c863f3418251868592ed6fcfe877fd071427bf06838503763cf",
+      "resume_sha256": "49678f267ae63f822fba2974e72223211719464407c57fdc1a1eea54d2d34f66",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1772
+    },
+    {
+      "label": "legacy_matrixgame",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_matrixgame",
+      "runner_sha256": "9465f81765fa9f3dd13ef0f4a1e64b909565e1d0df98a8ad63aee23070024684",
+      "resume_sha256": "52e2b6b1a8c7561d28e866ece93b0e59d71f5448d2ab8588a31c80a655c9129e",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1771
+    },
+    {
+      "label": "legacy_lyra",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_lyra",
+      "runner_sha256": "e1dcd7e0c9b0f8c8507542232931bb469cec43fd95c8574e64db657d08ff4606",
+      "resume_sha256": "92fb7825b090cc3fd56eb2aa4a7a894e5c8560503f9f80895532c654595b23b1",
+      "skipped": 0,
+      "remaining": 58,
+      "frozen_source_files_verified": 1812
+    },
+    {
+      "label": "lyra_memory",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory",
+      "runner_sha256": "b5be45655af6d476201fc4586b1c54088ea56e4322c459c06b4a36ff4f17ba32",
+      "resume_sha256": "1ac38d0802bb93e6fbe285b85282a722d80bdd48dbb11f85f2ff4d72957fee48",
+      "skipped": 0,
+      "remaining": 51,
+      "frozen_source_files_verified": 1801
+    },
+    {
+      "label": "sana_transition",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition",
+      "runner_sha256": "5eb1d9f980dd094c8ef15edd1799771d5d55ac48440a90fc6dffb088eea4bcd0",
+      "resume_sha256": "056fd8975e6cb07f591837031e3e353aef14299c6385dc5293a75f3edd02fc4b",
+      "skipped": 0,
+      "remaining": 49,
+      "frozen_source_files_verified": 1761
+    },
+    {
+      "label": "dreamx_future",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/dreamx_future",
+      "runner_sha256": "e9e5c6ebcf639b616db78a110e399f4a30817296847278e37f96434bfcdd8ccf",
+      "resume_sha256": "bbef3abea757379a798a535cfaadb8f16e199544b6d1549fdf835434dc6ef627",
+      "skipped": 0,
+      "remaining": 36,
+      "frozen_source_files_verified": 2037
+    },
+    {
+      "label": "lingbot_gauge",
+      "root": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lingbot_gauge",
+      "runner_sha256": "1176d063d9322f2cbc288049bd2ec5ae50da3f03d0225529bae3d3cb37f34bfc",
+      "resume_sha256": "62796525f50880c380e12d5dc56f09ee3d4d59035cd093db8e62fde774c8eb49",
+      "skipped": 0,
+      "remaining": 52,
+      "frozen_source_files_verified": 1786
+    }
+  ]
+}

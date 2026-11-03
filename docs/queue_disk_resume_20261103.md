@@ -1,5 +1,10 @@
 # Resuming the November 3 disk-held experiments
 
+**Later update:** these attempts subsequently stopped at the disk reserve again.
+The [second resume](queue_disk_resume_v2_20261103.md) preserves both earlier
+attempts and continues from their successful stages. This page records the first
+resume's launch and results.
+
 All ten relevant queues reached a terminal disk hold after free space fell below
 their 4 GiB launch reserve. The original processes were absent and the GPU was
 idle. MatrixGame had completed the seventh pair's measured generation; its

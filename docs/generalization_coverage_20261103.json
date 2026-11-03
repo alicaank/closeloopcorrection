@@ -1,5 +1,5 @@
 {
-  "snapshot_time": 1793693338.3638253,
+  "snapshot_time": 1793694999.2736323,
   "original_planned_pairs": 40,
   "models": {
     "lingbot": {
@@ -182,16 +182,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -440,7 +462,7 @@
         }
       },
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_02267acf_s7_commanded": {
             "state": "completed",
@@ -592,16 +614,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -695,16 +739,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -886,16 +952,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -1068,7 +1156,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_c7418b7d_s7_commanded": {
             "state": "completed",
@@ -1203,16 +1291,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -1276,16 +1386,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -1467,16 +1599,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -1649,7 +1803,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_0238de14_s7_commanded": {
             "state": "completed",
@@ -1784,16 +1938,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -1857,16 +2033,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -2048,16 +2246,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -2230,7 +2450,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_924228bf_s7_commanded": {
             "state": "completed",
@@ -2365,16 +2585,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -2438,16 +2680,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -2629,16 +2893,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -2811,7 +3097,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_02267acf_s107_commanded": {
             "state": "completed",
@@ -2946,16 +3232,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -3019,16 +3327,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -3210,16 +3540,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -3392,7 +3744,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_c7418b7d_s107_commanded": {
             "state": "completed",
@@ -3527,16 +3879,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -3600,16 +3974,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -3791,16 +4187,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -3973,7 +4391,7 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_0238de14_s107_commanded": {
             "state": "completed",
@@ -4108,16 +4526,38 @@
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "qualified_retry": {
         "attempt": "matrix_observer_lifetime",
@@ -4181,16 +4621,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -4372,16 +4834,38 @@
           "queue_phase": "waiting_for_gpu_lock",
           "jobs": {},
           "previous_queue_attempt": {
-            "pid": 3004366,
+            "pid": 3035721,
             "phase": "held",
             "failures": [
               "RuntimeError('4 GiB launch reserve; originals retained')"
             ],
-            "finished": 1793692686.2479234,
-            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
-            "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            "finished": 1793694484.8571634,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+            "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
           },
-          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json"
+          "previous_queue_attempts": [
+            {
+              "pid": 3004366,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793692686.2479234,
+              "status": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json",
+              "sha256": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066"
+            },
+            {
+              "pid": 3035721,
+              "phase": "held",
+              "failures": [
+                "RuntimeError('4 GiB launch reserve; originals retained')"
+              ],
+              "finished": 1793694484.8571634,
+              "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json",
+              "sha256": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626"
+            }
+          ],
+          "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json"
         }
       ],
       "has_qualified_result": false
@@ -4554,10 +5038,10 @@
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
-        "queue_phase": "matrixgame_924228bf_s107_commanded",
+        "queue_phase": "matrixgame_924228bf_s107_measured",
         "jobs": {
           "matrixgame_924228bf_s107_commanded": {
-            "state": "running",
+            "state": "completed",
             "started": 1793693101.1286135,
             "argv": [
               "/home/hj/Alican/baselines/venv_mg35/bin/python",
@@ -4580,22 +5064,92 @@
               "4"
             ],
             "pid": 3036177,
-            "min_host_available_bytes": 33193791488,
-            "peak_process_tree_rss_bytes": 30910078976
+            "min_host_available_bytes": 9368195072,
+            "peak_process_tree_rss_bytes": 55063494656,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793694482.9642084
+          },
+          "matrixgame_924228bf_s107_commanded_retain": {
+            "state": "completed",
+            "started": 1793694892.8566685,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_vmem/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/retain.py",
+              "--spec",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/specs/matrixgame_924228bf_s107.json",
+              "--arm",
+              "commanded"
+            ],
+            "pid": 3043600,
+            "min_host_available_bytes": 60581142528,
+            "peak_process_tree_rss_bytes": 2674114560,
+            "returncode": 0,
+            "stop_reason": null,
+            "finished": 1793694907.8714042
+          },
+          "matrixgame_924228bf_s107_measured": {
+            "state": "running",
+            "started": 1793694907.9667904,
+            "argv": [
+              "/home/hj/Alican/baselines/venv_mg35/bin/python",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/source/launch.py",
+              "matrixgame",
+              "--memory-policy",
+              "measured",
+              "--",
+              "--batch",
+              "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+              "--scene",
+              "924228bf",
+              "--seed",
+              "107",
+              "--out",
+              "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s107/measured",
+              "--arm",
+              "baseline",
+              "--blocks",
+              "4"
+            ],
+            "pid": 3043766,
+            "min_host_available_bytes": 33666945024,
+            "peak_process_tree_rss_bytes": 30493626368
           }
         },
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2834118,
+          "pid": 3035678,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.0049977,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
-          "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          "finished": 1793694483.3038557,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+          "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2834118,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.0049977,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json",
+            "sha256": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642"
+          },
+          {
+            "pid": 3035678,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694483.3038557,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json",
+            "sha256": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json"
       },
       "has_qualified_result": false
     },
@@ -4612,16 +5166,38 @@
         "jobs": {},
         "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record.",
         "previous_queue_attempt": {
-          "pid": 2846474,
+          "pid": 3035720,
           "phase": "held",
           "failures": [
             "RuntimeError('4 GiB launch reserve; originals retained')"
           ],
-          "finished": 1793692685.7934973,
-          "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
-          "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          "finished": 1793694485.4012296,
+          "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+          "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
         },
-        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json"
+        "previous_queue_attempts": [
+          {
+            "pid": 2846474,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793692685.7934973,
+            "status": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json",
+            "sha256": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad"
+          },
+          {
+            "pid": 3035720,
+            "phase": "held",
+            "failures": [
+              "RuntimeError('4 GiB launch reserve; originals retained')"
+            ],
+            "finished": 1793694485.4012296,
+            "status": "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json",
+            "sha256": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276"
+          }
+        ],
+        "resume_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json"
       },
       "has_qualified_result": false
     }
@@ -4639,17 +5215,17 @@
       "process_exists": false
     },
     "matrix_supplement": {
-      "pid": 3035678,
-      "phase": "matrixgame_924228bf_s107_commanded",
+      "pid": 3043593,
+      "phase": "matrixgame_924228bf_s107_measured",
       "process_exists": true
     },
     "lyra_supplement": {
-      "pid": 3035720,
+      "pid": 3043739,
       "phase": "waiting_for_gpu_lock",
       "process_exists": true
     },
     "sana_transition": {
-      "pid": 3035721,
+      "pid": 3043740,
       "phase": "waiting_for_gpu_lock",
       "process_exists": true
     }
@@ -4660,14 +5236,23 @@
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "94870c6e3edb92dfe04ca1e9259ae4b9625b12d5d64aea43138d3c1ca731c789",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642",
     "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/resume.json": "6c226b022c0a88818ea8195d6ac1caab6cc37577919026ee29b9d20286c455ea",
-    "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json": "1ffb7bf36775abe510f64fb38d11b4de341cb3a0efe248d1d6954afd5bff826f",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/resume.json": "aed5f71b3cfe872e939f54ec19f34450dedec82fef83132a4094c729e532e5ad",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json": "d4a3e59f193c17ec79bddb75ea19e1dfd4099a3b65c6a12a01021dff3e04755f",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/run_queue.py": "0ffcf07e1309a8ebea077938dbf5a4e1ae4ca44f9b68c42b9bb8afcb7a970f09",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json": "78d0d2baee0da14b3b8facc91be538dea2571742ddd227191de59a2a359735ad",
     "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/resume.json": "cac1225947313b3b6c7febba5c0b9838479448d696d7f8d054cafb95971a6391",
-    "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json": "6f653dad7cd1597398914c7c9489dcdb2a643112235315c3850fafdcec6a24bc",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/status.json": "57cef15a0c6e1d82829ae8fec325be8419d690cb286a2aea8af7313a4a38b276",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/resume.json": "1ac38d0802bb93e6fbe285b85282a722d80bdd48dbb11f85f2ff4d72957fee48",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/lyra_memory/status.json": "5bfc3a92d1ba0f2bed0864abc4b2afb8fc6ffee7564a206dbb1c30d7f35264de",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/lyra_memory/run_queue.py": "f379ff1c1e7dd7053f2561ca9f870050904e6c645427a9588a7e72b32cde1683",
     "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "ea7d10b9cfecd4cc6684944fc2e80b49be0a4e4e389357e8b8fe504b3d2068be",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/status.json": "9be04c5f71edb6650a5afcca197aa127bdc6f02e2f3c7a941accf5dea46c9066",
     "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/resume.json": "6bee0a3920b9b4e187c224fefd7e1e1753211219eb0b774251aa4165e25ae9d2",
-    "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json": "858db7518b496cf0217f7564ff0d40842c64e3f151944aa04531848dcf75a7b0",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/status.json": "d07ae8a6a76e7bec606c4508b11bbbe5608003d3f88861c8807800ec0f4c9626",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/resume.json": "056fd8975e6cb07f591837031e3e353aef14299c6385dc5293a75f3edd02fc4b",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/sana_transition/status.json": "daddaf5e7e6e92d723f7eef045109a480e96ac22b8d0bada0eaf4a5ccedcc9e7",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/sana_transition/run_queue.py": "f68c1074be22e616eb5ba22a2821ce495c090e7e7d602dcc6385936aa5bcbc78",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/resource_prefix.json": "0eb9a63fc0821d0ae3d7b94a3ff03155820f6bf5c85b3f1553111ab6ead7991b",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/visual_review/manifest.json": "56b2ddfc822ccb2d301bc895fd7eb6611b031dc5bbc81b8bec7b347bc25404dc",

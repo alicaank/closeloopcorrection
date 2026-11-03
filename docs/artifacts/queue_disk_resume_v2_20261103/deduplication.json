@@ -1,0 +1,168 @@
+{
+  "started": 1793694842.3132584,
+  "free_before": 4197666816,
+  "linked": [
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed11/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed11/native_G2/frames.npz",
+      "bytes": 12726239,
+      "sha256": "4a3c5d573ac4bd6b88ce6fc3a5a57944782ea49fd71e3f3d8da7f8a383db1827"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/fcd68cb1/seed11/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed11/native_G2/frames.npz",
+      "bytes": 12726239,
+      "sha256": "4a3c5d573ac4bd6b88ce6fc3a5a57944782ea49fd71e3f3d8da7f8a383db1827"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed7/truth/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed11/truth/frames.npz",
+      "bytes": 12158080,
+      "sha256": "3128a3b73b7f68f27ea95d8cdf38f0e1eb0eb7c3f7c0f0601d6ed9241813e666"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed7/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed7/native_G2/frames.npz",
+      "bytes": 12746500,
+      "sha256": "0842535c79c1b519cb35b3c90412234084d0d58b322385562d4a79646b782e26"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/fcd68cb1/seed7/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fcd68cb1/seed7/native_G2/frames.npz",
+      "bytes": 12746500,
+      "sha256": "0842535c79c1b519cb35b3c90412234084d0d58b322385562d4a79646b782e26"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed11/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed11/native_G2/frames.npz",
+      "bytes": 12236857,
+      "sha256": "ccd39a41ca06e1c46ffa66a86fc434ac88d0a1e616448876fdb82577bc5762b1"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/fb95b529/seed11/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed11/native_G2/frames.npz",
+      "bytes": 12236857,
+      "sha256": "ccd39a41ca06e1c46ffa66a86fc434ac88d0a1e616448876fdb82577bc5762b1"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed7/truth/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed11/truth/frames.npz",
+      "bytes": 11989960,
+      "sha256": "a592c4cd1aa1afaed0d8548c9091fd373eaea5f4eaf5ff0c031cdf7257c2a592"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed7/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed7/native_G2/frames.npz",
+      "bytes": 12298573,
+      "sha256": "90cc81e8b02b2f04b760924afd2c5c687528c6fa643f16e8635bfdd76a832f02"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/fb95b529/seed7/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fb95b529/seed7/native_G2/frames.npz",
+      "bytes": 12298573,
+      "sha256": "90cc81e8b02b2f04b760924afd2c5c687528c6fa643f16e8635bfdd76a832f02"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed11/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed11/native_G2/frames.npz",
+      "bytes": 9190316,
+      "sha256": "94700d2047f55dbca6bc90817b41f1562f2175342837dc5c4369cd02f61b1c38"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/fdf25f21/seed11/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed11/native_G2/frames.npz",
+      "bytes": 9190316,
+      "sha256": "94700d2047f55dbca6bc90817b41f1562f2175342837dc5c4369cd02f61b1c38"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed7/truth/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed11/truth/frames.npz",
+      "bytes": 8535184,
+      "sha256": "eff522255db2b064265dacb290ec20555155b52424c215e6b865807e60b9982d"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed7/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed7/native_G2/frames.npz",
+      "bytes": 9309647,
+      "sha256": "12672d88633ee88cfd5995c20674908f29eba6e6d62b84c490a3c52285aa7dd8"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/fdf25f21/seed7/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/fdf25f21/seed7/native_G2/frames.npz",
+      "bytes": 9309647,
+      "sha256": "12672d88633ee88cfd5995c20674908f29eba6e6d62b84c490a3c52285aa7dd8"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed11/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed11/native_G2/frames.npz",
+      "bytes": 15565798,
+      "sha256": "b0124e721742b20c00acaa3e72fbbf9d09420cbeda0109ecdd224710bf694323"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/ff11dc9d/seed11/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed11/native_G2/frames.npz",
+      "bytes": 15565798,
+      "sha256": "b0124e721742b20c00acaa3e72fbbf9d09420cbeda0109ecdd224710bf694323"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed7/truth/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed11/truth/frames.npz",
+      "bytes": 15517622,
+      "sha256": "bd9ac7646efa19671e01d6f1e7a68f5906ff71dcead097dbe90b7102a1585bf7"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed7/same_latents_whole_decode/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed7/native_G2/frames.npz",
+      "bytes": 15561416,
+      "sha256": "203abe42b2fbd1e12221cc5b3a24a2a7e3c57438d29ffeb926bd563771941958"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/boundary_checkpoint_cross_20260922/results/ff11dc9d/seed7/parent2100__parent2100__hop3/frames.npz",
+      "keep": "/home/hj/Alican/analysis/boundary_causal_probe_20260921/results/ff11dc9d/seed7/native_G2/frames.npz",
+      "bytes": 15561416,
+      "sha256": "203abe42b2fbd1e12221cc5b3a24a2a7e3c57438d29ffeb926bd563771941958"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/zigzag_followup_v1/runs/qualification_vmem/native/native/frames.npz",
+      "keep": "/home/hj/Alican/analysis/zigzag_followup_v2/runs/qualification_vmem/native/native/frames.npz",
+      "bytes": 7329533,
+      "sha256": "87a9afeb774a987dd116f7cfb1fd33c88254705bfcd2781dbde11b0b0df35446"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/online_memory_pose_20260919/rollouts/one_step/seed7/fdf25f21/shadow/frames.npz",
+      "keep": "/home/hj/Alican/analysis/aligned_history_long_20260923/parent_replay/fdf25f21/seed7/frames.npz",
+      "bytes": 66398335,
+      "sha256": "63fc462ba1dc77bf8f05c0c4db2a1d4fcdd2181c0c3351774de94b5e36a540c2"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/pose_servo_se3_20260918/fb95b529/probe/hop_00/frames.npz",
+      "keep": "/home/hj/Alican/analysis/pose_servo_se3_20260918/fb95b529/closed_loop/hop_00/frames.npz",
+      "bytes": 32715014,
+      "sha256": "806a6d6009bc45a95ece81c02e0939312c850f81d28e8b44f9761a24f76d9e8d"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/pose_servo_se3_20260918/fdf25f21/probe/hop_03/frames.npz",
+      "keep": "/home/hj/Alican/analysis/pose_servo_se3_20260918/fdf25f21/closed_loop/hop_03/frames.npz",
+      "bytes": 26896713,
+      "sha256": "2213b4dbb051ff4fa60a3803e3a5872d8dcc37f2d4740f6b8f37b2d95a41ceb6"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/pose_servo_se3_20260918/fdf25f21/probe/hop_00/frames.npz",
+      "keep": "/home/hj/Alican/analysis/pose_servo_se3_20260918/fdf25f21/closed_loop/hop_00/frames.npz",
+      "bytes": 26293647,
+      "sha256": "42011992ccb81a0f7c284c6411c945512533f28717ac48f28924d1c8edb59060"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/persistent_gaussians_20260918/rollouts/fdf25f21/normal/frames.npz",
+      "keep": "/home/hj/Alican/analysis/online_memory_pose_20260919/rollouts/baseline/seed7/fdf25f21/shadow/frames.npz",
+      "bytes": 65217902,
+      "sha256": "ed1611983641eb7e85b69e36e95a9f54be099c633dd88151b349e7cae3d7ff9a"
+    }
+  ],
+  "status": "complete",
+  "finished": 1793694843.1702447,
+  "free_after": 4670017536,
+  "logical_bytes_deduplicated": 472322682,
+  "all_paths_and_hashes_preserved": true,
+  "protected_tree_stats_unchanged": true
+}

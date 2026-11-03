@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "job_records_joined": 46,
+  "retained_previous_attempts": 2,
+  "corruptions_rejected": [
+    "duplicate",
+    "altered_skip",
+    "altered_prior_hash"
+  ],
+  "script_sha256": "75fde7526a9ce1cef9d30d6ba1f1c608928e9d59aa0f7467b4d53141fb98fe3f",
+  "input_sha256": {
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "0cf8ea39215df5082b456aea3210be0944efb80240c93a44ea58c7a1cd240642",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/status.json": "379be1d668b76a8c2e251ce308ce6ddd5e787022af5d4e64123b0b83b053009f",
+    "/home/hj/Alican/analysis/queue_disk_resume_20261103/matrix_memory/resume.json": "6c226b022c0a88818ea8195d6ac1caab6cc37577919026ee29b9d20286c455ea",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/status.json": "6604c1bd5946a053f78f09a0cc4d6b092c4b123731da63ce0415bbbfaf16bb3d",
+    "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/matrix_memory/resume.json": "aed5f71b3cfe872e939f54ec19f34450dedec82fef83132a4094c729e532e5ad"
+  }
+}
