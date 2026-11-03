@@ -1,5 +1,10 @@
 # Reassessing legacy rejoin as a main-method candidate
 
+Follow-up: the [cross-model failure investigation](legacy_rejoin_failures_20261103.md)
+reconstructs actual native commands, corrects the DreamX reversal interpretation,
+and separates VMem's command-only and combined-memory results. All historical
+scores below remain unchanged.
+
 The earlier decision to freeze measured-memory v1 was an experiment-control decision, not evidence that it outperforms legacy rejoin. The final paper method remains undecided. Legacy rejoin must remain a central candidate and reference comparison; measured memory, bounded command correction and online gain need demonstrated incremental value.
 
 The audit recomputes all ten legacy cohort/seed rows in the existing summary and verifies the SHA256 of all 80 underlying source comparison records. Each row compares rejoin with its own baseline. These heterogeneous rows must not be pooled, and they do not establish a matched ranking against later memory-only experiments. Negative percentage change means lower error; DINO has the opposite preference.

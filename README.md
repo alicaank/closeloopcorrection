@@ -5,12 +5,19 @@ The portable controller measures a generated endpoint and replans **future camer
 
 For paper writing, start with [the method reference](docs/paper_method_reference.md): equations, assumptions, implemented versus proposed components, per-model memory consumers, evaluation, and claim limits. See [measured-memory integration](docs/measured_memory.md) and the [dated development evidence](docs/paper_evidence_20261101.json) for the new seven-model path. Results are mixed; this is not a claim of universal tracking improvement.
 
-The primary candidate is now frozen as [measured-memory v1](docs/method_v1.md):
-memory reconstruction with the native baseline target policy, without adaptive
-gains or residual command correction. Its expanded development protocol fixes
-two common scenes, two seeds, and five qualified model paths before scoring.
-WorldWarp and Astronex remain qualification pending; Matrix-Game stays included
-despite its negative initial result.
+Final method selection remains open. [Legacy rejoin](docs/legacy_rejoin_reassessment_20261103.md)
+is a central candidate; [measured-memory v1](docs/method_v1.md) is a frozen
+experimental policy using native baseline targets without adaptive gains or
+residual command correction. The [matched comparison](docs/legacy_matched_preparation_20261103.md)
+keeps the original 40 cases across five models, four scenes and two seeds.
+WorldWarp and Astronex remain qualification pending.
+
+The [legacy failure investigation](docs/legacy_rejoin_failures_20261103.md)
+verifies 80 historical comparisons and separates visual collapse, tracking
+tradeoffs, observer disagreement and continuation effects. Native command replay
+corrects the earlier DreamX reversal claim: temporary measured chunk anchors
+remove the apparent 20–24 label reversals. VMem's historical improvement uses
+both command correction and measured memory; its command-only arm regresses.
 
 The [initial mechanism audit](docs/control_mechanism_audit_20261103.md) finds severe
 LingBot scene collapse after measured-memory writes in two matched seeds. Lower
