@@ -1,0 +1,58 @@
+{
+  "scope": "Separate first-boundary normalization diagnostic; original measured-memory-v1 and forty-pair cohort unchanged",
+  "cases": {
+    "lingbot_0238de14_s7": {
+      "key": "lingbot_0238de14_s7",
+      "scene": "0238de14",
+      "seed": 7,
+      "model": "lingbot",
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 77,
+      "first_affected_frame": 13
+    },
+    "lingbot_0238de14_s107": {
+      "key": "lingbot_0238de14_s107",
+      "scene": "0238de14",
+      "seed": 107,
+      "model": "lingbot",
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 77,
+      "first_affected_frame": 13
+    },
+    "lingbot_02267acf_s7": {
+      "key": "lingbot_02267acf_s7",
+      "scene": "02267acf",
+      "seed": 7,
+      "model": "lingbot",
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 77,
+      "first_affected_frame": 13
+    },
+    "lingbot_02267acf_s107": {
+      "key": "lingbot_02267acf_s107",
+      "scene": "02267acf",
+      "seed": 107,
+      "model": "lingbot",
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 77,
+      "first_affected_frame": 13
+    }
+  },
+  "arms": {
+    "A": "Original commanded memory and normalization",
+    "I": "Additional observation and exact native identity re-encoding",
+    "G": "Commanded history with shared plan/observed-prefix normalization",
+    "M": "Measured history with exactly the same normalization and future camera tensors as G"
+  },
+  "intervention": "First clean-context cache pass only; fixed normalizer afterward. Native later observations remain read-only. Full 77-frame horizon.",
+  "qualification": [
+    "Every case: A/I all 77 RGB bytes, first and final self/cross cache tensors and native generator state match",
+    "A/G/M emitted frames 0\u201312 exact; G/M initial noise, first latent, observed prefix, accepted measured poses, denominator and all future camera inputs match",
+    "Observer RNG preservation required; rejected observations retain original commands and are reported as abstentions"
+  ],
+  "interpretation": "G-A isolates rescaling; M-G isolates measured-history substitution under the same future conditioning; M-A is the combined effect. No result proves later cache replay, training support, or broad generalization.",
+  "scoring": "Offline VIPE, same original targets and initial anchor-depth units; mean over frames 13\u201376, endpoint, rotation and visual inspection separately. No cross-scene unit pooling.",
+  "generations": 16,
+  "parent_freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+  "gpu_qualified": false
+}

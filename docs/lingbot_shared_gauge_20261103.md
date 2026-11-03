@@ -39,8 +39,10 @@ physical units or execution gain.
 [conditioning_gauge.py](../src/camera_loop/conditioning_gauge.py) implements this
 candidate as a pure operation. It returns immutable arrays and explicitly marks
 deployment, cache-rebuild and training-support qualification as false. It is
-**not connected to a native adapter or running queue**. Input alignment and
-observer acceptance are adapter prerequisites.
+**not connected to the primary native adapters or original cohort**. Input
+alignment and observer acceptance are adapter prerequisites. Subsequent work
+integrates it into the separate [first-boundary diagnostic](lingbot_gauge_pilot_20261103.md),
+which is queued with mandatory GPU identity and attribution gates pending.
 
 The shared maximum bounds each encoded translation norm by one while preserving
 the ratio of history to future motion. It also makes future commands much smaller

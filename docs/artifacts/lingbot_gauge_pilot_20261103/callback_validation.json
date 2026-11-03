@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "manifest_sha256": "89cb0e918ee1c3246521b023f346df7dbf9a398396a540f82ee56fc59bc175f5",
+  "test_script_sha256": "785aa83d17102b7d72dad03150d671c426899304aad10fbca53c298c7d2df027",
+  "test_log_sha256": "e84af6fb3183f2e6c929d3188feaa38c20151c825192a5117c1911fec8992ee5",
+  "tests": 2,
+  "scope": "Actual frozen callback with released native camera encoder on CPU; accepted/rejected arms, future equality, identity, cleanup and unchanged absolute commands. GPU/model operations substituted."
+}
