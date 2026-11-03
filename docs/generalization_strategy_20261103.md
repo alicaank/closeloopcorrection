@@ -7,6 +7,15 @@ remain in the evaluation; they do not automatically veto the method or trigger
 a model-specific exception. Conversely, a few large gains cannot establish
 generality when all active interventions come from one scene.
 
+Current development snapshot: **13/40 original repeated-memory pairs are scored
+and visually reviewed**, seven LingBot and six DreamX. The resumed main queue is
+running; all seven supplementary queue processes were confirmed alive waiting
+for its GPU locks. SANA, MatrixGame and Lyra retain their original resource
+failures/holds, with full-horizon retries queued separately. See the
+[coverage ledger](generalization_coverage_20261103.json) and
+[visual audit](multiboundary_visual_audit_20261103.md). The execution narrative
+below preserves earlier attempts and is not a live status feed.
+
 ## Keep the core method and its extensions separate
 
 The primary candidate remains [measured-memory v1](method_v1.md): infer executed
@@ -65,7 +74,7 @@ unresolved causal-host seam. Lyra's small absolute angular changes must also be
 read in absolute degrees, not inflated into a large practical penalty solely
 through percentage change. No new full-video visual review is implied here.
 
-The separate 40-pair repeated-memory cohort stopped at a host-memory guard after
+The original attempt at the separate 40-pair repeated-memory cohort stopped at a host-memory guard after
 one completed LingBot pair. That pair's lower pose error accompanies visual
 collapse and remains a policy failure. The queue's PID is gone and its recorded
 state is terminal `held`; it is not a running experiment. This is distinct from
@@ -193,9 +202,14 @@ and the proposed method extensions remain unfinished.
 
 Additional SHA256-identical completed output archives were hardlinked while
 preserving every path and byte: the first cleanup recovered 0.434 GiB and the
-second 2.135 GiB. Free space was 6.6 GiB at launch. No additional DL3DV scenes
-were removed; all remaining scenes belong to the prior dependency/evaluation
-preservation set. Protected model assets remain untouched. Workspace receipts
+second 2.135 GiB. Free space was 6.6 GiB at launch. At that earlier check no additional DL3DV
+scenes were removed. A later user-authorized cleanup removed resized image
+payloads and completion markers from 53 unused scenes, releasing 2.32 GiB.
+Camera/crop metadata, active inputs, test data and protected model dependencies
+were retained; checkpoint hashes and retained trees were verified unchanged.
+The [cleanup receipt](artifacts/generalization_20261103/dl3dv_cleanup_receipt.json)
+records the exact manifest hash and post-deletion checks. Historical replay of
+those unused resized scenes now requires reconstructing their image payloads. Workspace receipts
 are `analysis/memory_generalization_20261103/deduplication*.json` and
 `storage_check_20261103.json` in that directory.
 
@@ -243,12 +257,13 @@ and the decoder effect remain pending. No live cohort source or score is changed
 ### Full-cohort coverage accounting
 
 The [40-pair coverage snapshot](generalization_coverage_20261103.json) keeps each
-original scene/seed/model case visible. At this snapshot two pairs have scores
-(one reused LingBot visual failure and one new DreamX pair); MatrixGame is
-running, one SANA case failed and its seven remaining parent cases are held by
-the model-level resource guard. Other cases are pending. The separate SANA retry
-appears beside those original failures/holds rather than replacing them. This is
-execution coverage, not a count of successful camera-control outcomes.
+original scene/seed/model case visible. The latest linked snapshot has 13 scored
+and reviewed pairs, including one reused LingBot pair. The main queue is running
+DreamX; SANA, MatrixGame and Lyra are held after one original execution failure
+each. Their separate full-horizon resource retries appear beside those original
+failures/holds rather than replacing them. Two completed pairs accepted no
+writes and have unavailable position metrics; every decoded RGB frame is exact
+between their arms. Coverage is not a count of successful control outcomes.
 
 ### MatrixGame observer-lifetime supplement
 

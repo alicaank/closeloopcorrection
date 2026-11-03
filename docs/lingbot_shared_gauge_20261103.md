@@ -94,3 +94,33 @@ history/future speed ratio. If those conditions cannot be demonstrated, keep
 the previous state and report abstention rather than calling the repair deployed.
 The existing 40-pair study and its failures remain the primary evidence; no
 case is removed and no new threshold is fitted to these outcomes.
+
+## Second-seed arithmetic check
+
+The same released-encoder audit now covers every completed LingBot pair in a
+seven-pair snapshot: six accepted first-boundary observations and one abstention.
+The largest accepted history step divided by the original plan normalizer is:
+
+| Scene | Seed 7 | Seed 107 |
+| --- | ---: | ---: |
+| 02267acf | 51.2191 | 41.3491 |
+| c7418b7d | 6.2146 | 6.3631 |
+| 0238de14 | 10.0175 | 8.9016 |
+
+All accepted values remain finite in BF16. The shared-normalization arithmetic
+keeps ray-origin norms within its envelope, leaves ray directions unchanged,
+and gives identical future native features in the matched G/M controls in all
+six cases. The largest first-history relative rotation is 0.4784° across them.
+The `924228bf` seed-7 observation was rejected; its stored fallback commands
+are not treated as measured motion. Seed 107 on that scene was still pending.
+
+This reproduces the conditioning-magnitude pattern across two seeds on three
+scenes. It does not estimate differential gain, establish a training-support
+threshold, or prove normalization causes the visual artifacts. In particular,
+the two moving-scene seeds show different artifact severity despite similarly
+large ratios. The queued matched GPU experiment remains necessary.
+
+[Source](artifacts/lingbot_shared_gauge_20261103/audit_seeds.py) and
+[results](artifacts/lingbot_shared_gauge_20261103/audit_seeds.json) preserve native,
+helper, score, run and memory-event hashes. This read-only CPU audit changes no
+frozen queue source, deployed controller, generated RGB or original score.

@@ -976,6 +976,67 @@
       "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_c7418b7d_s107.review.json",
       "inspection_sha256": "69a3b030de7c2c37de6a9f576f9fa7ececf8a6528cd9ea9ac90872d95484bc95",
       "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
+    },
+    {
+      "key": "lingbot_0238de14_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s107/score.json",
+      "score_sha256": "1b84e7cc5ec8857b3804b50ac5af84ecf12569347b5bfce8edcb9ccce3d5c9a9",
+      "frames": [
+        0,
+        12,
+        13,
+        38,
+        57,
+        76
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_0238de14_s107/commanded/baseline/frames.lossless.mkv",
+          "sha256": "a4d645cae9e6a8246b623e7a96306952fcc6e50fd56b0bb3b49014bf5f392099"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_0238de14_s107/measured/baseline/frames.lossless.mkv",
+          "sha256": "11dd9a3d775bf32efefc9c8e193a7c9d3f384d134ca1a639cdbde93267c0a86f"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00001.jpg",
+          "sha256": "1c1ce356899d698179fd103617162a53cb397e2f0a07cb128aa9c3e80b5d01d2"
+        },
+        {
+          "frame": 12,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00013.jpg",
+          "sha256": "c1514eab063d7d6f46e28eafa5e9cced7a20193f897832905144362d5beec00b"
+        },
+        {
+          "frame": 13,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00014.jpg",
+          "sha256": "b5447f38fa4e2477dadb87d5e884406d9c3bbd89190f945829e50aae789e748b"
+        },
+        {
+          "frame": 38,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00039.jpg",
+          "sha256": "565f1066344c1db6f6b409e27d8650ce85ef7ba88febb1226c27ac119f997693"
+        },
+        {
+          "frame": 57,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00058.jpg",
+          "sha256": "0be7e77d046f64ae4b7301c821f77bd4158188feede9db786804af46eaa5fd36"
+        },
+        {
+          "frame": 76,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/0238de14089be825251ca9a7c91c471a941bde76f78ae7b637ef306f30df544e/frames/frame_00077.jpg",
+          "sha256": "56b564e046c1d0cf535682013057ea8df5e146d3362a31b3bcb4ab8e3d12a6ec"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_0238de14_s107.jpg",
+      "sheet_sha256": "36a1c616bdafc50848f7bf9f55010b50ec863541929bf80753e2a29e1e46a927",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_0238de14_s107.review.json",
+      "inspection_sha256": "0b97ccddda674f679c9faa200f93b2c46f04a5f1f57d2ec1c72c7f8c4dadb27c",
+      "classification": "Pose benefit with boundary ghosting and altered structure; visual fidelity tradeoff retained, not clean success."
     }
   ]
 }

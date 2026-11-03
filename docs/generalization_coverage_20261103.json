@@ -1,5 +1,5 @@
 {
-  "snapshot_time": 1793669231.2052183,
+  "snapshot_time": 1793669427.196853,
   "original_planned_pairs": 40,
   "models": {
     "lingbot": {
@@ -2375,6 +2375,10 @@
       "position_valid": {
         "commanded": true,
         "measured": true
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Pose benefit with boundary ghosting and altered structure; visual fidelity tradeoff retained, not clean success."
       }
     },
     {
@@ -2400,7 +2404,7 @@
       "reason": null,
       "jobs": {
         "dreamx_0238de14_s107_commanded": {
-          "state": "running",
+          "state": "completed",
           "argv": [
             "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
             "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
@@ -2423,7 +2427,53 @@
           ],
           "started": 1793669184.5384169,
           "pid": 2866333,
-          "min_host_available_bytes": 19927461888
+          "min_host_available_bytes": 16721502208,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669314.9652295
+        },
+        "dreamx_0238de14_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_0238de14_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793669315.1865852,
+          "pid": 2867387,
+          "min_host_available_bytes": 63303741440,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669320.1898365
+        },
+        "dreamx_0238de14_s107_measured": {
+          "state": "running",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "0238de14",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_0238de14_s107/measured",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793669320.2432954,
+          "pid": 2867642,
+          "min_host_available_bytes": 7693066240
         }
       }
     },
@@ -2520,7 +2570,7 @@
   "queue_processes": {
     "cohort": {
       "pid": 2808063,
-      "phase": "dreamx_0238de14_s107_commanded",
+      "phase": "dreamx_0238de14_s107_measured",
       "process_exists": true
     },
     "sana_supplement": {
@@ -2541,13 +2591,13 @@
   },
   "input_hashes": {
     "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "5937a20f1bac94c87cf00abb032afdafe27ab41eae016a8840326d160064f917",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "66950fec76e19a2cc4be1b18213883bf3cba368901d8d6f0e6d0f0ea94731606",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/manifest.json": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "d699c5f53924f1f7b0a7f9f9d6566053e47dff2c3586ef0647b17444c51613fd",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json": "ebbc307ca09a43d6675ef6d131a06da8cb63bbcb7ff02360ca7409d8cfadb31d",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "194f89b4d14ed9d2e17ed7d3d430c2b5954b93abf5d40b1636efa339c9c67bb0"
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "1bfa0c80f8a1fa4e11937a35271fe608b1c05537f67d8fed938fc2e0a7295d19"
   }
 }

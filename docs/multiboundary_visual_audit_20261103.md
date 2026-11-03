@@ -6,12 +6,12 @@ reference video; stored camera poses may be VIPE-derived and are not claimed
 as independent ground truth. Translation is in each scene's reference
 anchor-depth units, not established metric metres.
 
-Latest reviewed snapshot: **12/40 original pairs**, six LingBot and six DreamX.
-The accompanying coverage snapshot has **13 scored pairs**; the newly scored
-LingBot `0238de14`, seed 107, still awaits visual review in this snapshot.
-Ten have valid positional registration; two are zero-write abstentions with
+Latest reviewed snapshot: **13/40 original pairs**, seven LingBot and six DreamX.
+Eleven have valid positional registration; two are zero-write abstentions with
 unavailable position metrics. Three reviewed LingBot pairs have visible scene
-fidelity failures despite lower position-error scores. The sections below retain
+fidelity failures despite lower position-error scores; the additional moving-scene
+seed-107 pair has boundary ghosting and structural changes with recognizable
+later content. The sections below retain
 earlier snapshots as dated progression; their counts are not the latest coverage.
 The full-horizon SANA, MatrixGame and Lyra resource retries remain separate and
 do not erase their original execution failures.
@@ -241,3 +241,31 @@ whose first feedback command remains nominal and whose later commands respond
 to observed lag. Neither queued ablation is evidence of efficacy before its
 parity gates and matched runs complete. Six-frame reviews also do not resolve
 zigzag motion between samples.
+
+## Moving scene, seed 107: pose benefit with visible fidelity tradeoffs
+
+LingBot `0238de14`, seed 107, completes all 77 frames, has an exact
+pre-intervention prefix and accepts four writes. Mean position error is
+**0.543381 → 0.154948 (71.48% lower)** and mean rotation error is
+**3.90866° → 2.52908°**. Endpoint position is 0.961401 → 0.166888;
+endpoint rotation is 7.53677° → 2.59558°.
+
+![Moving-scene second seed](artifacts/generalization_20261103/visual_review/lingbot_0238de14_s107.jpg)
+
+The commanded arm drifts far past the playground. The measured arm has ghosted
+stair/pole edges at the first corrected boundary, followed by recognizable
+playground content with changed roof and rail geometry. The commanded arm also
+changes structure while drifting. This is a pose benefit with visible quality
+tradeoffs, not a clean visual-control success. It is also not the sustained
+near-total content loss of `02267acf`, seed 107.
+
+In addition to the six matched reference samples, both generated arms were
+inspected at **every frame** as 160×88 thumbnails:
+[commanded](artifacts/generalization_20261103/visual_review/lingbot_0238de14_s107.commanded.all_frames.jpg),
+[measured](artifacts/generalization_20261103/visual_review/lingbot_0238de14_s107.measured.all_frames.jpg).
+The [manifest](artifacts/generalization_20261103/visual_review/lingbot_0238de14_s107.all_frames.json)
+binds the full-frame sheets to the lossless archives. Static thumbnails still
+do not establish physical camera reversal, perceptual video quality, or absence
+of fine artifacts. The failure mode therefore repeats qualitatively at the first
+boundary across the two moving-scene seeds, with different severity and later
+appearance; it is not reduced to a binary scene-level collapse label.
