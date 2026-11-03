@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "navFits": true,
+  "mobileFlowVisible": true,
+  "noPageOverflow": true,
+  "primaryPairs": 22,
+  "studyDisclosure": true,
+  "deepLinkOpensParent": true,
+  "presetSelection": true,
+  "filterRegression": true
+}

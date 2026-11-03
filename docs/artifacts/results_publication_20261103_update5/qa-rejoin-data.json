@@ -1,0 +1,13 @@
+{
+  "old_records_preserved_exactly": 196,
+  "new_records": 1,
+  "all_part_gzip_json_exact": true,
+  "memory_pairs": 22,
+  "legacy_cohorts": 10,
+  "queued_studies": 14,
+  "static_bytes": 249626659,
+  "referenced_assets_checked": 901,
+  "missing_assets": 0,
+  "gzip_json_parts": 6,
+  "static_under_256_MiB": true
+}
