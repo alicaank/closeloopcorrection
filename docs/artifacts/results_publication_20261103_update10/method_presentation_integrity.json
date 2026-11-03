@@ -1,0 +1,20 @@
+{
+  "preserved_comparisons": 203,
+  "unchanged_arm_data": true,
+  "method_pairs": 80,
+  "cohorts": 10,
+  "failure_entries": 36,
+  "position_regressions": 21,
+  "endpoint_tradeoffs": 8,
+  "mean_recomputation_passed": true,
+  "snapshot_sha256": "ff25aa7bdb952de5e1f603edfb7fbcb54e58d6b9e9c40e8279b7561394909f1d",
+  "referenced_assets": 968,
+  "missing_assets": [],
+  "static_bytes": 261156704,
+  "browser_validation": "qa-update10-browser.json",
+  "visually_inspected": [
+    "method-averages-desktop.png",
+    "failure-ledger-desktop.png",
+    "failure-ledger-mobile.png"
+  ]
+}

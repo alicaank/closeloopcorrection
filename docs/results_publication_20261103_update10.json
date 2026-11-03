@@ -1,0 +1,29 @@
+{
+  "deployment": {
+    "id": "appgdep_6ae9b402daf08191af1f256d866c4b24",
+    "project_id": "appgprj_6ae3401d14148191a33a2534e734aa9a",
+    "title": "Camera Correction \u00b7 Evaluation Lab",
+    "version_id": "appgprj_6ae3401d14148191a33a2534e734aa9a~appgver_0d126bb2fd7c819194ade332339b4ae5",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://camera-correction-results-20261029.alicankk.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ae3401d14148191a33a2534e734aa9a",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-11-03T10:14:57.896443+00:00"
+  },
+  "source": {
+    "project_id": "appgprj_6ae3401d14148191a33a2534e734aa9a",
+    "checkout_path": "/home/hj/Alican/sites/camera-correction-results",
+    "commit_sha": "d1fea47b17af2ae445dc02c7c7bb55cc2ca22213",
+    "archive": "/home/hj/Alican/sites/camera-correction-results-update10.tar.gz"
+  },
+  "scope": "Rename the retained rejoin policy to Method; expose per-cohort baseline/Method means and six metric selectors; add 36 searchable failure/tradeoff/abstention/control cases with timing and causal confidence. All 203 comparisons and their scientific arm data preserved. Same owner-private audience.",
+  "validation": "All 203 comparison selections; six metrics across ten cohorts recomputed; 36 ledger entries and filters/frame links; 390px mobile without page overflow; 968 referenced assets present; direct screenshot inspection.",
+  "page_id": null,
+  "archive_sha256": "381fefc494d6fa4bc02bbf756c824c3060b6d3d381b393171be40d55ff8ae6a9",
+  "archive_bytes": 217872577,
+  "archive_removed_after_success": true
+}
