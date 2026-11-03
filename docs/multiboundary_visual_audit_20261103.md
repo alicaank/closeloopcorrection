@@ -142,3 +142,18 @@ moving-scene results do not substitute for this repeated-write evidence.
 Five original pairs have scores at this subsequent snapshot. Lyra now has a
 [full 321-frame resource retry](lyra_observer_resources_20261103.md) queued;
 the original failure remains recorded and GPU qualification is pending.
+
+## DreamX 0238de14, seed 7: small mixed changes
+
+The sixth scored pair has an exact prefix and four accepted writes. Mean
+position error changes **0.017469 → 0.017767 (1.71% worse)**, endpoint position
+**0.031227 → 0.030699**, and mean rotation **1.02951° → 0.98635°**. Sampled
+frames 0, 20, 21, 34, 51 and 68 retain recognizable playground geometry in
+both arms, with very similar appearance. Severe fragmentation like the LingBot
+case is not evident. These small mixed differences have no matched regeneration
+floor; they do not establish efficacy or differential memory authority.
+
+![DreamX moving-scene samples](artifacts/generalization_20261103/visual_review/dreamx_0238de14_s7.jpg)
+
+At this snapshot, six of the original 40 pairs have been scored and reviewed
+at six timestamps each. This remains an incomplete development cohort.

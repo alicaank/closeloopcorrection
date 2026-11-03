@@ -1,0 +1,23 @@
+{
+  "reviewed_at": 1793667221.7394564,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "dreamx_0238de14_s7",
+  "sheet_sha256": "162ce27c6ffe7c767654999e893eb9f837db1bb1a065f4251aa3e34f163f1772",
+  "score_sha256": "c6f3128807c43a473cfdac2a36c97b8e9197e0a8b81c4fdddbea02da6013b937",
+  "frames": [
+    0,
+    20,
+    21,
+    34,
+    51,
+    68
+  ],
+  "observations": [
+    "Both outputs preserve recognizable playground geometry at the six sampled timestamps.",
+    "Commanded and measured samples look very similar; both exhibit some framing change relative to the source reference.",
+    "No severe fragmentation like the repeated-memory LingBot result is evident in these samples.",
+    "Small mixed pose changes: mean position worsens while endpoint position and mean rotation improve; no regeneration floor was measured."
+  ],
+  "classification": "Visually similar sampled outputs with small mixed pose changes; efficacy unresolved.",
+  "temporal_limitation": "Sampled inspection cannot rule out defects between frames or establish a causal memory gain."
+}
