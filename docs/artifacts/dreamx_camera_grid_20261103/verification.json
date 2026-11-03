@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "checked": 1793665747.709746,
+  "preparation_receipt_sha256": "0651e47fde73c58356da6306f370261298dc528d4b666af4093c8e55123921d8",
+  "current_camera_grid_sha256": "92c55a55d84095e473833c1bbf206955f4fcb006d2163097a3858e4eba6473e1",
+  "rows": [
+    {
+      "scene": "02267acf",
+      "anchor_rgb_exact": true,
+      "anchor_depth_exact": true,
+      "first_reference_exact": true,
+      "pose_and_unit_values_exact": true,
+      "valid_depth_fraction": 1.0,
+      "rgb_coverage": 1.0
+    },
+    {
+      "scene": "c7418b7d",
+      "anchor_rgb_exact": true,
+      "anchor_depth_exact": true,
+      "first_reference_exact": true,
+      "pose_and_unit_values_exact": true,
+      "valid_depth_fraction": 1.0,
+      "rgb_coverage": 1.0
+    },
+    {
+      "scene": "0238de14",
+      "anchor_rgb_exact": true,
+      "anchor_depth_exact": true,
+      "first_reference_exact": true,
+      "pose_and_unit_values_exact": true,
+      "valid_depth_fraction": 1.0,
+      "rgb_coverage": 1.0
+    },
+    {
+      "scene": "924228bf",
+      "anchor_rgb_exact": true,
+      "anchor_depth_exact": true,
+      "first_reference_exact": true,
+      "pose_and_unit_values_exact": true,
+      "valid_depth_fraction": 1.0,
+      "rgb_coverage": 1.0
+    }
+  ],
+  "all_prepared_output_hashes_unchanged": true,
+  "note": "Post-preparation identity-map numerical guard does not change any prepared case; original receipt and source hash retained."
+}
