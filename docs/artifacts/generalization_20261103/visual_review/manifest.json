@@ -610,6 +610,372 @@
       "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_0238de14_s7.review.json",
       "inspection_sha256": "8423ff76edd5062e81d502f04125660c5f08d4ae03a77f3ec7fa44007124df7a",
       "classification": "Visually similar sampled outputs with small mixed pose changes; efficacy unresolved."
+    },
+    {
+      "key": "lingbot_924228bf_s7",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7/score.json",
+      "score_sha256": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+      "frames": [
+        0,
+        12,
+        13,
+        38,
+        57,
+        76
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/commanded/baseline/frames.lossless.mkv",
+          "sha256": "12078247e59d04987af4411a996b8969665d9f841f950d61d1dc892fa12601d0"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/measured/baseline/frames.lossless.mkv",
+          "sha256": "e4b0460537c668f98273eb3c1ff17d9f8c463d2b7dfbe105a5dd218d4bbc29ab"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00001.jpg",
+          "sha256": "b9daaffd753414529be50d4a3c05d75e9c81ce42d5703013277c126b0ff5fdea"
+        },
+        {
+          "frame": 12,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00013.jpg",
+          "sha256": "b8e92946ce8cbdec8439843fda0b82b3876e42031adcae2c6398e415d0b8a3e2"
+        },
+        {
+          "frame": 13,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00014.jpg",
+          "sha256": "58c5a256066014bb17656e1388f345198dbe3357845f80ec2910d79546b08484"
+        },
+        {
+          "frame": 38,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00039.jpg",
+          "sha256": "015583eb475ba2f6ef22f15ef379c8d1b86182d494474ab8ee9e9873b2059855"
+        },
+        {
+          "frame": 57,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00058.jpg",
+          "sha256": "de8aa5742d3375674a81737315c4ef9c0d0fc0c4a2ee1cd65a3619a8afeec088"
+        },
+        {
+          "frame": 76,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00077.jpg",
+          "sha256": "c4568f193cf1c664347d1e4fa65d4f0e1c51926499d5582fb267037d1269c538"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s7.jpg",
+      "sheet_sha256": "53bc3f2dfbc8a0ba35e3c17895533e2ccd52c55a80722bb599e66f4f999ac161",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_924228bf_s7.review.json",
+      "inspection_sha256": "c9ac4267293954df6b2509152dbcff50d9dcf6aadd84f56f416ea80b98562a41",
+      "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
+    },
+    {
+      "key": "dreamx_924228bf_s7",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s7/score.json",
+      "score_sha256": "6ce7aecbb0185e2a8f1b7f8d91c0db7ba89560b3268a702f9d6b074d0893257b",
+      "frames": [
+        0,
+        20,
+        21,
+        34,
+        51,
+        68
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s7/commanded/frames.lossless.mkv",
+          "sha256": "c669ba411f41fcb2e129d9e81ed07ce9286943edf23d0902b18cd3d6a0b9c0f2"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s7/measured/frames.lossless.mkv",
+          "sha256": "a628a732709ffff461ad75f97a7589a160cd0c90566996087ab038881ae032a9"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00001.jpg",
+          "sha256": "b9daaffd753414529be50d4a3c05d75e9c81ce42d5703013277c126b0ff5fdea"
+        },
+        {
+          "frame": 20,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00021.jpg",
+          "sha256": "fb06238add951250856aef79a29ec4bb341f2de1ec185360d7b51ef6ed922c54"
+        },
+        {
+          "frame": 21,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00022.jpg",
+          "sha256": "8c22ead316df576b47d75e4647a89573f6125b5afcffae6d2388f7fd0ceac2a4"
+        },
+        {
+          "frame": 34,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00035.jpg",
+          "sha256": "b071d637dfcdca41aab80a3479d8bb7ae2b175c3a01869578e7d8dd430ed2be9"
+        },
+        {
+          "frame": 51,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00052.jpg",
+          "sha256": "4d802626b3d5ddac18a9176775ce6c1911a105d7babc691c8eb26697edd65ec3"
+        },
+        {
+          "frame": 68,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/924228bfa8983b5aa7921a609d5046036c96022f8458c037460386e74f3ffec6/frames/frame_00069.jpg",
+          "sha256": "8ccdaa2b8100895055521946bb701d7e35fd309b8d0dd18bcc7d99f8f8f4e162"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s7.jpg",
+      "sheet_sha256": "73b6804b5d46fda6406ae8595c35561ca45489d9b2d563a9c0e12441169c5538",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_924228bf_s7.review.json",
+      "inspection_sha256": "1a2b32e6012b834fea53e6107786c5e3c82a12b62bda992f9a7d2cebc9ae4e8c",
+      "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
+    },
+    {
+      "key": "lingbot_02267acf_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_02267acf_s107/score.json",
+      "score_sha256": "895844b37f01dcd488960b132da74a7986930d743fc81c42d075ab038d61b726",
+      "frames": [
+        0,
+        12,
+        13,
+        38,
+        57,
+        76
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_02267acf_s107/commanded/baseline/frames.lossless.mkv",
+          "sha256": "ea777212f06d377a80bd4046e2c479874bb15dbaa382f864e36055a17ebf719c"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_02267acf_s107/measured/baseline/frames.lossless.mkv",
+          "sha256": "36038a26fcce0afdfd8cb94b5a17f7f6aa9ad43d05a003ba07206666a5da9791"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00001.jpg",
+          "sha256": "dbd275b79ec7f7fb46acaaec70b803d8f9147ff4559a7d00ceb40f34c01e0d03"
+        },
+        {
+          "frame": 12,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00013.jpg",
+          "sha256": "ad7f625e2b32768989ac033b36cb6d5bb59dcfe172d1e3b3fb8d6f57b6c3eac7"
+        },
+        {
+          "frame": 13,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00014.jpg",
+          "sha256": "44d4d6edb5254f2a2e447c1056c07a539012acd188b3807bf2bf3c6f4c1473d6"
+        },
+        {
+          "frame": 38,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00039.jpg",
+          "sha256": "788e21f2b52d1240dd8acc28957969b1c5c14abd6ec3747ead87e847248be050"
+        },
+        {
+          "frame": 57,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00058.jpg",
+          "sha256": "2739080127e44a227775b5c16cf7bcfaa03ca75f5a231fad7a21391bb9c4eec7"
+        },
+        {
+          "frame": 76,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00077.jpg",
+          "sha256": "50f49ff24ce403ac83772a45cc9e69f273b52f0ac9587851d59bb98d9b4915bb"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s107.jpg",
+      "sheet_sha256": "9ebccc1eeea6d48558fde8dc098f5da2d31cfbd3e0069025dca9923266b6ddad",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_02267acf_s107.review.json",
+      "inspection_sha256": "50b1406b61201b19251149cbdb2a0888d979231199369e177ee2f54af6b20f5d",
+      "classification": "Severe sampled visual collapse despite reduced positional error; policy failure retained in cohort."
+    },
+    {
+      "key": "dreamx_02267acf_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s107/score.json",
+      "score_sha256": "600dac6d4d74eff58c1e771c5d03f3e2373762252d794f43d02e87ed39f8a228",
+      "frames": [
+        0,
+        20,
+        21,
+        34,
+        51,
+        68
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s107/commanded/frames.lossless.mkv",
+          "sha256": "356b309b15008dd7195a5873e9fd945cbbe916f507c6770ce50333f4d80e7b4b"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s107/measured/frames.lossless.mkv",
+          "sha256": "4d1c70564f1ecc9a6960078e254cebdb0c77eee599bc16fb4247a47510e51791"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00001.jpg",
+          "sha256": "dbd275b79ec7f7fb46acaaec70b803d8f9147ff4559a7d00ceb40f34c01e0d03"
+        },
+        {
+          "frame": 20,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00021.jpg",
+          "sha256": "583131478cf464240379fa96781d2da208f3b257a8d4479ec3e032645594ee6f"
+        },
+        {
+          "frame": 21,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00022.jpg",
+          "sha256": "e89fe85502afbaacbeb705e8184d551884a3b49bdad25afb67c9c53948015d67"
+        },
+        {
+          "frame": 34,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00035.jpg",
+          "sha256": "845787f554b85b80b89984d62d12285a24e009c144df9bda0af736b3c4a315bd"
+        },
+        {
+          "frame": 51,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00052.jpg",
+          "sha256": "11ecb3d974e567d1b7059dc9edc9cb38d358db3b660e9dfd9d8f31edbeef437a"
+        },
+        {
+          "frame": 68,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/02267acf6fb98de36173bf4e7db9734c8c421dcb00267e42964dc15134cbb1be/frames/frame_00069.jpg",
+          "sha256": "4ca197ab63e67c1aef662654bf9eb2141b10ddd85d2f7e3fc2222f61781602f3"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_02267acf_s107.jpg",
+      "sheet_sha256": "f51443d1594b7a732695274f40c1a74f41128074623d82d3874e6e954e34c410",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_02267acf_s107.review.json",
+      "inspection_sha256": "257eb9a89ea5347a1a31ccc1a5948bfe4dc4c23993431dd9a70eaed91b64391f",
+      "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
+    },
+    {
+      "key": "lingbot_c7418b7d_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s107/score.json",
+      "score_sha256": "d96bb0193fd0d345f59175f5dc16ceee7467c077433d1b6d4a3758d01b274b17",
+      "frames": [
+        0,
+        12,
+        13,
+        38,
+        57,
+        76
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_c7418b7d_s107/commanded/baseline/frames.lossless.mkv",
+          "sha256": "94f29d0aaa1b334e14171d46fec22c7e0ab256d3d3e33b0ebd7b7eef31feed5e"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_c7418b7d_s107/measured/baseline/frames.lossless.mkv",
+          "sha256": "1cfac6bf4a00984e8aab6c50715fda30b37d0a0f689f4a83d450d002c091a350"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00001.jpg",
+          "sha256": "65b3f2c26077985214a150a8151375533ed9fc6fec2981e692eec6744bc2e948"
+        },
+        {
+          "frame": 12,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00013.jpg",
+          "sha256": "ba9c1e10d553567e840ddf5d41327dbc965b158df01f6309e1654e1297d7731a"
+        },
+        {
+          "frame": 13,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00014.jpg",
+          "sha256": "1aed9e575aca1b7d51d8f5730c154293a8cd2ddbe4b2422e6f16c845954b2c58"
+        },
+        {
+          "frame": 38,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00039.jpg",
+          "sha256": "f3fc76d70dabdf7b69784792e18bbbc85163609e473dc98ebea05748be6b1439"
+        },
+        {
+          "frame": 57,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00058.jpg",
+          "sha256": "588952a4fbab7556b00d6f453b435a07f0f901a25f27ba2d3e6b13f2e8611013"
+        },
+        {
+          "frame": 76,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00077.jpg",
+          "sha256": "804d2a053e2b339d0a6c0bda7cae8105d73585d25ce52c6c433b90525de840f9"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_c7418b7d_s107.jpg",
+      "sheet_sha256": "a0612b7be15ea14acdf40469077a338763f83697af981b6d240b040e195f8326",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/lingbot_c7418b7d_s107.review.json",
+      "inspection_sha256": "9c4f73603ea556e546842ee0d8ab3a135c9eaed75e70a8e71f9838af09c5abfc",
+      "classification": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy."
+    },
+    {
+      "key": "dreamx_c7418b7d_s107",
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s107/score.json",
+      "score_sha256": "2945f7cf9e732eb169c3571cde95e2c51ad9ffaf5b434ca1b9c7328124cd8712",
+      "frames": [
+        0,
+        20,
+        21,
+        34,
+        51,
+        68
+      ],
+      "archives": {
+        "commanded": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_c7418b7d_s107/commanded/frames.lossless.mkv",
+          "sha256": "0aa62541a854770aed35eadd7dea0d6e5ed6a8f5b3536a6e042a37d22e060559"
+        },
+        "measured": {
+          "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_c7418b7d_s107/measured/frames.lossless.mkv",
+          "sha256": "5b3b0b90100188caba926b942395cce437596d1cf163d4308e6ae22e42910e9a"
+        }
+      },
+      "reference_frames": [
+        {
+          "frame": 0,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00001.jpg",
+          "sha256": "65b3f2c26077985214a150a8151375533ed9fc6fec2981e692eec6744bc2e948"
+        },
+        {
+          "frame": 20,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00021.jpg",
+          "sha256": "ac787a268ddeee274ca87a3e592ab5fd8c48219b725f10b05de7c8c4974e3f95"
+        },
+        {
+          "frame": 21,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00022.jpg",
+          "sha256": "236dc17a9a1f01c02e794f140a1f514224a7acc70f4b17d05de09a667ac9d250"
+        },
+        {
+          "frame": 34,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00035.jpg",
+          "sha256": "02367e52d3cd14f8cad74c4fb9142d82aac781a7152cdb91288fa511dedcea66"
+        },
+        {
+          "frame": 51,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00052.jpg",
+          "sha256": "3c9d49a3938c6ddf343342678f424300cf31ab845b4c991de1078c610a2e26a7"
+        },
+        {
+          "frame": 68,
+          "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scenes/c7418b7d13490f78a288ad199137162909ecb78bfed6e582e451fd47cd622ec9/frames/frame_00069.jpg",
+          "sha256": "80719ebe8e2a9ae94ca8d39f270c5efad364a95ba64906a3e5c57bf2a9ba39ea"
+        }
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_c7418b7d_s107.jpg",
+      "sheet_sha256": "40c366fcdb4c6484e11fa1a29d515ea9ac5c4d9367a63da8264666357834f6fb",
+      "review_status": "sampled_visual_review_complete",
+      "inspection_record": "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/dreamx_c7418b7d_s107.review.json",
+      "inspection_sha256": "69a3b030de7c2c37de6a9f576f9fa7ececf8a6528cd9ea9ac90872d95484bc95",
+      "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
     }
   ]
 }

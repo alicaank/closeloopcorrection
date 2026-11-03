@@ -1,40 +1,40 @@
 {
-  "snapshot_time": 1793667221.7639563,
+  "snapshot_time": 1793669231.2052183,
   "original_planned_pairs": 40,
   "models": {
     "lingbot": {
       "planned": 8,
       "execution_counts": {
         "reused": 1,
-        "completed": 2,
-        "running": 1,
-        "pending": 4
+        "completed": 6,
+        "pending": 1
       },
-      "scored": 3
+      "scored": 7
     },
     "sana": {
       "planned": 8,
       "execution_counts": {
         "failed": 1,
-        "held": 2,
-        "held_by_model": 5
+        "held": 6,
+        "held_by_model": 1
       },
       "scored": 0
     },
     "dreamx": {
       "planned": 8,
       "execution_counts": {
-        "completed": 3,
-        "pending": 5
+        "completed": 6,
+        "running": 1,
+        "pending": 1
       },
-      "scored": 3
+      "scored": 6
     },
     "matrixgame": {
       "planned": 8,
       "execution_counts": {
         "failed": 1,
-        "held": 2,
-        "held_by_model": 5
+        "held": 5,
+        "held_by_model": 2
       },
       "scored": 0
     },
@@ -42,8 +42,8 @@
       "planned": 8,
       "execution_counts": {
         "failed": 1,
-        "held": 2,
-        "held_by_model": 5
+        "held": 5,
+        "held_by_model": 2
       },
       "scored": 0
     }
@@ -1154,11 +1154,11 @@
       "model": "lingbot",
       "scene": "924228bf",
       "seed": 7,
-      "execution_state": "running",
+      "execution_state": "completed",
       "reason": null,
       "jobs": {
         "lingbot_924228bf_s7_commanded": {
-          "state": "running",
+          "state": "completed",
           "argv": [
             "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
             "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
@@ -1181,8 +1181,130 @@
           ],
           "started": 1793667115.383021,
           "pid": 2847213,
-          "min_host_available_bytes": 36592586752
+          "min_host_available_bytes": 36592586752,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667230.4173815
+        },
+        "lingbot_924228bf_s7_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_924228bf_s7.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793667230.6530151,
+          "pid": 2848427,
+          "min_host_available_bytes": 63199629312,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667235.654926
+        },
+        "lingbot_924228bf_s7_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "924228bf",
+            "--seed",
+            "7",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/measured",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793667235.7036917,
+          "pid": 2848514,
+          "min_host_available_bytes": 27185311744,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667375.7410643
+        },
+        "lingbot_924228bf_s7_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_924228bf_s7.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793667375.7925725,
+          "pid": 2850385,
+          "min_host_available_bytes": 63295987712,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667380.7946393
+        },
+        "lingbot_924228bf_s7_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_924228bf_s7.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7"
+          ],
+          "started": 1793667380.8537157,
+          "pid": 2850471,
+          "min_host_available_bytes": 60981972992,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667390.857947
         }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7/score.json",
+      "score_sha256": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "delta": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.546151711347021,
+          "measured": 1.546151711347021,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.9421014079706629,
+          "measured": 1.9421014079706629,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "position_valid": {
+        "commanded": false,
+        "measured": false
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
       }
     },
     {
@@ -1190,7 +1312,7 @@
       "model": "sana",
       "scene": "924228bf",
       "seed": 7,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1204,16 +1326,165 @@
       "model": "dreamx",
       "scene": "924228bf",
       "seed": 7,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "dreamx_924228bf_s7_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "924228bf",
+            "--seed",
+            "7",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s7/commanded",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793667390.9061694,
+          "pid": 2850641,
+          "min_host_available_bytes": 13957918720,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667516.009719
+        },
+        "dreamx_924228bf_s7_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_924228bf_s7.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793667516.241129,
+          "pid": 2851714,
+          "min_host_available_bytes": 63433707520,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667521.2439127
+        },
+        "dreamx_924228bf_s7_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "924228bf",
+            "--seed",
+            "7",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s7/measured",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793667521.2888148,
+          "pid": 2851828,
+          "min_host_available_bytes": 15496495104,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667691.3665295
+        },
+        "dreamx_924228bf_s7_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_924228bf_s7.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793667691.5667555,
+          "pid": 2853058,
+          "min_host_available_bytes": 63442309120,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667696.569125
+        },
+        "dreamx_924228bf_s7_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_924228bf_s7.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s7"
+          ],
+          "started": 1793667696.6256053,
+          "pid": 2853198,
+          "min_host_available_bytes": 61146271744,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667711.6316066
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_924228bf_s7/score.json",
+      "score_sha256": "6ce7aecbb0185e2a8f1b7f8d91c0db7ba89560b3268a702f9d6b074d0893257b",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 0,
+      "delta": {
+        "position_mean": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "position_endpoint": {
+          "commanded": null,
+          "measured": null,
+          "measured_minus_commanded": null,
+          "reduction_percent": null
+        },
+        "rotation_mean_deg": {
+          "commanded": 3.9727717123661015,
+          "measured": 3.9727717123661015,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 5.003824900167467,
+          "measured": 5.003824900167467,
+          "measured_minus_commanded": 0.0,
+          "reduction_percent": 0.0
+        }
+      },
+      "position_valid": {
+        "commanded": false,
+        "measured": false
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit."
+      }
     },
     {
       "key": "matrixgame_924228bf_s7",
       "model": "matrixgame",
       "scene": "924228bf",
       "seed": 7,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1227,7 +1498,7 @@
       "model": "lyra",
       "scene": "924228bf",
       "seed": 7,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1241,16 +1512,165 @@
       "model": "lingbot",
       "scene": "02267acf",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "lingbot_02267acf_s107_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_02267acf_s107/commanded",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793667711.6839473,
+          "pid": 2853511,
+          "min_host_available_bytes": 36801273856,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667821.7275949
+        },
+        "lingbot_02267acf_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_02267acf_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793667821.9001927,
+          "pid": 2854242,
+          "min_host_available_bytes": 63340802048,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667826.902326
+        },
+        "lingbot_02267acf_s107_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_02267acf_s107/measured",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793667826.9505417,
+          "pid": 2854332,
+          "min_host_available_bytes": 27669037056,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667961.995992
+        },
+        "lingbot_02267acf_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_02267acf_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793667962.0603018,
+          "pid": 2855558,
+          "min_host_available_bytes": 63355981824,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667967.0626261
+        },
+        "lingbot_02267acf_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_02267acf_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_02267acf_s107"
+          ],
+          "started": 1793667967.1106267,
+          "pid": 2855651,
+          "min_host_available_bytes": 60813930496,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793667987.1167755
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_02267acf_s107/score.json",
+      "score_sha256": "895844b37f01dcd488960b132da74a7986930d743fc81c42d075ab038d61b726",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.6530304914255702,
+          "measured": 0.527340254626803,
+          "measured_minus_commanded": -0.12569023679876723,
+          "reduction_percent": 19.24722328422744
+        },
+        "position_endpoint": {
+          "commanded": 1.2395414182176718,
+          "measured": 1.0391151496489808,
+          "measured_minus_commanded": -0.20042626856869106,
+          "reduction_percent": 16.16938858379437
+        },
+        "rotation_mean_deg": {
+          "commanded": 9.441131362684297,
+          "measured": 10.06880290359778,
+          "measured_minus_commanded": 0.6276715409134823,
+          "reduction_percent": -6.648266153718923
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 21.505305068998645,
+          "measured": 15.550100276742459,
+          "measured_minus_commanded": -5.955204792256186,
+          "reduction_percent": 27.69179406267069
+        }
+      },
+      "position_valid": {
+        "commanded": true,
+        "measured": true
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Severe sampled visual collapse despite reduced positional error; policy failure retained in cohort."
+      }
     },
     {
       "key": "sana_02267acf_s107",
       "model": "sana",
       "scene": "02267acf",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1264,16 +1684,165 @@
       "model": "dreamx",
       "scene": "02267acf",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "dreamx_02267acf_s107_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s107/commanded",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793667987.1646867,
+          "pid": 2855883,
+          "min_host_available_bytes": 7653359616,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668107.2114553
+        },
+        "dreamx_02267acf_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_02267acf_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793668107.4600737,
+          "pid": 2856795,
+          "min_host_available_bytes": 63537532928,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668112.4641721
+        },
+        "dreamx_02267acf_s107_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_02267acf_s107/measured",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793668112.522916,
+          "pid": 2856908,
+          "min_host_available_bytes": 7760089088,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668277.5854645
+        },
+        "dreamx_02267acf_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_02267acf_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793668277.6391368,
+          "pid": 2858054,
+          "min_host_available_bytes": 63801917440,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668282.6420147
+        },
+        "dreamx_02267acf_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_02267acf_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s107"
+          ],
+          "started": 1793668282.7001395,
+          "pid": 2858167,
+          "min_host_available_bytes": 60825878528,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668302.7067087
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_02267acf_s107/score.json",
+      "score_sha256": "600dac6d4d74eff58c1e771c5d03f3e2373762252d794f43d02e87ed39f8a228",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.032730435357102655,
+          "measured": 0.03324248521169921,
+          "measured_minus_commanded": 0.0005120498545965538,
+          "reduction_percent": -1.56444559630777
+        },
+        "position_endpoint": {
+          "commanded": 0.0673810446699804,
+          "measured": 0.06853084119786221,
+          "measured_minus_commanded": 0.0011497965278818023,
+          "reduction_percent": -1.7064094709621793
+        },
+        "rotation_mean_deg": {
+          "commanded": 0.6438166111167528,
+          "measured": 0.627268699387394,
+          "measured_minus_commanded": -0.016547911729358766,
+          "reduction_percent": 2.5702834384243447
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 0.608250398846722,
+          "measured": 0.5918777563966119,
+          "measured_minus_commanded": -0.016372642450110164,
+          "reduction_percent": 2.6917602489293295
+        }
+      },
+      "position_valid": {
+        "commanded": true,
+        "measured": true
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
+      }
     },
     {
       "key": "matrixgame_02267acf_s107",
       "model": "matrixgame",
       "scene": "02267acf",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1287,7 +1856,7 @@
       "model": "lyra",
       "scene": "02267acf",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1301,16 +1870,165 @@
       "model": "lingbot",
       "scene": "c7418b7d",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "lingbot_c7418b7d_s107_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "c7418b7d",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_c7418b7d_s107/commanded",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793668302.7571669,
+          "pid": 2858425,
+          "min_host_available_bytes": 36720562176,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668412.7995343
+        },
+        "lingbot_c7418b7d_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_c7418b7d_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793668412.850814,
+          "pid": 2859322,
+          "min_host_available_bytes": 63196045312,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668417.8534439
+        },
+        "lingbot_c7418b7d_s107_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "c7418b7d",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_c7418b7d_s107/measured",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793668417.9000604,
+          "pid": 2859481,
+          "min_host_available_bytes": 27578494976,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668552.947259
+        },
+        "lingbot_c7418b7d_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_c7418b7d_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793668553.1147294,
+          "pid": 2860268,
+          "min_host_available_bytes": 63400591360,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668558.1191778
+        },
+        "lingbot_c7418b7d_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_c7418b7d_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s107"
+          ],
+          "started": 1793668558.1632566,
+          "pid": 2860354,
+          "min_host_available_bytes": 61468446720,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668578.1694365
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s107/score.json",
+      "score_sha256": "d96bb0193fd0d345f59175f5dc16ceee7467c077433d1b6d4a3758d01b274b17",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.6725432786295911,
+          "measured": 0.16001398625761432,
+          "measured_minus_commanded": -0.5125292923719768,
+          "reduction_percent": 76.2076298519157
+        },
+        "position_endpoint": {
+          "commanded": 1.2884411276553882,
+          "measured": 0.18936641992366585,
+          "measured_minus_commanded": -1.0990747077317224,
+          "reduction_percent": 85.30267189869505
+        },
+        "rotation_mean_deg": {
+          "commanded": 1.7066579628288825,
+          "measured": 1.8258274044730403,
+          "measured_minus_commanded": 0.11916944164415777,
+          "reduction_percent": -6.982620082036102
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 1.9172935337502788,
+          "measured": 4.097615102220306,
+          "measured_minus_commanded": 2.1803215684700277,
+          "reduction_percent": -113.71871495363878
+        }
+      },
+      "position_valid": {
+        "commanded": true,
+        "measured": true
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy."
+      }
     },
     {
       "key": "sana_c7418b7d_s107",
       "model": "sana",
       "scene": "c7418b7d",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1324,16 +2042,165 @@
       "model": "dreamx",
       "scene": "c7418b7d",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "dreamx_c7418b7d_s107_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "c7418b7d",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_c7418b7d_s107/commanded",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793668578.2122843,
+          "pid": 2860657,
+          "min_host_available_bytes": 7440166912,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668703.2435615
+        },
+        "dreamx_c7418b7d_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_c7418b7d_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793668703.5286307,
+          "pid": 2861772,
+          "min_host_available_bytes": 63575896064,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668708.532973
+        },
+        "dreamx_c7418b7d_s107_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "c7418b7d",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_c7418b7d_s107/measured",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793668708.5783472,
+          "pid": 2861885,
+          "min_host_available_bytes": 7725088768,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668878.6205618
+        },
+        "dreamx_c7418b7d_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_c7418b7d_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793668878.868405,
+          "pid": 2863063,
+          "min_host_available_bytes": 63817011200,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668883.8730037
+        },
+        "dreamx_c7418b7d_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/dreamx_c7418b7d_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s107"
+          ],
+          "started": 1793668883.9198825,
+          "pid": 2863179,
+          "min_host_available_bytes": 60625203200,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793668903.926414
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/dreamx_c7418b7d_s107/score.json",
+      "score_sha256": "2945f7cf9e732eb169c3571cde95e2c51ad9ffaf5b434ca1b9c7328124cd8712",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.03872637278325624,
+          "measured": 0.0383948774809156,
+          "measured_minus_commanded": -0.00033149530234063973,
+          "reduction_percent": 0.8559936769600205
+        },
+        "position_endpoint": {
+          "commanded": 0.08432506253211958,
+          "measured": 0.08282056063124418,
+          "measured_minus_commanded": -0.0015045019008753935,
+          "reduction_percent": 1.7841693272416204
+        },
+        "rotation_mean_deg": {
+          "commanded": 2.6330017574951188,
+          "measured": 2.707157182377204,
+          "measured_minus_commanded": 0.07415542488208526,
+          "reduction_percent": -2.8163834175573177
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 2.2307819040148704,
+          "measured": 2.389602704272392,
+          "measured_minus_commanded": 0.15882080025752154,
+          "reduction_percent": -7.119512668256917
+        }
+      },
+      "position_valid": {
+        "commanded": true,
+        "measured": true
+      },
+      "visual_review": {
+        "review_status": "sampled_visual_review_complete",
+        "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished."
+      }
     },
     {
       "key": "matrixgame_c7418b7d_s107",
       "model": "matrixgame",
       "scene": "c7418b7d",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1347,7 +2214,7 @@
       "model": "lyra",
       "scene": "c7418b7d",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1361,16 +2228,161 @@
       "model": "lingbot",
       "scene": "0238de14",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "completed",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "lingbot_0238de14_s107_commanded": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "0238de14",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_0238de14_s107/commanded",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793668903.976251,
+          "pid": 2863424,
+          "min_host_available_bytes": 36642291712,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669014.0008538
+        },
+        "lingbot_0238de14_s107_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_0238de14_s107.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793669014.168921,
+          "pid": 2864475,
+          "min_host_available_bytes": 63182888960,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669019.173092
+        },
+        "lingbot_0238de14_s107_measured": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/lingbot/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lingbot",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "0238de14",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_0238de14_s107/measured",
+            "--arms",
+            "baseline",
+            "--frames",
+            "77"
+          ],
+          "started": 1793669019.2180712,
+          "pid": 2864561,
+          "min_host_available_bytes": 27242577920,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669159.2516134
+        },
+        "lingbot_0238de14_s107_measured_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_0238de14_s107.json",
+            "--arm",
+            "measured"
+          ],
+          "started": 1793669159.4295697,
+          "pid": 2865974,
+          "min_host_available_bytes": 63270928384,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669164.4338293
+        },
+        "lingbot_0238de14_s107_score": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/score_memory_pair.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/lingbot_0238de14_s107.json",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s107"
+          ],
+          "started": 1793669164.486899,
+          "pid": 2866079,
+          "min_host_available_bytes": 61017309184,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793669184.493896
+        }
+      },
+      "score": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s107/score.json",
+      "score_sha256": "1b84e7cc5ec8857b3804b50ac5af84ecf12569347b5bfce8edcb9ccce3d5c9a9",
+      "prefix_exact": true,
+      "comparison_valid": true,
+      "accepted_writes": 4,
+      "delta": {
+        "position_mean": {
+          "commanded": 0.5433808572444334,
+          "measured": 0.15494844647427242,
+          "measured_minus_commanded": -0.388432410770161,
+          "reduction_percent": 71.48437520231401
+        },
+        "position_endpoint": {
+          "commanded": 0.961400508543771,
+          "measured": 0.1668878416138734,
+          "measured_minus_commanded": -0.7945126669298976,
+          "reduction_percent": 82.64117398204233
+        },
+        "rotation_mean_deg": {
+          "commanded": 3.9086640245223916,
+          "measured": 2.529080442718204,
+          "measured_minus_commanded": -1.3795835818041877,
+          "reduction_percent": 35.29552740140571
+        },
+        "rotation_endpoint_deg": {
+          "commanded": 7.536765254064935,
+          "measured": 2.5955818227185037,
+          "measured_minus_commanded": -4.941183431346431,
+          "reduction_percent": 65.56106319858398
+        }
+      },
+      "position_valid": {
+        "commanded": true,
+        "measured": true
+      }
     },
     {
       "key": "sana_0238de14_s107",
       "model": "sana",
       "scene": "0238de14",
       "seed": 107,
-      "execution_state": "held_by_model",
+      "execution_state": "held",
       "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
       "jobs": {},
       "resource_supplement": {
@@ -1384,9 +2396,36 @@
       "model": "dreamx",
       "scene": "0238de14",
       "seed": 107,
-      "execution_state": "pending",
+      "execution_state": "running",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "dreamx_0238de14_s107_commanded": {
+          "state": "running",
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/dreamx/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "dreamx",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "0238de14",
+            "--seed",
+            "107",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_0238de14_s107/commanded",
+            "--latents",
+            "18",
+            "--prefix-latents",
+            "6"
+          ],
+          "started": 1793669184.5384169,
+          "pid": 2866333,
+          "min_host_available_bytes": 19927461888
+        }
+      }
     },
     {
       "key": "matrixgame_0238de14_s107",
@@ -1481,7 +2520,7 @@
   "queue_processes": {
     "cohort": {
       "pid": 2808063,
-      "phase": "lingbot_924228bf_s7_commanded",
+      "phase": "dreamx_0238de14_s107_commanded",
       "process_exists": true
     },
     "sana_supplement": {
@@ -1502,13 +2541,13 @@
   },
   "input_hashes": {
     "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "9f21c6476956452f45bd5b1000f0af367d3ffde66281f571b63be2572b6dcfc5",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "5937a20f1bac94c87cf00abb032afdafe27ab41eae016a8840326d160064f917",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/manifest.json": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "d699c5f53924f1f7b0a7f9f9d6566053e47dff2c3586ef0647b17444c51613fd",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
     "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
     "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/status.json": "ebbc307ca09a43d6675ef6d131a06da8cb63bbcb7ff02360ca7409d8cfadb31d",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "7e5cfe20901a2010152382bad36b104b7d0c1d3e894168bb56d59d5b3692243c"
+    "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "194f89b4d14ed9d2e17ed7d3d430c2b5954b93abf5d40b1636efa339c9c67bb0"
   }
 }

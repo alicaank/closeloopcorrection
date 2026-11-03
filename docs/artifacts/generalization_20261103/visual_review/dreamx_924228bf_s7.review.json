@@ -1,0 +1,22 @@
+{
+  "reviewed_at": 1793669173.3925374,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "dreamx_924228bf_s7",
+  "sheet_sha256": "73b6804b5d46fda6406ae8595c35561ca45489d9b2d563a9c0e12441169c5538",
+  "score_sha256": "6ce7aecbb0185e2a8f1b7f8d91c0db7ba89560b3268a702f9d6b074d0893257b",
+  "frames": [
+    0,
+    20,
+    21,
+    34,
+    51,
+    68
+  ],
+  "observations": [
+    "The generated rows look identical in the six samples and retain recognizable building and trees.",
+    "Both diverge in viewpoint from the reference later in the clip.",
+    "Zero memory writes were accepted and both arms lack valid positional registration. Unavailable position scores must not be treated as perfect tracking."
+  ],
+  "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit.",
+  "temporal_limitation": "Six samples do not resolve oscillation or exact event timing between samples."
+}

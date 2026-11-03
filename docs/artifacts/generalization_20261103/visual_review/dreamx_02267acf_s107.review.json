@@ -1,0 +1,22 @@
+{
+  "reviewed_at": 1793669173.3924584,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "dreamx_02267acf_s107",
+  "sheet_sha256": "f51443d1594b7a732695274f40c1a74f41128074623d82d3874e6e954e34c410",
+  "score_sha256": "600dac6d4d74eff58c1e771c5d03f3e2373762252d794f43d02e87ed39f8a228",
+  "frames": [
+    0,
+    20,
+    21,
+    34,
+    51,
+    68
+  ],
+  "observations": [
+    "Both generated rows look very similar and retain recognizable store geometry at all six sampled timestamps.",
+    "Both change framing relative to the near-stationary reference. Severe collapse is not evident in these samples.",
+    "Mean position error slightly increases and mean rotation error slightly decreases. No matched regeneration floor was measured."
+  ],
+  "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished.",
+  "temporal_limitation": "Six samples do not resolve oscillation or exact event timing between samples."
+}

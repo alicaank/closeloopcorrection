@@ -6,6 +6,16 @@ reference video; stored camera poses may be VIPE-derived and are not claimed
 as independent ground truth. Translation is in each scene's reference
 anchor-depth units, not established metric metres.
 
+Latest reviewed snapshot: **12/40 original pairs**, six LingBot and six DreamX.
+The accompanying coverage snapshot has **13 scored pairs**; the newly scored
+LingBot `0238de14`, seed 107, still awaits visual review in this snapshot.
+Ten have valid positional registration; two are zero-write abstentions with
+unavailable position metrics. Three reviewed LingBot pairs have visible scene
+fidelity failures despite lower position-error scores. The sections below retain
+earlier snapshots as dated progression; their counts are not the latest coverage.
+The full-horizon SANA, MatrixGame and Lyra resource retries remain separate and
+do not erase their original execution failures.
+
 ## Motion depends on the evaluated horizon
 
 The following net displacements come directly from the frozen target arrays.
@@ -157,3 +167,77 @@ floor; they do not establish efficacy or differential memory authority.
 
 At this snapshot, six of the original 40 pairs have been scored and reviewed
 at six timestamps each. This remains an incomplete development cohort.
+
+## Second seed: a repeated failure and a repeated positional benefit
+
+Four more active-write pairs have exact pre-intervention prefixes and four
+accepted writes each. Values below are post-intervention means, in anchor-depth
+units for position and degrees for rotation. These are paired descriptive results,
+not seed-level significance tests or an aggregate success claim.
+
+| Model / scene / seed | Position commanded → measured | Position reduction | Rotation commanded → measured | Sampled visual assessment |
+| --- | ---: | ---: | ---: | --- |
+| LingBot / 02267acf / 107 | 0.653030 → 0.527340 | 19.25% | 9.44113 → 10.06880 | Severe collapse |
+| LingBot / c7418b7d / 107 | 0.672543 → 0.160014 | 76.21% | 1.70666 → 1.82583 | Recognizable shop; rotation tradeoff |
+| DreamX / 02267acf / 107 | 0.032730 → 0.033242 | −1.56% | 0.64382 → 0.62727 | Similar appearance; small mixed changes |
+| DreamX / c7418b7d / 107 | 0.038726 → 0.038395 | 0.86% | 2.63300 → 2.70716 | Similar appearance; small mixed changes |
+
+LingBot's `02267acf` measured arm is severely ghosted at frame 13, deteriorates
+further at frames 38 and 57, and ends largely featureless at frame 76. The
+commanded arm drifts but retains recognizable store structure. Thus the visual
+failure repeats across both seeds on this scene; a positive pose-score reduction
+cannot be counted as a successful visual-control outcome.
+
+![LingBot 02267acf second seed](artifacts/generalization_20261103/visual_review/lingbot_02267acf_s107.jpg)
+
+On `c7418b7d`, the measured samples retain the note-covered partition and shelf
+layout closer to reference framing, while the commanded arm drifts across the
+shop. This repeats the seed-7 positional benefit with recognizable sampled
+geometry. Rotation remains a tradeoff: endpoint rotation is **1.91729° →
+4.09762°**, larger than the mean change suggests. Two seeds establish recurrence
+in these tested cases, not statistical generalization across scenes or seeds.
+
+![LingBot c7418b7d second seed](artifacts/generalization_20261103/visual_review/lingbot_c7418b7d_s107.jpg)
+
+Both new DreamX pairs retain similar recognizable geometry at the six sampled
+timestamps. The position-effect signs reverse relative to seed 7 on both scenes:
+`02267acf` changes from a small improvement to a small regression, and `c7418b7d`
+from a small regression to a small improvement. There is no matched regeneration
+floor here. These results do not establish reliable memory-channel benefit or a
+differential command gain.
+
+## Zero-write cases: full RGB equality verified
+
+LingBot and DreamX on `924228bf`, seed 7, accepted **zero** memory writes.
+All **77 LingBot frames** and **69 DreamX frames** were decoded at native
+resolution as RGB24 and compared by per-frame SHA256, dimensions and timestamps.
+The two arms are exactly equal throughout each clip. This is stronger evidence
+of unchanged fallback behavior than matching pose scores or six thumbnails.
+
+Both observers reject scalar anchor-depth registration for the final position
+assessment. Position metrics remain **unavailable**, not zero. Rotation means
+are identical between arms (LingBot 1.54615°, DreamX 3.97277°), as expected from
+identical RGB. Samples retain recognizable building/tree geometry but drift in
+viewpoint relative to the reference. These cases remain in the cohort as
+abstentions, without a correction-benefit claim.
+
+The [LingBot RGB audit](artifacts/generalization_20261103/visual_review/lingbot_924228bf_s7.abstention_rgb.json)
+and [DreamX RGB audit](artifacts/generalization_20261103/visual_review/dreamx_924228bf_s7.abstention_rgb.json)
+record every decoded frame digest and the reproducible audit script hash.
+
+## Consequence for the next experiments
+
+The frozen method and original 40-pair denominator stay unchanged. A general
+method can have scene failures; the eventual claim depends on the aggregate
+pose/quality tradeoff, intervention coverage, abstentions and execution coverage.
+Pose improvements on collapsed videos must remain visible alongside their scores.
+
+The repeated scene dependence supports finishing the queued
+[matched normalization diagnostic](lingbot_gauge_pilot_20261103.md), which separates
+shared rescaling from measured labels. It does not prove normalization is the
+cause or justify adding a scene-specific exception. DreamX's sign-changing small
+memory effects support the separate [future-command pilot](dreamx_future_command_20261103.md),
+whose first feedback command remains nominal and whose later commands respond
+to observed lag. Neither queued ablation is evidence of efficacy before its
+parity gates and matched runs complete. Six-frame reviews also do not resolve
+zigzag motion between samples.

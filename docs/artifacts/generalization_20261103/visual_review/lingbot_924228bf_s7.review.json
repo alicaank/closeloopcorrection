@@ -1,0 +1,22 @@
+{
+  "reviewed_at": 1793669173.3925014,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "lingbot_924228bf_s7",
+  "sheet_sha256": "53bc3f2dfbc8a0ba35e3c17895533e2ccd52c55a80722bb599e66f4f999ac161",
+  "score_sha256": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+  "frames": [
+    0,
+    12,
+    13,
+    38,
+    57,
+    76
+  ],
+  "observations": [
+    "The two generated rows look identical in the six samples and preserve recognizable building and tree geometry.",
+    "Both drift away from the nearly stationary reference framing.",
+    "The controller accepted zero memory writes. Both arms lack a valid scalar anchor-depth registration, so position errors are unavailable rather than zero."
+  ],
+  "classification": "Zero-write abstention with recognizable sampled geometry; position unregistered, not evidence of correction benefit.",
+  "temporal_limitation": "Six samples do not resolve oscillation or exact event timing between samples."
+}
