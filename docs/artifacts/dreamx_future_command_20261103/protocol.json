@@ -1,0 +1,71 @@
+{
+  "method": "dreamx_future_fractional_v1_camera_grid",
+  "scope": "Separate command-only ablation; does not replace the frozen measured-memory method or its original forty-pair cohort.",
+  "cases": {
+    "dreamx_0238de14_s7": {
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 33,
+      "regime": "moving development"
+    },
+    "dreamx_0238de14_s107": {
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 33,
+      "regime": "moving development"
+    },
+    "dreamx_02267acf_s7": {
+      "model": "dreamx",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 33,
+      "regime": "near-stationary stress"
+    },
+    "dreamx_02267acf_s107": {
+      "model": "dreamx",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 33,
+      "regime": "near-stationary stress"
+    }
+  },
+  "arms": {
+    "A": "Observer-free unchanged native commands in the same host",
+    "S": "Observer runs; commands unchanged",
+    "F": "Same observer, commanded memory, nominal first feedback issuance then accepted fractional recovery"
+  },
+  "controls": "Same native BF16 K, prepared anchor/depth grid, weights, seed, complete horizon and original targets in all arms. No memory rewrite, probe generations or fitted inverse gains.",
+  "policy": {
+    "recovery_fraction": 0.5,
+    "speed_multiplier": 2.0,
+    "native_stride": 4,
+    "nominal_boundaries": 1,
+    "memory_anchor": "Declared previous native camera sample, distinct from latest emitted RGB",
+    "authority": "Passive execution receipts only; no differential-gain claim"
+  },
+  "gates": [
+    "Complete 69-frame A/S raw RGB identity before F",
+    "Exact S/F frames 0 through 32 and latent/cache/RNG receipts through latent 9",
+    "All initial native camera/noise inputs exact; first feedback command nominal"
+  ],
+  "scoring": "Independent offline VIPE, original timestamped poses and preserved anchor-depth units; primary mean position frames 33\u201368; endpoint, rotation, actuation and visual review separately.",
+  "qualification": "CPU tests do not establish native GPU parity. GPU gates precede interpretation; losses/abstentions retained. Separate input FOV contract cannot be pooled with historical DreamX runs."
+}

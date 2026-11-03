@@ -92,8 +92,13 @@ use the initial input and declared native contract, never future reference
 motion or output-score fitting. That candidate has not been implemented or
 GPU-qualified in this preflight.
 
-The future-only GPU pilot is therefore **not queued by this change**. Next,
+At the time of this preflight, the future-only GPU pilot was **not queued**. Next,
 resolve that focal contract, implement the causal native next-chunk commit,
 qualify observer/no-op parity, and freeze the matched moving-scene pilot with
 commanded memory. Only later observed lag should perturb future commands.
 Execution ratios remain observational; no inverse gain is enabled from them.
+
+Subsequent work implemented the camera-grid contract and causal next-chunk
+commit. The [separate frozen pilot](dreamx_future_command_20261103.md) is now
+queued with four native-encoder CPU tests passing. GPU parity remains pending;
+this does not change the historical scope of the preflight above.

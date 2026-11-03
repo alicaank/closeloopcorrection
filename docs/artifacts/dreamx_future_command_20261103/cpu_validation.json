@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "manifest_sha256": "226aab81a0601d1476be1b33444aa4cad0dcb4d3b8ee3ccb9912ef7f3cfefb33",
+  "checks": [
+    "Four actual native-encoder CPU tests",
+    "Exact runtime source overlay compiles after unchanged native context-cache pass",
+    "Native interpreter CLI help",
+    "Prepared input/reference hashes verified",
+    "Original parent source freeze unchanged"
+  ],
+  "gpu_qualified": false
+}

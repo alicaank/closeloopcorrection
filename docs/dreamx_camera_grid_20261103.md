@@ -80,3 +80,7 @@ only the next chunk, and pass native/observer no-op parity. The first feedback
 command stays nominal. Subsequent accepted observations can drive the separately
 frozen recovery ablation; observational execution ratios do not enable inverse
 control. GPU/native qualification and efficacy remain outstanding.
+
+Subsequently, the [command-only pilot](dreamx_future_command_20261103.md)
+implemented this integration and entered the GPU queue. Its CPU checks pass;
+its mandatory GPU parity gates and measured outcomes remain pending.

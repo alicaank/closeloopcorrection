@@ -1,0 +1,23 @@
+{
+  "reviewed_at": 1793666739.3156538,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "lingbot_c7418b7d_s7",
+  "sheet_sha256": "e0c42cda3bdeaa94dd3698ad8ca1f29dc38b1c46d0cf7c91aff4e7c7cdf9d310",
+  "score_sha256": "f0aa1f4be67925b506185ae5a1e35e95a5c91a3fc9c78b9eca2e7b165a946b21",
+  "frames": [
+    0,
+    12,
+    13,
+    38,
+    57,
+    76
+  ],
+  "observations": [
+    "Reference shows a small viewpoint change while retaining the shop layout.",
+    "Both outputs share the sampled prefix. Commanded output moves substantially across the shop by frames 38\u201376.",
+    "Measured samples retain recognizable shop geometry and stay closer to the initial/reference composition; no severe fragmentation like the 02267acf pair is evident.",
+    "Measured orientation and framing differ from reference; lower position error accompanies higher rotation error."
+  ],
+  "classification": "Reduced positional drift with recognizable sampled geometry; rotation tradeoff, not aggregate efficacy.",
+  "temporal_limitation": "Six samples do not resolve oscillation or exact event timing between samples."
+}

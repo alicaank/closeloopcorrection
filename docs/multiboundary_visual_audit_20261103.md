@@ -90,3 +90,34 @@ gain or statistically established control benefit.
 and [frame-wise RGB differences](artifacts/generalization_20261103/visual_review/dreamx_02267acf_s7.rgb_difference.json)
 retain the numerical and visual evidence. MatrixGame was running next at this
 snapshot; SANA remained an execution failure with a separate resource retry queued.
+
+## c7418b7d, seed 7: two additional completed pairs
+
+LingBot's 77-frame pair has exact pre-intervention RGB equality and four
+accepted writes. Mean position error falls **0.659398 → 0.128310 (80.54%)**,
+while mean rotation error rises **1.90072° → 4.35909°**. At sampled frames
+0, 12, 13, 38, 57 and 76, the measured arm retains recognizable shop geometry
+and stays closer to the reference composition than the strongly drifting
+commanded arm. The severe fragmentation of the `02267acf` case is not evident
+here. This supports a positional benefit with a rotation tradeoff on this pair;
+it does not establish aggregate efficacy or exclude temporal defects between
+samples. The earlier collapsed pair remains in the denominator.
+
+![LingBot c7418b7d matched samples](artifacts/generalization_20261103/visual_review/lingbot_c7418b7d_s7.jpg)
+
+DreamX's 69-frame pair has exact pre-intervention equality. Mean position error
+rises **0.033154 → 0.033859 (2.13%)**, and mean rotation error rises
+**1.90717° → 1.93598°**. Both generated rows look very similar at frames
+0, 20, 21, 34, 51 and 68, retain recognizable geometry, and diverge in framing
+from the reference later in the clip. No severe collapse is evident in these
+samples. This is a small numerical regression, without a measured regeneration
+floor or a differential-authority conclusion.
+
+![DreamX c7418b7d matched samples](artifacts/generalization_20261103/visual_review/dreamx_c7418b7d_s7.jpg)
+
+The manifest links the score and inspection hashes for both new pairs. At this
+snapshot **4/40 original pairs** are scored. SANA, MatrixGame and Lyra each
+stopped at a host-memory guard; those are execution failures with missing paired
+evidence. Full-horizon SANA and Matrix resource retries are queued. Lyra still
+requires resource-path diagnosis. Model-specific horizons and all original cases
+remain fixed in the [coverage ledger](generalization_coverage_20261103.json).

@@ -1,0 +1,14 @@
+usage: run.py [-h] --batch BATCH --scene SCENE --out OUT [--latents LATENTS]
+              --arm {A,S,F} [--memory-policy {commanded,identity,measured}]
+              [--seed SEED] [--prefix-latents PREFIX_LATENTS]
+
+options:
+  -h, --help            show this help message and exit
+  --batch BATCH
+  --scene SCENE
+  --out OUT
+  --latents LATENTS
+  --arm {A,S,F}
+  --memory-policy {commanded,identity,measured}
+  --seed SEED
+  --prefix-latents PREFIX_LATENTS
