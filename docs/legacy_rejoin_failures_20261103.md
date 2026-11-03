@@ -83,6 +83,11 @@ do not establish a relay-like plant or differential gain.
 
 ## LingBot: real visual collapse after large native commands
 
+The [zigzag reassessment](zigzag_reassessment_20261103.md) additionally verifies
+2–10 intended-command reversals in each of the 16 correction runs, versus zero
+in their baselines, and 25 accepted feedback observations after visible degradation
+across three selected failures. Reversal count alone does not rank success.
+
 Fresh replay of the 16 paired runs verifies the initial-prefix hashes,
 normalizers, camera timestamps and rejoin endpoints. Unlike the erroneous
 DreamX diagnostic, this replay already uses the measured pose for the first
