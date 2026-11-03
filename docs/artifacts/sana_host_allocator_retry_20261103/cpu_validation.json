@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "manifest_sha256": "e083981bbe00a98147e0532260c35a1c73e5ffc58f18f4a9786f90848051c1db",
+  "gpu_qualified": false,
+  "checks": [
+    "155 repository CPU tests",
+    "Real allocator call preserves live CPU tensor storage/value and Torch RNG",
+    "Exception-safe device restoration and trim lifecycle",
+    "Native overlay compilation",
+    "Original eight 121-frame cases retained; mandatory original-prefix and B/S gates"
+  ]
+}

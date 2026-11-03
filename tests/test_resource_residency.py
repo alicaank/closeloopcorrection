@@ -3,7 +3,7 @@ import types
 import unittest
 from unittest.mock import patch
 import torch
-from camera_loop.resource_residency import observer_residency
+from camera_loop.resource_residency import observer_residency, release_host_allocator
 
 
 class ResourceResidency(unittest.TestCase):
@@ -47,3 +47,25 @@ class ResourceResidency(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError,'one original'):
             with observer_residency(model,enabled=True):self.fail('Body should not run')
         self.assertEqual(events,[])
+
+    def test_trim_lifecycle_preserves_failure_restoration(self):
+        model,events=self.model()
+        with patch.dict(os.environ,{'CAMERA_HOST_ALLOCATOR_TRIM':'1'},clear=True),patch('torch.cuda.empty_cache'),patch(
+                'camera_loop.resource_residency.release_host_allocator',side_effect=lambda:events.append('trim')):
+            with self.assertRaisesRegex(RuntimeError,'observer failed'):
+                with observer_residency(model,enabled=True):
+                    events.append('observer_closed')
+                    raise RuntimeError('observer failed')
+        self.assertEqual(events,['cuda:0','trim','observer_closed','trim','cpu','trim'])
+        self.assertEqual(model.device,torch.device('cpu'))
+
+    def test_real_trim_preserves_live_tensor_and_rng(self):
+        tensor=torch.arange(1024,dtype=torch.float32)
+        before=tensor.clone();rng=torch.random.get_rng_state().clone()
+        pointer=tensor.data_ptr()
+        with patch.dict(os.environ,{'CAMERA_HOST_ALLOCATOR_TRIM':'1'}):
+            result=release_host_allocator()
+        self.assertIsInstance(result,bool)
+        self.assertEqual(tensor.data_ptr(),pointer)
+        self.assertTrue(torch.equal(tensor,before))
+        self.assertTrue(torch.equal(torch.random.get_rng_state(),rng))

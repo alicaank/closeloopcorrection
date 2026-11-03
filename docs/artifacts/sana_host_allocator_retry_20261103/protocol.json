@@ -1,0 +1,117 @@
+{
+  "model": "sana",
+  "cases": {
+    "sana_02267acf_s7": {
+      "key": "sana_02267acf_s7",
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_c7418b7d_s7": {
+      "key": "sana_c7418b7d_s7",
+      "model": "sana",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_0238de14_s7": {
+      "key": "sana_0238de14_s7",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_924228bf_s7": {
+      "key": "sana_924228bf_s7",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_02267acf_s107": {
+      "key": "sana_02267acf_s107",
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_c7418b7d_s107": {
+      "key": "sana_c7418b7d_s107",
+      "model": "sana",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_0238de14_s107": {
+      "key": "sana_0238de14_s107",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    },
+    "sana_924228bf_s107": {
+      "key": "sana_924228bf_s107",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "frames": 121,
+      "first_affected_frame": 25
+    }
+  },
+  "first_case": "sana_02267acf_s7",
+  "scope": "All eight original cases for this model within the full five-model, 40-case comparison.",
+  "arms": {
+    "B": "Native future commands, commanded history, original causal endpoint observer",
+    "S": "Full-horizon native identity/sham command encoding, commanded history",
+    "L": "Existing correction arm and commanded history; explicit legacy actuator as documented",
+    "M": "Baseline future policy and measured memory"
+  },
+  "reuse": "Only complete baseline-arm outputs with the correct model/scene/seed, memory policy and exact original generated-source hashes (including children); copied source equivalence already qualified. Decode lossless RGB, verify retained raw hash and horizon, bind artifact hashes. Otherwise generate a fresh matched arm.",
+  "execution": "First full-horizon B/S identity; then all eight B/L comparisons; only then M and complete triplets. Scientific/registration failures retained. A memory failure cannot suppress already completed legacy comparisons.",
+  "gates": "Exact raw B/S full-horizon identity on the first prespecified case; exact B/L and B/L/M pre-intervention RGB and matching intrinsics for every scored case.",
+  "primary_metric": "Mean fixed-time position from the original first-affected frame to the original native endpoint. Rotation, endpoint, whole-rollout, quality, unavailable registration and failures remain visible.",
+  "legacy_caveat": "Preserve the actual legacy host/controller and its observer acceptance behavior. No newly fitted gain, bounded non-reversal rule or measured-memory rewrite is added to L. DreamX uses its separately documented corrected common host.",
+  "parent_manifest": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/manifest.json",
+  "parent_manifest_sha256": "3a28b857d13a5be4147811d57f2afbe76e94ddbcbf20a09587b3331a7755bb81",
+  "parent_overlay_hashes": {
+    "sana": "df4d63b55d7bd4debf856f88b1fd14d7899741cebea1ca286ebbc19c25fa9baf"
+  },
+  "copied_overlay_hashes": {
+    "sana": "361f26def1fb420a7e3649f863d923a0128298db62021d816007fa149697219a"
+  },
+  "guards": "4 GiB launch / 2 GiB runtime disk reserve; 2 GiB host-memory reserve; shared GPU locks",
+  "resource_retry": {
+    "parent": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/sana",
+    "parent_manifest_sha256": "2bf661d7bd3966d5a86682d15ec49b106de5bafac56750f4dcea3d5fb36fecd0",
+    "failed_status": "/home/hj/Alican/analysis/queue_disk_resume_v2_20261103/legacy_sana/status.json",
+    "failed_status_sha256": "a63ee58edda444d75f46fa5717c5dbd646bc8836ccfdee0736d6d494df11a9f7",
+    "change": "Opt-in gc.collect plus glibc malloc_trim after stage-1 CPU-to-GPU placement and around CPU restoration; no live tensors evicted, no policy/dtype/context/horizon change.",
+    "qualification": "Fresh 121-frame B, exact preserved 73- and 97-frame prefixes, then original full B/S identity and all original pair gates.",
+    "prefix_references": [
+      {
+        "path": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/sana/runs/sana_02267acf_s7/B/frames.npz",
+        "sha256": "8ce5bfdf361694d6777b92c7a866c48865a59bb5760c6a578d02d9a3f2b29371"
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/sana_02267acf_s7/commanded/frames.npz",
+        "sha256": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb"
+      }
+    ]
+  }
+}
