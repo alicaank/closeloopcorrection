@@ -1,0 +1,13 @@
+test_failed_quality_invalid_geometry_and_anchor_change_abstain (__main__.MatchedBoundaryTests.test_failed_quality_invalid_geometry_and_anchor_change_abstain) ... ok
+test_first_boundary_corrects_lag_and_can_return_after_overshoot (__main__.MatchedBoundaryTests.test_first_boundary_corrects_lag_and_can_return_after_overshoot) ... ok
+test_future_commit_requires_the_matching_completed_cache_boundary (__main__.MatchedBoundaryTests.test_future_commit_requires_the_matching_completed_cache_boundary) ... ok
+test_identity_roundtrip_is_exact_in_both_intervention_arms (__main__.MatchedBoundaryTests.test_identity_roundtrip_is_exact_in_both_intervention_arms) ... ok
+test_legacy_matches_historical_curve_and_measured_native_anchor (__main__.MatchedBoundaryTests.test_legacy_matches_historical_curve_and_measured_native_anchor) ... ok
+test_memory_changes_only_current_context_and_retains_future (__main__.MatchedBoundaryTests.test_memory_changes_only_current_context_and_retains_future) ... ok
+test_native_and_observer_controls_leave_both_actuators_exact (__main__.MatchedBoundaryTests.test_native_and_observer_controls_leave_both_actuators_exact) ... ok
+test_timestamps_context_and_intrinsics_fail_closed (__main__.MatchedBoundaryTests.test_timestamps_context_and_intrinsics_fail_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.019s
+
+OK

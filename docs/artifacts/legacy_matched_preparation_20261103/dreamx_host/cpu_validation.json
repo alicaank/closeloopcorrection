@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "manifest_sha256": "afbedc28cdcac69a275556c39b7f3560b61e754e485be04367cfdafb5b5f96f2",
+  "gpu_qualified": false,
+  "checks": [
+    "Eight actual-native-encoder CPU tests",
+    "Runtime overlay compiles with pre/post cache separation",
+    "Native interpreter CLI",
+    "Parent freeze and all four calibrated scene inputs verified"
+  ]
+}

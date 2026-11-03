@@ -1,0 +1,114 @@
+{
+  "method": "dreamx_legacy_memory_matched_camera_grid_v1",
+  "cases": {
+    "dreamx_02267acf_s7": {
+      "model": "dreamx",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_c7418b7d_s7": {
+      "model": "dreamx",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_0238de14_s7": {
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_924228bf_s7": {
+      "model": "dreamx",
+      "scene": "924228bf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_02267acf_s107": {
+      "model": "dreamx",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_c7418b7d_s107": {
+      "model": "dreamx",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_0238de14_s107": {
+      "model": "dreamx",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    },
+    "dreamx_924228bf_s107": {
+      "model": "dreamx",
+      "scene": "924228bf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/dreamx_camera_grid_20261103/batch",
+      "frames": 69,
+      "latents": 18,
+      "prefix_latents": 6,
+      "first_affected_frame": 21
+    }
+  },
+  "scope": "All eight original DreamX cases within the full 40-case, five-model legacy comparison. Other models remain required.",
+  "arms": {
+    "A": "Observer-free native commands and cache",
+    "S": "Same causal observer as L/M, native commands and cache",
+    "L": "Historical rejoin curve; temporary measured encoding anchor; future chunk committed after native KV pass",
+    "M": "Measured-history camera labels only during the native context-noise KV pass; future commands unchanged"
+  },
+  "primary_comparisons": [
+    "S versus L",
+    "S versus M",
+    "L versus M"
+  ],
+  "controls": "A/S must be raw-RGB and native-receipt identical for the full 69 frames. All arms use the same prepared anchor grid, BF16 native intrinsics, scene, seed, horizon and targets.",
+  "observation": "Shared query of the current chunk camera labels and preceding camera anchor, plus fixed frame zero; full emitted causal RGB prefix; before the context-noise cache pass. All nonterminal boundaries starting at latent 6.",
+  "changed_from_historical": [
+    "Initial camera-grid correction",
+    "Shared full causal observation window rather than truncating three available RGB frames",
+    "Observation before context-noise pass for all observed arms",
+    "Explicit registration/SE3 quality rejection; no correction on rejection"
+  ],
+  "policy": "Unmodified legacy rejoin function and immediate first-boundary correction. No speed cap, non-reversal projection, learned gain, probes or inverse control.",
+  "gates": [
+    "Complete A/S raw RGB, initial input/noise and all native boundary receipts exact",
+    "S/L/M raw frames 0 through 20 exact; native receipts exact through the first pre-cache intervention point",
+    "L never changes context conditioning; M never changes future camera tensors"
+  ],
+  "scoring": "One independent offline VIPE contract; primary mean fixed-time position frames 21\u201368. Also whole-rollout, endpoint and angular errors, invalid registrations, actuator counts and visual quality. Original reference poses may be VIPE-derived, not independent ground truth.",
+  "qualification": "CPU checks establish encoding/actuator contracts, not GPU parity, differential authority or efficacy.",
+  "storage": "Retain exact raw RGB as round-trip-verified FFV1; 4 GiB launch / 2 GiB runtime disk guard, 2 GiB host-memory guard. Do not overwrite older attempts."
+}

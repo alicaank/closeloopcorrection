@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "native_sha256": "f9b74c99dbcd6eb1e2c9907c39b1e196dbaa7d2377301dc89a7e07c33f5ba78f",
+  "overlay_sha256": "8881c3a058ce29debf53d608eed5e711633dc89b8cb7571c2696c4cb1a6a37d6",
+  "memory_callback_before_context_pass": true,
+  "future_commit_after_context_pass": true,
+  "preintervention_receipt_before_memory_callback": true
+}

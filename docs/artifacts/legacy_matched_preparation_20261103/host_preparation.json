@@ -1,0 +1,524 @@
+{
+  "created": 1793689904.2708375,
+  "hosts": {
+    "lingbot": {
+      "parent": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume",
+      "parent_manifest": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json",
+      "parent_manifest_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+      "source": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lingbot/source",
+      "source_files": {
+        "overlays.py": "146342a665cd94e94e80d95ba04349ece3b88ac98ffdee3a504c7d348f09699c",
+        "runtime.py": "c63e2a465d57ff0cd1f9920b3bf7d55efb8d440c8771e64c1edfd14279ef356c",
+        "memory_contract.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "memory_hooks.py": "9f77f04f8a7ab9b2f2b312966e3f822c2ab609ae3ca5ede6dd4b4cb93bf4e227",
+        "dreamx_hook.py": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f",
+        "dreamx_run.py": "8ff67c74fbe570244428aca40afe531c281b1db69491a53329489e9e19789ec5",
+        "camera_sana_resource.py": "211f4938aeb533968fb4acbe0fd76091e812d6c94ab2966dc0a7d358e4e72da9",
+        "score_memory_pair.py": "256eecc8830377b73a4b63a38ba1ad87606f9909d8e592ad99a5bb2e6ab64fe4",
+        "launch.py": "09875c3d328e333fb3a90d3eab9d1932be49734c4bd75df0b23e915a44caba1e",
+        "drivers/matrixgame.py": "99a03a5683521b8f693f6ad535dd358cc0abfcffed7ed3a76c7412ec2cc550db",
+        "drivers/lyra_child.py": "c139218adb67c3a55cb2f608a4d231d7cc196b7199568f5e85a9df31533a14fe",
+        "drivers/sana.py": "f545039bda23ab96027f99d75bb95bd76d3b55a8c03c1938fbe8019a9b364074",
+        "drivers/lingbot.py": "06476087238774e0d0c635c010a3418d7ae91f2f3f048614c5cab71a976098b1",
+        "drivers/matrix_child.py": "a9e29b765ac6852e9a61576bce7fbc3146f565b267bfb5b0478e878ef7a2cdd0",
+        "drivers/worldwarp.py": "58f9229bf70e7e0e8c3df749e79e5d3eddf42154a1eaafb372b2b77afc8bc29e",
+        "drivers/lyra.py": "b33ff26a085a4fdf76df32760e77ab212354893d69e969abaaedd0297f6d98e6",
+        "drivers/astronex.py": "6b778173d41f8fb9fab89575f0f71a0726d3f0c1f98a94d25ff959c8fa1c9975",
+        "camera_loop/alignment.py": "fa70b1c1941c4b68b339826313d11b306cdb2457e33f2a7eadadd812214794cf",
+        "camera_loop/memory.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "camera_loop/geometry.py": "28929d5cc1b5ac1f3f3812b39e596ad713f19c4d9a6deafe77508875ac662672",
+        "camera_loop/experiments.py": "e66258c0f0b46e9a90103c32d83a7e154d3155c2b68cd5e69ecb9fe090243eef",
+        "camera_loop/online_units.py": "a1f1e16ef39ca1bc6f8c078f5bc4689c6157dd60a6b2f4f9f7f7dde9f5695a4f",
+        "camera_loop/lossless_archive.py": "e6d0d274c527ebd36bb445449d928be69190fc2700924b0701b97ed509f9235c",
+        "camera_loop/cli.py": "9e3b1de7540e76c4a4d0660c9ad3f3dc8cad7ea4a4f5fffef27b14f88b15bf3f",
+        "camera_loop/registry.py": "24ada938003f8ac21dd3b9aff13381a171a2677243a457f8117f3285ab57e37c",
+        "camera_loop/quality.py": "68e3ac1c2bccd6c4fd285d86011911dfe1c758b93cdb31ab6740eec776781055",
+        "camera_loop/hooks.py": "0ad4834f6d391e0023962639912bcc0db6b8b899bb24f95406613722c43e6b88",
+        "camera_loop/response_observer.py": "2a34455937d607c7d5cd239ebd68a163cc5893590be4ec11b7500408c6b9d0f9",
+        "camera_loop/native_response_runtime.py": "ddb9227457c40a8e9c298e85bddd0490e60991526d0c01bf24a99cd9413dfc9e",
+        "camera_loop/evaluation_cache.py": "99e08c6a5dffdc57a6b151a57976304cde6ece9d1f04db13c51817b5cb6557c2",
+        "camera_loop/adaptive.py": "5230f3c673279ceebf7453cadb07a113237e069b474bc212a2f7433f73ff742a",
+        "camera_loop/controller.py": "0d1ec41ae53a1d31bb7e821a7299be4dcdbf022fb7eb01a8d9c60a450d84555b",
+        "camera_loop/integrations.py": "4dc6df1499b72a21ae85100816aae34d7fcdeede5ab053fe807635a8ffe0451f",
+        "camera_loop/evidence.py": "7b87942d70510fda7da3ab4a7ff77f7e655fd848d7135b02fcc7a37abb5b6414",
+        "camera_loop/profiles.json": "5f56838b903f9f40b351e6e12802d0fed912897fea3434f77267c828cd8dbffa",
+        "camera_loop/datasets.py": "fa06d81267d743c5f46f62877f924e0a1d62292f60a660602436492a68cdf04a",
+        "camera_loop/telemetry.py": "e831b02b3dee963d3adeb99b1e01ef83a7ba211cf31b418866d05ad8068362ab",
+        "camera_loop/__init__.py": "43eeaf224a272129a56156cb270ea08556b5fa3e1b26a1314194e03f39657318",
+        "camera_loop/online_response.py": "0eb80d29b20b359769b507b549eb0525386708b1ef88a91ff41ca4a4a3f5f265"
+      },
+      "source_checks": [
+        {
+          "driver": "lingbot",
+          "original": {
+            "sha256": "99348e9c1b018dd19fde5908075ebd78e640e274a48978d91b9d5187d5df92a8",
+            "normalized_sha256": "5b8738a6ec736043b4f95fa286a8a9c57a258405dcdcffa525c4f42706b3d13b",
+            "compiled": true
+          },
+          "copied": {
+            "sha256": "3185c7d892b141b1495d71ce3ce2c7a1fe0c17a0e60758a4fa3e2f4f620e0c03",
+            "normalized_sha256": "5b8738a6ec736043b4f95fa286a8a9c57a258405dcdcffa525c4f42706b3d13b",
+            "compiled": true
+          },
+          "normalized_source_exact": true
+        }
+      ],
+      "gpu_equivalence_qualified": false,
+      "cases": [
+        {
+          "model": "lingbot",
+          "scene": "02267acf",
+          "seed": 7,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "c7418b7d",
+          "seed": 7,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "0238de14",
+          "seed": 7,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "924228bf",
+          "seed": 7,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "02267acf",
+          "seed": 107,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "c7418b7d",
+          "seed": 107,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "0238de14",
+          "seed": 107,
+          "frames": 77,
+          "first_affected_frame": 13
+        },
+        {
+          "model": "lingbot",
+          "scene": "924228bf",
+          "seed": 107,
+          "frames": 77,
+          "first_affected_frame": 13
+        }
+      ]
+    },
+    "sana": {
+      "parent": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition",
+      "parent_manifest": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/manifest.json",
+      "parent_manifest_sha256": "3a28b857d13a5be4147811d57f2afbe76e94ddbcbf20a09587b3331a7755bb81",
+      "source": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/sana/source",
+      "source_files": {
+        "overlays.py": "1eac682630c2d7e1a17012e7154d93369bc266c5cd1566bcdfeb2fbfd352f807",
+        "runtime.py": "c63e2a465d57ff0cd1f9920b3bf7d55efb8d440c8771e64c1edfd14279ef356c",
+        "memory_contract.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "memory_hooks.py": "93cf630cbbe930cdd71d657b772b227fe2899df9d3b0834b9653dee6f157f415",
+        "dreamx_hook.py": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f",
+        "dreamx_run.py": "8ff67c74fbe570244428aca40afe531c281b1db69491a53329489e9e19789ec5",
+        "camera_sana_resource.py": "211f4938aeb533968fb4acbe0fd76091e812d6c94ab2966dc0a7d358e4e72da9",
+        "score_memory_pair.py": "256eecc8830377b73a4b63a38ba1ad87606f9909d8e592ad99a5bb2e6ab64fe4",
+        "launch.py": "3e0e53d615b0334817908f173f4a395d858fefd5e4c8a4cb7bfc5b3812cf0af5",
+        "drivers/matrixgame.py": "99a03a5683521b8f693f6ad535dd358cc0abfcffed7ed3a76c7412ec2cc550db",
+        "drivers/lyra_child.py": "c139218adb67c3a55cb2f608a4d231d7cc196b7199568f5e85a9df31533a14fe",
+        "drivers/sana.py": "f86cef822043a6e6d7d4139d73c5c44e66d24d7094981379ca68eb2016812c38",
+        "drivers/lingbot.py": "06476087238774e0d0c635c010a3418d7ae91f2f3f048614c5cab71a976098b1",
+        "drivers/matrix_child.py": "a9e29b765ac6852e9a61576bce7fbc3146f565b267bfb5b0478e878ef7a2cdd0",
+        "drivers/worldwarp.py": "58f9229bf70e7e0e8c3df749e79e5d3eddf42154a1eaafb372b2b77afc8bc29e",
+        "drivers/lyra.py": "b33ff26a085a4fdf76df32760e77ab212354893d69e969abaaedd0297f6d98e6",
+        "drivers/astronex.py": "6b778173d41f8fb9fab89575f0f71a0726d3f0c1f98a94d25ff959c8fa1c9975",
+        "camera_loop/alignment.py": "fa70b1c1941c4b68b339826313d11b306cdb2457e33f2a7eadadd812214794cf",
+        "camera_loop/memory.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "camera_loop/geometry.py": "28929d5cc1b5ac1f3f3812b39e596ad713f19c4d9a6deafe77508875ac662672",
+        "camera_loop/experiments.py": "e66258c0f0b46e9a90103c32d83a7e154d3155c2b68cd5e69ecb9fe090243eef",
+        "camera_loop/online_units.py": "a1f1e16ef39ca1bc6f8c078f5bc4689c6157dd60a6b2f4f9f7f7dde9f5695a4f",
+        "camera_loop/lossless_archive.py": "e6d0d274c527ebd36bb445449d928be69190fc2700924b0701b97ed509f9235c",
+        "camera_loop/cli.py": "9e3b1de7540e76c4a4d0660c9ad3f3dc8cad7ea4a4f5fffef27b14f88b15bf3f",
+        "camera_loop/registry.py": "24ada938003f8ac21dd3b9aff13381a171a2677243a457f8117f3285ab57e37c",
+        "camera_loop/quality.py": "68e3ac1c2bccd6c4fd285d86011911dfe1c758b93cdb31ab6740eec776781055",
+        "camera_loop/hooks.py": "0ad4834f6d391e0023962639912bcc0db6b8b899bb24f95406613722c43e6b88",
+        "camera_loop/response_observer.py": "2a34455937d607c7d5cd239ebd68a163cc5893590be4ec11b7500408c6b9d0f9",
+        "camera_loop/native_response_runtime.py": "ddb9227457c40a8e9c298e85bddd0490e60991526d0c01bf24a99cd9413dfc9e",
+        "camera_loop/evaluation_cache.py": "99e08c6a5dffdc57a6b151a57976304cde6ece9d1f04db13c51817b5cb6557c2",
+        "camera_loop/adaptive.py": "5230f3c673279ceebf7453cadb07a113237e069b474bc212a2f7433f73ff742a",
+        "camera_loop/controller.py": "0d1ec41ae53a1d31bb7e821a7299be4dcdbf022fb7eb01a8d9c60a450d84555b",
+        "camera_loop/integrations.py": "4dc6df1499b72a21ae85100816aae34d7fcdeede5ab053fe807635a8ffe0451f",
+        "camera_loop/resource_residency.py": "701fc1aeaf6b3383de5d85315302d8d476b79252daeb0042ca437bbfda558466",
+        "camera_loop/evidence.py": "7b87942d70510fda7da3ab4a7ff77f7e655fd848d7135b02fcc7a37abb5b6414",
+        "camera_loop/profiles.json": "5f56838b903f9f40b351e6e12802d0fed912897fea3434f77267c828cd8dbffa",
+        "camera_loop/datasets.py": "fa06d81267d743c5f46f62877f924e0a1d62292f60a660602436492a68cdf04a",
+        "camera_loop/telemetry.py": "e831b02b3dee963d3adeb99b1e01ef83a7ba211cf31b418866d05ad8068362ab",
+        "camera_loop/__init__.py": "43eeaf224a272129a56156cb270ea08556b5fa3e1b26a1314194e03f39657318",
+        "camera_loop/online_response.py": "0eb80d29b20b359769b507b549eb0525386708b1ef88a91ff41ca4a4a3f5f265"
+      },
+      "source_checks": [
+        {
+          "driver": "sana",
+          "original": {
+            "sha256": "df4d63b55d7bd4debf856f88b1fd14d7899741cebea1ca286ebbc19c25fa9baf",
+            "normalized_sha256": "7ab48a1b4f2141b1eef614a9d4365d904fbb11ce34fd0a17450cfc3f767f5d29",
+            "compiled": true
+          },
+          "copied": {
+            "sha256": "b3c07509c3bb4a1bea1892f4a5dcbf8337befc01d287e7643d2c9eac8e6cb4e0",
+            "normalized_sha256": "7ab48a1b4f2141b1eef614a9d4365d904fbb11ce34fd0a17450cfc3f767f5d29",
+            "compiled": true
+          },
+          "normalized_source_exact": true
+        }
+      ],
+      "gpu_equivalence_qualified": false,
+      "cases": [
+        {
+          "model": "sana",
+          "scene": "02267acf",
+          "seed": 7,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "c7418b7d",
+          "seed": 7,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "0238de14",
+          "seed": 7,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "924228bf",
+          "seed": 7,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "02267acf",
+          "seed": 107,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "c7418b7d",
+          "seed": 107,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "0238de14",
+          "seed": 107,
+          "frames": 121,
+          "first_affected_frame": 25
+        },
+        {
+          "model": "sana",
+          "scene": "924228bf",
+          "seed": 107,
+          "frames": 121,
+          "first_affected_frame": 25
+        }
+      ]
+    },
+    "matrixgame": {
+      "parent": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime",
+      "parent_manifest": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json",
+      "parent_manifest_sha256": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
+      "source": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/matrixgame/source",
+      "source_files": {
+        "overlays.py": "146342a665cd94e94e80d95ba04349ece3b88ac98ffdee3a504c7d348f09699c",
+        "runtime.py": "c63e2a465d57ff0cd1f9920b3bf7d55efb8d440c8771e64c1edfd14279ef356c",
+        "memory_contract.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "memory_hooks.py": "55ca264dda29930e1526847984907e532fb89da8c0bb36f18597ad56932c561b",
+        "dreamx_hook.py": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f",
+        "dreamx_run.py": "8ff67c74fbe570244428aca40afe531c281b1db69491a53329489e9e19789ec5",
+        "camera_sana_resource.py": "211f4938aeb533968fb4acbe0fd76091e812d6c94ab2966dc0a7d358e4e72da9",
+        "score_memory_pair.py": "256eecc8830377b73a4b63a38ba1ad87606f9909d8e592ad99a5bb2e6ab64fe4",
+        "launch.py": "09875c3d328e333fb3a90d3eab9d1932be49734c4bd75df0b23e915a44caba1e",
+        "drivers/matrixgame.py": "99a03a5683521b8f693f6ad535dd358cc0abfcffed7ed3a76c7412ec2cc550db",
+        "drivers/lyra_child.py": "c139218adb67c3a55cb2f608a4d231d7cc196b7199568f5e85a9df31533a14fe",
+        "drivers/sana.py": "f545039bda23ab96027f99d75bb95bd76d3b55a8c03c1938fbe8019a9b364074",
+        "drivers/lingbot.py": "06476087238774e0d0c635c010a3418d7ae91f2f3f048614c5cab71a976098b1",
+        "drivers/matrix_child.py": "5672d26ed9f36baa6b18c394fcdf0928a0ed1798ef2654fb5abaf2456af2c61c",
+        "drivers/worldwarp.py": "58f9229bf70e7e0e8c3df749e79e5d3eddf42154a1eaafb372b2b77afc8bc29e",
+        "drivers/lyra.py": "b33ff26a085a4fdf76df32760e77ab212354893d69e969abaaedd0297f6d98e6",
+        "drivers/astronex.py": "6b778173d41f8fb9fab89575f0f71a0726d3f0c1f98a94d25ff959c8fa1c9975",
+        "camera_loop/alignment.py": "fa70b1c1941c4b68b339826313d11b306cdb2457e33f2a7eadadd812214794cf",
+        "camera_loop/memory.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "camera_loop/geometry.py": "28929d5cc1b5ac1f3f3812b39e596ad713f19c4d9a6deafe77508875ac662672",
+        "camera_loop/experiments.py": "e66258c0f0b46e9a90103c32d83a7e154d3155c2b68cd5e69ecb9fe090243eef",
+        "camera_loop/online_units.py": "a1f1e16ef39ca1bc6f8c078f5bc4689c6157dd60a6b2f4f9f7f7dde9f5695a4f",
+        "camera_loop/lossless_archive.py": "e6d0d274c527ebd36bb445449d928be69190fc2700924b0701b97ed509f9235c",
+        "camera_loop/cli.py": "9e3b1de7540e76c4a4d0660c9ad3f3dc8cad7ea4a4f5fffef27b14f88b15bf3f",
+        "camera_loop/registry.py": "24ada938003f8ac21dd3b9aff13381a171a2677243a457f8117f3285ab57e37c",
+        "camera_loop/quality.py": "68e3ac1c2bccd6c4fd285d86011911dfe1c758b93cdb31ab6740eec776781055",
+        "camera_loop/hooks.py": "0ad4834f6d391e0023962639912bcc0db6b8b899bb24f95406613722c43e6b88",
+        "camera_loop/response_observer.py": "2a34455937d607c7d5cd239ebd68a163cc5893590be4ec11b7500408c6b9d0f9",
+        "camera_loop/native_response_runtime.py": "ddb9227457c40a8e9c298e85bddd0490e60991526d0c01bf24a99cd9413dfc9e",
+        "camera_loop/evaluation_cache.py": "99e08c6a5dffdc57a6b151a57976304cde6ece9d1f04db13c51817b5cb6557c2",
+        "camera_loop/adaptive.py": "5230f3c673279ceebf7453cadb07a113237e069b474bc212a2f7433f73ff742a",
+        "camera_loop/controller.py": "0d1ec41ae53a1d31bb7e821a7299be4dcdbf022fb7eb01a8d9c60a450d84555b",
+        "camera_loop/integrations.py": "4dc6df1499b72a21ae85100816aae34d7fcdeede5ab053fe807635a8ffe0451f",
+        "camera_loop/evidence.py": "7b87942d70510fda7da3ab4a7ff77f7e655fd848d7135b02fcc7a37abb5b6414",
+        "camera_loop/profiles.json": "5f56838b903f9f40b351e6e12802d0fed912897fea3434f77267c828cd8dbffa",
+        "camera_loop/datasets.py": "fa06d81267d743c5f46f62877f924e0a1d62292f60a660602436492a68cdf04a",
+        "camera_loop/telemetry.py": "e831b02b3dee963d3adeb99b1e01ef83a7ba211cf31b418866d05ad8068362ab",
+        "camera_loop/__init__.py": "43eeaf224a272129a56156cb270ea08556b5fa3e1b26a1314194e03f39657318",
+        "camera_loop/online_response.py": "0eb80d29b20b359769b507b549eb0525386708b1ef88a91ff41ca4a4a3f5f265"
+      },
+      "source_checks": [
+        {
+          "driver": "matrixgame",
+          "original": {
+            "sha256": "1a9cd1c7f0d1130c3874cffb818f7505a68203df8a30e67f8a88fb521a865c6e",
+            "normalized_sha256": "a17312a2dbdac7489cb5dc5bdd4204c2d18bdff3ae37a4a88e917e78b24a7d91",
+            "compiled": true
+          },
+          "copied": {
+            "sha256": "b35c904eb1fcc45797306193472d532a2136c40137375307d24ac5680a29e0f7",
+            "normalized_sha256": "a17312a2dbdac7489cb5dc5bdd4204c2d18bdff3ae37a4a88e917e78b24a7d91",
+            "compiled": true
+          },
+          "normalized_source_exact": true
+        },
+        {
+          "driver": "matrix_child",
+          "original": {
+            "sha256": "5508667a366b1f37c89f1b2bee325b5eb1fbe4286ac30e94b2b1ebfcf3432c34",
+            "normalized_sha256": "5f90541392b07f9b7baf8713742fac69bbaa316faaf39327513126d2ab1e7594",
+            "compiled": true
+          },
+          "copied": {
+            "sha256": "06b421a237129142f8400c14b61eaf1810ae59384286839942e17915f1370afb",
+            "normalized_sha256": "5f90541392b07f9b7baf8713742fac69bbaa316faaf39327513126d2ab1e7594",
+            "compiled": true
+          },
+          "normalized_source_exact": true
+        }
+      ],
+      "gpu_equivalence_qualified": false,
+      "cases": [
+        {
+          "model": "matrixgame",
+          "scene": "02267acf",
+          "seed": 7,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "c7418b7d",
+          "seed": 7,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "0238de14",
+          "seed": 7,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "924228bf",
+          "seed": 7,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "02267acf",
+          "seed": 107,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "c7418b7d",
+          "seed": 107,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "0238de14",
+          "seed": 107,
+          "frames": 337,
+          "first_affected_frame": 85
+        },
+        {
+          "model": "matrixgame",
+          "scene": "924228bf",
+          "seed": 107,
+          "frames": 337,
+          "first_affected_frame": 85
+        }
+      ]
+    },
+    "lyra": {
+      "parent": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources",
+      "parent_manifest": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/manifest.json",
+      "parent_manifest_sha256": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
+      "source": "/home/hj/Alican/analysis/legacy_rejoin_matched_20261103/hosts/lyra/source",
+      "source_files": {
+        "overlays.py": "146342a665cd94e94e80d95ba04349ece3b88ac98ffdee3a504c7d348f09699c",
+        "runtime.py": "c63e2a465d57ff0cd1f9920b3bf7d55efb8d440c8771e64c1edfd14279ef356c",
+        "memory_contract.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "memory_hooks.py": "87f699d05ff466ce683dfd3d117e2606501bf4ca87a14edbc09441fa2a3af2f2",
+        "dreamx_hook.py": "ba1360c36d2c062c82f6bdea8132ed52b03a5dec2054bef82c5f7c9280ebab0f",
+        "dreamx_run.py": "8ff67c74fbe570244428aca40afe531c281b1db69491a53329489e9e19789ec5",
+        "camera_sana_resource.py": "211f4938aeb533968fb4acbe0fd76091e812d6c94ab2966dc0a7d358e4e72da9",
+        "score_memory_pair.py": "256eecc8830377b73a4b63a38ba1ad87606f9909d8e592ad99a5bb2e6ab64fe4",
+        "launch.py": "09875c3d328e333fb3a90d3eab9d1932be49734c4bd75df0b23e915a44caba1e",
+        "drivers/matrixgame.py": "99a03a5683521b8f693f6ad535dd358cc0abfcffed7ed3a76c7412ec2cc550db",
+        "drivers/lyra_child.py": "a20eb0439c4ea378e9ad592309c307666dfbc786edb391277e81c6c2d9827ac2",
+        "drivers/sana.py": "f545039bda23ab96027f99d75bb95bd76d3b55a8c03c1938fbe8019a9b364074",
+        "drivers/lingbot.py": "06476087238774e0d0c635c010a3418d7ae91f2f3f048614c5cab71a976098b1",
+        "drivers/matrix_child.py": "a9e29b765ac6852e9a61576bce7fbc3146f565b267bfb5b0478e878ef7a2cdd0",
+        "drivers/worldwarp.py": "58f9229bf70e7e0e8c3df749e79e5d3eddf42154a1eaafb372b2b77afc8bc29e",
+        "drivers/lyra.py": "b33ff26a085a4fdf76df32760e77ab212354893d69e969abaaedd0297f6d98e6",
+        "drivers/astronex.py": "6b778173d41f8fb9fab89575f0f71a0726d3f0c1f98a94d25ff959c8fa1c9975",
+        "camera_loop/alignment.py": "fa70b1c1941c4b68b339826313d11b306cdb2457e33f2a7eadadd812214794cf",
+        "camera_loop/memory.py": "a39c837b5033ff8adcb4f6a2f2058b8c70b7093901fa61d7fa9c42905c5568dd",
+        "camera_loop/geometry.py": "28929d5cc1b5ac1f3f3812b39e596ad713f19c4d9a6deafe77508875ac662672",
+        "camera_loop/experiments.py": "e66258c0f0b46e9a90103c32d83a7e154d3155c2b68cd5e69ecb9fe090243eef",
+        "camera_loop/video_conversion.py": "b9f4ff0bbcf26dc00fe238ebd204afb36350bf5426859824e4311aecd659deeb",
+        "camera_loop/online_units.py": "a1f1e16ef39ca1bc6f8c078f5bc4689c6157dd60a6b2f4f9f7f7dde9f5695a4f",
+        "camera_loop/lossless_archive.py": "e6d0d274c527ebd36bb445449d928be69190fc2700924b0701b97ed509f9235c",
+        "camera_loop/cli.py": "9e3b1de7540e76c4a4d0660c9ad3f3dc8cad7ea4a4f5fffef27b14f88b15bf3f",
+        "camera_loop/registry.py": "24ada938003f8ac21dd3b9aff13381a171a2677243a457f8117f3285ab57e37c",
+        "camera_loop/quality.py": "68e3ac1c2bccd6c4fd285d86011911dfe1c758b93cdb31ab6740eec776781055",
+        "camera_loop/hooks.py": "0ad4834f6d391e0023962639912bcc0db6b8b899bb24f95406613722c43e6b88",
+        "camera_loop/response_observer.py": "2a34455937d607c7d5cd239ebd68a163cc5893590be4ec11b7500408c6b9d0f9",
+        "camera_loop/native_response_runtime.py": "ddb9227457c40a8e9c298e85bddd0490e60991526d0c01bf24a99cd9413dfc9e",
+        "camera_loop/evaluation_cache.py": "99e08c6a5dffdc57a6b151a57976304cde6ece9d1f04db13c51817b5cb6557c2",
+        "camera_loop/adaptive.py": "5230f3c673279ceebf7453cadb07a113237e069b474bc212a2f7433f73ff742a",
+        "camera_loop/controller.py": "0d1ec41ae53a1d31bb7e821a7299be4dcdbf022fb7eb01a8d9c60a450d84555b",
+        "camera_loop/integrations.py": "4dc6df1499b72a21ae85100816aae34d7fcdeede5ab053fe807635a8ffe0451f",
+        "camera_loop/evidence.py": "7b87942d70510fda7da3ab4a7ff77f7e655fd848d7135b02fcc7a37abb5b6414",
+        "camera_loop/profiles.json": "5f56838b903f9f40b351e6e12802d0fed912897fea3434f77267c828cd8dbffa",
+        "camera_loop/datasets.py": "fa06d81267d743c5f46f62877f924e0a1d62292f60a660602436492a68cdf04a",
+        "camera_loop/telemetry.py": "e831b02b3dee963d3adeb99b1e01ef83a7ba211cf31b418866d05ad8068362ab",
+        "camera_loop/__init__.py": "43eeaf224a272129a56156cb270ea08556b5fa3e1b26a1314194e03f39657318",
+        "camera_loop/online_response.py": "0eb80d29b20b359769b507b549eb0525386708b1ef88a91ff41ca4a4a3f5f265"
+      },
+      "source_checks": [
+        {
+          "driver": "lyra",
+          "original": {
+            "sha256": "ed2f36ed5606fd579971e739a7754581d55b658bf9f87fd858e5424c8cb43c80",
+            "normalized_sha256": "6180d9aa516d5a6605b003c6e654f3bce7dbaf865d11f2e52262c333eacaf2cc",
+            "compiled": true
+          },
+          "copied": {
+            "sha256": "b8f7ccf22021daa3558a5e63ab0e0010e1d1f56bc52ad0ff7192ef9b95f3880f",
+            "normalized_sha256": "6180d9aa516d5a6605b003c6e654f3bce7dbaf865d11f2e52262c333eacaf2cc",
+            "compiled": true
+          },
+          "normalized_source_exact": true
+        },
+        {
+          "driver": "lyra_child",
+          "original": {
+            "sha256": "dc0545efdecc299911ee31adc241e28380a2bde90ba199108f91396d677465dd",
+            "normalized_sha256": "cce098b4581adc8d4cf1aa148d895ca65dda5f9dd5f4fbb18284dbde8c7b3926",
+            "compiled": true
+          },
+          "copied": {
+            "sha256": "9f44acb72e866ed2fae4f31d327f92d30634e7b20a9701d3eb5a586b31a2ffbf",
+            "normalized_sha256": "cce098b4581adc8d4cf1aa148d895ca65dda5f9dd5f4fbb18284dbde8c7b3926",
+            "compiled": true
+          },
+          "normalized_source_exact": true
+        }
+      ],
+      "gpu_equivalence_qualified": false,
+      "cases": [
+        {
+          "model": "lyra",
+          "scene": "02267acf",
+          "seed": 7,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "c7418b7d",
+          "seed": 7,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "0238de14",
+          "seed": 7,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "924228bf",
+          "seed": 7,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "02267acf",
+          "seed": 107,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "c7418b7d",
+          "seed": 107,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "0238de14",
+          "seed": 107,
+          "frames": 321,
+          "first_affected_frame": 81
+        },
+        {
+          "model": "lyra",
+          "scene": "924228bf",
+          "seed": 107,
+          "frames": 321,
+          "first_affected_frame": 81
+        }
+      ]
+    }
+  },
+  "scope": "All remaining 32 cases retain original scenes, seeds and native horizons; source preparation only, no GPU qualification or queue launch implied."
+}
