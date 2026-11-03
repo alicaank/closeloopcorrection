@@ -1,0 +1,13 @@
+{
+  "recorded_at": 1793667835.106158,
+  "repository_tests": 152,
+  "passed": true,
+  "gpu_qualified": false,
+  "deployed": false,
+  "files": {
+    "/home/hj/Alican/camera-closed-loop/src/camera_loop/conditioning_gauge.py": "d5a3438ae9f102d78144fdb6dfe5cd7c61cff439db24b08ab725dba4fee35667",
+    "/home/hj/Alican/camera-closed-loop/tests/test_conditioning_gauge.py": "250d4ffb29cb3220f1213f2e1a54ddaff5b7c4c68d20156b37dd947752a6cbcd",
+    "/home/hj/Alican/analysis/lingbot_shared_gauge_20261103/audit.py": "ee5d605924b8ec67535e715366a9a647835e4cb7c6fa75ea42f0432f47eff153",
+    "/home/hj/Alican/analysis/lingbot_shared_gauge_20261103/audit.json": "228ddf73faf60f5c744908ecaa3fc06ec6fc15a0149681fcb0eda3c61e16e8cf"
+  }
+}

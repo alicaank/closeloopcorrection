@@ -47,6 +47,13 @@ denominator cannot manufacture that evidence. If a consistent retained-state
 rebuild or required support check cannot be performed, retain the previous
 state and record the abstention.
 
+The later [77-frame first-boundary audit](lingbot_shared_gauge_20261103.md)
+implements and CPU-qualifies the shared arithmetic without deploying it. It
+finds ratios 51.22, 6.21 and 10.02 on three accepted seed-7 cases. Shared
+normalization also shrinks future conditioning, so the next test separates a
+rescaling-only control from measured-history substitution with identical future
+tensors. Full cache replay and training support remain unqualified.
+
 ## Return after overshoot and the stronger moving-target evidence
 
 After a generated prefix overshoots, measured history places the original next

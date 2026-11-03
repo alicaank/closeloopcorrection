@@ -1,0 +1,165 @@
+{
+  "scope": "Four seed-7 first-boundary cases, 77 RGB frames; three accepted observations and one abstention. No future observed RGB/pose or output score selects the normalizer.",
+  "native_source": "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/repos/lingbot/wan/utils/cam_utils.py",
+  "native_sha256": "379a97a2f17bcc90ab868382fef8cbd1f2735d6eefbbbc88b4533c269c2f9538",
+  "script_sha256": "ee5d605924b8ec67535e715366a9a647835e4cb7c6fa75ea42f0432f47eff153",
+  "helper_sha256": "d5a3438ae9f102d78144fdb6dfe5cd7c61cff439db24b08ab725dba4fee35667",
+  "native_feature_semantics": "Concatenated ray origin and direction, not cross-product Plucker moment.",
+  "rows": [
+    {
+      "key": "lingbot_02267acf_s7",
+      "source_hashes": {
+        "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/scores/lingbot_02267acf_s7/score.json": "bf62592148d4332d1c768c28821ed1250a55af546d6f37a4dc6fc37719e29c8d",
+        "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/runs/lingbot_02267acf_s7/measured/baseline/run.json": "dc108e96be173d2014019315dabde4b7d6c6d24f177f675790cc79139217642b",
+        "/home/hj/Alican/analysis/measured_memory_multiboundary_20261102/runs/lingbot_02267acf_s7/measured/baseline/memory_events.jsonl": "3636ea7085ab0c9d86ef124ae48a61aa8ac4f50e9192d13d32622409f520422f"
+      },
+      "first_boundary_frames": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "write_applied": true,
+      "reason": "measured",
+      "original_plan_normalizer": 0.0014731939882040024,
+      "accepted_native_steps_over_plan_max": [
+        0.0,
+        40.33646011352539,
+        51.2191162109375,
+        38.28104782104492
+      ],
+      "first_history_max_rotation_deg": 0.1972143113363173,
+      "current_bf16_all_finite": true,
+      "candidate": {
+        "denominator": 0.07545569524290435,
+        "planned_step_max": 0.0014731939588962205,
+        "observed_step_max": 0.07545569524290435,
+        "emitted_native_samples": 4,
+        "total_native_samples": 20,
+        "scale_identified": false,
+        "normalization_applied": true,
+        "future_tensors_equal": true,
+        "changed_from_plan_normalizer": true,
+        "cache_rebuild_qualified": false,
+        "training_support_qualified": false,
+        "deployment_qualified": false
+      },
+      "candidate_max_origin_norm": 1.0,
+      "candidate_future_max_origin_norm": 0.01952395960688591,
+      "native_future_features_exact_between_matched_controls": true,
+      "direction_channels_unchanged_by_translation_rescale": true,
+      "interpretation": "Conditioning magnitude evidence before first intervention. Finite BF16 values do not establish operational support; shared rescaling is not an efficacy result."
+    },
+    {
+      "key": "lingbot_c7418b7d_s7",
+      "source_hashes": {
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_c7418b7d_s7/score.json": "f0aa1f4be67925b506185ae5a1e35e95a5c91a3fc9c78b9eca2e7b165a946b21",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_c7418b7d_s7/measured/baseline/run.json": "b14114bcea1349715a1a5669f448fed682bf203cb85d83f7fff85075af3eb5bc",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_c7418b7d_s7/measured/baseline/memory_events.jsonl": "d41899b4627745275284133b0468f9d14dea15292bfe057213c5070aebf66cd3"
+      },
+      "first_boundary_frames": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "write_applied": true,
+      "reason": "measured",
+      "original_plan_normalizer": 0.006599978543817997,
+      "accepted_native_steps_over_plan_max": [
+        0.0,
+        4.4175333976745605,
+        4.901658058166504,
+        6.214598655700684
+      ],
+      "first_history_max_rotation_deg": 0.47836115580325245,
+      "current_bf16_all_finite": true,
+      "candidate": {
+        "denominator": 0.041016215620647875,
+        "planned_step_max": 0.00659997844092589,
+        "observed_step_max": 0.041016215620647875,
+        "emitted_native_samples": 4,
+        "total_native_samples": 20,
+        "scale_identified": false,
+        "normalization_applied": true,
+        "future_tensors_equal": true,
+        "changed_from_plan_normalizer": true,
+        "cache_rebuild_qualified": false,
+        "training_support_qualified": false,
+        "deployment_qualified": false
+      },
+      "candidate_max_origin_norm": 0.9999999403953552,
+      "candidate_future_max_origin_norm": 0.1609114408493042,
+      "native_future_features_exact_between_matched_controls": true,
+      "direction_channels_unchanged_by_translation_rescale": true,
+      "interpretation": "Conditioning magnitude evidence before first intervention. Finite BF16 values do not establish operational support; shared rescaling is not an efficacy result."
+    },
+    {
+      "key": "lingbot_0238de14_s7",
+      "source_hashes": {
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_0238de14_s7/score.json": "8426f81cb7ff88345082c0f9bcc63c09f8926d7ebcfc23d8376051468ad7588f",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_0238de14_s7/measured/baseline/run.json": "0414da862022922f6d527401959cc908c2c479a9976e7d5f6572a655d1088778",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_0238de14_s7/measured/baseline/memory_events.jsonl": "06d137c8f89a8a2f2c647e292d6988843be68ce09ba5627e88188c4456db7558"
+      },
+      "first_boundary_frames": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "write_applied": true,
+      "reason": "measured",
+      "original_plan_normalizer": 0.0065074339509010315,
+      "accepted_native_steps_over_plan_max": [
+        0.0,
+        5.284195423126221,
+        7.652454853057861,
+        10.017465591430664
+      ],
+      "first_history_max_rotation_deg": 0.2232127629712656,
+      "current_bf16_all_finite": true,
+      "candidate": {
+        "denominator": 0.06518799089155516,
+        "planned_step_max": 0.006507434081951073,
+        "observed_step_max": 0.06518799089155516,
+        "emitted_native_samples": 4,
+        "total_native_samples": 20,
+        "scale_identified": false,
+        "normalization_applied": true,
+        "future_tensors_equal": true,
+        "changed_from_plan_normalizer": true,
+        "cache_rebuild_qualified": false,
+        "training_support_qualified": false,
+        "deployment_qualified": false
+      },
+      "candidate_max_origin_norm": 1.0,
+      "candidate_future_max_origin_norm": 0.0998256579041481,
+      "native_future_features_exact_between_matched_controls": true,
+      "direction_channels_unchanged_by_translation_rescale": true,
+      "interpretation": "Conditioning magnitude evidence before first intervention. Finite BF16 values do not establish operational support; shared rescaling is not an efficacy result."
+    },
+    {
+      "key": "lingbot_924228bf_s7",
+      "source_hashes": {
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/scores/lingbot_924228bf_s7/score.json": "7e27aa5b0148f93c9d7eb5d61cbf4a04534e28381ae3ed1c4987e4217bc8c8cc",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/measured/baseline/run.json": "a126d2e72ae36723e5f65652a61435e25845f5717584049b737b0d0ec6221062",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/measured/baseline/memory_events.jsonl": "cf963dc3f0359e69abd80a787f126c00cc877bce3831cf0f57998f4878a66998"
+      },
+      "first_boundary_frames": [
+        0,
+        4,
+        8,
+        12
+      ],
+      "write_applied": false,
+      "reason": "observer_quality_rejected",
+      "original_plan_normalizer": 0.0007431943668052554,
+      "interpretation": "Observer rejected: stored poses are fallback commands, not accepted measured geometry. No measured-envelope claim."
+    }
+  ],
+  "gpu_tested": false,
+  "cache_replay_qualified": false,
+  "training_support_qualified": false,
+  "deployed": false,
+  "normalizer_is_physical_scale": false
+}
