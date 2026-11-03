@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "native_sha256": "f9b74c99dbcd6eb1e2c9907c39b1e196dbaa7d2377301dc89a7e07c33f5ba78f",
-  "overlay_sha256": "54d9806f50ab00ba21cb46a1849abb2db0990b451075c21a7aa300ba50cff4c8",
-  "future_callback_after_native_cache_pass": true,
-  "no_memory_camera_rewrite": true
-}

@@ -1,8 +1,0 @@
-{
-  "pid": 3071105,
-  "launched": 1793698205.0650685,
-  "argv": [
-    "/home/hj/Alican/baselines/venv_vmem/bin/python",
-    "/home/hj/Alican/analysis/dreamx_matched_observers_20261103/run_queue.py"
-  ]
-}

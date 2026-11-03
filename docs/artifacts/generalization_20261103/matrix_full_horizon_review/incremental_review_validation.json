@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "existing_review_items_unchanged": 7,
-  "before_manifest_sha256": "56b2ddfc822ccb2d301bc895fd7eb6611b031dc5bbc81b8bec7b347bc25404dc",
-  "after_manifest_sha256": "25c79c51588f94c91e7720ad4bf99d079a899e551b01a14198faf71a3f8d5264",
-  "all_existing_pixels_scores_and_inspection_records_preserved": true,
-  "unqualified_pair_request_rejected": true,
-  "unqualified_request_preserved_manifest": true
-}

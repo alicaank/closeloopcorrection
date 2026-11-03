@@ -1,11 +1,15 @@
-# Measured-pose memory writes
+# Measured-pose memory integration
+
+This is an optional adapter contract. The main Method is command rejoin; the
+reported VMem Method result includes these writes. Other memory experiments are
+not universal defaults. See [retained ablations](ablations.md).
 
 The runtime in `analysis/measured_memory_20261101/` adds a separate memory
 policy to seven native adapters. It observes already generated frames and uses
 accepted poses when native history is consumed. It does not run calibration
 probes, train weights, or infer a causal control gain from an execution ratio.
 
-The [latest mechanism audit](control_mechanism_audit_20261103.md) identifies
+The [latest mechanism audit](https://github.com/alicaank/closeloopcorrection/blob/b467679a28243241c3dcf5156f1c980540d879cd/docs/control_mechanism_audit_20261103.md) identifies
 severe LingBot visual collapse after accepted writes in two seeds. Measured
 translation conditioning reaches 70–106 times the original plan's maximum
 normalized step. Existing observer/SE(3) checks do not reject this situation;
@@ -73,7 +77,7 @@ and assets. For example:
 The relocated runtime uses a bundled copy of the portable memory staging
 contract, so every model environment does not need an editable package install.
 The native observer still needs its configured interpreter and model assets.
-[Source provenance](measured_memory_source_provenance.json) records the original
+[Source provenance](https://github.com/alicaank/closeloopcorrection/blob/b467679a28243241c3dcf5156f1c980540d879cd/docs/measured_memory_source_provenance.json) records the original
 hashes and export transformations. Local GPU qualification does not establish
 GPU portability of a newly materialized workspace.
 

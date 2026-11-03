@@ -1,9 +1,0 @@
-{
-  "pid": 3085516,
-  "argv": [
-    "/home/hj/Alican/baselines/venv_vmem/bin/python",
-    "/home/hj/Alican/analysis/worldplay_identity_trace_20261103/run_queue.py"
-  ],
-  "launched": 1793700189.809919,
-  "manifest_sha256": "a85495a8ea5a0bf23918c106fcc6e3dd1a92b2b12cd386ae947296b4b599a6f8"
-}

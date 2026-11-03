@@ -132,8 +132,8 @@ its actual normalizer is tested for exact CPU parity. Bundle relocation and
 measured-memory overlay compilation are also checked. Full GPU rollouts and
 tracking improvements have not been established by these tests.
 
-The follow-up [Astronex/WorldPlay source audit](astronex_worldplay_scale.md)
+The follow-up [Astronex/WorldPlay source audit](https://github.com/alicaank/closeloopcorrection/blob/b467679a28243241c3dcf5156f1c980540d879cd/docs/astronex_worldplay_scale.md)
 distinguishes physical unit calibration from an operational command-response
-controller that could learn from normal rollout chunks. That route is now implemented as the opt-in [online response pilot](online_response.md);
+controller that could learn from normal rollout chunks. That route is now implemented as the opt-in [online response pilot](https://github.com/alicaank/closeloopcorrection/blob/b467679a28243241c3dcf5156f1c980540d879cd/docs/online_response.md);
 it does not validate measured-translation memory writes. The fail-closed behavior
 above describes physical-unit mode, which remains separate.

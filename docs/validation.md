@@ -9,9 +9,9 @@ bundled memory contract against the portable core and compiles all seven
 measured-memory drivers plus their Matrix-Game/Lyra child overlays after
 relocation. No GPU is used for these package checks.
 
-The [validation receipt](measured_memory_package_validation.json) records the
+The [validation receipt](https://github.com/alicaank/closeloopcorrection/blob/b467679a28243241c3dcf5156f1c980540d879cd/docs/measured_memory_package_validation.json) records the
 wheel and bundle hashes and test output. The [method reference](paper_method_reference.md)
-and [development evidence snapshot](paper_evidence_20261101.json) distinguish
+and [development evidence snapshot](https://github.com/alicaank/closeloopcorrection/blob/b467679a28243241c3dcf5156f1c980540d879cd/docs/paper_evidence_20261101.json) distinguish
 the locally GPU-tested memory runtime from the relocated source bundle. Fresh
 machine GPU portability remains unqualified. Earlier version-specific counts
 below describe historical releases, not the current suite.

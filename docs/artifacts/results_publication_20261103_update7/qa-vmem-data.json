@@ -1,9 +1,0 @@
-{
-  "passed": true,
-  "comparison_records": 198,
-  "all_existing_comparisons_unchanged": true,
-  "referenced_assets": 918,
-  "missing_assets": [],
-  "queue_histories_with_two_prior_attempts": 10,
-  "snapshot_sha256": "191ec7ec312e58750f01104b927514e8a6fe4a644d897d5378a248b602a7939e"
-}

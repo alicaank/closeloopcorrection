@@ -1,8 +1,0 @@
-{
-  "passed": true,
-  "new_frames": 337,
-  "reference_frames": 337,
-  "required_frames": 337,
-  "reference_sha256": "0b3af3cbd22e452c68699664d1c96a55cc3a5eedb2696c26801f79437832069f",
-  "scope": "Full 337-frame commanded output byte equality to original completed baseline; not partial-prefix qualification"
-}
