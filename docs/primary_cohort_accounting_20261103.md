@@ -4,8 +4,10 @@ The resumed original attempt has finished with model-level resource holds.
 All **16 LingBot/DreamX pairs** are scored, prefix-qualified and visually
 reviewed. SANA, MatrixGame and Lyra each retain one original resource failure
 and seven held pairs. The full planned denominator remains **40 pairs**.
-SANA's separate 121-frame resource retry has started; its result is not yet
-qualified. MatrixGame/Lyra retries and the other diagnostic queues remain separate.
+SANA's separate residency retry also failed after an exact 97-frame prefix; its
+[transition-order retry](sana_observer_transition_20261103.md) is queued. The
+MatrixGame observer-lifetime retry is running. Retry results and other diagnostic
+queues remain separate from this original-attempt table.
 
 | Model | Scored / planned | Active / abstained | Mean position lower / higher / unavailable | Mean rotation lower / higher / equal |
 | --- | ---: | ---: | --- | --- |

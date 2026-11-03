@@ -28,7 +28,9 @@ class SanaObserverLifetime(unittest.TestCase):
                 return np.eye(4),{'ok':True}
             def close(self):self.closed=True
         ns=types.SimpleNamespace
-        pipe=ns(model=object(),_move_vae_decoder_for_streaming=lambda device:None,
+        def move_decoder(device):
+            if residency is not None:assert residency['active'], 'Move stage-1 weights before decoder CPU offload'
+        pipe=ns(model=object(),_move_vae_decoder_for_streaming=move_decoder,
                 config=ns(vae=ns(vae_stride=(8,32,32))),refiner_settings=ns(block_size=3))
         scope=dict(np=np,PoseWorker=Worker,
                    torch=ns(cuda=ns(empty_cache=lambda:None),random=ns(fork_rng=lambda **kw:contextlib.nullcontext())),
@@ -75,6 +77,25 @@ class SanaObserverLifetime(unittest.TestCase):
                             callback(np.zeros((24,2,2,3),np.uint8),1,0)
                     else:callback(np.zeros((24,2,2,3),np.uint8),1,0)
                 self.assertFalse(residency['active'])
+
+    def test_restore_resource_scope_when_decoder_offload_raises(self):
+        with tempfile.TemporaryDirectory() as directory:
+            residency={'active':False}
+            callback,workers,scope=self.callback(Path(directory),residency=residency)
+            def fail_offload(device):
+                self.assertTrue(residency['active'])
+                raise RuntimeError('decoder offload failed')
+            scope['state']['pipe']._move_vae_decoder_for_streaming=fail_offload
+            @contextlib.contextmanager
+            def placement(model):
+                residency['active']=True
+                try:yield
+                finally:residency['active']=False
+            with patch('camera_loop.resource_residency.observer_residency',placement):
+                with self.assertRaisesRegex(RuntimeError,'decoder offload failed'):
+                    callback(np.zeros((24,2,2,3),np.uint8),1,0)
+            self.assertFalse(residency['active'])
+            self.assertEqual(workers,[])
 
 
 if __name__=='__main__':unittest.main()

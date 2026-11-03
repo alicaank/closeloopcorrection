@@ -1,0 +1,67 @@
+--- previous/source/drivers/sana.py
++++ transition/source/drivers/sana.py
+@@ -76,13 +76,16 @@
+   prefix.extend(pixel_np);lo=len(prefix)-1
+   np.savez_compressed(a.out/'frames.npz',frames=np.asarray(prefix,np.uint8))
+   if a.arm=='native' or lo>=a.frames-1:return
+-  pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()
++  pipe=state['pipe']
+   from camera_loop.resource_residency import observer_residency
+   with observer_residency(pipe.model):
++   # Free idle stage-1 host weights before bringing decoder weights back to CPU.
++   pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()
+    try:
+     if worker is None:worker=PoseWorker(a.out/'observer')
+     with torch.random.fork_rng(devices=[0]):measured,info=worker.measure(np.asarray(prefix),K,depth)
+    finally:
++    # Close before generator weights return to CPU, including on failure.
+     if worker is not None:worker.close();worker=None
+   stride=int(pipe.config.vae.vae_stride[0]);latent_lo=(lo//stride)+1;latent_hi=min(latent_lo+int(pipe.refiner_settings.block_size),state['latent_T']);hi=(latent_hi-1)*stride+1
+   assert lo%stride==0
+--- previous/source/overlays.py
++++ transition/source/overlays.py
+@@ -52,8 +52,15 @@
+     elif model=='sana':
+         source=replace_once(source,'  state.update(pipe=pipe,ray=ray,plucker=plucker,latent_T=latent_T)',
+             '  mm.install_sana()\n  state.update(pipe=pipe,ray=ray,plucker=plucker,latent_T=latent_T)')
+-        needle="  pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()"
+-        source=replace_once(source,needle,needle+"\n  if mm.policy()=='measured' and worker is not None:worker.close();worker=None\n  memory_boundary=mm.sana_write(dict(locals(),state=state,commands=commands,prefix=prefix,K=K,depth=depth,lib=lib,intr=intr,a=a))")
++        memory_call="  if mm.policy()=='measured' and worker is not None:worker.close();worker=None\n  memory_boundary=mm.sana_write(dict(locals(),state=state,commands=commands,prefix=prefix,K=K,depth=depth,lib=lib,intr=intr,a=a))"
++        if "  pipe=state['pipe']\n" in source:
++            # Memory observation/replay retains its own placement scope. Keep
++            # the decoder on GPU until the endpoint scope moves stage-1 first.
++            needle="  pipe=state['pipe']\n"
++            source=replace_once(source,needle,needle+memory_call+"\n")
++        else:
++            needle="  pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()"
++            source=replace_once(source,needle,needle+"\n"+memory_call)
+         source=replace_once(source,'(commands[lo]@np.linalg.inv(start))@desired','(memory_boundary@np.linalg.inv(start))@desired')
+         source=replace_once(source,"a=ap.parse_args();a.out.mkdir", "a=ap.parse_args();\n if a.arm=='native' and mm.policy()!='commanded':raise ValueError('Use --arm baseline for serialized measured-memory callbacks')\n a.out.mkdir")
+     elif model=='worldwarp':
+--- previous/source/launch.py
++++ transition/source/launch.py
+@@ -26,6 +26,9 @@
+     source=driver_source(args.model);path=DRIVERS[args.model]
+     if args.check_source:
+         print(json.dumps(dict(model=args.model,source=str(path),sha256=hashlib.sha256(source.encode()).hexdigest(),compiled=True)));return
++    import faulthandler,signal
++    faulthandler.enable()
++    faulthandler.register(signal.SIGUSR1,all_threads=True)
+     sys.argv=[str(path)]+driver_args
+     # Match Python's ordinary script-directory import behavior, including
+     # native helper imports made before a driver adds its own search paths.
+--- previous/run_queue.py
++++ transition/run_queue.py
+@@ -65,7 +65,11 @@
+                     if shutil.disk_usage(R).free<2*2**30:reason='disk_guard'
+                     if psutil.virtual_memory().available<2*2**30:reason='host_memory_guard'
+                     if time.time()-rec['started']>5400:reason='timeout'
+-                    if reason:stop();break
++                    if reason:
++                        if entry['argv'][1].endswith('/launch.py') and active.poll() is None:
++                            try:os.kill(active.pid,signal.SIGUSR1);time.sleep(0.2)
++                            except ProcessLookupError:pass
++                        stop();break
+                     time.sleep(5)
+                 rc=active.wait()
+                 if rc:stop()

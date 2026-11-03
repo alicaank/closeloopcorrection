@@ -1,0 +1,14 @@
+{
+  "captured_at": 1793686850.6175578,
+  "status": {
+    "pid": 3004366,
+    "phase": "waiting_for_gpu_lock",
+    "started": 1793686716.6150594,
+    "manifest_sha256": "3a28b857d13a5be4147811d57f2afbe76e94ddbcbf20a09587b3331a7755bb81",
+    "jobs": {},
+    "failures": [],
+    "held_cases": {}
+  },
+  "process_command": "/home/hj/Alican/baselines/venv_vmem/bin/python /home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/run_queue.py ",
+  "manifest_sha256": "3a28b857d13a5be4147811d57f2afbe76e94ddbcbf20a09587b3331a7755bb81"
+}

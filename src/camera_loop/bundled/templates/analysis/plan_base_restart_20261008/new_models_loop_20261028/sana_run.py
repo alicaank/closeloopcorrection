@@ -76,9 +76,11 @@ def main():
   prefix.extend(pixel_np);lo=len(prefix)-1
   np.savez_compressed(a.out/'frames.npz',frames=np.asarray(prefix,np.uint8))
   if a.arm=='native' or lo>=a.frames-1:return
-  pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()
+  pipe=state['pipe']
   from camera_loop.resource_residency import observer_residency
   with observer_residency(pipe.model):
+   # Free idle stage-1 host weights before bringing decoder weights back to CPU.
+   pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()
    try:
     if worker is None:worker=PoseWorker(a.out/'observer')
     with torch.random.fork_rng(devices=[0]):measured,info=worker.measure(np.asarray(prefix),K,depth)

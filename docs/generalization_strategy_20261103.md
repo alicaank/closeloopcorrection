@@ -10,8 +10,10 @@ generality when all active interventions come from one scene.
 Current development snapshot: **16/40 original repeated-memory pairs are scored
 and visually reviewed**, all eight LingBot and all eight DreamX pairs. The resumed
 main queue has finished with holds. SANA's separate full-horizon residency retry
-has started; six other supplementary queue processes remain alive waiting for
-GPU locks. SANA, MatrixGame and Lyra retain their original resource failures/holds.
+also failed at the host-memory guard after saving an exact 97-frame prefix.
+A [transition-order retry](sana_observer_transition_20261103.md) is now queued.
+The MatrixGame observer-lifetime retry is running, and its decoder-only audit
+has completed; those results remain separate from the original attempts. SANA, MatrixGame and Lyra retain their original resource failures/holds.
 The [original-attempt accounting](primary_cohort_accounting_20261103.md) records
 12 active pairs, four exact-RGB abstentions and the 24 cases missing paired scores. See the
 [coverage ledger](generalization_coverage_20261103.json) and
@@ -250,11 +252,13 @@ estimated; treat this as a small descriptive result. Details are in the
 
 The saved latent history permits a [decoder-only audit](matrix_decoder_audit_20261103.md)
 of all four original MatrixGame short pairs, both arms, without new generation.
-It first requires exact reconstruction of the causal block export, then compares
-whole-history decoding of the same latents and checks whether previously emitted
-RGB changes. The VAE clears temporal state at each decode call, providing a
-specific possible seam mechanism. CPU VAE-only loading passed; GPU equivalence
-and the decoder effect remain pending. No live cohort source or score is changed.
+All eight GPU block replays now reproduce the original causal RGB exactly.
+Whole-history decoding of the same latents reduces the 84→85 RGB jump by
+46.6–91.5%, and inspected seam frames show a suppressed contrast/saturation pulse.
+This establishes a decoder/export contribution. Six exports also change earlier
+emitted pixels slightly, so the offline joint output cannot replace causal
+observations or scores. A causal host repair remains unqualified. The ongoing
+full-horizon cohort source and original scores are unchanged.
 
 ### Full-cohort coverage accounting
 
@@ -262,7 +266,7 @@ The [40-pair coverage snapshot](generalization_coverage_20261103.json) keeps eac
 original scene/seed/model case visible. The latest linked snapshot has 16 scored
 and reviewed pairs, including one reused LingBot pair. The main queue finished
 with SANA, MatrixGame and Lyra held after one original execution failure each.
-SANA's separate full-horizon residency retry is now running; the retries appear
+SANA's residency retry failed and its transition-order retry is queued; the retries appear
 beside original failures/holds rather than replacing them. Four completed pairs
 accepted no writes and have unavailable position metrics; every decoded RGB
 frame is exact between their arms. Coverage is not a count of successful control outcomes.

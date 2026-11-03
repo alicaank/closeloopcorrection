@@ -1,0 +1,112 @@
+{
+  "scope": "All four original MatrixGame short-cohort pairs, both arms; eight same-latent decoder exports, not eight independent scenes.",
+  "reviewed_at": 1793686993.9503648,
+  "all_block_replays_exact": true,
+  "rows": [
+    {
+      "case": "matrixgame_0238de14_s107",
+      "arm": "commanded",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s107_commanded/result.json",
+      "result_sha256": "22c11ba3783da4783f03eb0f5001adbe50862cca4af0e408a2da6bf182fa9b3e",
+      "control_exact": true,
+      "prior_85_exact": false,
+      "seam_stream_mae": 19.763139724731445,
+      "seam_joint_mae": 4.947305679321289,
+      "seam_mae_reduction_percent": 74.96700550505004,
+      "max_prior_frame_mean_absolute_difference": 0.029538796164772726,
+      "post_85_mean_absolute_difference": 1.5977325175231671
+    },
+    {
+      "case": "matrixgame_0238de14_s107",
+      "arm": "measured",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s107_measured/result.json",
+      "result_sha256": "41873ea61ec9c1393b485c4418b46d0dc93852295c903fc34dff9908a0eeec0b",
+      "control_exact": true,
+      "prior_85_exact": false,
+      "seam_stream_mae": 20.962200164794922,
+      "seam_joint_mae": 11.186623573303223,
+      "seam_mae_reduction_percent": 46.634306106423615,
+      "max_prior_frame_mean_absolute_difference": 0.029538796164772726,
+      "post_85_mean_absolute_difference": 1.6076494577471139
+    },
+    {
+      "case": "matrixgame_0238de14_s7",
+      "arm": "commanded",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s7_commanded/result.json",
+      "result_sha256": "c6caec66e13b1bf3bf85890f00e0785f2019c02e967ddab806a6768039f5d0c9",
+      "control_exact": true,
+      "prior_85_exact": true,
+      "seam_stream_mae": 20.888656616210938,
+      "seam_joint_mae": 5.256896018981934,
+      "seam_mae_reduction_percent": 74.8337285850051,
+      "max_prior_frame_mean_absolute_difference": 0.0,
+      "post_85_mean_absolute_difference": 1.8036623868075283
+    },
+    {
+      "case": "matrixgame_0238de14_s7",
+      "arm": "measured",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s7_measured/result.json",
+      "result_sha256": "4db0a0e6fcddb743e992de993b9a9f733f3c16033dc20731465ae549fdfd1dd0",
+      "control_exact": true,
+      "prior_85_exact": true,
+      "seam_stream_mae": 20.7034969329834,
+      "seam_joint_mae": 6.392513751983643,
+      "seam_mae_reduction_percent": 69.12350714144563,
+      "max_prior_frame_mean_absolute_difference": 0.0,
+      "post_85_mean_absolute_difference": 1.7438605634681072
+    },
+    {
+      "case": "matrixgame_924228bf_s107",
+      "arm": "commanded",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s107_commanded/result.json",
+      "result_sha256": "dadcf56144e05cc43e1a03e5085c83e37521e27bb0d066e727cd7ef8413eb500",
+      "control_exact": true,
+      "prior_85_exact": false,
+      "seam_stream_mae": 20.38358497619629,
+      "seam_joint_mae": 1.8974065780639648,
+      "seam_mae_reduction_percent": 90.69149720091076,
+      "max_prior_frame_mean_absolute_difference": 0.03269523851799242,
+      "post_85_mean_absolute_difference": 1.6168627233904336
+    },
+    {
+      "case": "matrixgame_924228bf_s107",
+      "arm": "measured",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s107_measured/result.json",
+      "result_sha256": "e95377c1d9616d38f4c1297da02fdeb043487bad68fdc8efe04339f152343e6e",
+      "control_exact": true,
+      "prior_85_exact": false,
+      "seam_stream_mae": 20.38358497619629,
+      "seam_joint_mae": 1.8974065780639648,
+      "seam_mae_reduction_percent": 90.69149720091076,
+      "max_prior_frame_mean_absolute_difference": 0.03269523851799242,
+      "post_85_mean_absolute_difference": 1.6168627233904336
+    },
+    {
+      "case": "matrixgame_924228bf_s7",
+      "arm": "commanded",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s7_commanded/result.json",
+      "result_sha256": "4e7a24ea581d38b5ec87cef63678bdb4e42e4f0d19dd501100dc7e68bd67b9a6",
+      "control_exact": true,
+      "prior_85_exact": false,
+      "seam_stream_mae": 20.231998443603516,
+      "seam_joint_mae": 1.7224963903427124,
+      "seam_mae_reduction_percent": 91.48627657745155,
+      "max_prior_frame_mean_absolute_difference": 0.04185310132575758,
+      "post_85_mean_absolute_difference": 1.6688867346032874
+    },
+    {
+      "case": "matrixgame_924228bf_s7",
+      "arm": "measured",
+      "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s7_measured/result.json",
+      "result_sha256": "7c4183f26f7417dfe08abdb976a9929c972e972d5ba5cca2701ddb9423cf05bb",
+      "control_exact": true,
+      "prior_85_exact": false,
+      "seam_stream_mae": 20.231998443603516,
+      "seam_joint_mae": 1.7224963903427124,
+      "seam_mae_reduction_percent": 91.48627657745155,
+      "max_prior_frame_mean_absolute_difference": 0.04185310132575758,
+      "post_85_mean_absolute_difference": 1.6688867346032874
+    }
+  ],
+  "interpretation": "Decoder context contributes to the visible contrast pulse. Joint decode is offline; prior emitted RGB changes in six exports. Original causal scores and RGB remain unchanged. Pixel differences are not camera motion."
+}

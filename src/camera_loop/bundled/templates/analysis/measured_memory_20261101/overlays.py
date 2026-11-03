@@ -52,8 +52,15 @@ def driver_source(model):
     elif model=='sana':
         source=replace_once(source,'  state.update(pipe=pipe,ray=ray,plucker=plucker,latent_T=latent_T)',
             '  mm.install_sana()\n  state.update(pipe=pipe,ray=ray,plucker=plucker,latent_T=latent_T)')
-        needle="  pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()"
-        source=replace_once(source,needle,needle+"\n  if mm.policy()=='measured' and worker is not None:worker.close();worker=None\n  memory_boundary=mm.sana_write(dict(locals(),state=state,commands=commands,prefix=prefix,K=K,depth=depth,lib=lib,intr=intr,a=a))")
+        memory_call="  if mm.policy()=='measured' and worker is not None:worker.close();worker=None\n  memory_boundary=mm.sana_write(dict(locals(),state=state,commands=commands,prefix=prefix,K=K,depth=depth,lib=lib,intr=intr,a=a))"
+        if "  pipe=state['pipe']\n" in source:
+            # Memory observation/replay retains its own placement scope. Keep
+            # the decoder on GPU until the endpoint scope moves stage-1 first.
+            needle="  pipe=state['pipe']\n"
+            source=replace_once(source,needle,needle+memory_call+"\n")
+        else:
+            needle="  pipe=state['pipe'];pipe._move_vae_decoder_for_streaming('cpu');torch.cuda.empty_cache()"
+            source=replace_once(source,needle,needle+"\n"+memory_call)
         source=replace_once(source,'(commands[lo]@np.linalg.inv(start))@desired','(memory_boundary@np.linalg.inv(start))@desired')
         source=replace_once(source,"a=ap.parse_args();a.out.mkdir", "a=ap.parse_args();\n if a.arm=='native' and mm.policy()!='commanded':raise ValueError('Use --arm baseline for serialized measured-memory callbacks')\n a.out.mkdir")
     elif model=='worldwarp':

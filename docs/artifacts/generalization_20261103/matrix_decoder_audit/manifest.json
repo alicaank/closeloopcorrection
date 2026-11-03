@@ -1,0 +1,130 @@
+{
+  "scope": "Same-latent original/joint RGB around seam 84\u219285; appearance diagnostic, not new camera-control outcomes.",
+  "cases": [
+    {
+      "case": "matrixgame_0238de14_s7",
+      "frames": [
+        80,
+        83,
+        84,
+        85,
+        86,
+        90
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/visual_review/matrixgame_0238de14_s7.jpg",
+      "sheet_sha256": "b4734170e6c5551b574962328f72384d1b081fcbeb56f64b8c017a7e21a8923d",
+      "sources": {
+        "commanded": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s7_commanded/result.json",
+          "result_sha256": "c6caec66e13b1bf3bf85890f00e0785f2019c02e967ddab806a6768039f5d0c9"
+        },
+        "measured": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s7_measured/result.json",
+          "result_sha256": "4db0a0e6fcddb743e992de993b9a9f733f3c16033dc20731465ae549fdfd1dd0"
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "reviewed_at": 1793686993.9501235,
+      "observations": [
+        "At frame 85, separate-block output has a conspicuous increase in contrast/saturation relative to adjacent frames in both arms.",
+        "Joint decoding of the same latents visibly suppresses this pulse while retaining recognizable scene content in the inspected seam samples.",
+        "This appearance change does not identify physical camera velocity or establish improved camera-control efficacy."
+      ],
+      "classification": "Visible decoder/export contribution to the boundary contrast pulse; offline diagnostic only."
+    },
+    {
+      "case": "matrixgame_0238de14_s107",
+      "frames": [
+        80,
+        83,
+        84,
+        85,
+        86,
+        90
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/visual_review/matrixgame_0238de14_s107.jpg",
+      "sheet_sha256": "554113e266a29f895e9927b9839d3969495a5b8af2c6f25c19addd94fc28ee85",
+      "sources": {
+        "commanded": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s107_commanded/result.json",
+          "result_sha256": "22c11ba3783da4783f03eb0f5001adbe50862cca4af0e408a2da6bf182fa9b3e"
+        },
+        "measured": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_0238de14_s107_measured/result.json",
+          "result_sha256": "41873ea61ec9c1393b485c4418b46d0dc93852295c903fc34dff9908a0eeec0b"
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "reviewed_at": 1793686993.9501252,
+      "observations": [
+        "At frame 85, separate-block output has a conspicuous increase in contrast/saturation relative to adjacent frames in both arms.",
+        "Joint decoding of the same latents visibly suppresses this pulse while retaining recognizable scene content in the inspected seam samples.",
+        "This appearance change does not identify physical camera velocity or establish improved camera-control efficacy.",
+        "Measured joint output still has a larger numerical 84\u219285 RGB difference than commanded joint output; decoder repair does not imply all boundary variation is removed."
+      ],
+      "classification": "Visible decoder/export contribution to the boundary contrast pulse; offline diagnostic only."
+    },
+    {
+      "case": "matrixgame_924228bf_s7",
+      "frames": [
+        80,
+        83,
+        84,
+        85,
+        86,
+        90
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/visual_review/matrixgame_924228bf_s7.jpg",
+      "sheet_sha256": "59bb0ccbc91ac6250864a8ad62862b594b847689250b3f764988812f200df4cd",
+      "sources": {
+        "commanded": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s7_commanded/result.json",
+          "result_sha256": "4e7a24ea581d38b5ec87cef63678bdb4e42e4f0d19dd501100dc7e68bd67b9a6"
+        },
+        "measured": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s7_measured/result.json",
+          "result_sha256": "7c4183f26f7417dfe08abdb976a9929c972e972d5ba5cca2701ddb9423cf05bb"
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "reviewed_at": 1793686993.9501262,
+      "observations": [
+        "At frame 85, separate-block output has a conspicuous increase in contrast/saturation relative to adjacent frames in both arms.",
+        "Joint decoding of the same latents visibly suppresses this pulse while retaining recognizable scene content in the inspected seam samples.",
+        "This appearance change does not identify physical camera velocity or establish improved camera-control efficacy."
+      ],
+      "classification": "Visible decoder/export contribution to the boundary contrast pulse; offline diagnostic only."
+    },
+    {
+      "case": "matrixgame_924228bf_s107",
+      "frames": [
+        80,
+        83,
+        84,
+        85,
+        86,
+        90
+      ],
+      "sheet": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/visual_review/matrixgame_924228bf_s107.jpg",
+      "sheet_sha256": "cf30829194a47dfd9c6cf4f11d3e43f259ca094ece054112e4a481d649a6f37a",
+      "sources": {
+        "commanded": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s107_commanded/result.json",
+          "result_sha256": "dadcf56144e05cc43e1a03e5085c83e37521e27bb0d066e727cd7ef8413eb500"
+        },
+        "measured": {
+          "result": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s107_measured/result.json",
+          "result_sha256": "e95377c1d9616d38f4c1297da02fdeb043487bad68fdc8efe04339f152343e6e"
+        }
+      },
+      "review_status": "sampled_visual_review_complete",
+      "reviewed_at": 1793686993.9501264,
+      "observations": [
+        "At frame 85, separate-block output has a conspicuous increase in contrast/saturation relative to adjacent frames in both arms.",
+        "Joint decoding of the same latents visibly suppresses this pulse while retaining recognizable scene content in the inspected seam samples.",
+        "This appearance change does not identify physical camera velocity or establish improved camera-control efficacy."
+      ],
+      "classification": "Visible decoder/export contribution to the boundary contrast pulse; offline diagnostic only."
+    }
+  ]
+}

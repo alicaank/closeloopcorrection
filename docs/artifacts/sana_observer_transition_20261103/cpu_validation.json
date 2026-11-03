@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "manifest_sha256": "3a28b857d13a5be4147811d57f2afbe76e94ddbcbf20a09587b3331a7755bb81",
+  "checks": [
+    "153 CPU tests",
+    "Native SANA overlay source compiles",
+    "Parent freeze verified",
+    "Original eight SANA cases retained"
+  ]
+}

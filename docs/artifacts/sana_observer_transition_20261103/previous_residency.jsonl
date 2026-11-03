@@ -1,0 +1,11 @@
+{"time": 1793670237.7754614, "phase": "before", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 16543174656, "gpu_free_bytes": 30303322112, "gpu_total_bytes": 33661911040}
+{"time": 1793670238.1941485, "phase": "observer_enter", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 17524469760, "gpu_free_bytes": 25221922816, "gpu_total_bytes": 33661911040}
+{"time": 1793670253.589113, "phase": "restored", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 15484170240, "gpu_free_bytes": 30303322112, "gpu_total_bytes": 33661911040}
+{"time": 1793670292.0364285, "phase": "before", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 11556995072, "gpu_free_bytes": 29451878400, "gpu_total_bytes": 33661911040}
+{"time": 1793670292.444646, "phase": "observer_enter", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 11892641792, "gpu_free_bytes": 24456462336, "gpu_total_bytes": 33661911040}
+{"time": 1793670307.0764334, "phase": "restored", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 12319932416, "gpu_free_bytes": 29451878400, "gpu_total_bytes": 33661911040}
+{"time": 1793670343.7498527, "phase": "before", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 10231341056, "gpu_free_bytes": 28619309056, "gpu_total_bytes": 33661911040}
+{"time": 1793670344.1366622, "phase": "observer_enter", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 10230923264, "gpu_free_bytes": 23711973376, "gpu_total_bytes": 33661911040}
+{"time": 1793670359.1226656, "phase": "restored", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 10202103808, "gpu_free_bytes": 28619309056, "gpu_total_bytes": 33661911040}
+{"time": 1793670398.8151789, "phase": "before", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 8895447040, "gpu_free_bytes": 28472508416, "gpu_total_bytes": 33661911040}
+{"time": 1793670399.202418, "phase": "observer_enter", "pid": 2875889, "tensor_bytes": 5327151656, "host_available_bytes": 8893423616, "gpu_free_bytes": 23670030336, "gpu_total_bytes": 33661911040}

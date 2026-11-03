@@ -1,0 +1,46 @@
+{
+  "pid": 2815420,
+  "phase": "held",
+  "started": 1793663134.5214663,
+  "manifest_sha256": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
+  "jobs": {
+    "sana_02267acf_s7_commanded": {
+      "state": "failed",
+      "started": 1793670097.1942174,
+      "argv": [
+        "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/source/launch.py",
+        "sana",
+        "--memory-policy",
+        "commanded",
+        "--",
+        "--batch",
+        "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+        "--scene",
+        "02267acf",
+        "--seed",
+        "7",
+        "--out",
+        "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/runs/sana_02267acf_s7/commanded",
+        "--arm",
+        "baseline",
+        "--frames",
+        "121"
+      ],
+      "pid": 2875889,
+      "min_host_available_bytes": 2000998400,
+      "peak_process_tree_rss_bytes": 71553585152,
+      "returncode": -15,
+      "stop_reason": "host_memory_guard",
+      "finished": 1793670409.2796998
+    }
+  },
+  "failures": [
+    "sana_02267acf_s7_commanded: -15 / host_memory_guard",
+    "RuntimeError('sana_02267acf_s7_commanded: -15 / host_memory_guard')"
+  ],
+  "held_cases": {
+    "sana_02267acf_s7": "sana_02267acf_s7_commanded: -15 / host_memory_guard"
+  },
+  "finished": 1793670409.281248
+}

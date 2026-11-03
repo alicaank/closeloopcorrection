@@ -1,0 +1,233 @@
+{
+  "scope": "Resource-only SANA supplement to the original 40-pair cohort, not a replacement or reduced generalization cohort.",
+  "parent_freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+  "pairs": [
+    {
+      "key": "sana_02267acf_s7",
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_02267acf_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_02267acf_s7/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_c7418b7d_s7",
+      "model": "sana",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_c7418b7d_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_c7418b7d_s7/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_0238de14_s7",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_0238de14_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_0238de14_s7/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_924228bf_s7",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_924228bf_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_924228bf_s7/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_02267acf_s107",
+      "model": "sana",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_02267acf_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_02267acf_s107/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_c7418b7d_s107",
+      "model": "sana",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_c7418b7d_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_c7418b7d_s107/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_0238de14_s107",
+      "model": "sana",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_0238de14_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_0238de14_s107/measured",
+      "first_affected_frame": 25
+    },
+    {
+      "key": "sana_924228bf_s107",
+      "model": "sana",
+      "scene": "924228bf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_924228bf_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_transition/runs/sana_924228bf_s107/measured",
+      "first_affected_frame": 25
+    }
+  ],
+  "original_protocol": {
+    "method_id": "measured-memory-v1",
+    "status": "frozen_for_expanded_development",
+    "base_repository_commit": "aa84d68f063b955440463b6695ae7043d9922616",
+    "primary_intervention": "causal measured-pose memory reconstruction",
+    "target_policy": "native baseline with required memory coordinate conversion",
+    "future_residual_correction": false,
+    "online_response_learning": false,
+    "calibration_probes": false,
+    "per_model_fitted_gains": false,
+    "observer": {
+      "name": "DA3",
+      "max_views": 16,
+      "query_tail_max": 8,
+      "min_depth_pixels": 256,
+      "min_depth_coverage": 0.2,
+      "max_depth_ratio_p90_over_p10": 4.0,
+      "requires_all_requested_poses_finite": true,
+      "requires_proper_SE3": true,
+      "fixed_anchor": true,
+      "calibrated_uncertainty": false,
+      "validated_collapse_detector": false
+    },
+    "models": [
+      "lingbot",
+      "sana",
+      "dreamx",
+      "matrixgame",
+      "lyra"
+    ],
+    "qualification_pending": {
+      "worldwarp": "Pre-intervention prefix mismatch; current apparent gain is confounded.",
+      "astronex": "Raw prefix parity unverified; current pair also has unsupported positional registration."
+    },
+    "batch": "analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+    "scene_selection": "Retain both original development scenes; add the lowest two SHA256(memory-multiboundary-v2:SCENE) names among remaining batch scenes. No observer/outcome filtering.",
+    "scenes": [
+      "02267acf",
+      "c7418b7d",
+      "0238de14",
+      "924228bf"
+    ],
+    "seeds": [
+      7,
+      107
+    ],
+    "arms": [
+      "commanded",
+      "measured"
+    ],
+    "pairs": 40,
+    "generation_jobs": 80,
+    "schedules": {
+      "lingbot": {
+        "frames": 77,
+        "first_affected_frame": 13
+      },
+      "sana": {
+        "frames": 121,
+        "first_affected_frame": 25
+      },
+      "dreamx": {
+        "frames": 69,
+        "latents": 18,
+        "prefix_latents": 6,
+        "first_affected_frame": 21
+      },
+      "matrixgame": {
+        "frames": 337,
+        "blocks": 4,
+        "first_affected_frame": 85
+      },
+      "lyra": {
+        "frames": 321,
+        "first_affected_frame": 81
+      }
+    },
+    "evaluator": "VIPE, fixed intrinsics and anchor-depth registration, no target-trajectory fitting",
+    "primary_interval": "first_affected_frame through native exported endpoint, original timestamps",
+    "prefix_mismatch_policy": "hold remaining pairs for that model; preserve the mismatched result",
+    "invalid_registration_policy": "position unavailable; retain rotation, validity, and failure counts",
+    "split_claim": "expanded development; not untouched held-out data",
+    "method_change_policy": "new version and matched-arm reruns; no outcome-driven edits within this snapshot",
+    "disk_reserve_gib": 4,
+    "evaluation_protocol": "memory-multiboundary-v2",
+    "qualification": {
+      "active_scenes_per_model": 2,
+      "accepted_writes_per_qualified_pair": 2,
+      "policy_outcomes_include_abstentions": true
+    },
+    "artifact_retention": "After each arm, exact RGB hash-verified FFV1 can replace newly generated NPZ/PNG frames; all pose, command, memory and score evidence retained."
+  },
+  "change": "Move idle stage-1 weights to GPU BEFORE decoder CPU offload at the endpoint callback; retain observer-time placement for both observers and close them before restoration. No dtype, camera, cache-length or model arithmetic change. Dump the main Python stack before a guarded generation stop.",
+  "first_case_required": "Original failed sana_02267acf_s7: 121-frame commanded completion and exact preserved-prefix parity, then measured completion and paired prefix attribution.",
+  "remaining_cases": "All seven remaining original SANA pairs, retaining losses and abstentions. Resource/prefix failures hold this supplement.",
+  "option": "CAMERA_SANA_OBSERVER_GPU_RESIDENCY=1; default remains disabled outside this attempt.",
+  "previous_attempt": {
+    "status": {
+      "pid": 2815420,
+      "phase": "held",
+      "started": 1793663134.5214663,
+      "manifest_sha256": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
+      "jobs": {
+        "sana_02267acf_s7_commanded": {
+          "state": "failed",
+          "started": 1793670097.1942174,
+          "argv": [
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/envs/sana/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/source/launch.py",
+            "sana",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "7",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/runs/sana_02267acf_s7/commanded",
+            "--arm",
+            "baseline",
+            "--frames",
+            "121"
+          ],
+          "pid": 2875889,
+          "min_host_available_bytes": 2000998400,
+          "peak_process_tree_rss_bytes": 71553585152,
+          "returncode": -15,
+          "stop_reason": "host_memory_guard",
+          "finished": 1793670409.2796998
+        }
+      },
+      "failures": [
+        "sana_02267acf_s7_commanded: -15 / host_memory_guard",
+        "RuntimeError('sana_02267acf_s7_commanded: -15 / host_memory_guard')"
+      ],
+      "held_cases": {
+        "sana_02267acf_s7": "sana_02267acf_s7_commanded: -15 / host_memory_guard"
+      },
+      "finished": 1793670409.281248
+    },
+    "partial_frames": 97,
+    "partial_sha256": "a73bf0362b8408ba73d5b1d2c32fbf0adfcfd3db6f1543939beec5fd11f4d4fb",
+    "observation": "97 RGB frames saved exactly, but only three observer-residency entries. Guard interval precedes fourth observer entry; decoder CPU transfer is a candidate peak, not stack-proven causality."
+  }
+}
