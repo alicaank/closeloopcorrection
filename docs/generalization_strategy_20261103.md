@@ -249,3 +249,14 @@ running, one SANA case failed and its seven remaining parent cases are held by
 the model-level resource guard. Other cases are pending. The separate SANA retry
 appears beside those original failures/holds rather than replacing them. This is
 execution coverage, not a count of successful camera-control outcomes.
+
+### MatrixGame observer-lifetime supplement
+
+The new MatrixGame measured arm also reached the host-memory guard, after its
+third block. Its 337-frame commanded arm completed, but the pair is incomplete.
+The main queue now holds MatrixGame and proceeds with other models. A separate
+[observer-lifetime retry](matrix_observer_lifetime_20261103.md) preserves all
+eight original Matrix pairs and requires full-baseline RGB equality before
+its first measured run. Closing both auxiliary workers between callbacks is
+CPU-tested; GPU recovery is pending. The 40-pair accounting retains the failed
+attempt and does not substitute a shorter horizon.

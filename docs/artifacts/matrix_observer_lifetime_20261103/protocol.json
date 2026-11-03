@@ -1,0 +1,118 @@
+{
+  "scope": "All eight original MatrixGame pairs within the original forty-pair cohort; no horizon reduction",
+  "pairs": [
+    {
+      "key": "matrixgame_02267acf_s7",
+      "model": "matrixgame",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_c7418b7d_s7",
+      "model": "matrixgame",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s7/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_0238de14_s7",
+      "model": "matrixgame",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s7/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_924228bf_s7",
+      "model": "matrixgame",
+      "scene": "924228bf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_02267acf_s107",
+      "model": "matrixgame",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s107/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_c7418b7d_s107",
+      "model": "matrixgame",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_c7418b7d_s107/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_0238de14_s107",
+      "model": "matrixgame",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_0238de14_s107/measured",
+      "first_affected_frame": 85
+    },
+    {
+      "key": "matrixgame_924228bf_s107",
+      "model": "matrixgame",
+      "scene": "924228bf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s107/measured",
+      "first_affected_frame": 85
+    }
+  ],
+  "parent_freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+  "frames": 337,
+  "change": "Close endpoint observer before starting memory observer; close memory observer before native continuation. Both close on measurement failure. No weights, precision, camera policy, cache size or decoder arithmetic change.",
+  "first_case": "Full 337-frame commanded completion and byte equality with original baseline, then full measured arm and exact paired prefix gate",
+  "original_failure": {
+    "state": "failed",
+    "argv": [
+      "/home/hj/Alican/baselines/venv_mg35/bin/python",
+      "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+      "matrixgame",
+      "--memory-policy",
+      "measured",
+      "--",
+      "--batch",
+      "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "--scene",
+      "02267acf",
+      "--seed",
+      "7",
+      "--out",
+      "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/matrixgame_02267acf_s7/measured",
+      "--arm",
+      "baseline",
+      "--blocks",
+      "4"
+    ],
+    "started": 1793664322.6300035,
+    "pid": 2823406,
+    "min_host_available_bytes": 1533771776,
+    "stop_reason": "host_memory_guard",
+    "returncode": -15,
+    "finished": 1793665344.1344063
+  }
+}

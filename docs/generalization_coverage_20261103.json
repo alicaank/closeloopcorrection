@@ -1,5 +1,5 @@
 {
-  "snapshot_time": 1793663724.6838784,
+  "snapshot_time": 1793665702.5573978,
   "original_planned_pairs": 40,
   "models": {
     "lingbot": {
@@ -29,15 +29,16 @@
     "matrixgame": {
       "planned": 8,
       "execution_counts": {
-        "running": 1,
-        "pending": 7
+        "failed": 1,
+        "held_by_model": 7
       },
       "scored": 0
     },
     "lyra": {
       "planned": 8,
       "execution_counts": {
-        "pending": 8
+        "running": 1,
+        "pending": 7
       },
       "scored": 0
     }
@@ -298,11 +299,11 @@
       "model": "matrixgame",
       "scene": "02267acf",
       "seed": 7,
-      "execution_state": "running",
-      "reason": null,
+      "execution_state": "failed",
+      "reason": "RuntimeError('Reserve guard reached: host_memory_guard')",
       "jobs": {
         "matrixgame_02267acf_s7_commanded": {
-          "state": "running",
+          "state": "completed",
           "argv": [
             "/home/hj/Alican/baselines/venv_mg35/bin/python",
             "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
@@ -325,8 +326,62 @@
           ],
           "started": 1793662992.0694094,
           "pid": 2813138,
-          "min_host_available_bytes": 10535976960
+          "min_host_available_bytes": 5937225728,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793664307.3425999
+        },
+        "matrixgame_02267acf_s7_commanded_retain": {
+          "state": "completed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/retain.py",
+            "--spec",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/specs/matrixgame_02267acf_s7.json",
+            "--arm",
+            "commanded"
+          ],
+          "started": 1793664307.5676088,
+          "pid": 2823255,
+          "min_host_available_bytes": 61370343424,
+          "stop_reason": null,
+          "returncode": 0,
+          "finished": 1793664322.5708017
+        },
+        "matrixgame_02267acf_s7_measured": {
+          "state": "failed",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_mg35/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "matrixgame",
+            "--memory-policy",
+            "measured",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "7",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/matrixgame_02267acf_s7/measured",
+            "--arm",
+            "baseline",
+            "--blocks",
+            "4"
+          ],
+          "started": 1793664322.6300035,
+          "pid": 2823406,
+          "min_host_available_bytes": 1533771776,
+          "stop_reason": "host_memory_guard",
+          "returncode": -15,
+          "finished": 1793665344.1344063
         }
+      },
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
       }
     },
     {
@@ -334,9 +389,36 @@
       "model": "lyra",
       "scene": "02267acf",
       "seed": 7,
-      "execution_state": "pending",
+      "execution_state": "running",
       "reason": null,
-      "jobs": {}
+      "jobs": {
+        "lyra_02267acf_s7_commanded": {
+          "state": "running",
+          "argv": [
+            "/home/hj/Alican/baselines/venv_vmem/bin/python",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+            "lyra",
+            "--memory-policy",
+            "commanded",
+            "--",
+            "--batch",
+            "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+            "--scene",
+            "02267acf",
+            "--seed",
+            "7",
+            "--out",
+            "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lyra_02267acf_s7/commanded",
+            "--arm",
+            "baseline",
+            "--frames",
+            "321"
+          ],
+          "started": 1793665344.409166,
+          "pid": 2832182,
+          "min_host_available_bytes": 17924251648
+        }
+      }
     },
     {
       "key": "lingbot_c7418b7d_s7",
@@ -375,9 +457,14 @@
       "model": "matrixgame",
       "scene": "c7418b7d",
       "seed": 7,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_c7418b7d_s7",
@@ -425,9 +512,14 @@
       "model": "matrixgame",
       "scene": "0238de14",
       "seed": 7,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_0238de14_s7",
@@ -475,9 +567,14 @@
       "model": "matrixgame",
       "scene": "924228bf",
       "seed": 7,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_924228bf_s7",
@@ -525,9 +622,14 @@
       "model": "matrixgame",
       "scene": "02267acf",
       "seed": 107,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_02267acf_s107",
@@ -575,9 +677,14 @@
       "model": "matrixgame",
       "scene": "c7418b7d",
       "seed": 107,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_c7418b7d_s107",
@@ -625,9 +732,14 @@
       "model": "matrixgame",
       "scene": "0238de14",
       "seed": 107,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_0238de14_s107",
@@ -675,9 +787,14 @@
       "model": "matrixgame",
       "scene": "924228bf",
       "seed": 107,
-      "execution_state": "pending",
-      "reason": null,
-      "jobs": {}
+      "execution_state": "held_by_model",
+      "reason": "Host-memory guard: Reserve guard reached: host_memory_guard",
+      "jobs": {},
+      "resource_supplement": {
+        "queue_phase": "waiting_for_gpu_lock",
+        "jobs": {},
+        "note": "Separate original-horizon retry; the parent execution failure/hold remains in this record."
+      }
     },
     {
       "key": "lyra_924228bf_s107",
@@ -693,20 +810,27 @@
   "queue_processes": {
     "cohort": {
       "pid": 2808063,
-      "phase": "matrixgame_02267acf_s7_commanded",
+      "phase": "lyra_02267acf_s7_commanded",
       "process_exists": true
     },
     "sana_supplement": {
       "pid": 2815420,
       "phase": "waiting_for_gpu_lock",
       "process_exists": true
+    },
+    "matrix_supplement": {
+      "pid": 2834118,
+      "phase": "waiting_for_gpu_lock",
+      "process_exists": true
     }
   },
   "input_hashes": {
     "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/freeze.json": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
-    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "1ddd3842019091416f149850a6d4bb90da7ef67e6442bdf63e4adf4efd132805",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/status.json": "88f81ee1138c06250ba4a1022b038be348e447e99a5ece3e557157678dace48f",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/manifest.json": "ec4d784068bd3214679b98faa1c851f724f00d3917fd42c629a7ac721521b1ce",
     "/home/hj/Alican/analysis/memory_generalization_20261103/sana_observer_residency/status.json": "d699c5f53924f1f7b0a7f9f9d6566053e47dff2c3586ef0647b17444c51613fd",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/manifest.json": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
+    "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/status.json": "c9960898a9ee7b554c945b4d01813a046a7440ed39c5f4cf94b5d07fceb59684",
     "/home/hj/Alican/analysis/memory_generalization_20261103/visual_review/manifest.json": "b1eca26059888b4813a9d7c9e223a713ef1c1bfb549b8334531e351e77b45f82"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "manifest_sha256": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
+  "checks": [
+    "145 repository CPU tests",
+    "Both native Matrix source overlays compile",
+    "Original 337-frame horizon and all eight pairs preserved",
+    "Original failure process absent"
+  ]
+}

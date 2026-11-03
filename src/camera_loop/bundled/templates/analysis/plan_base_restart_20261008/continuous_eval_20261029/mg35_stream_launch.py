@@ -39,9 +39,13 @@ def observe(section,pipe,camera):
  if arm=='correction':
   # These are the poses actually used to generate the cached four clean RGB frames.
   camera['clean_latent_indices_prope_extrinsic']=torch.tensor(native_w2c(all_commands[lo-3:lo+1]),dtype=clean.dtype,device=clean.device)
- if worker is None:worker=PoseWorker(out/'observer')
  with torch.random.fork_rng(devices=[0]):
-  pipe.load_models_to_device([]);measured,info=worker.measure(np.asarray(prefix),K,depth)
+  pipe.load_models_to_device([])
+  try:
+   if worker is None:worker=PoseWorker(out/'observer')
+   measured,info=worker.measure(np.asarray(prefix),K,depth)
+  finally:
+   if worker is not None:worker.close();worker=None
  commands=plan[lo+1:lo+85].copy()
  if arm in ['sham','correction']:
   start=measured if arm=='correction' else plan[lo]

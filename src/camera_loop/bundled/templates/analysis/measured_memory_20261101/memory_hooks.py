@@ -49,7 +49,8 @@ def matrix_context(L):
     if policy()=='commanded':return old[-1]
     with torch.random.fork_rng(devices=[0]):
         L['pipe'].load_models_to_device([])
-        write,q=measured_write(out,np.asarray(L['prefix']),L['K'],L['depth'],ids,old)
+        try:write,q=measured_write(out,np.asarray(L['prefix']),L['K'],L['depth'],ids,old)
+        finally:close_observer(out)
     if write.applied:
         # Both the clean context and native frustum registration consume these
         # labels. Registration reconstructs world points from depth afterward.
