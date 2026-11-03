@@ -1,0 +1,229 @@
+{
+  "scope": "SHA256-identical completed camera-control frame archives; retain every path and byte, exclude protected trees and active outputs.",
+  "roots": [
+    "analysis/runtime_repairs_20261030/retry2",
+    "analysis/runtime_repairs_20261031/lingbot",
+    "analysis/lingbot_rotation_guard_20261031",
+    "analysis/zigzag_followup_v1/spatia_diagnostic",
+    "analysis/plan_base_restart_20261008/continuous_eval_20261029/validation",
+    "analysis/plan_base_restart_20261008/new_models_loop_20261028/validation",
+    "analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3",
+    "analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2"
+  ],
+  "terminal_or_completion_receipts": {
+    "/home/hj/Alican/analysis/runtime_repairs_20261030/retry2/queue_status.json": "fc1a310acf7e17a2363990afdd81673ab74a6d7926336beb96ca13fdd776d5f2",
+    "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/queue_status.json": "77ffd76e7b1917211e8b23d86f55b9a1d885490cd5b05a87b03b8c106b72e8d8",
+    "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/queue_status.json": "30002aef07ac7fb019d76663121a427de45c82f4025d715165ea6af94352a2bc",
+    "/home/hj/Alican/analysis/zigzag_followup_v1/spatia_diagnostic/queue_status.json": "5af7a1794813462422f625142327a1faa55da2d3b92bf1ca953a45065015712d",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_native/run.json": "ff1e69368c25d948e3ffc6412432b3e4baeb50b2ef5e899bcc343ea83268664d",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_baseline/run.json": "77944d43bbdd79abf1c1e8fc29fdcda6dcf82224b607f7ae6feede3716a6229c",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_sham/run.json": "8039c2f8acfbd59f8a738c262289240cf377403b11659fea1c44439a0ac8930c",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_sham/run.json": "e4f55226c192416d1eb43fae64d3887feecbc0fc73e464a52121e8ea9e3ef907",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/dreamx_correction_full160_v1/run.json": "7697805766e61174c36c55e6c8c55865e48194cd684a174358fd4f23aa69979b",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_native_v8/run.json": "445a800f8c2805856da0d7509591f2210cb5b9e0864832268300ee2882ff9a8c",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_baseline_v8/run.json": "7cef4547d5b1604da68da4cdebd15323a50c329fbf3aaf414e5a08452e2e7279",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_sham_v8/run.json": "27281a61fc35982437f86590d738661ab1258e7c0f261e4e3e52c5025cff74b0",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_correction_v8/run.json": "441f4e90a6d5fbfb13301724c60f980560d36f827b1357c95a48c3e78e80c31f",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_correction_v8/run.json": "7fb4f9cda0e726abdab32b655a0fe3882f3fe38e30c7ca4b9737304d650ed7d8",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_correction_v4/run.json": "1fbce53036c65bae073da06486671c6e7df0534f9f9779296e60acb26210dc09",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_sham_v4/run.json": "93d7b2ead9255cd6b2754ed81e47254c8ce175c751a8eda2fec1622ceebfc267",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_baseline_v1/run.json": "1196bcaccb045a6e03dcee9bc60c16a9df79d528d35712bae9065e85a40b0617",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/dreamx_baseline_full160_v1/run.json": "08602dd7f22e0c752c3c025fead3d60c84b7df83b52ded01d44827a055f4acbf",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_sham_v5/run.json": "a2d18dff4c3b39e0247d206cf1b5bb27f09bcbcbea77645abcdc3187310127b6",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_geometry_v4/correction/run.json": "cd6d44d8178171feb3bf3aa70fc9beb0e92c49b4981ebc90cdb31dcc968c7a93",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_geometry_v4/baseline/run.json": "63a507bca78c80ca8c6bf8976695e1724539065272488acdd5268ba11f6af550",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_geometry_v4/sham/run.json": "0ca8e5f6d556df24ce8e817dc21b4e82fd57dc5bf0b30951e2baf5cbcf8f8ae1",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_correction_full160_v1/correction/run.json": "a2b2f42183309384bb90eeff9984dbb58d3050597e1c59bc4dfc1b86d1285809",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_baseline_full160_v1/baseline/run.json": "cd845a63c7a718561563fff1952c89a13917590f91df5b57a839168a8fae06cf",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/matrixgame_native/run.json": "d528d390b4b9982f88531b1fe0f393f66418e4ad9b2c65771842d4f9e0e0efa7",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/lingbot_parity/correction/run.json": "1d6001f8e23d36ff72a7b43cfb61efe0208e819fef3aa60c896b4b61d3ca705d",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/lingbot_parity/baseline/run.json": "d359640cd9a974327eb06caa4bb78b59ed586f8663aedbebbe08a55f9243567e",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/lingbot_parity/sham/run.json": "fb62eca0ccc27c44d11ef85795617376bc35b7159c2f6394656b07e73c7cf202",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/dreamx_sham/run.json": "069d75cb5815423cfcbf0c6ca4b7a60c6eed60aa1c432c5b255155947f94b69b",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/dreamx_correction/run.json": "b8d8a691c74474715ba5392c302b4e2a6e57f76a2cbcce557e36a20cff152960",
+    "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/lingbot_parity/baseline/run.json": "7f526d6297ea8633e8931bea2cb92297905c5febc746ed31d3f8d6c04f1baacf"
+  },
+  "links": [
+    {
+      "canonical": "/home/hj/Alican/analysis/runtime_repairs_20261030/retry2/runs/sana_legacy97_baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/runtime_repairs_20261030/retry2/runs/sana_legacy97_sham/frames.npz",
+      "sha256": "decbaef59e33f3dd0e99df20133644a64cdac84139259dd1fbbe23811b3c53b7",
+      "bytes": 161949058,
+      "inode": 48270245,
+      "device": 66311,
+      "mtime_ns": 1793383233734655983,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/runs/lingbot_d3f042a2_s107/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/runs/lingbot_d3f042a2_s107/B/frames.npz",
+      "sha256": "af4bf1697bb55f351f9f486393efb5135ebd1ce88fc6d67aba8a0d9b86e581f6",
+      "bytes": 117839662,
+      "inode": 48366082,
+      "device": 66311,
+      "mtime_ns": 1793452486453011442,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/runs/lingbot_74310829_s7/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/runs/lingbot_74310829_s7/B/frames.npz",
+      "sha256": "62e4e9a166d86522f76d67138a74420e611d1812771c1122ef7cddac72e19a56",
+      "bytes": 163628450,
+      "inode": 48366044,
+      "device": 66311,
+      "mtime_ns": 1793452140615356048,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/runs/lingbot_e43058cb_s7/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/runs/lingbot_e43058cb_s7/B/frames.npz",
+      "sha256": "70d3b085b3c167cd6cebbe123df5fcedd7f875f195677e5bf97d5fb3cfb4d57e",
+      "bytes": 127446764,
+      "inode": 48366010,
+      "device": 66311,
+      "mtime_ns": 1793451790112066446,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/runs/lingbot_a4e9bdb6_s7/B/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/runs/lingbot_a4e9bdb6_s7/B/frames.npz",
+      "sha256": "72031c5145cde352e672d69a43aeb8ad35a157d07a197cfd0b1ab4af3c01cc99",
+      "bytes": 117135923,
+      "inode": 48366116,
+      "device": 66311,
+      "mtime_ns": 1793452827979859319,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/zigzag_followup_v1/spatia_diagnostic/runs/baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/zigzag_followup_v1/spatia_diagnostic/runs/sham/frames.npz",
+      "sha256": "523a20c5948692536ba2284fdbb03676063b55d8629d17394ed46667e876c01e",
+      "bytes": 368863425,
+      "inode": 48368414,
+      "device": 66311,
+      "mtime_ns": 1793521344636370800,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_native/frames.npz",
+      "sha256": "29438ffba039fc9e187446fbbf4a6b46d45cf4616830279a16d83dc7097a930d",
+      "bytes": 299824047,
+      "inode": 48261218,
+      "device": 66311,
+      "mtime_ns": 1793229833696505784,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrix_export169_d3f042a2_sham/frames.npz",
+      "sha256": "29438ffba039fc9e187446fbbf4a6b46d45cf4616830279a16d83dc7097a930d",
+      "bytes": 299824047,
+      "inode": 48262390,
+      "device": 66311,
+      "mtime_ns": 1793231222419624402,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_baseline_v8/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_native_v8/frames.npz",
+      "sha256": "8c6114cd8b26ec7354b42ea5cf4395fb2bd55aa120285afe7e53a2cbfa4257f4",
+      "bytes": 79624317,
+      "inode": 48265676,
+      "device": 66311,
+      "mtime_ns": 1793294214472933048,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_baseline_v8/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/sana_sham_v8/frames.npz",
+      "sha256": "8c6114cd8b26ec7354b42ea5cf4395fb2bd55aa120285afe7e53a2cbfa4257f4",
+      "bytes": 79624317,
+      "inode": 48265698,
+      "device": 66311,
+      "mtime_ns": 1793294621148608142,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_correction_v4/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_correction_v8/frames.npz",
+      "sha256": "0eabbaf0eb054a7e31c0525cb96e5dbb3052c423d7485baac62a840da5f248b8",
+      "bytes": 292249259,
+      "inode": 48106382,
+      "device": 66311,
+      "mtime_ns": 1793195043693219390,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/matrixgame_native/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_baseline_v1/frames.npz",
+      "sha256": "b588ab178b1fac2a6e1198cad5127fed7749cbe3e296ee9d0f02526c82c2cdf3",
+      "bytes": 291354201,
+      "inode": 48104696,
+      "device": 66311,
+      "mtime_ns": 1793176008120720366,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/matrixgame_native/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/matrixgame_sham_v5/frames.npz",
+      "sha256": "b588ab178b1fac2a6e1198cad5127fed7749cbe3e296ee9d0f02526c82c2cdf3",
+      "bytes": 291354201,
+      "inode": 48105946,
+      "device": 66311,
+      "mtime_ns": 1793188267467107682,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/lingbot_parity/correction/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_geometry_v4/correction/frames.npz",
+      "sha256": "3a4a5958bd9ec11c84027e036e0b33521fa240fec024887e74384cfeb64776cc",
+      "bytes": 23242267,
+      "inode": 48104738,
+      "device": 66311,
+      "mtime_ns": 1793176195874062540,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/lingbot_parity/baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/lingbot_parity/baseline/frames.npz",
+      "sha256": "fc9e3bee9aa0d4b525530b34d1fa19cdea897c9db345fea1516737a08e08db89",
+      "bytes": 23290478,
+      "inode": 48104578,
+      "device": 66311,
+      "mtime_ns": 1793174338946568528,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/lingbot_parity/baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r3/lingbot_parity/sham/frames.npz",
+      "sha256": "fc9e3bee9aa0d4b525530b34d1fa19cdea897c9db345fea1516737a08e08db89",
+      "bytes": 23290478,
+      "inode": 48104589,
+      "device": 66311,
+      "mtime_ns": 1793174358216501015,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/lingbot_parity/baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_geometry_v4/baseline/frames.npz",
+      "sha256": "fc9e3bee9aa0d4b525530b34d1fa19cdea897c9db345fea1516737a08e08db89",
+      "bytes": 23290478,
+      "inode": 48104720,
+      "device": 66311,
+      "mtime_ns": 1793176157887195634,
+      "nlink": 1
+    },
+    {
+      "canonical": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/pilot_r2/lingbot_parity/baseline/frames.npz",
+      "duplicate": "/home/hj/Alican/analysis/plan_base_restart_20261008/new_models_loop_20261028/validation/lingbot_geometry_v4/sham/frames.npz",
+      "sha256": "fc9e3bee9aa0d4b525530b34d1fa19cdea897c9db345fea1516737a08e08db89",
+      "bytes": 23290478,
+      "inode": 48104729,
+      "device": 66311,
+      "mtime_ns": 1793176176883129078,
+      "nlink": 1
+    }
+  ],
+  "estimated_gib": 2.614335948601365
+}

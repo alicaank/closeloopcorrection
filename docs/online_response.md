@@ -91,4 +91,35 @@ or existing experiment is removed. The manifest and CPU qualification receipt
 bind the launched sources; later repository edits do not change this snapshot.
 
 This is a one-scene, two-seed pilot. It does not establish cross-scene
-calibration or improvement, and GPU outcomes remain pending while queued.
+calibration or improvement.
+
+## Execution update, November 3
+
+The original v2 queue is terminal `held`, not still waiting. Its first Astronex
+job failed before first-frame generation because inherited `LOCAL_RANK` caused
+distributed initialization, which the released I2V path rejects. The subsequent
+environment-only retry stripped rank variables for Astronex and supplied them
+only to WorldPlay, but that retry stopped before launching any job because the
+8 GiB disk reserve was unavailable. Both queue PIDs are gone; their failures
+remain preserved.
+
+A fresh attempt is now queued at
+`analysis/online_response_v2_resume_20261103/`, after SHA256-identical archived
+outputs were hardlinked to recover space. Every output path and byte was retained;
+no additional DL3DV scenes or protected model assets were removed. The current
+attempt copies the environment-fixed frozen controller and evaluation sources,
+changing only output paths and queue provenance. It retains all ten generation
+jobs, four A/C score groups, 20 native chunks, both seeds, and A/S identity and
+A/C first-chunk checks. Its 8 GiB launch and 4 GiB runtime disk guards remain
+unchanged; disk availability will be rechecked after acquiring the GPU locks.
+
+CPU validation passed 19 tests against the copied frozen package, both native
+CLI checks, the evaluator CLI and import binding. The actual Astronex native
+initialization branch also executes in single-process mode under the stripped
+environment. **No GPU response-calibration or tracking outcome is available yet.**
+This command-response ablation remains separate from measured-memory v1 and does
+not establish a physical native-unit conversion.
+
+[Execution snapshot and prior failures](online_response_execution_20261103.json)
+and [CPU qualification](artifacts/online_response_resume_20261103/cpu_validation.json)
+record the current evidence. The snapshot is dated, not a live queue feed.

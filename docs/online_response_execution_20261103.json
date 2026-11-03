@@ -1,0 +1,161 @@
+{
+  "snapshot_time": 1793664249.876565,
+  "prior_attempts": {
+    "online_response_v2_20261102": {
+      "status": {
+        "phase": "held",
+        "pid": 2643116,
+        "started": 1793625968.575103,
+        "manifest_sha256": "a39eb72c2eb8e5898d714e7fb185f8b1ea391727e62fffb17cae367008766faa",
+        "follows": "spatia_command_gain_20261102 through shared queue locks; supersedes unstarted online_response_20261102",
+        "jobs": {
+          "astronex_A_s7": {
+            "state": "failed",
+            "argv": [
+              "/home/hj/Alican/baselines/venv_astronex/bin/python",
+              "/home/hj/Alican/analysis/online_response_v2_20261102/hosts/analysis/plan_base_restart_20261008/long_domain_20261028/astronex_run.py",
+              "--out",
+              "/home/hj/Alican/analysis/online_response_v2_20261102/runs/astronex",
+              "--arms",
+              "/home/hj/Alican/analysis/online_response_v2_20261102/arms.json",
+              "--arm",
+              "A",
+              "--online-response",
+              "--min_free_gib",
+              "8",
+              "--videos",
+              "0238de14",
+              "--seed",
+              "7",
+              "--latents",
+              "160"
+            ],
+            "started": 1793638176.7479973,
+            "pid": 2707701,
+            "returncode": 1,
+            "stop_reason": null,
+            "finished": 1793638241.9164326
+          }
+        },
+        "qualification": {},
+        "failures": [
+          {
+            "error": "RuntimeError('astronex_A_s7: 1, None')"
+          }
+        ],
+        "finished": 1793638241.9262214
+      },
+      "queue_process_exists": false,
+      "manifest_sha256": "a39eb72c2eb8e5898d714e7fb185f8b1ea391727e62fffb17cae367008766faa"
+    },
+    "online_response_v2_retry_20261102": {
+      "status": {
+        "phase": "held",
+        "pid": 2709076,
+        "started": 1793638381.3673058,
+        "manifest_sha256": "ceeb90b1f821ca155314a26b03d1541dbb4fd84178a53a6d50ac96c26773589c",
+        "follows": "Environment-only retry of held response-v2; follows running memory cohort through shared GPU locks",
+        "jobs": {},
+        "qualification": {},
+        "failures": [
+          {
+            "error": "RuntimeError('8 GiB launch reserve reached; no data deleted')"
+          }
+        ],
+        "finished": 1793638737.1287477
+      },
+      "queue_process_exists": false,
+      "manifest_sha256": "ceeb90b1f821ca155314a26b03d1541dbb4fd84178a53a6d50ac96c26773589c"
+    }
+  },
+  "current_attempt": "/home/hj/Alican/analysis/online_response_v2_resume_20261103",
+  "status_snapshot": {
+    "phase": "waiting_for_gpu_lock",
+    "pid": 2822450,
+    "started": 1793664249.861263,
+    "manifest_sha256": "069b7dd7a5f9265e40d6fdec7fdf3fc325f59d8c41fdee245c20ce84b1aa886e",
+    "follows": "Preserved response-v2 controller and rank-environment fix; fresh retry after duplicate-only disk recovery; shared GPU locks",
+    "jobs": {},
+    "qualification": {},
+    "failures": []
+  },
+  "queue_process_exists": true,
+  "manifest_sha256": "069b7dd7a5f9265e40d6fdec7fdf3fc325f59d8c41fdee245c20ce84b1aa886e",
+  "cpu_validation": {
+    "passed": true,
+    "manifest_sha256": "069b7dd7a5f9265e40d6fdec7fdf3fc325f59d8c41fdee245c20ce84b1aa886e",
+    "checks": [
+      {
+        "name": "astronex_help",
+        "argv": [
+          "/home/hj/Alican/baselines/venv_astronex/bin/python",
+          "/home/hj/Alican/analysis/online_response_v2_resume_20261103/hosts/analysis/plan_base_restart_20261008/long_domain_20261028/astronex_run.py",
+          "--help"
+        ],
+        "passed": true,
+        "seconds": 1.9247875213623047,
+        "log_sha256": "42c55176441b9ba25e45db0da01bfb5cdd5ec53f15c1ae5437f57fdc3904fbe6"
+      },
+      {
+        "name": "worldplay_help",
+        "argv": [
+          "/home/hj/Alican/baselines/venv_worldplay/bin/python",
+          "/home/hj/Alican/analysis/online_response_v2_resume_20261103/hosts/analysis/plan_base_restart_20261008/fair_common_20261025/wp_fair.py",
+          "--help"
+        ],
+        "passed": true,
+        "seconds": 4.457772493362427,
+        "log_sha256": "624c8f687b352dd8c6d9a06694cda3596beb92e2a6fa12feae8c7c86d20ee68a"
+      },
+      {
+        "name": "score_help",
+        "argv": [
+          "/home/hj/Alican/baselines/venv_vmem/bin/python",
+          "/home/hj/Alican/analysis/online_response_v2_resume_20261103/score.py",
+          "--help"
+        ],
+        "passed": true,
+        "seconds": 1.0230960845947266,
+        "log_sha256": "a79d187919968f35b6b317e158c6e89348625de8b21875ae0a571d3520bdbb2a"
+      },
+      {
+        "name": "frozen_regressions",
+        "argv": [
+          "/home/hj/Alican/baselines/venv_vmem/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "/home/hj/Alican/analysis/online_response_v2_resume_20261103/tests",
+          "-v"
+        ],
+        "passed": true,
+        "seconds": 0.29436779022216797,
+        "log_sha256": "0db9f6c353cd786667b88344e55880baf390a93f5c463cdfa0b614ae7fd0e471"
+      },
+      {
+        "name": "import_binding",
+        "argv": [
+          "/home/hj/Alican/baselines/venv_vmem/bin/python",
+          "-c",
+          "import camera_loop; from pathlib import Path; assert Path(camera_loop.__file__).is_relative_to(Path('/home/hj/Alican/analysis/online_response_v2_resume_20261103/frozen')); print(camera_loop.__file__)"
+        ],
+        "passed": true,
+        "seconds": 0.1751389503479004,
+        "log_sha256": "8fa7e18dda22f0c8d907f40e0d98ff175d683af5a7ea78d31b7fa277b8514dae"
+      }
+    ],
+    "native_distributed_branch_check": {
+      "passed": true,
+      "source_sha256": "4c68c7fcc913f44f91fafe70ec417c80e896deaf228bf34748f8c05e4afd662d",
+      "inherited_rank_variables_stripped": true,
+      "world_size": 1,
+      "local_rank": 0
+    },
+    "scope": "Frozen-module CPU regression and native CLI/branch checks; no generation outcome or efficacy claim"
+  },
+  "generation_jobs": 10,
+  "score_groups": 4,
+  "gpu_outcomes_available": false,
+  "free_disk_gib": 8.436820983886719
+}
