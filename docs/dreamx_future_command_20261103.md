@@ -1,4 +1,44 @@
-# DreamX command-only pilot: frozen and queued
+# DreamX command-only pilot: frozen protocol and first reviewed result
+
+## First completed pair: moving scene 0238de14, seed 7
+
+The first of four planned cases has completed the original 69 RGB frames.
+A/S observer identity passes for all 69 frames. S/F attribution passes for
+frames 0–32, native inputs and shared boundary/cache receipts. F's first feedback
+is nominal; its later three accepted observations change three future native
+chunks, while memory remains commanded. This qualifies an active future-command
+comparison, not a memory intervention or an identified inverse gain.
+
+| Metric, frames 33–68 | S: observer only | F: future correction | Change |
+| --- | ---: | ---: | --- |
+| Mean position | 0.014894 | 0.013970 | 6.20% lower |
+| Endpoint position | 0.024509 | 0.022865 | 6.71% lower |
+| Mean rotation | 0.6067° | 0.6788° | 0.0721° higher |
+| Endpoint rotation | 0.7004° | 0.6119° | 0.0885° lower |
+
+The six inspected timestamps retain a recognizable playground in both arms;
+the videos look similar and both depart from reference viewpoint/detail. There
+is no sampled near-total noise collapse. Static samples do not establish smooth
+motion or rule out between-sample failure.
+
+The absolute mean-position reduction is only **0.000924 anchor units**. Independent
+full-video VIPE fits differ on the identical RGB prefix by mean 0.000538, p90
+0.001233 and maximum 0.001344 position units; maximum rotation disagreement is
+0.0998°. Different future videos can affect the offline prefix fit. These are
+contextual sensitivity measurements, not a calibrated noise floor, confidence
+interval or proof that the effect is zero. Statistical and practical benefit
+remain unresolved from one scene/seed.
+
+![Reference, observer-only and future-correction samples](artifacts/dreamx_future_command_20261103/first_result/contact_sheet.jpg)
+
+[Score](artifacts/dreamx_future_command_20261103/first_result/score.json) ·
+[Visual and prefix-sensitivity review](artifacts/dreamx_future_command_20261103/first_result/dreamx_0238de14_s7.review.json) ·
+[Full A/S identity](artifacts/dreamx_future_command_20261103/first_result/dreamx_0238de14_s7_identity.json) ·
+[S/F attribution](artifacts/dreamx_future_command_20261103/first_result/dreamx_0238de14_s7_attribution.json).
+The remaining cases continue in the frozen queue. This input/FOV contract remains
+separate from historical DreamX comparisons.
+
+## Frozen design
 
 This is a separate ablation of future-command correction. The primary
 measured-memory v1 method and its original 40-pair cohort remain unchanged.
@@ -55,9 +95,10 @@ cannot establish a causal response curve or separate memory/history effects.
 Four CPU tests using the actual released encoder pass, covering nominal parity,
 the explicit native anchor, next-slice isolation, rejected-observation rebasing,
 and invalid timestamp/intrinsics rejection. The actual source overlay compiles
-and native CLI startup passes. **GPU parity and efficacy remain unverified.**
+and native CLI startup passes. At freezing, GPU parity and efficacy were unverified;
+the completed first-case qualification and descriptive result are reported above.
 
-The live queue was verified waiting for the standard GPU lock at this snapshot.
+At the original protocol snapshot the queue was waiting for the standard GPU lock.
 It has 36 jobs including gates, retention and scoring; required gate failures
 hold the affected work. Scientific losses and abstentions remain reportable.
 Manifest SHA256:

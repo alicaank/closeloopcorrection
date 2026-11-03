@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "old_pairs": 198,
+  "total_pairs": 199,
+  "unchanged_pairs": 190,
+  "audited_pairs": [
+    "lingbot_shared_bc_74310829_s7",
+    "lingbot_shared_bc_a4e9bdb6_s7",
+    "lingbot_shared_bc_d3f042a2_s107",
+    "lingbot_shared_bc_e43058cb_s107",
+    "lingbot_shared_bc_e43058cb_s7",
+    "sana_shared_bc_0f12b97e_s107",
+    "sana_shared_bc_0f12b97e_s7",
+    "sana_shared_bc_a4e9bdb6_s7"
+  ],
+  "new_pairs": [
+    "matrixgame_memory_repeated_924228bf_s107"
+  ],
+  "static_bytes": 258080186,
+  "asset_references": 950,
+  "missing_assets": []
+}

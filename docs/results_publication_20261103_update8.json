@@ -1,0 +1,32 @@
+{
+  "published_at": "2026-11-03T09:13:40.824380+00:00",
+  "project_id": "appgprj_6ae3401d14148191a33a2534e734aa9a",
+  "version_id": "appgprj_6ae3401d14148191a33a2534e734aa9a~appgver_fddee3696b488191a078817c2750533e",
+  "deployment_id": "appgdep_6ae9a5a86258819192dc10afb6d88bdf",
+  "status": "succeeded",
+  "url": "https://camera-correction-results-20261029.alicankk.chatgpt.site",
+  "source_commit": "abb9b5342ab71db747705cd1841609da2f9572f1",
+  "source_checkout": "/home/hj/Alican/sites/camera-correction-results",
+  "audience": "Existing owner-private access preserved",
+  "comparisons": 199,
+  "qualified_memory_pairs": 24,
+  "planned_memory_pairs": 40,
+  "matrix_pairs": 8,
+  "studies": 25,
+  "unchanged_existing_comparisons": 190,
+  "audited_existing_comparisons": 8,
+  "canonical_exact_output_ties": 6,
+  "static_bytes": 258080186,
+  "archive_sha256": "69d9b40af9f468c57b57e93c739c08579c47aca5d45e138db9224c93b797b87d",
+  "archive_bytes": 215216202,
+  "scope": "Completed MatrixGame cohort, zigzag audit and distinct RE10K versus DL3DV response-learning audits. First DreamX future A/S identity included; F result completed review after this publication snapshot and is separately recorded in repository.",
+  "validation": {
+    "browser": "199 selectors, 25 studies, five method modes, filters, warnings, video sync and 390px mobile viewport passed; no JS/HTTP errors.",
+    "asset_references": 950,
+    "missing_assets": 0,
+    "visual_inspection": [
+      "response-audit-desktop.png",
+      "response-audit-mobile.png"
+    ]
+  }
+}

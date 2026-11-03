@@ -1,0 +1,121 @@
+{
+  "key": "dreamx_0238de14_s7",
+  "reviewed_at": 1793697322.182222,
+  "method": "Direct unblinded inspection of six reference/S/F timestamps; not full-video review.",
+  "frames": [
+    0,
+    20,
+    32,
+    33,
+    50,
+    68
+  ],
+  "score": "/home/hj/Alican/analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/score.json",
+  "score_sha256": "840608f669444f019a0921e1040858b18012b038ebe4742a75a2b522b4ca03fe",
+  "sheet": "/home/hj/Alican/analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/contact_sheet.jpg",
+  "sheet_sha256": "cc0bd5d0e074dbc90b45b1b98d296704871d5550c0687e56c6634c0bf67ec99d",
+  "classification": "Small descriptive position reduction with higher mean rotation; recognizable playground in both arms, unresolved estimator/context sensitivity.",
+  "observations": [
+    "The playground tower, green slide, stairs, surrounding buildings and foliage remain recognizable in both arms at sampled timestamps.",
+    "S and F look very similar. Both depart from the reference in viewpoint and foreground/foliage detail; no near-total noise collapse is visible in these samples.",
+    "No obvious large discontinuity is visible between sampled frames 32 and 33. These thumbnails cannot establish temporal smoothness or physical camera motion.",
+    "F changes three native future chunks after one nominal feedback boundary. Commanded memory remains fixed."
+  ],
+  "feedback": {
+    "S": {
+      "boundaries": 4,
+      "accepted_observations": 4,
+      "requested_corrections": 0,
+      "changed_native_chunks": 0
+    },
+    "F": {
+      "boundaries": 4,
+      "accepted_observations": 4,
+      "requested_corrections": 3,
+      "changed_native_chunks": 3
+    }
+  },
+  "delta": {
+    "position_mean": {
+      "S": 0.014894342844188993,
+      "F": 0.013970293373862793,
+      "F_minus_S": -0.0009240494703261996,
+      "reduction_percent": 6.2040298118068105
+    },
+    "position_endpoint": {
+      "S": 0.024509123952814665,
+      "F": 0.02286531055725808,
+      "F_minus_S": -0.001643813395556585,
+      "reduction_percent": 6.706944722794985
+    },
+    "rotation_mean_deg": {
+      "S": 0.6066732190467763,
+      "F": 0.6787967134630724,
+      "F_minus_S": 0.07212349441629606,
+      "reduction_percent": -11.88835968886491
+    },
+    "rotation_endpoint_deg": {
+      "S": 0.7003687655309428,
+      "F": 0.6119110074818818,
+      "F_minus_S": -0.08845775804906109,
+      "reduction_percent": 12.630168905662448
+    }
+  },
+  "identical_prefix_estimator_disagreement": {
+    "frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "position_mean": 0.0005384001308741232,
+    "position_p90": 0.0012332898327190337,
+    "position_max": 0.0013437116549512005,
+    "rotation_mean_deg": 0.04349980022486298,
+    "rotation_max_deg": 0.09983914904463327,
+    "interpretation": "Independent full-video VIPE fits disagree on identical prefix RGB. Different post-prefix videos can alter the offline fit; this is contextual measurement sensitivity, not a calibrated regeneration floor or error bar."
+  },
+  "limitations": [
+    "One development scene and seed; no population claim.",
+    "Position gain 0.000924 anchor units is comparable in scale to prefix-fit disagreement; significance unresolved.",
+    "Changed native-K input contract prevents pooling with historical DreamX results.",
+    "Passive execution ratios are not differential command gains."
+  ],
+  "input_sha256": {
+    "analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/score.json": "840608f669444f019a0921e1040858b18012b038ebe4742a75a2b522b4ca03fe",
+    "analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/contact_sheet.jpg": "cc0bd5d0e074dbc90b45b1b98d296704871d5550c0687e56c6634c0bf67ec99d",
+    "analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/S.npz": "9e9264a308b92b58c873f72d49597feda14b7ba63be187e8729004bc368bf5da",
+    "analysis/dreamx_future_command_20261103/scores/dreamx_0238de14_s7/F.npz": "b4b6d4fbd92f596c9e4e92aa4e95788bc5ad14dd298676b2be1b839cba38f538",
+    "analysis/dreamx_future_command_20261103/gates/dreamx_0238de14_s7_identity.json": "693e9ba977b02fa64db4104d2fcfe35d6f9e76399da6cc50bb17dd5d1ce99698",
+    "analysis/dreamx_future_command_20261103/gates/dreamx_0238de14_s7_attribution.json": "c42280683fd7d91d19464a1e3892d2910dac52e2bfe657509902654d0e870d1a"
+  }
+}
