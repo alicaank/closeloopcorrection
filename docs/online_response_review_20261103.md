@@ -81,7 +81,9 @@ input receipts, and repeat the unchanged-command identity pair. Inspect the
 first divergent intermediate before changing generation behavior. If necessary,
 separately test deterministic kernel configuration as a declared qualification
 change. Do not admit C by replacing exact identity with an arbitrary tolerance.
-No such new GPU diagnostic was launched in this review.
+No such new GPU diagnostic was launched in this review. A subsequent
+[full-horizon traced identity pair](worldplay_identity_trace_20261103.md) is now
+prepared and queued separately; it has not yet produced a GPU result.
 
 ## Evidence and reproduction
 

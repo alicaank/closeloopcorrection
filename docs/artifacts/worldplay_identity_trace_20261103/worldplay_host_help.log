@@ -1,0 +1,18 @@
+INFO 11-03 11:02:40 [__init__.py:91] ROCm platform is unavailable: No module named 'amdsmi'
+WARNING 11-03 11:02:40 [logger.py:127] [92m is_local_main_process is set to True, logging only from the local main process.[0;0m
+INFO 11-03 11:02:40 [__init__.py:50] CUDA is available
+usage: trace_launcher.py [-h] --out OUT --arms ARMS [--arm [ARM ...]]
+                         [--scenes SCENES [SCENES ...]]
+                         [--seeds SEEDS [SEEDS ...]] [--chunks CHUNKS]
+                         [--online-response] [--min_free_gib MIN_FREE_GIB]
+
+options:
+  -h, --help            show this help message and exit
+  --out OUT
+  --arms ARMS
+  --arm [ARM ...]
+  --scenes SCENES [SCENES ...]
+  --seeds SEEDS [SEEDS ...]
+  --chunks CHUNKS
+  --online-response
+  --min_free_gib MIN_FREE_GIB
