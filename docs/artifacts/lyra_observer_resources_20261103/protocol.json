@@ -1,0 +1,119 @@
+{
+  "scope": "All eight original Lyra pairs within the original forty-pair cohort; no evaluated horizon reduction",
+  "pairs": [
+    {
+      "key": "lyra_02267acf_s7",
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_02267acf_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_02267acf_s7/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_c7418b7d_s7",
+      "model": "lyra",
+      "scene": "c7418b7d",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_c7418b7d_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_c7418b7d_s7/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_0238de14_s7",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_0238de14_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_0238de14_s7/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_924228bf_s7",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 7,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_924228bf_s7/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_924228bf_s7/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_02267acf_s107",
+      "model": "lyra",
+      "scene": "02267acf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_02267acf_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_02267acf_s107/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_c7418b7d_s107",
+      "model": "lyra",
+      "scene": "c7418b7d",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_c7418b7d_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_c7418b7d_s107/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_0238de14_s107",
+      "model": "lyra",
+      "scene": "0238de14",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_0238de14_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_0238de14_s107/measured",
+      "first_affected_frame": 81
+    },
+    {
+      "key": "lyra_924228bf_s107",
+      "model": "lyra",
+      "scene": "924228bf",
+      "seed": 107,
+      "batch": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "commanded": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_924228bf_s107/commanded",
+      "measured": "/home/hj/Alican/analysis/memory_generalization_20261103/lyra_observer_resources/runs/lyra_924228bf_s107/measured",
+      "first_affected_frame": 81
+    }
+  ],
+  "parent_freeze_sha256": "5c03bbc1af215d91207cd992a2f32a35d46115da85171ab23aeffdd53d9c1e96",
+  "frames": 321,
+  "change": "Close endpoint observer before restoring native models. Convert full observer RGB history in blocks of eight with each legacy operation order unchanged. No weights, precision, camera policy, cache size or decoder arithmetic change.",
+  "first_case": "Original 161-frame commanded calibration run; repaired full 321-frame baseline must match its first 161 frames exactly. Full measured run and paired prefix gate follow. No legacy full-horizon output exists.",
+  "reference_is_efficacy_case": false,
+  "original_failure": {
+    "state": "failed",
+    "argv": [
+      "/home/hj/Alican/baselines/venv_vmem/bin/python",
+      "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/source/launch.py",
+      "lyra",
+      "--memory-policy",
+      "commanded",
+      "--",
+      "--batch",
+      "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/batch_continuous1009",
+      "--scene",
+      "02267acf",
+      "--seed",
+      "7",
+      "--out",
+      "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lyra_02267acf_s7/commanded",
+      "--arm",
+      "baseline",
+      "--frames",
+      "321"
+    ],
+    "started": 1793665344.409166,
+    "pid": 2832182,
+    "min_host_available_bytes": 1879060480,
+    "stop_reason": "host_memory_guard",
+    "returncode": -15,
+    "finished": 1793665902.3450825
+  }
+}

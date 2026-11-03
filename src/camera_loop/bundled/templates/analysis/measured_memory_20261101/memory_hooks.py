@@ -227,7 +227,8 @@ def lyra_memory(pipe,end):
             da3dev=next(pipe.local_da3_model.parameters()).device
             ARI._offload_diffusion_to_cpu(pipe.model,True);pipe.local_da3_model.to('cpu');torch.cuda.empty_cache()
             try:
-                frames=pixels(pipe.history_frames[0,:,pipe.start_index:],'cthw')
+                from camera_loop.video_conversion import history_rgb
+                frames=history_rgb(pipe.history_frames[0,:,pipe.start_index:],formula='memory')
                 with np.load(meta['trajectory']) as z:K=z['intrinsics'][0].astype(float);depth=z['anchor_depth']*meta['pose_scale']
                 K[0]*=frames.shape[2]/864;K[1]*=frames.shape[1]/480
                 depth=np.asarray(Image.fromarray(depth.astype(np.float32)).resize((frames.shape[2],frames.shape[1]),Image.Resampling.BILINEAR))

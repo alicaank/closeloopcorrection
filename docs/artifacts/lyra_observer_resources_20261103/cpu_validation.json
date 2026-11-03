@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "manifest_sha256": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
+  "checks": [
+    "148 repository CPU tests",
+    "Both Lyra source overlays compile",
+    "321-frame horizon and all eight pairs preserved",
+    "Original failed process absent"
+  ],
+  "gpu_qualified": false
+}

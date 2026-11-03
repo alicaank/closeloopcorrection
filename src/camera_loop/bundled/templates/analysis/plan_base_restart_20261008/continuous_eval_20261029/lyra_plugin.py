@@ -72,7 +72,8 @@ def gv_step(self, *, cam_w2c_chunk, intrinsics_chunk, **kw):
     lo=int(history.shape[2])-1
     assert lo == int(self.cam_w2c.shape[1])-1, 'Generated history/camera timeline mismatch'
     if lo>0 and ARM['name']!='native':
-        frames=((history[0].detach().cpu().permute(1,2,3,0).float()*.5+.5).clamp(0,1)*255).round().byte().numpy()
+        from camera_loop.video_conversion import history_rgb
+        frames=history_rgb(history[0],formula='endpoint')
         h,w=frames.shape[1:3];mw=504;mh=round(h*mw/w)
         small=np.stack([np.asarray(Image.fromarray(f).resize((mw,mh),Image.Resampling.BICUBIC)) for f in frames])
         with np.load(meta['trajectory']) as z:
@@ -81,11 +82,16 @@ def gv_step(self, *, cam_w2c_chunk, intrinsics_chunk, **kw):
         K[0]*=mw/864;K[1]*=mh/480
         depth=np.asarray(Image.fromarray(depth).resize((mw,mh),Image.Resampling.BILINEAR))
         # Never change native history labels; external measurement is a read-only observer.
-        if not hasattr(self,'_long_observer'):self._long_observer=PoseWorker(Path(meta['out'])/'observer')
         da3dev=next(self.local_da3_model.parameters()).device
-        self.local_da3_model.to('cpu');ARI._offload_diffusion_to_cpu(self.model,True);torch.cuda.empty_cache()
+        worker=None
         try:
-            with torch.random.fork_rng(devices=[0]):measured,info=self._long_observer.measure(small,K,depth)
+            self.local_da3_model.to('cpu');ARI._offload_diffusion_to_cpu(self.model,True);torch.cuda.empty_cache()
+            with torch.random.fork_rng(devices=[0]):
+                try:
+                    worker=PoseWorker(Path(meta['out'])/'observer')
+                    measured,info=worker.measure(small,K,depth)
+                finally:
+                    if worker is not None:worker.close()
         finally:
             self.local_da3_model.to(da3dev);ARI._restore_diffusion_to_gpu(self.model,True)
         n=int(cam.shape[-3]);future=plan[lo+1:lo+n+1];assert len(future)==n
@@ -99,8 +105,8 @@ def gv_step(self, *, cam_w2c_chunk, intrinsics_chunk, **kw):
             assert np.array_equal(rejoin(plan[lo],plan[lo],future),future)
             assert torch.equal(cam,cam_w2c_chunk)
         _event(kind='external_feedback',frame=lo,applied=ARM['name']=='correction',measured=measured.tolist(),measurement=info,prefix_sha256=hashlib.sha256(frames.tobytes()).hexdigest())
+        del frames,small
     result=_orig_step(self,cam_w2c_chunk=cam,intrinsics_chunk=intrinsics_chunk,**kw)
-    if kw.get('is_last_step') and hasattr(self,'_long_observer'):self._long_observer.close()
     return result
 
 def gv_add(self, depth, w2c, K, latent_index, frame_id=None):

@@ -121,3 +121,24 @@ stopped at a host-memory guard; those are execution failures with missing paired
 evidence. Full-horizon SANA and Matrix resource retries are queued. Lyra still
 requires resource-path diagnosis. Model-specific horizons and all original cases
 remain fixed in the [coverage ledger](generalization_coverage_20261103.json).
+
+## LingBot 0238de14, seed 7: moving-scene fidelity failure
+
+The next 77-frame pair has exact prefix equality and four accepted writes.
+Mean position error falls **0.617993 → 0.302626 (51.03%)**, and mean rotation
+error falls **4.53203° → 2.97007°**. Yet the sampled measured output has strongly
+overlapping/ghosted stairs and poles at frame 13. Later samples show a
+substantially changed play structure and roof, with appearance changes relative
+to the source. The commanded arm drifts far past the central structure.
+
+![LingBot moving-scene samples](artifacts/generalization_20261103/visual_review/lingbot_0238de14_s7.jpg)
+
+This is a **scene-fidelity failure despite improved pose metrics**, retained in
+the cohort. It shows that the visual failure is not confined to the nearly
+stationary `02267acf` scene. It does not identify the encoder denominator as the
+cause or establish a physical reversal from estimated poses. The shorter prior
+moving-scene results do not substitute for this repeated-write evidence.
+
+Five original pairs have scores at this subsequent snapshot. Lyra now has a
+[full 321-frame resource retry](lyra_observer_resources_20261103.md) queued;
+the original failure remains recorded and GPU qualification is pending.

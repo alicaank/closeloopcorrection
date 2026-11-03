@@ -17,7 +17,7 @@
   },
   {
     "path": "analysis/measured_memory_20261101/memory_hooks.py",
-    "sha256": "7758e819754158774648f77cd88d378b102e312f473a188754fa9950574e3398"
+    "sha256": "46f1b97108d498a99dbd3f3556c5fcf74b65665cf04906d287720a1a1ad1a2eb"
   },
   {
     "path": "analysis/measured_memory_20261101/overlays.py",
@@ -57,7 +57,7 @@
   },
   {
     "path": "analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_plugin.py",
-    "sha256": "c139218adb67c3a55cb2f608a4d231d7cc196b7199568f5e85a9df31533a14fe"
+    "sha256": "a20eb0439c4ea378e9ad592309c307666dfbc786edb391277e81c6c2d9827ac2"
   },
   {
     "path": "analysis/plan_base_restart_20261008/continuous_eval_20261029/lyra_run.py",

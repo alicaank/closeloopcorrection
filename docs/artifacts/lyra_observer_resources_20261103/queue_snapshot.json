@@ -1,0 +1,13 @@
+{
+  "captured_at": 1793667099.2185075,
+  "pid_alive": true,
+  "status": {
+    "pid": 2846474,
+    "phase": "waiting_for_gpu_lock",
+    "started": 1793667033.9083788,
+    "manifest_sha256": "3f5c1831d98114571b25a21839fcd19880ad94e73d9a34afac4e183047909d19",
+    "jobs": {},
+    "failures": [],
+    "held_cases": {}
+  }
+}

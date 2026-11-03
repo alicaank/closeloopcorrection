@@ -1,0 +1,23 @@
+{
+  "reviewed_at": 1793667099.215729,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "lingbot_0238de14_s7",
+  "sheet_sha256": "11b6407ded6c025ad8f9831b6b2689710d86474ba089756f5293a76ebffd53eb",
+  "score_sha256": "8426f81cb7ff88345082c0f9bcc63c09f8926d7ebcfc23d8376051468ad7588f",
+  "frames": [
+    0,
+    12,
+    13,
+    38,
+    57,
+    76
+  ],
+  "observations": [
+    "Reference retains playground structure while the viewpoint changes.",
+    "Commanded output preserves recognizable content but drifts far past the central play structure.",
+    "Measured output matches the prefix; frame 13 shows strong overlapping/ghosted stairs and poles.",
+    "Later measured samples contain a substantially altered play structure and roof with color/framing changes; lower pose errors coexist with scene-fidelity failure."
+  ],
+  "classification": "Scene-fidelity failure despite lower position and rotation errors.",
+  "temporal_limitation": "Six samples do not establish continuous motion or physical reversal; observer poses on altered geometry need caution."
+}

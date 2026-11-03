@@ -1,12 +1,12 @@
 """All original cases, with retries visible rather than replacing failures."""
 from pathlib import Path
 import collections,hashlib,json,time
-R=Path(__file__).resolve().parent;Q=R/'cohort_resume';S=R/'sana_observer_residency';M=R/'matrix_observer_lifetime'
+R=Path(__file__).resolve().parent;Q=R/'cohort_resume';S=R/'sana_observer_residency';M=R/'matrix_observer_lifetime';L=R/'lyra_observer_resources'
 captured={}
 def read(p):
     raw=p.read_bytes();captured[str(p)]=hashlib.sha256(raw).hexdigest();return json.loads(raw)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-freeze=read(Q/'freeze.json');state=read(Q/'status.json');supp=read(S/'status.json');matrix_supp=read(M/'status.json')
+freeze=read(Q/'freeze.json');state=read(Q/'status.json');supp=read(S/'status.json');matrix_supp=read(M/'status.json');lyra_supp=read(L/'status.json')
 visual=read(R/'visual_review/manifest.json');visual_by_key={x['key']:x for x in visual['pairs']}
 rows=[]
 for pair in freeze['pairs']:
@@ -26,8 +26,8 @@ for pair in freeze['pairs']:
         review=visual_by_key.get(key)
         if review and review['score_sha256']==row['score_sha256']:
             row['visual_review']={k:review[k] for k in ['review_status','classification'] if k in review}
-    if model in ('sana','matrixgame'):
-        supplement=supp if model=='sana' else matrix_supp
+    if model in ('sana','matrixgame','lyra'):
+        supplement={'sana':supp,'matrixgame':matrix_supp,'lyra':lyra_supp}[model]
         sj={k:v for k,v in supplement['jobs'].items() if k.startswith(key+'_')}
         row['resource_supplement']=dict(queue_phase=supplement['phase'],jobs=sj,
             note='Separate original-horizon retry; the parent execution failure/hold remains in this record.')
@@ -38,7 +38,7 @@ models={m:dict(planned=8,execution_counts=dict(collections.Counter(r['execution_
 for model,counts in models.items():assert sum(counts['execution_counts'].values())==8,model
 out=dict(snapshot_time=time.time(),original_planned_pairs=40,models=models,rows=rows,
     interpretation='Coverage accounting only. Execution success, active writes, numeric pose changes and visual quality are distinct. Pending/held cases are not efficacy results; retries do not erase failures.',
-    queue_processes={name:dict(pid=s['pid'],phase=s['phase'],process_exists=Path('/proc',str(s['pid'])).exists()) for name,s in [('cohort',state),('sana_supplement',supp),('matrix_supplement',matrix_supp)]},
-    input_hashes={str(p):captured.get(str(p),None) or sha(p) for p in [Q/'freeze.json',Q/'status.json',S/'manifest.json',S/'status.json',M/'manifest.json',M/'status.json',R/'visual_review/manifest.json']})
+    queue_processes={name:dict(pid=s['pid'],phase=s['phase'],process_exists=Path('/proc',str(s['pid'])).exists()) for name,s in [('cohort',state),('sana_supplement',supp),('matrix_supplement',matrix_supp),('lyra_supplement',lyra_supp)]},
+    input_hashes={str(p):captured.get(str(p),None) or sha(p) for p in [Q/'freeze.json',Q/'status.json',S/'manifest.json',S/'status.json',M/'manifest.json',M/'status.json',L/'manifest.json',L/'status.json',R/'visual_review/manifest.json']})
 (R/'coverage_snapshot.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps(models,indent=2))
