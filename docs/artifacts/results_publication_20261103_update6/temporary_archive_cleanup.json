@@ -1,0 +1,8 @@
+{
+  "deployment_id": "appgdep_6ae999096a3081918267bcbcd352be1c",
+  "status": "succeeded",
+  "path": "/tmp/camera-results-failure-audit.tar.gz",
+  "sha256": "712523a16965a0e4e6b86f19be12d372e3645eaa83cee9f7daa2b5a1aec2fcbd",
+  "bytes": 211869421,
+  "deleted_at": 1793694089.5305755
+}
