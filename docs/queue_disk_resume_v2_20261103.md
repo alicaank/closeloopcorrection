@@ -14,6 +14,15 @@ deleted. [Plan](artifacts/queue_disk_resume_v2_20261103/deduplication_plan.json)
 [execution receipt](artifacts/queue_disk_resume_v2_20261103/deduplication.json),
 and [implementation](artifacts/queue_disk_resume_v2_20261103/deduplicate.py).
 
+A subsequent exact-byte scan of historical output videos recovered another
+**489,926,726 bytes (467.2 MiB)** across 19 groups, replacing 20 duplicate
+allocations with hardlinks. Every MP4 path and SHA256 was preserved, and protected
+tree metadata was unchanged. Model-repository assets were excluded. FFV1 files
+whose container bytes differed were also left unchanged, even where their decoded
+RGB had previously matched. Free space rose to about **5.1 GiB** while the final
+MatrixGame generation remained active. [Video deduplication receipt](artifacts/storage_video_dedup_20261103/video_deduplication.json)
+and [exact plan](artifacts/storage_video_dedup_20261103/video_deduplication_plan.json).
+
 After this recovery, the existing MatrixGame archival job completed and verified
 **337 × 704 × 1280 RGB frames, pixel-exact**, before replacing its bulky owned
 NPZ with FFV1 storage. The remaining measured-memory generation was then launched.

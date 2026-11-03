@@ -1,0 +1,460 @@
+{
+  "created": 1793695106.255495,
+  "groups": [
+    [
+      {
+        "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s7/C/video.mp4",
+        "inode": 38277619,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 11868176
+      },
+      {
+        "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s7/B/video.mp4",
+        "inode": 38277591,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 11868176
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s107/C/video.mp4",
+        "inode": 38277729,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 14718658
+      },
+      {
+        "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s107/B/video.mp4",
+        "inode": 38277701,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 14718658
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_0238de14_s107/C/video.mp4",
+        "inode": 38277511,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 16175911
+      },
+      {
+        "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_0238de14_s107/B/video.mp4",
+        "inode": 38277483,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 16175911
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/A/0238de14_s7.mp4",
+        "inode": 38288450,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 50688930
+      },
+      {
+        "path": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/S/0238de14_s7.mp4",
+        "inode": 38288482,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 50688930
+      },
+      {
+        "path": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/C/0238de14_s7.mp4",
+        "inode": 38288514,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 50688930
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/runs/lingbot_74310829_s7/B/video.mp4",
+        "inode": 48367355,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 19666506
+      },
+      {
+        "path": "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/runs/lingbot_74310829_s7/B/video.mp4",
+        "inode": 48366047,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 19666506
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/repos/worldwarp/assets/web_teaser.mp4",
+        "inode": 47981782,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 24182307
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/model_readiness_20261027/weights/worldwarp/assets/web_teaser.mp4",
+        "inode": 48236423,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 24182307
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/matrixgame_02267acf_s7/commanded/frames.lossless.mkv",
+        "inode": 38286141,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 270994412
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/commanded/frames.lossless.mkv",
+        "inode": 38288675,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 270994412
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/matrixgame_02267acf_s7/commanded/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+        "inode": 38285878,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 10672232
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/commanded/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+        "inode": 38288637,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 10672232
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/commanded/baseline/frames.lossless.mkv",
+        "inode": 38287413,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 31052509
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s7/measured/baseline/frames.lossless.mkv",
+        "inode": 38287443,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 31052509
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s7/commanded/frames.lossless.mkv",
+        "inode": 38287481,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 54515290
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s7/measured/frames.lossless.mkv",
+        "inode": 38287507,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 54515290
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s107/commanded/baseline/frames.lossless.mkv",
+        "inode": 38288135,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 31506139
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/lingbot_924228bf_s107/measured/baseline/frames.lossless.mkv",
+        "inode": 38288166,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 31506139
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s107/commanded/frames.lossless.mkv",
+        "inode": 38288210,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 54546057
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/dreamx_924228bf_s107/measured/frames.lossless.mkv",
+        "inode": 38288237,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 54546057
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s107_commanded/joint.lossless.mkv",
+        "inode": 38288421,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 129997206
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s107_measured/joint.lossless.mkv",
+        "inode": 38288427,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 129997206
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s7_commanded/joint.lossless.mkv",
+        "inode": 38288409,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 134256524
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_decoder_audit/runs/matrixgame_924228bf_s7_measured/joint.lossless.mkv",
+        "inode": 38288415,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 134256524
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/commanded/frames.lossless.mkv",
+        "inode": 38289027,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 271324554
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/measured/frames.lossless.mkv",
+        "inode": 38289077,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 271324554
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/commanded/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+        "inode": 38289007,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 11388846
+      },
+      {
+        "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/measured/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+        "inode": 38289046,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 11388846
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/raw/spatia_02267acf/sham/02267acf_s7.mp4",
+        "inode": 48266988,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25486169
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/raw/spatia_02267acf/baseline/02267acf_s7.mp4",
+        "inode": 48266879,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25486169
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/lyra_02267acf_baseline/review_full.mp4",
+        "inode": 48266049,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 16240598
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/lyra_02267acf_sham/review_full.mp4",
+        "inode": 48266583,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 16240598
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/spatia_02267acf_sham/review_full.mp4",
+        "inode": 48267110,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 26025601
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/spatia_02267acf_baseline/review_full.mp4",
+        "inode": 48267014,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 26025601
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/video.mp4",
+        "inode": 48367781,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 15458395
+      },
+      {
+        "path": "/home/hj/Alican/analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/video.mp4",
+        "inode": 48367759,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 15458395
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/runtime_repairs_20261030/resume/runs/spatia_0238de14/baseline/0238de14_s7.mp4",
+        "inode": 48270851,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 48184689
+      },
+      {
+        "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/A/0238de14_s7.mp4",
+        "inode": 38280325,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 48184689
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/qualification/A/0238de14_s7.mp4",
+        "inode": 38278343,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 14082058
+      },
+      {
+        "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/qualification/S/0238de14_s7.mp4",
+        "inode": 38278380,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 14082058
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/raw/spatia_02267acf/sham/02267acf_s7.mp4",
+        "inode": 48264754,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25385593
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/raw/spatia_02267acf/baseline/02267acf_s7.mp4",
+        "inode": 48264645,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25385593
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/C/0238de14_s7.mp4",
+        "inode": 38281897,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 48396073
+      },
+      {
+        "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/B/0238de14_s7.mp4",
+        "inode": 38281771,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 48396073
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/lyra_02267acf_baseline/review_full.mp4",
+        "inode": 48264009,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 18126075
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/lyra_02267acf_sham/review_full.mp4",
+        "inode": 48264506,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 18126075
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/spatia_02267acf_sham/review_full.mp4",
+        "inode": 48264866,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25321289
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/spatia_02267acf_baseline/review_full.mp4",
+        "inode": 48264780,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25321289
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_sham/review_full.mp4",
+        "inode": 48262481,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25605806
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_baseline/review_full.mp4",
+        "inode": 48262444,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 25605806
+      }
+    ],
+    [
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_sham/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+        "inode": 48262499,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 15746191
+      },
+      {
+        "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_baseline/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+        "inode": 48262462,
+        "device": 66311,
+        "nlink": 1,
+        "bytes": 15746191
+      }
+    ]
+  ]
+}

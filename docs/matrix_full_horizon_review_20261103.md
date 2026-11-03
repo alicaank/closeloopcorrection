@@ -28,6 +28,12 @@ This is direct, unblinded inspection of six matched timestamps per arm, not a fu
 
 [Review manifest](artifacts/generalization_20261103/matrix_full_horizon_review/manifest.json) · [full-baseline resource parity](artifacts/generalization_20261103/matrix_full_horizon_review/resource_prefix.json) · [all 40 cases and preserved execution attempts](generalization_coverage_20261103.json). Audit scripts are workspace-specific archival copies; their original locations are recorded in the manifest.
 
+The review script now supports incremental additions. It verifies existing score,
+gate, archive, reference-image and sheet hashes before reusing a review; the seven
+existing review records remain unchanged. An explicit request for an unqualified
+pair fails without changing the manifest. This reduces repeated decoding while
+preserving the evidence behind each inspection. [Validation](artifacts/generalization_20261103/matrix_full_horizon_review/incremental_review_validation.json).
+
 **matrixgame_02267acf_s7**
 ![matrixgame_02267acf_s7 reference, commanded and measured samples](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_02267acf_s7.jpg)
 [Inspection notes](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_02267acf_s7.review.json) · [score](artifacts/generalization_20261103/matrix_full_horizon_review/matrixgame_02267acf_s7.score.json)

@@ -1,0 +1,132 @@
+{
+  "started": 1793695152.0835695,
+  "free_before": 4996526080,
+  "status": "complete",
+  "linked": [
+    {
+      "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s7/C/video.mp4",
+      "keep": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s7/B/video.mp4",
+      "bytes": 11868176,
+      "sha256": "3b0e23c7c98636fac7e5e015c5d85962fce47bbbf05988745e891f15e1f3d1a0"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s107/C/video.mp4",
+      "keep": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_924228bf_s107/B/video.mp4",
+      "bytes": 14718658,
+      "sha256": "f9698b717c220c9d7db7481876ced1a99162dc77ecfb12f324bf84f7130d02e2"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_0238de14_s107/C/video.mp4",
+      "keep": "/home/hj/Alican/analysis/command_gain_abc_20261101/runs/lingbot_0238de14_s107/B/video.mp4",
+      "bytes": 16175911,
+      "sha256": "ca09d3147d6550bdd433799358a6ac060b4745105f0d11f6d25ac97c421a11dc"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/C/0238de14_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/A/0238de14_s7.mp4",
+      "bytes": 50688930,
+      "sha256": "4b0f8511f07bd789d5cfb41e683d3ffd514d24497e6363995c3c6462441ee611"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/S/0238de14_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/online_response_v2_resume_20261103/runs/astronex/A/0238de14_s7.mp4",
+      "bytes": 50688930,
+      "sha256": "4b0f8511f07bd789d5cfb41e683d3ffd514d24497e6363995c3c6462441ee611"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/runtime_repairs_20261031/lingbot/runs/lingbot_74310829_s7/B/video.mp4",
+      "keep": "/home/hj/Alican/analysis/lingbot_rotation_guard_20261031/runs/lingbot_74310829_s7/B/video.mp4",
+      "bytes": 19666506,
+      "sha256": "9c9cb28d9480dc47f9897c5df83068875b0153cd5c4952302dd9112a715d003f"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_02267acf_s7/commanded/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+      "keep": "/home/hj/Alican/analysis/memory_generalization_20261103/cohort_resume/runs/matrixgame_02267acf_s7/commanded/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+      "bytes": 10672232,
+      "sha256": "056e0bb69ffb9c475930798f1470441e3ee273557d574a6c4e9da624dfd83c79"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/measured/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+      "keep": "/home/hj/Alican/analysis/memory_generalization_20261103/matrix_observer_lifetime/runs/matrixgame_924228bf_s7/commanded/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+      "bytes": 11388846,
+      "sha256": "0cf95c14e39ff678177bcec485f8b13d26983cd6fde2e6b1d009072663bb2f35"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/raw/spatia_02267acf/sham/02267acf_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/raw/spatia_02267acf/baseline/02267acf_s7.mp4",
+      "bytes": 25486169,
+      "sha256": "f86a2229bce7eca6cfe5a3a6899a530b1f740818049392bcfaef830000a3e559"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/lyra_02267acf_sham/review_full.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/lyra_02267acf_baseline/review_full.mp4",
+      "bytes": 16240598,
+      "sha256": "ccf97ea3d68fb2c66f2e99adedad472e3686e1e95f00c7fdb859c5d807bc6947"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/spatia_02267acf_sham/review_full.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/scale_20261030/measured_gate_cohort/validation/spatia_02267acf_baseline/review_full.mp4",
+      "bytes": 26025601,
+      "sha256": "b2fec9c0287272a8d73b33ccd294544f09e78ee94bc49f277b481c21d7813b8a"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/C/video.mp4",
+      "keep": "/home/hj/Alican/analysis/shared_controller_pilot_v2/runs/lingbot_74310829_s7/B/video.mp4",
+      "bytes": 15458395,
+      "sha256": "8dfc21987f240c0a4e60f360f294056079db386d55e26f88d993495e71c08d5c"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/A/0238de14_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/runtime_repairs_20261030/resume/runs/spatia_0238de14/baseline/0238de14_s7.mp4",
+      "bytes": 48184689,
+      "sha256": "df63648d0e0e97e1ad041f9104c6850a7f85b0bd28c547a64bf20184b48f3a78"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/qualification/S/0238de14_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/qualification/A/0238de14_s7.mp4",
+      "bytes": 14082058,
+      "sha256": "b6c54c038b4b0d521186ce506d23938c1e3b32e60a8ddeef27dcbe575e959159"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/raw/spatia_02267acf/sham/02267acf_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/raw/spatia_02267acf/baseline/02267acf_s7.mp4",
+      "bytes": 25385593,
+      "sha256": "7cf95b25968b6313e2b1341bc97ad66641a1bf11a809ab3a2a6ca4050a4e21c7"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/C/0238de14_s7.mp4",
+      "keep": "/home/hj/Alican/analysis/spatia_command_gain_20261102/runs/spatia_0238de14_s7/B/0238de14_s7.mp4",
+      "bytes": 48396073,
+      "sha256": "ad4acfdb7a2a5526aee30360df09a4d70a4b595932a341a5b7f57cd95f2e3ff2"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/lyra_02267acf_sham/review_full.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/lyra_02267acf_baseline/review_full.mp4",
+      "bytes": 18126075,
+      "sha256": "7b5d32a102e7bd35eb900f702775a25141be9976d7f5c25f2b4ddeb9a6bdf29c"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/spatia_02267acf_sham/review_full.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/repair_20261029/validation/spatia_02267acf_baseline/review_full.mp4",
+      "bytes": 25321289,
+      "sha256": "821e80a9c6f5f6de3827d2b10ab59cf94c4454b05c3afc6956339bd2a7e0690d"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_sham/review_full.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_baseline/review_full.mp4",
+      "bytes": 25605806,
+      "sha256": "64d1f061c5b2f6e876d604711b63ff35845a1ccd0183db848f7cdbfd7421c0fe"
+    },
+    {
+      "path": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_sham/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+      "keep": "/home/hj/Alican/analysis/plan_base_restart_20261008/continuous_eval_20261029/validation/matrixgame_02267acf_baseline/raw/run/validation/_temp/epoch_-001_000_proc_000_case_history_temp.mp4",
+      "bytes": 15746191,
+      "sha256": "050ec0f88e184ac15fe746dfe9f83540f6f6328d212f798806062039510e064c"
+    }
+  ],
+  "finished": 1793695153.2382927,
+  "free_after": 5486526464,
+  "logical_bytes_deduplicated": 489926726,
+  "all_paths_and_hashes_preserved": true,
+  "protected_tree_stats_unchanged": true
+}

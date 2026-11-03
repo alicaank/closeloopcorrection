@@ -1,7 +1,7 @@
 {
   "scope": "Original 337-frame retry; sampled RGB review, not a full-video quality metric. Stored reference poses may be VIPE-derived, not independent GT.",
   "queue_manifest_sha256": "8265bf0bbbf70c4813e5ee04a4e6f48fdbbda4ca835d6b8eb9edaf376509f314",
-  "script_sha256": "3b07f1850d7defec62285a1134594188cbf984c938d52c64db2a1f93f6e126ad",
+  "script_sha256": "d265fd0d4b4bc09b6657d622633492054137c52de6393f49e80539495dcf7655",
   "pairs": [
     {
       "key": "matrixgame_02267acf_s7",
