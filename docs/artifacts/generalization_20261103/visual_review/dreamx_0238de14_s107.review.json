@@ -1,0 +1,22 @@
+{
+  "reviewed_at": 1793669672.6670935,
+  "method": "Direct inspection of six-frame contact sheet; not full-video review",
+  "key": "dreamx_0238de14_s107",
+  "sheet_sha256": "81087628a27661f746dbc9bcd091dc35eb8868aebf20663b648691e1aefb7743",
+  "score_sha256": "72296e93c0bbc74088d401896f863406de7858ab2e99378a821725c932965aec",
+  "frames": [
+    0,
+    20,
+    21,
+    34,
+    51,
+    68
+  ],
+  "observations": [
+    "Both generated rows retain recognizable playground geometry and look very similar at all six sampled timestamps.",
+    "Both change framing relative to the recorded reference; no severe fragmentation is evident in these samples.",
+    "Mean position and rotation errors slightly increase while endpoint position slightly decreases. No matched regeneration floor was measured."
+  ],
+  "classification": "Small mixed numerical changes with similar sampled appearance; efficacy and differential memory authority unestablished.",
+  "temporal_limitation": "Six samples do not resolve oscillation or exact event timing between samples."
+}

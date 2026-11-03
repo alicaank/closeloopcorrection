@@ -6,8 +6,8 @@ reference video; stored camera poses may be VIPE-derived and are not claimed
 as independent ground truth. Translation is in each scene's reference
 anchor-depth units, not established metric metres.
 
-Latest reviewed snapshot: **13/40 original pairs**, seven LingBot and six DreamX.
-Eleven have valid positional registration; two are zero-write abstentions with
+Latest reviewed snapshot: **14/40 original pairs**, seven LingBot and seven DreamX.
+Twelve have valid positional registration; two are zero-write abstentions with
 unavailable position metrics. Three reviewed LingBot pairs have visible scene
 fidelity failures despite lower position-error scores; the additional moving-scene
 seed-107 pair has boundary ghosting and structural changes with recognizable
@@ -269,3 +269,16 @@ do not establish physical camera reversal, perceptual video quality, or absence
 of fine artifacts. The failure mode therefore repeats qualitatively at the first
 boundary across the two moving-scene seeds, with different severity and later
 appearance; it is not reduced to a binary scene-level collapse label.
+
+
+## DreamX moving scene, seed 107: another small mixed change
+
+The 69-frame pair has exact prefix equality and four accepted writes. Mean
+position error is **0.024619 → 0.024667 (0.20% worse)**, endpoint position
+0.044552 → 0.044427, and mean rotation **1.79088° → 1.80228°**. The six
+matched samples retain recognizable playground geometry and look very similar
+between arms, without evident severe fragmentation. No matched regeneration
+floor was measured; these small changes do not establish reliable efficacy or
+differential memory authority. This brings sampled reviews to 14 original pairs.
+
+![DreamX moving-scene second seed](artifacts/generalization_20261103/visual_review/dreamx_0238de14_s107.jpg)

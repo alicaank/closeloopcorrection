@@ -7,8 +7,8 @@ remain in the evaluation; they do not automatically veto the method or trigger
 a model-specific exception. Conversely, a few large gains cannot establish
 generality when all active interventions come from one scene.
 
-Current development snapshot: **13/40 original repeated-memory pairs are scored
-and visually reviewed**, seven LingBot and six DreamX. The resumed main queue is
+Current development snapshot: **14/40 original repeated-memory pairs are scored
+and visually reviewed**, seven LingBot and seven DreamX. The resumed main queue is
 running; all seven supplementary queue processes were confirmed alive waiting
 for its GPU locks. SANA, MatrixGame and Lyra retain their original resource
 failures/holds, with full-horizon retries queued separately. See the
@@ -257,7 +257,7 @@ and the decoder effect remain pending. No live cohort source or score is changed
 ### Full-cohort coverage accounting
 
 The [40-pair coverage snapshot](generalization_coverage_20261103.json) keeps each
-original scene/seed/model case visible. The latest linked snapshot has 13 scored
+original scene/seed/model case visible. The latest linked snapshot has 14 scored
 and reviewed pairs, including one reused LingBot pair. The main queue is running
 DreamX; SANA, MatrixGame and Lyra are held after one original execution failure
 each. Their separate full-horizon resource retries appear beside those original
